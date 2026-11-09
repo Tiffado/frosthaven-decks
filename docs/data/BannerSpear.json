@@ -54,10 +54,34 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Disarm}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "B"
+      ],
+      [
+       2,
+       2,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -77,10 +101,39 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Push} 1",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -2,
+       0,
+       "B"
+      ],
+      [
+       -3,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -145,10 +198,39 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Pierce} 3",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -1,
+       -1,
+       "B"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ],
+      [
+       3,
+       3,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -166,10 +248,29 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Wound}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "B"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -209,10 +310,29 @@
    "haut": {
     "texte": [
      "{Attack} 5 {Muddle}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "B"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -253,10 +373,39 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Immobilize}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -2,
+       0,
+       "B"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -319,10 +468,34 @@
    "haut": {
     "texte": [
      "{Attack} 4 {Wound}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "B"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -365,10 +538,39 @@
      "{Attack} 2 {Poison}",
      "—",
      "{Target} tous sur {BlueHex} et {GreyHex}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       2,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "B"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -388,10 +590,29 @@
    "haut": {
     "texte": [
      "{Attack} 7 {Stun}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}3"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "B"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -410,10 +631,49 @@
    "initiative": 72,
    "haut": {
     "texte": [
-     "{Attack} 4 {Target} 1 {Enemy} sur un {RedHex} — {Bless} tous les {Allies} sur {BlueHex} {Zone}",
+     "{Attack} 4 {Target} 1 {Enemy} sur un {RedHex} — {Bless} tous les {Allies} sur {BlueHex} {Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -2,
+       0,
+       "B"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "B"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -456,9 +716,53 @@
     "texte": [
      "{Attack} 3 {Push} 1 {XP1}",
      "Octroyez {Move}1 à tous les personnages sur un {BlueHex} et un {GreyHex}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -2,
+       0,
+       "B"
+      ],
+      [
+       -3,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -3,
+       -1,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -506,9 +810,48 @@
      "Octroyez {Shield}1 à tous les {Allies} sur {BlueHex} et {GreyHex}",
      "{XP1} {Round}",
      "{Persistent} {Shield} 1",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -2,
+       0,
+       "B"
+      ],
+      [
+       2,
+       0,
+       "B"
+      ],
+      [
+       -3,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -550,10 +893,34 @@
     "texte": [
      "{Attack} 7",
      "{Stun}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "B"
+      ],
+      [
+       3,
+       1,
+       "B"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -596,10 +963,39 @@
     "texte": [
      "{Attack} 4",
      "{Pierce} 2, {Immobilize}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "B"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -641,10 +1037,74 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Poison}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       -2,
+       0,
+       "B"
+      ],
+      [
+       -1,
+       -1,
+       "B"
+      ],
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

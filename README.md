@@ -48,7 +48,7 @@ servi à vérifier que les lignes manquantes (voir plus bas) ne s'y trouvent pas
 
 - Environ 270 lignes de texte de cartes (sur 198 cartes) sont référencées par le jeu mais absentes de ses tables de
   traduction locales. Le site les signale par « ⚠ texte absent des données du jeu ».
-- Les zones d'effet (schémas d'hexagones) ne sont pas dessinées : le site indique seulement « zone d'effet ».
+- Les zones d'effet sont dessinées à partir des coordonnées du jeu (AreaEffect) ; une seule carte n'en a pas dans les données.
 - Les données suivent la version installée du jeu et peuvent changer avec les mises à jour.
 
 ## Droits

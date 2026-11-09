@@ -79,9 +79,33 @@
      "{Attack} 2",
      "—",
      "{ConsumeFire} : Créez un {HazardHex} dans chaque {RedHex} vide, {XP1}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       6,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -659,9 +683,28 @@
     "texte": [
      "Déplacement {Move} 2",
      "—",
-     "{Attack} 3 {Zone}"
+     "{Attack} 3 {Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {

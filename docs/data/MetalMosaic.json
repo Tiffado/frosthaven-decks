@@ -175,9 +175,51 @@
     "texte": [
      "{Attack} 4",
      "{MMPressureOver} {XP1}, {MMSelfDamage}, {MMLosePressure}{MMLosePressure}",
-     "{MMPressureHigh} {XP1}, {MMSelfDamage}, {MMLosePressure}"
+     "{MMPressureHigh} {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ],
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

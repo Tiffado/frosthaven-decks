@@ -118,11 +118,30 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Range} 3 {Curse}",
-     "{Zone}",
+     "{Zone_0}",
      "{CreateDark}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

@@ -122,10 +122,31 @@ function libelle(jeton) {
 
 const svg = (nom) => `<svg viewBox="0 0 24 24" aria-hidden="true">${PICTOS[nom]}</svg>`;
 
-// Un jeton (+ sa valeur éventuelle) en HTML.
-function jetonHtml(jeton, valeur) {
+// Zone d'effet : hexagones « pointe en haut », coordonnées à pas horizontal double (x pair/impair selon la rangée).
+// Types : G votre case, R case touchée, B allié ou bannière, S point d'origine, E case vide de repère.
+const TYPES_HEX = { G: "votre case", R: "case touchée", B: "allié ou bannière", S: "point d'origine", E: "case vide" };
+function zoneSvg(hexs) {
+  const s = 10, w = Math.sqrt(3) * s;
+  const pts = hexs.map(([x, y, t]) => [x * w / 2, y * 1.5 * s, t]);
+  const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+  const minX = Math.min(...xs) - w / 2 - 1, maxX = Math.max(...xs) + w / 2 + 1;
+  const minY = Math.min(...ys) - s - 1, maxY = Math.max(...ys) + s + 1;
+  const coin = (cx, cy) => [...Array(6).keys()].map((k) => {
+    const a = Math.PI / 180 * (60 * k - 30);
+    return `${(cx + s * .93 * Math.cos(a)).toFixed(1)},${(cy + s * .93 * Math.sin(a)).toFixed(1)}`;
+  }).join(" ");
+  const poly = pts.map(([cx, cy, t]) => `<polygon class="hex hex-${t}" points="${coin(cx, cy)}"><title>${TYPES_HEX[t] || t}</title></polygon>` +
+    (t === "G" ? `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3" class="hex-vous"/>` : "")).join("");
+  const largeur = maxX - minX, hauteur = maxY - minY;
+  return `<svg class="zone" viewBox="${minX.toFixed(1)} ${minY.toFixed(1)} ${largeur.toFixed(1)} ${hauteur.toFixed(1)}" ` +
+    `style="width:${(largeur * 1.35).toFixed(0)}px" role="img" aria-label="Zone d'effet">${poly}</svg>`;
+}
+
+// Un jeton (+ sa valeur éventuelle) en HTML. `zones` : zones d'effet du côté de carte, pour les jetons {Zone_k}.
+function jetonHtml(jeton, valeur, zones) {
   const val = valeur ? `<b class="val">${echapper(valeur)}</b>` : "";
   let m;
+  if ((m = jeton.match(/^Zone_(\d+)$/)) && zones && zones[Number(m[1])]) return zoneSvg(zones[Number(m[1])]) + val;
   if ((m = jeton.match(/^(Consume|Create)(.+)$/))) {
     const titre = libelle(jeton).texte;
     const elems = elementCode(m[2]).map((e) => `<span class="el el-${ELEM_PICTO[e] || "joker"}">${svg(ELEM_PICTO[e] || "joker")}</span>`);
@@ -173,7 +194,7 @@ function invocationHtml(ligne) {
     `<div class="invoc-stats">${stats}</div></div>`;
 }
 
-function ligneHtml(ligne) {
+function ligneHtml(ligne, zones) {
   if (ligne === "—") return '<hr class="sep">';
   const suivi = ligne.match(/^\{Suivi_([01]+)\}$/);
   if (suivi) return suiviHtml(suivi[1]);
@@ -185,7 +206,9 @@ function ligneHtml(ligne) {
   if (debut && PRINCIPAUX.has(debut[1]) && texteSeul.length < 22) classe = "principal";
   else if (texteSeul.length > 40) classe = "detail";
   const html = echapper(ligne).replace(/\{([A-Za-z0-9_+\-]+)\}(\s*(?:[+−-]?\d+|X)\b)?/g,
-    (_, j, v) => jetonHtml(j, v ? v.trim() : ""));
+    (_, j, v) => jetonHtml(j, v ? v.trim() : "", zones));
+  // Ligne qui n'est qu'une zone : affichée seule, centrée.
+  if (/^\{Zone_\d+\}$/.test(ligne.trim())) return `<p class="ligne-zone">${html}</p>`;
   return `<p class="${classe}">${html.replace(/\n/g, "<br>")}</p>`;
 }
 
@@ -206,7 +229,7 @@ function moitieHtml(cote, action) {
   const droite = creations.map((j) => `<span class="coin-elem">${jetonHtml(j.slice(1, -1), "")}</span>`).join("") +
     (perdue ? `<span class="coin-perte${action.defausse === "perte_definitive" ? " definitive" : ""}" ` +
       `title="${ETIQ_PERTE[action.defausse] || "Perte"} : la carte part dans les cartes perdues">${svg("perte")}</span>` : "");
-  return `<section class="moitie ${cote}${perdue ? " perdue" : ""}"><div class="moitie-corps">${corps.map(ligneHtml).join("")}</div>` +
+  return `<section class="moitie ${cote}${perdue ? " perdue" : ""}"><div class="moitie-corps">${corps.map((l) => ligneHtml(l, action.zones)).join("")}</div>` +
     `<div class="coins"><span class="coin-g">${gauche}</span><span class="coin-d">${droite}</span></div></section>`;
 }
 
@@ -245,6 +268,8 @@ function legendeHtml() {
   items.push([jetonHtml("CreateFire", ""), "Créer un élément (+)"], [jetonHtml("ConsumeFire", ""), "Consommer un élément (−)"]);
   items.push(['<span class="ic etat-neg">Blessure</span>', "État négatif infligé"], ['<span class="ic etat-pos">Renforcement</span>', "État positif"]);
   items.push([`<span class="coin-perte">${svg("perte")}</span>`, "Perte : l'action fait perdre la carte"]);
+  items.push([zoneSvg([[0, 0, "G"], [2, 0, "R"], [1, 1, "R"], [3, 1, "B"], [4, 0, "E"]]),
+    "Zone d'effet : gris = vous, rouge = cases touchées, bleu = allié ou bannière, pointillé = case vide"]);
   items.push([suiviHtml("101010").replace(/^<p/, "<span").replace(/<\/p>$/, "</span>"), "Utilisations d'un bonus (étoile : +1 XP)"]);
   return items.map(([h, t]) => `<div class="leg">${h}<span>${echapper(t)}</span></div>`).join("");
 }

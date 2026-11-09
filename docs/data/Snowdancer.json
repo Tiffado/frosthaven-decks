@@ -31,11 +31,50 @@
     "texte": [
      "{Attack} 2",
      "{Range}3 ,{Muddle}",
-     "{Zone}",
+     "{Zone_0}",
      "{Create['Ice', 'Air']}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -63,9 +102,63 @@
    "bas": {
     "texte": [
      "{Pull} 1 {Range} 2",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {
@@ -279,10 +372,59 @@
     "texte": [
      "{Attack} 3",
      "{ConsumeAir} : +1 {Attack}, {Push} 1, {XP1}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "E"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ],
+      [
+       1,
+       3,
+       "R"
+      ],
+      [
+       3,
+       3,
+       "E"
+      ],
+      [
+       2,
+       4,
+       "R"
+      ],
+      [
+       4,
+       4,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -306,9 +448,53 @@
      "{ConsumeIce} : +2 {Attack}, {XP1}",
      "{ConsumeAir} : {Push}2, {XP1}",
      "{ConsumeLight} : {Disarm}, {XP1}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       -2,
+       "R"
+      ],
+      [
+       1,
+       -3,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ],
+      [
+       0,
+       -2,
+       "R"
+      ],
+      [
+       4,
+       -2,
+       "R"
+      ],
+      [
+       3,
+       -3,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -374,13 +560,52 @@
    "initiative": 59,
    "haut": {
     "texte": [
-     "{Attack} 3 {Range}3 {Zone}",
+     "{Attack} 3 {Range}3 {Zone_0}",
      "—",
      "{Manquant}",
      "{Create['Air']}",
      "{XP}2"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -565,10 +790,79 @@
      "{Manquant}",
      "{Attack} 4 {Push} 2",
      "{ConsumeIce} : {Immobilize}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}2"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       0,
+       -2,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       -3,
+       1,
+       "R"
+      ],
+      [
+       -3,
+       -1,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -615,9 +909,38 @@
      "{Attack} 2 {Range} 2 {Pierce} 2, {Push} 2",
      "—",
      "{ConsumeAir}: Tous les {Enemy} adjacents aux {RedHex} de la capacité d'attaque subissent {Damage}1, {XP1}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       2,
+       "R"
+      ],
+      [
+       -3,
+       3,
+       "R"
+      ],
+      [
+       -4,
+       4,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

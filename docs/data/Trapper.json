@@ -532,11 +532,25 @@
    "haut": {
     "texte": [
      "Détruisez un piège {Damage} adjacent :",
-     "{Attack} X-1 {Range}3 {Zone}",
+     "{Attack} X-1 {Range}3 {Zone_0}",
      "où X est la valeur de {Damage} du piège détruit. Ajoutez également tous les états de celui-ci aux attaques.",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

@@ -216,10 +216,39 @@
    "haut": {
     "texte": [
      "{Attack} 2",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -668,9 +697,39 @@
     "texte": [
      "{Attack}3 {Wound}",
      "£TAttack.Area£",
-     "{XP}1"
+     "{XP}1",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

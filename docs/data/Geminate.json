@@ -57,11 +57,35 @@
    "haut": {
     "texte": [
      "{Attack} 3",
-     "{Zone}",
+     "{Zone_0}",
      "{ConsumeLight} : Avantage, {XP1}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       6,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -84,9 +108,43 @@
      "{Attack} 1 {Pierce} 3, {Poison}",
      "{Target} tous les {Allies} sur {RedHex}",
      "{GMMeleeToRanged}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -135,9 +193,63 @@
      "{ConsumeLight} : +1 {Attack}",
      "—",
      "{Manquant}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       -2,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       -4,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "E"
+      ],
+      [
+       2,
+       0,
+       "E"
+      ],
+      [
+       -1,
+       -1,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -159,9 +271,38 @@
    "initiative": 34,
    "haut": {
     "texte": [
-     "{Attack} 2 {Immobilize} {GMMeleeToRanged} {Zone}"
+     "{Attack} 2 {Immobilize} {GMMeleeToRanged} {Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       -2,
+       2,
+       "R"
+      ],
+      [
+       -3,
+       1,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -253,10 +394,29 @@
     "texte": [
      "{Attack} 3 {Manquant}",
      "{ConsumeFire} : +1 {Attack}, {XP1}",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -275,9 +435,33 @@
    "haut": {
     "texte": [
      "{Attack} 2 {Manquant}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       -2,
+       0,
+       "E"
+      ],
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -419,9 +603,24 @@
     "texte": [
      "{Attack} 2 {Manquant}",
      "{Consume} : {Manquant}",
-     "{Consume} : {Manquant} {BSRedHex}{BSRedHex}"
+     "{Consume} : {Manquant} {BSRedHex}{BSRedHex}",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -492,9 +691,81 @@
      "£TAttack.Area£",
      "{Consume} : {Manquant}",
      "£TCAreaIncrease.Area£",
-     "{XP}2"
+     "{XP}2",
+     "{Zone_0}"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ],
+     [
+      [
+       -3,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       -4,
+       0,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -517,9 +788,38 @@
      "—",
      "{Muddle} self",
      "{GMMeleeToRanged}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       0,
+       0,
+       "G"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -676,9 +976,38 @@
     "texte": [
      "{Attack}2",
      "{Consume} : {Manquant} {Consume} : {Manquant}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -1,
+       1,
+       "E"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -736,9 +1065,39 @@
    "bas": {
     "texte": [
      "{Push}2 {Brittle} {ConsumeIce} : {Immobilize}, {XP1} {ConsumeLight} : {Disarm} £BPush.Area£",
-     "{XP}1"
+     "{XP}1",
+     "{Zone_0}"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       -2,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {
@@ -750,16 +1109,76 @@
    "initiative": 49,
    "haut": {
     "texte": [
-     "{Manquant} — {ConsumeWild} {CreateFire} {CreateLight} £TAttack.Area£"
+     "{Manquant} — {ConsumeWild} {CreateFire} {CreateLight} £TAttack.Area£",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
      "{Heal}2 {Regenerate}, {Bless} {ConsumeFire} : {Strengthen} {ConsumeLight} : {Bless}, {XP1} £BHeal.Area£",
-     "{XP}1"
+     "{XP}1",
+     "{Zone_0}"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {

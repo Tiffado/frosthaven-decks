@@ -283,6 +283,40 @@ def rendre_invocation(v, ctx):
 PERTE = {"Discard": "defausse", "Lost": "perte", "Permanently Lost": "perte_definitive"}
 
 
+def lire_zone(code: str):
+    """« 0,0,G|2,0,R » → [[0, 0, "G"], [2, 0, "R"]] (coordonnées hexagonales à pas horizontal double).
+    G : votre case, R : case touchée, B : allié ou bannière, S : point d'origine, E : case vide de repère."""
+    hexs = []
+    for morceau in str(code).split("|"):
+        p = [x.strip() for x in morceau.split(",")]
+        if len(p) >= 2 and re.fullmatch(r"-?\d+", p[0]) and re.fullmatch(r"-?\d+", p[1]):
+            hexs.append([int(p[0]), int(p[1]), (p[2] if len(p) > 2 else "R")[:1].upper()])
+    return hexs
+
+
+def zones_du_cote(data) -> list:
+    """Zones d'effet d'un côté de carte, dans l'ordre, sans doublon. La variante prévue pour l'affichage
+    (AreaEffectLayoutOverride) est préférée quand elle existe."""
+    zones, vues = [], set()
+
+    def parcourir(n):
+        if isinstance(n, dict):
+            if "AreaEffect" in n:
+                code = n.get("AreaEffectLayoutOverride") or n["AreaEffect"]
+                if code not in vues:
+                    vues.add(code)
+                    z = lire_zone(code)
+                    if z:
+                        zones.append(z)
+            for v in n.values():
+                parcourir(v)
+        elif isinstance(n, list):
+            for v in n:
+                parcourir(v)
+    parcourir(data)
+    return zones
+
+
 def convertir_carte(chemin: Path):
     c = lire_yaml(chemin)
     index = {}
@@ -301,6 +335,16 @@ def convertir_carte(chemin: Path):
         while lignes and lignes[-1] == "—":
             lignes.pop()
         cotes[cote] = {"texte": lignes, "defausse": defausse[0 if cote == "haut" else 1]}
+        # Zones d'effet : le k-ième {Zone} de ce côté reçoit la k-ième zone trouvée dans ses données.
+        zones = zones_du_cote((c.get("Data") or {}).get(cle))
+        if zones:
+            compteur = iter(range(10 ** 6))
+            texte = [re.sub(r"\{Zone\}", lambda _m: "{Zone_%d}" % min(next(compteur), len(zones) - 1), l)
+                     for l in lignes]
+            if not any("{Zone_" in l for l in texte):
+                texte.append("{Zone_0}")  # zone présente dans les données mais pas dans la mise en page du jeu
+            cotes[cote]["texte"] = texte
+            cotes[cote]["zones"] = zones
     return {
         "id": c["ID"],
         "nom": nom,

@@ -78,12 +78,36 @@
    "initiative": 61,
    "haut": {
     "texte": [
-     "{Attack} 2 {Push} 2 {Zone}",
+     "{Attack} 2 {Push} 2 {Zone_0}",
      "—",
      "Créez 1 {IceHex} sur un {RedHex} sans décor de la capacité d'attaque",
      "{Create['Ice']}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -180,9 +204,29 @@
      "{Attack} 3 {Pierce}2",
      "{ConsumeIce} : {BSYouHex}{BSRedHex}{BSRedHex},{XP1}",
      "—",
-     "{Retaliate} 1"
+     "{Retaliate} 1",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -334,9 +378,29 @@
    "initiative": 67,
    "haut": {
     "texte": [
-     "{Attack} 2 — {ConsumeIce} : {Disarm}, {XP1} £TAttack.Area£"
+     "{Attack} 2 — {ConsumeIce} : {Disarm}, {XP1} £TAttack.Area£",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -357,9 +421,61 @@
    "initiative": 51,
    "haut": {
     "texte": [
-     "{Attack} 3 — {ConsumeIce} : {Wound} £TAttack.Area£ — {ConsumeEarth} :  £TCAreaIncrease.Area£ {XP1}"
+     "{Attack} 3 — {ConsumeIce} : {Wound} £TAttack.Area£ — {ConsumeEarth} :  £TCAreaIncrease.Area£ {XP1}",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ],
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -524,9 +640,53 @@
    "initiative": 84,
    "haut": {
     "texte": [
-     "{Attack} 3 {Muddle} Ajoutez {Pierce}3 si la cible est sur un {IceHex} {Zone}"
+     "{Attack} 3 {Muddle} Ajoutez {Pierce}3 si la cible est sur un {IceHex} {Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -621,9 +781,29 @@
     "texte": [
      "{Attack}5 £TAttack.Area£",
      "—",
-     "Si la capacité d'attaque a ciblé 2 {Enemy} :"
+     "Si la capacité d'attaque a ciblé 2 {Enemy} :",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -671,9 +851,49 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Range}3, {Push} Créez 3 {IceHex} sur des {RedHex} sans décor, {XP1} £TAttack.Area£",
-     "{Create['Ice']}"
+     "{Create['Ice']}",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       -1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

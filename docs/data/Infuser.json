@@ -100,13 +100,37 @@
    "haut": {
     "texte": [
      "{Attack} 3",
-     "{Zone}",
+     "{Zone_0}",
      "—",
      "{Teleport} sur n'importe quel hexagone inoccupé adjacent à l'unité {Enemy} ciblée par la capacité d'attaque la plus éloignée",
      "{CreateMixed-AD}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       6,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -152,10 +176,34 @@
     "texte": [
      "{ConsumeAir}, {ConsumeDark}:",
      "{Attack} 4 {Push} 2",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "E"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -163,9 +211,33 @@
      "{Consume} : -1{Move}: {CreateEarth}",
      "—",
      "{Immobilize}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "E"
+      ],
+      [
+       -1,
+       1,
+       "R"
+      ],
+      [
+       -2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {
@@ -397,9 +469,48 @@
     "texte": [
      "{Attack} 3",
      "{Consume} : -1{Attack}: {Push} 1, {CreateAir}, {XP1}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       -1,
+       -1,
+       "S"
+      ],
+      [
+       -2,
+       2,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       -3,
+       1,
+       "R"
+      ],
+      [
+       -4,
+       0,
+       "E"
+      ],
+      [
+       2,
+       2,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -550,9 +661,38 @@
     "texte": [
      "{Attack} 4",
      "{Consume} : -1{Attack}: {Pull} 1, {CreateDark}, {XP1}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "S"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       6,
+       0,
+       "R"
+      ],
+      [
+       8,
+       0,
+       "E"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -635,11 +775,60 @@
    "bas": {
     "texte": [
      "{Wound}, {Immobilize} {Range}2",
-     "{Zone}",
+     "{Zone_0}",
      "{CreateMixed-ED}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ],
+      [
+       2,
+       -2,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {
@@ -652,11 +841,45 @@
     "texte": [
      "{Attack} 4",
      "{Stun}",
-     "{Zone}",
+     "{Zone_0}",
      "{CreateMixed-ED}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "S"
+      ],
+      [
+       1,
+       1,
+       "S"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -709,11 +932,40 @@
    },
    "bas": {
     "texte": [
-     "{Move} 2 — {Attack} 4 — {Move} 2 {Zone}",
+     "{Move} 2 — {Attack} 4 — {Move} 2 {Zone_0}",
      "{CreateMixed-AE}",
      "{XP}1"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       0,
+       2,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "E"
+      ]
+     ]
+    ]
    }
   },
   {
@@ -763,9 +1015,29 @@
      "—",
      "Tous les {Enemy} adjacents au {ObstacleHex} créé subissent {Damage}4 et gagnent {Stun}",
      "{Create['Earth', 'Air', 'Dark']}",
-     "{XP}1"
+     "{XP}1",
+     "{Zone_0}"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    }
   }
  ]

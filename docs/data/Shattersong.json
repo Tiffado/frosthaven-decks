@@ -29,10 +29,44 @@
    "initiative": 26,
    "haut": {
     "texte": [
-     "ONDE : -X{SSResonance}: {Attack} X {Zone}",
+     "ONDE : -X{SSResonance}: {Attack} X {Zone_0}",
      "{XP}2"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       2,
+       2,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -147,9 +181,28 @@
     "texte": [
      "{Attack} 2 {Immobilize}",
      "{Consume} : +1 {Attack}, {Push} 1, {XP1}",
-     "{Zone}"
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

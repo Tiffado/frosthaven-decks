@@ -30,10 +30,34 @@
    "haut": {
     "texte": [
      "{Attack} 3",
-     "{Zone}",
+     "{Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -196,9 +220,28 @@
    "initiative": 45,
    "haut": {
     "texte": [
-     "{Attack} 1 {Push}2 {ConsumeLight} : +1{Push}, {XP1} {Zone}"
+     "{Attack} 1 {Push}2 {ConsumeLight} : +1{Push}, {XP1} {Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -238,12 +281,51 @@
    "initiative": 34,
    "haut": {
     "texte": [
-     "{Attack} 2 {Zone}",
+     "{Attack} 2 {Zone_0}",
      "—",
      "Vous pouvez créer des tuiles Eau d'un hexagone sur n'importe quel nombre d'hexagones sans décor {RedHex}",
      "{XP}2"
     ],
-    "defausse": "perte"
+    "defausse": "perte",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ],
+      [
+       3,
+       1,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       4,
+       0,
+       "R"
+      ],
+      [
+       3,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -313,9 +395,24 @@
     "texte": [
      "Créez une tuile Eau de 2 hexagones de sorte qu'au moins un vous soit adjacent et que les deux soient sans décor",
      "—",
-     "Les adversaires sur ces hexagones subissent {Damage}1 et gagnent {Immobilize}"
+     "Les adversaires sur ces hexagones subissent {Damage}1 et gagnent {Immobilize}",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
@@ -415,9 +512,24 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}"
+     "{Manquant}",
+     "{Zone_0}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "R"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ]
+     ]
+    ]
    }
   },
   {
@@ -594,10 +706,29 @@
    "initiative": 33,
    "haut": {
     "texte": [
-     "{Attack} 3 {ConsumeLight} : +1{Attack} {ConsumeDark} : +1{Attack} {Zone}",
+     "{Attack} 3 {ConsumeLight} : +1{Attack} {ConsumeDark} : +1{Attack} {Zone_0}",
      "{XP}1"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       1,
+       -1,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [

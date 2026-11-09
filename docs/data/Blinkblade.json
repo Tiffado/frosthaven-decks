@@ -76,10 +76,29 @@
    "initiative": 45,
    "haut": {
     "texte": [
-     "{Attack} 2 {Zone}",
+     "{Attack} 2 {Zone_0}",
      "{BBFast} {Manquant}"
     ],
-    "defausse": "defausse"
+    "defausse": "defausse",
+    "zones": [
+     [
+      [
+       0,
+       0,
+       "G"
+      ],
+      [
+       2,
+       0,
+       "R"
+      ],
+      [
+       1,
+       1,
+       "R"
+      ]
+     ]
+    ]
    },
    "bas": {
     "texte": [
