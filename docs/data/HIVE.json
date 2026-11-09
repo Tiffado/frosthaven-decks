@@ -1,0 +1,740 @@
+{
+ "id": "HIVE",
+ "nom": "HIVE",
+ "nom_en": "HIVE",
+ "nom_complet": "HIVE Émancipée",
+ "main": 11,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Au début de chaque quête, choisissez une carte de votre main qui a une action d'invocation ({Summon}) qui déterminera votre Mode ({HIVEMode}) : un ensemble d'effets écrits sous les caractéristiques de l'action {Summon} qui s'appliquent à vous. La carte est toujours placée dans votre zone active mais aucune action d'invocation n'est effectuée. Toute action d'invocation supplémentaire effectuée invoque des alliés normalement et ne vous applique pas ses effets de {HIVEMode}. Vous ne pouvez pas retirer un Mode{HIVEMode} actif comme tout autre effet persistant.\n\nVous avez une capacité spéciale optionnelle appelée Transfert de Mode ({HIVETransfer}). Quand elle est effectuée et que vous avez au moins une {Summon} sur le terrain, choisissez une de vos {Summon} et faites ce qui suit :\nTéléportez-vous sur la position de cette invocation et fusionnez avec elle en changeant votre mode {HIVEMode} pour le mode de l'invocation {Summon}. Tous ses états et dégâts subis vous sont appliqués. Invoquez une nouvelle invocation {Summon} basée sur la carte de votre mode précédent {HIVEMode} sur l'hexagone que vous occupiez auparavant.",
+ "histoire": "Les machines vivantes viennent d'une époque révolue. Construits pour remplir diverses fonctions, ces automates furent mis en sommeil lors d'un grand cataclysme. Mais aujourd'hui, ils se réveillent, se proclament « Émancipés », et étendent leur influence dans le Nord. Libérés de leur programmation d'origine, ils disposent désormais du libre arbitre.\n\nToutes les anciennes machines n'ont cependant pas pu se rallier à la cause des Émancipés. Un exemple est la Haute Intelligence Voltaïque Évolutive, ou HIVE, un modèle expérimental conçu pour imiter la structure en essaim d'un Persécuteur. La HIVE utilise une architecture de traitement unique répartie entre les nombreux petits automates qui composent sa forme intégrale. Cette structure décuple sa faculté de construire une pensée indépendante. C'est pourquoi, une fois réveillée, elle a décidé de suivre son propre chemin.",
+ "deblocage": "Terminer le scénario 58 « Le Cœur de l'Orphelin » ou le scénario 59 « La Révolte des Automates » (chaîne des Affranchis).",
+ "cartes": [
+  {
+   "id": 387,
+   "nom": "Défense Blindée",
+   "nom_en": "Plated Defense",
+   "niveau": "1",
+   "initiative": 80,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Char d'Assaut : {Health}6 {Move}2 {Attack}2 {Shield}1",
+     "{Shield}1",
+     "{HIVEMode} {Persistent} {Shield} 1 {Persistent} -1{Move} à toutes vos capacités de déplacement",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Shield} 1",
+     "—",
+     "{Retaliate} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 388,
+   "nom": "Assistance Réparation",
+   "nom_en": "Reconstructive Aid",
+   "niveau": "1",
+   "initiative": 90,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Drone de Réparation : {Health}3 {Move}2 {Attack}1 {Range}3",
+     "À la fin du tour :",
+     "{HIVEMode} {Persistent} Au début du tour : {Persistent} -1{Range} à vos attaques à distance",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 3",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 389,
+   "nom": "Chasseur-Tueur",
+   "nom_en": "Hunter-Killer",
+   "niveau": "1",
+   "initiative": 84,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Chacal Mécanique : {Health}4 {Move}3 {Attack}2 {Range}1 {Retaliate}1",
+     "{Wound}",
+     "{Retaliate}1",
+     "{HIVEMode} {Persistent} Au début du tour : {Damage} 2 sur vous-même {Persistent} +1{Attack} à vos attaques de mêlée",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Attack} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 390,
+   "nom": "Membres Déployables",
+   "nom_en": "Coiled Limbs",
+   "niveau": "1",
+   "initiative": 82,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Sauteur : {Health}7 {Move}5 {Attack}1 {Shield}1",
+     "Cible les {Enemy} les plus éloignés de la HIVE",
+     "{HIVEMode} {Persistent} Vos actions de déplacement gagnent {Jump}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {Jump}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 391,
+   "nom": "Assaut Ciblé",
+   "nom_en": "Aimed Assault",
+   "niveau": "1",
+   "initiative": 88,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Tourelle de Tir : {Health}3 {Move}0 {Attack}2 {Range}4",
+     "{HIVEMode} {Persistent} +2{Range} à votre attaque de mêlée à cible unique {Persistent} -1{Move} à toutes vos capacités de déplacement",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 1 {Range}4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 392,
+   "nom": "Lanceur",
+   "nom_en": "Launch Pod",
+   "niveau": "1",
+   "initiative": 77,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range} 3",
+     "—",
+     "Jouez une action {AA_Summon} depuis votre main comme si vous étiez sur l'hexagone ciblé par votre attaque"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Heal} 2 sur vous-même"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 393,
+   "nom": "Entité sans Visage",
+   "nom_en": "Faceless Entity",
+   "niveau": "1",
+   "initiative": 12,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Attack} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 394,
+   "nom": "Préparation au Déploiement",
+   "nom_en": "Prepare for Deployment",
+   "niveau": "1",
+   "initiative": 64,
+   "haut": {
+    "texte": [
+     "{Heal} 4",
+     "sur vous-même",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 395,
+   "nom": "Fonction Fauchage",
+   "nom_en": "Reaper Function",
+   "niveau": "1",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 396,
+   "nom": "Projectiles à Haut Impact",
+   "nom_en": "High Impact Projectiles",
+   "niveau": "1",
+   "initiative": 16,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Target}2 ,",
+     "{Range}3",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Octroyez à 2 de vos {AA_Summon} :",
+     "{Move} 3 {Jump}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 397,
+   "nom": "Interférence",
+   "nom_en": "Interference",
+   "niveau": "1",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Heal} 2 sur vous-même",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Persistent} Tous les {Enemy} ciblant vos {AA_Summon} adjacentes vous ciblent à la place sans tenir compte de la portée ou de la ligne de vue"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 398,
+   "nom": "Impulsion Voltaïque",
+   "nom_en": "Shocking Pulse",
+   "niveau": "X",
+   "initiative": 86,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Générateur d'Arcs : {Health}5 {Move}4 {Attack}2",
+     "{Target} tous les {Enemy} adjacents\n{Pierce}2",
+     "{HIVEMode} {Persistent} -1{Attack} et {Pierce}5 à toutes vos attaques",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 399,
+   "nom": "Télécommande",
+   "nom_en": "Remote Control",
+   "niveau": "X",
+   "initiative": 48,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 400,
+   "nom": "Réassemblage",
+   "nom_en": "Reassemble",
+   "niveau": "X",
+   "initiative": 27,
+   "haut": {
+    "texte": [
+     "{HIVETransfer}",
+     "Au lieu de placer votre {HIVEMode} précédente sur le plateau comme invocation, mettez cette carte dans la défausse"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Jouez une action {AA_Summon} depuis votre pile de cartes perdues",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Move} 2"
+    ],
+    "defausse": "perte_definitive"
+   }
+  },
+  {
+   "id": 401,
+   "nom": "Champ de Force",
+   "nom_en": "Force Field",
+   "niveau": "2",
+   "initiative": 78,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Unité Amortisseur : {Health}5 {Move}2 {Attack}1 {Range}2",
+     "{Shield}1 à tous les {Allies} adjacents",
+     "{HIVEMode} {Persistent} Gagnez {Shield}2 la première fois qu'une attaque vous inflige des dégâts par round",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 402,
+   "nom": "Missile Longue-portée",
+   "nom_en": "Long-Range Missile",
+   "niveau": "2",
+   "initiative": 19,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range} 5"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Si votre {AA_Summon} devait subir {Damage}, vous pouvez subir ce montant de {Damage} moins 1, {HIVETransfer} avec cette {AA_Summon}, mettre fin à cet effet et gagner {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 403,
+   "nom": "Feu Nourri",
+   "nom_en": "Rapid Fire",
+   "niveau": "3",
+   "initiative": 92,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Mitrailleuse : {Health}3 {Move}0 {Attack}2 {Range}3",
+     "{Target}2",
+     "{HIVEMode} {Persistent} +1{Target} à toutes vos capacités d'attaque à distance {Persistent} -1{Range} à toutes vos capacités d'attaque à distance",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Manquant}",
+     "{Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 404,
+   "nom": "Détournement",
+   "nom_en": "Hijack",
+   "niveau": "3",
+   "initiative": 40,
+   "haut": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "Octroyez à l'{AA_Summon} placée par la capacité de transfert :",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Contrôlez un {Enemy} à {Range}4 ou moins :"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 405,
+   "nom": "Protocole Épidémie",
+   "nom_en": "Plague Protocol",
+   "niveau": "4",
+   "initiative": 98,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Distributeur de Toxines : {Health}6 {Move}2 {Attack}2",
+     "{Poison}",
+     "{HIVEMode} {Persistent} {Heal} n'affecte pas vos points de vie {Persistent} Ajoutez {Poison} à toutes vos attaques",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Shield} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 406,
+   "nom": "Destruction Divergente",
+   "nom_en": "Divergent Destruction",
+   "niveau": "4",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Attack} 3",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Move} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 407,
+   "nom": "Lanceur de Filet",
+   "nom_en": "Net Dispersal",
+   "niveau": "5",
+   "initiative": 94,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Unité de Piégeage : {Health}7 {Move}3 {Attack}2",
+     "Quand vous êtes attaqué, -1 {Damage} pour chaque état négatif sur l'attaquant",
+     "{Immobilize}",
+     "{HIVEMode} {Persistent} Vous ne pouvez pas effectuer de capacité de déplacement {Persistent} Ajoutez {Immobilize} à toutes vos attaques",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Immobilize} {Target}3, {Range}3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 408,
+   "nom": "Code Gémination",
+   "nom_en": "Code Geminate",
+   "niveau": "5",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "Si vous avez deux {HIVEMode}, vous pouvez en annuler un",
+     "—",
+     "Si vous avez un {HIVEMode}, vous pouvez jouer un {HIVEMode} supplémentaire depuis votre main (sans gagner l'expérience)",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "{Manquant} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 409,
+   "nom": "Lames Tournoyantes",
+   "nom_en": "Spinning Blades",
+   "niveau": "6",
+   "initiative": 79,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Propulseur d'Épée : {Health}1 {Move}5 {Attack}2",
+     "{Wound} sur vous-même et tous les personnages adjacents à la fin du tour",
+     "{HIVEMode} {Persistent} À la fin de vos tours, {Damage}2 à un {Enemy} adjacent et vous subissez {Damage}1",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Attack} 1 {Target} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 410,
+   "nom": "Programme de Tri",
+   "nom_en": "Triage Program",
+   "niveau": "6",
+   "initiative": 13,
+   "haut": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Heal} 5 sur vous-même",
+     "—",
+     "{HIVETransfer}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Loot} 1",
+     "—",
+     "{Heal} 2 sur vous-même"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 411,
+   "nom": "Obus de Mortier",
+   "nom_en": "Mortar Shells",
+   "niveau": "7",
+   "initiative": 85,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Mortier : {Health}5 {Move}1 {Attack}2 {Range}4",
+     "{Wound} sur vous-même et tous les personnages adjacents à la fin du tour",
+     "{HIVEMode} {Round} Quand vous subissez des {Damage}, un {Allies} adjacent subit {Damage}1 {Persistent} Ajoutez {Push}2 à toutes vos attaques",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 2 {Range} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 412,
+   "nom": "Rappel",
+   "nom_en": "Recall",
+   "niveau": "7",
+   "initiative": 91,
+   "haut": {
+    "texte": [
+     "Jouez deux actions {AA_Summon} depuis votre pile des cartes perdues (sans gagner l'expérience)"
+    ],
+    "defausse": "perte_definitive"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}",
+     "Cette téléportation doit se terminer sur un hexagone qui vous est adjacent"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 413,
+   "nom": "Rempart Grouillant",
+   "nom_en": "Swarming Bulwark",
+   "niveau": "8",
+   "initiative": 96,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Araignée Bouclier : {Health}7 {Move}3 {Attack}2 {Range}1",
+     "À la fin du tour : {Ward} {Range}4",
+     "{HIVEMode} {Persistent} Au début du tour : {Ward} sur vous-même",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Move} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 414,
+   "nom": "Lacération Brûlante",
+   "nom_en": "Burning Slash",
+   "niveau": "8",
+   "initiative": 29,
+   "haut": {
+    "texte": [
+     "{Attack}3 {Wound}",
+     "£TAttack.Area£",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{HIVETransfer}",
+     "—",
+     "{Move} 1",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 415,
+   "nom": "Métal Lourd",
+   "nom_en": "Heavy Metal",
+   "niveau": "9",
+   "initiative": 76,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Pilote de Traîneau : {Health}9 {Move}2 {Attack}4 {Shield}1",
+     "{Shield}1",
+     "{Pierce}3",
+     "{HIVEMode} {Persistent} +15 initiative {Persistent} +3{Attack} à votre première attaque chaque tour",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Damage}2 à tous les personnages adjacents",
+     "—",
+     "{Shield} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 416,
+   "nom": "Démontage",
+   "nom_en": "Disassemble",
+   "niveau": "9",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Attack} 2",
+     "—",
+     "{HIVETransfer}",
+     "—",
+     "{Attack} 3"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Éliminez toutes vos {AA_Summon} (sauf les Lames Tournoyantes). Pour chaque {AA_Summon} éliminée :"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

@@ -1,0 +1,681 @@
+{
+ "id": "BannerSpear",
+ "nom": "Porte-Bannière",
+ "nom_en": "Banner Spear",
+ "nom_complet": "Porte-Bannière Humaine",
+ "main": 10,
+ "pv": [
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26
+ ],
+ "depart": true,
+ "difficulte": "Basse",
+ "gameplay": "{Manquant}",
+ "histoire": "Il existait des colonies humaines dans le nord bien avant que des émissaires de Chêne-Blanc n'aillent chercher à Havreblanc de nouvelles filières pour leur Guilde des Marchands. Leur entreprise ne fit que susciter la colère des Algox. Alors les gens du Sud fuirent, laissant le village de pêcheurs, mal préparé, encaisser les conséquences. Mais les humains sont résilients. Même à l'orée du découragement, il reste un espoir de survie.\n\nLa Guilde des Marchands laissa toutefois derrière elle ses Porte-Bannières, d'endurants guerriers mus par une insatiable soif de gloire et de reconnaissance. Mais à Havreblanc, l'orgueil n'a pas sa place. Coupés du reste du monde et confrontés aux dures réalités du nord, les Porte-Bannières sont contraints de reconsidérer leurs priorités. Laissés-pour-compte par leurs anciens patrons, ils doivent désormais tisser de nouveaux liens, plus forts, pour survivre.",
+ "deblocage": null,
+ "cartes": [
+  {
+   "id": 61,
+   "nom": "Coûte que Coûte",
+   "nom_en": "At All Costs",
+   "niveau": "1",
+   "initiative": 60,
+   "haut": {
+    "texte": [
+     "{Heal} 3 {Target} tous les {Allies}",
+     "—",
+     "Où X est le nombre de {Allies} dont les points de vie ont été augmentés par cette capacité",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Renfort : {Health}1 {Move}2",
+     "Vous contrôlez les déplacements de cette invocation",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 62,
+   "nom": "Cri de Ralliement",
+   "nom_en": "Rallying Cry",
+   "niveau": "1",
+   "initiative": 71,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Disarm}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Bannière de Force : {Health}4 {Move}0 {Attack}0 {Range}0",
+     "Tous les {Allies} à {Range}2 ou moins ajoutent +1{Attack} à une de leurs attaques chaque tour",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 63,
+   "nom": "Muraille Incassable",
+   "nom_en": "Unbreakable Wall",
+   "niveau": "1",
+   "initiative": 83,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Push} 1",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "{Persistent} -1{Range} à toutes vos capacités d'attaque à distance",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 64,
+   "nom": "Javelot",
+   "nom_en": "Javelin",
+   "niveau": "1",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range} 3",
+     "{CreateAir}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Pull} 2 {Range} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 65,
+   "nom": "Manœuvre de Détournement",
+   "nom_en": "Deflecting Maneuver",
+   "niveau": "1",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{ConsumeAir} : +1 {Attack}, Avantage, {XP1}",
+     "—",
+     "{Round} Toutes les attaques vous ciblant ce round gagnent {Disadvantage}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} {Shield} 2",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 66,
+   "nom": "Pointe de la Lance",
+   "nom_en": "Tip of the Spear",
+   "niveau": "1",
+   "initiative": 67,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Pierce} 3",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 67,
+   "nom": "Effort Conjoint",
+   "nom_en": "Combined Effort",
+   "niveau": "1",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Wound}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Octroyez à 2 {Allies} à {Range}2 ou moins :",
+     "{Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 68,
+   "nom": "Prêt à l'Assaut",
+   "nom_en": "Set for the Charge",
+   "niveau": "1",
+   "initiative": 6,
+   "haut": {
+    "texte": [
+     "{Round} Ce round, lorsqu'un {Enemy} finit sa {Teleport} ou son {Move} d'un hexagone qui ne vous est pas adjacent vers un autre qui vous est adjacent, ce {Enemy} subit {Damage}2."
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 69,
+   "nom": "Manœuvre en Tenaille",
+   "nom_en": "Pincer Movement",
+   "niveau": "1",
+   "initiative": 69,
+   "haut": {
+    "texte": [
+     "{Attack} 5 {Muddle}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 70,
+   "nom": "Rassemblement",
+   "nom_en": "Regroup",
+   "niveau": "1",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "{Heal} 2",
+     "{Range} 2 {Regenerate}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Octroyez à 2 {Allies} à {Range}3 ou moins :",
+     "{Move} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 71,
+   "nom": "Bravoure Opiniâtre",
+   "nom_en": "Resolved Courage",
+   "niveau": "X",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Immobilize}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} +1 {Attack} à la prochaine capacité d'attaque que vous ou un {Allies} adjacent effectuez ce round"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 72,
+   "nom": "Lancer Incendiaire",
+   "nom_en": "Incendiary Throw",
+   "niveau": "X",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Attack} 1 {Range} 3",
+     "Si la cible subit des {Damage} de cette attaque, elle et tous les {Enemy} qui lui sont adjacents gagnent {Wound}",
+     "{CreateFire}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Porte-Torche : {Health}5 {Move}2 {Attack}1 {Range}1",
+     "{Wound}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 73,
+   "nom": "Inspiration Motivante",
+   "nom_en": "Driving Inspiration",
+   "niveau": "X",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 4, Avantage",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Bannière d'Espoir : {Health}4 {Move}0 {Attack}0 {Range}0",
+     "Au début de leurs tours, les {Allies} à {Range}3 ou moins gagnent :",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 74,
+   "nom": "Hachoir à Viande",
+   "nom_en": "Meat Grinder",
+   "niveau": "2",
+   "initiative": 62,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Wound}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Heal} 1 {Range} 1, {Regenerate}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 75,
+   "nom": "Assaut Immobilisant",
+   "nom_en": "Pinning Charge",
+   "niveau": "2",
+   "initiative": 17,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 3",
+     "{ConsumeAir} : +1 {Range}, {Immobilize}, {XP1}",
+     "+1{RangedAttack} pour chaque {Allies} adjacent à la cible"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Octroyez à 3 {Allies} à {Range}4 ou moins : {Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 76,
+   "nom": "Qu'ils y Viennent",
+   "nom_en": "Let Them Come",
+   "niveau": "3",
+   "initiative": 24,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Poison}",
+     "—",
+     "{Target} tous sur {BlueHex} et {GreyHex}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Bannière de Courage : {Health}7 {Move}0 {Attack}0 {Range}0",
+     "Tous les {Allies} adjacents gagnent {Shield}1",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 77,
+   "nom": "Tête du Marteau",
+   "nom_en": "Head of the Hammer",
+   "niveau": "3",
+   "initiative": 87,
+   "haut": {
+    "texte": [
+     "{Attack} 7 {Stun}",
+     "{Zone}",
+     "{XP}3"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "— {Manquant}",
+     "{CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 78,
+   "nom": "Coup Enhardissant",
+   "nom_en": "Boldening Blow",
+   "niveau": "4",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Target} 1 {Enemy} sur un {RedHex} — {Bless} tous les {Allies} sur {BlueHex} {Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "Octroyez à 2 {Allies} à {Range}3 ou moins :",
+     "{Move} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 79,
+   "nom": "Support Aérien",
+   "nom_en": "Air Support",
+   "niveau": "4",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Range} 3, {Pierce} 2",
+     "{CreateAir}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Faucon Dressé : {Health}1 {Move}3 {Attack}2 {Range}1",
+     "{Flying}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 80,
+   "nom": "Épicentre Explosif",
+   "nom_en": "Explosive Epicenter",
+   "niveau": "5",
+   "initiative": 78,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Push} 1 {XP1}",
+     "Octroyez {Move}1 à tous les personnages sur un {BlueHex} et un {GreyHex}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Une fois par tour, pendant votre tour, tant que {Enemy} est à {Range}3 ou moins, vous et un {Allies} adjacent gagnez {Move}1",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 81,
+   "nom": "Tenir la Position",
+   "nom_en": "Hold the Line",
+   "niveau": "5",
+   "initiative": 5,
+   "haut": {
+    "texte": [
+     "{Persistent} {Shield} 2",
+     "Octroyez à tous les {Allies} adjacents :",
+     "{Round} {Shield} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Shield} 2",
+     "{Persistent} {Shield} 2",
+     "{Retaliate} 3",
+     "{Persistent} {Retaliate} 3",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 82,
+   "nom": "Barricade",
+   "nom_en": "Barricade",
+   "niveau": "6",
+   "initiative": 16,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Wound}",
+     "Octroyez {Shield}1 à tous les {Allies} sur {BlueHex} et {GreyHex}",
+     "{XP1} {Round}",
+     "{Persistent} {Shield} 1",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Bannière de Vaillance : {Health}5 {Move}0 {Attack}0 {Range}0",
+     "Annule la première source de {Damage} infligés à un {Allies} adjacent chaque round",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 83,
+   "nom": "Cri Exaltant",
+   "nom_en": "Bolstering Shout",
+   "niveau": "6",
+   "initiative": 75,
+   "haut": {
+    "texte": [
+     "{Heal} 3 {Range} 3 , {Regenerate}",
+     "{ConsumeAir} : +1 {Target}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Pull} 2 {Target} 2 {Range} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 84,
+   "nom": "Triple Estoc",
+   "nom_en": "Tri-Thrust",
+   "niveau": "7",
+   "initiative": 27,
+   "haut": {
+    "texte": [
+     "{Attack} 7",
+     "{Stun}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Attack} 1 {Target} 3",
+     "{ConsumeAir} : $FH/084_character_ability_cards_banner_spear_tri-thrust_2$"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 85,
+   "nom": "Depuis les Lignes Arrières",
+   "nom_en": "Lead from Afar",
+   "niveau": "7",
+   "initiative": 80,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 4",
+     "+2{RangedAttack} pour chaque {Allies} adjacent à la cible"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Long-Archer : {Health}4 {Move}2 {Attack}2 {Range}4",
+     "{Muddle}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 86,
+   "nom": "Balayage",
+   "nom_en": "Sweeping Aid",
+   "niveau": "8",
+   "initiative": 73,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{Pierce} 2, {Immobilize}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 2 {Range} 2",
+     "{Move} 3",
+     "{Heal} 2 {Range} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 87,
+   "nom": "Hurlement de Défi",
+   "nom_en": "Taunting Howl",
+   "niveau": "8",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "{Pull} 2 {Target} tous, {Range}4, {Muddle} {XP2}",
+     "{Shield} 3",
+     "{Persistent} {Shield} 3"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "Octroyez à 2 {Allies} à {Range}3 ou moins :"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 88,
+   "nom": "Pas de Quartier",
+   "nom_en": "Take No Prisoners",
+   "niveau": "9",
+   "initiative": 85,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Poison}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Bannière de Ruine : {Health}9 {Move}0 {Attack}0 {Range}0",
+     "Tout {Enemy} à {Range}4 ou moins subit {Damage}1 au début de son tour",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 89,
+   "nom": "Volée de Lances",
+   "nom_en": "Hail of Spears",
+   "niveau": "9",
+   "initiative": 44,
+   "haut": {
+    "texte": [
+     "{Attack} 5 {Range} 4",
+     "+1{Target} pour chaque Bannière {AA_Summon} adjacente",
+     "{Teleport} chaque Bannière {AA_Summon} adjacente vers un hexagone adjacent à une cible"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{Recover} jusqu'à 2 cartes Bannière {AA_Summon} et jouez immédiatement leurs capacités {AA_Summon}"
+    ],
+    "defausse": "perte_definitive"
+   }
+  }
+ ]
+}

@@ -1,0 +1,715 @@
+{
+ "id": "Shattersong",
+ "nom": "Brise-Chant",
+ "nom_en": "Shattersong",
+ "nom_complet": "Brise-Chant Savvas",
+ "main": 10,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Vous vibrez aux fréquences de tout ce qui vous entoure, accumulant lentement de la Résonance ({SSResonance}) qui peut être libérée pour déclencher divers effets.\n\nÀ la fin de chacun de vos tours, vous gagnez une {SSResonance}. Vous commencez chaque quête avec une {SSResonance}, et ne vous pouvez à aucun moment en avoir plus de cinq. Vos cartes Capacité vous permettent de les dépenser de diverses façons.\n\nVous disposez de puissantes actions Onde qui ne peuvent être effectuées que si vous dépensez au moins une {SSResonance}. Leur puissance, évaluée par « X », dépend du total de {SSResonance} que vous dépensez.",
+ "histoire": "Les Savvas vivent dans les profondeurs sous les Crêtes de Cuivre, en grande partie à l'écart de l'agitation de la surface. Là, ils protègent leur source de vie, qui instille conscience et pensée à la roche inerte. Les besoins des Savvas étant limités, la plupart ne cherchent qu'à dominer les éléments, pour contrôler et utiliser le vent, la terre, la glace ou le feu. Ceux qui en sont capables sont tenus en très haute estime.\n\nSi les Savvas se considèrent au-dessus des querelles du monde de la surface, les Brise-Chant se sont élevés au-dessus même des luttes mesquines pour le pouvoir qu'entretiennent les Savvas normaux. Ils sont composés de quartz pur, résultat d'un régime strict et de méditation. Un Brise-Chant ne s'intéresse qu'à une seule chose : puiser dans le pouvoir de leur source de vie et déchiffrer sa volonté. Ces préoccupations ne les ont toutefois pas laissés sans défense. Ils sont également à l'écoute du monde qui les entoure et peuvent générer une énergie vibratoire destructrice.",
+ "deblocage": "Terminer le scénario 61 « De Vie à Trépas » (scénario du livre d'énigmes).",
+ "cartes": [
+  {
+   "id": 244,
+   "nom": "Gémissement Incessant",
+   "nom_en": "Unrelenting Wail",
+   "niveau": "1",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "ONDE : -X{SSResonance}: {Attack} X {Zone}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "-1{SSResonance}: {Push} 2 {Range} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 245,
+   "nom": "Voix Ascendante",
+   "nom_en": "Lifting Voice",
+   "niveau": "1",
+   "initiative": 29,
+   "haut": {
+    "texte": [
+     "Octroyez à tous les {Allies} à {Range}3 ou moins et à vous-même :",
+     "{CreateAir}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{Consume} : : +3 {Range},"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 246,
+   "nom": "Harmonie Réconfortante",
+   "nom_en": "Heartening Harmony",
+   "niveau": "1",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "{Heal}X+2",
+     "{Range}X+1",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 247,
+   "nom": "Puissantes Vibrations",
+   "nom_en": "Forceful Vibrations",
+   "niveau": "1",
+   "initiative": 27,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Range} 2",
+     "{Consume} : +1 {Range}, {Push} 2, {Muddle}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5 {Jump}",
+     "—",
+     "Gagnez 2{SSResonance}",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 248,
+   "nom": "Fréquence de Résonance",
+   "nom_en": "Resonant Frequency",
+   "niveau": "1",
+   "initiative": 88,
+   "haut": {
+    "texte": [
+     "Détruisez 1 {ObstacleHex} à {Range}3 ou moins :",
+     "{ConsumeEarth} : +1 {Attack}, {XP}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{Manquant}",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 249,
+   "nom": "Tremblements Prémonitoires",
+   "nom_en": "Foreboding Tremors",
+   "niveau": "1",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Immobilize}",
+     "{Consume} : +1 {Attack}, {Push} 1, {XP1}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 250,
+   "nom": "Secousse Sonique",
+   "nom_en": "Sonic Shock",
+   "niveau": "1",
+   "initiative": 58,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Range} 3",
+     "{Consume} : {Brittle}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Gagnez 1{SSResonance} si vous êtes adjacent à au moins quatre hexagones vides"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 251,
+   "nom": "Précieuses Gemmes",
+   "nom_en": "Precious Gems",
+   "niveau": "1",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "{Attack} 3"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Révélez la prochaine capacité d'un type d'{Enemy} à {Range}2 ou moins",
+     "{Consume} : +3{Range}, {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 252,
+   "nom": "Pulsation Exaltante",
+   "nom_en": "Empowering Pulse",
+   "niveau": "1",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "{Range} 2",
+     "—",
+     "{Manquant}",
+     "{CreateAir}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 253,
+   "nom": "Cri Dévastateur",
+   "nom_en": "Devastating Shout",
+   "niveau": "1",
+   "initiative": 68,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "{Attack}X+1",
+     "{Range} 3",
+     "{CreateAir}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Détruisez 1 {ObstacleHex} ou piège adjacent",
+     "—",
+     "{Move} 3",
+     "—",
+     "Détruisez 1 {ObstacleHex} ou piège adjacent"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 254,
+   "nom": "Brouhaha Calamiteux",
+   "nom_en": "Calamitous Yawp",
+   "niveau": "X",
+   "initiative": 65,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "Tous les {Allies} et {Enemy} à {Range}2 ou moins subissent {Damage}X/2 (arrondi à l'unité supérieure)",
+     "{CreateEarth}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "-1{SSResonance}: {Stun} {Range} 1",
+     "{ConsumeLight} : +1 {Target}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 255,
+   "nom": "Tumulte de Bataille",
+   "nom_en": "Din of Battle",
+   "niveau": "X",
+   "initiative": 14,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Target} 2 {Muddle}",
+     "—",
+     "Gagnez 1{SSResonance} si la capacité d'attaque a ciblé au moins deux {Enemy}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Vous et tous les {Allies} à {Range}1 ajoutez chacun +1{Attack} à l'une de vos attaques ce round"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 256,
+   "nom": "Tonalité d'Illumination",
+   "nom_en": "Illuminative Tone",
+   "niveau": "X",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Range} 2",
+     "{ConsumeLight} : {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 257,
+   "nom": "Transparence",
+   "nom_en": "Transparency",
+   "niveau": "2",
+   "initiative": 13,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 4",
+     "Révélez la prochaine capacité du type d'{Enemy} ciblé",
+     "{Consume} : +1 {Attack}, {Pierce} 1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Round} Toutes les attaques vous ciblant ce round gagnent {Disadvantage}",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 258,
+   "nom": "Clameur Déroutante",
+   "nom_en": "Befuddling Bellow",
+   "niveau": "2",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "Octroyez à tous les {Allies} à {Range}2 ou moins et à vous-même :",
+     "{Shield}X/2",
+     "(arrondissez au supérieur)",
+     "{CreateAir}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{Consume} : +1 {Range}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 259,
+   "nom": "Façonner la Voie",
+   "nom_en": "Shape the Path",
+   "niveau": "3",
+   "initiative": 40,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "Pour chaque {SSResonance} dépensée, effectuez :",
+     "{Bless}{Range}1",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Gagnez 1 {SSResonance}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 260,
+   "nom": "Vibrations Furtives",
+   "nom_en": "Stealth Vibrations",
+   "niveau": "3",
+   "initiative": 35,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 261,
+   "nom": "Déflagration Concentrée",
+   "nom_en": "Concentrated Blast",
+   "niveau": "4",
+   "initiative": 38,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 3",
+     "{Consume} : +1 {Target}",
+     "{Consume} : {Stun}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Un {Enemy} adjacent subit {Damage}2",
+     "{CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 262,
+   "nom": "Pulsation Élémentaire",
+   "nom_en": "Elemental Pulse",
+   "niveau": "4",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{ConsumeAir} : +3 {Range}",
+     "—",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{ConsumeAir} : +1 {Move}, {Jump}",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 263,
+   "nom": "Chakram Hurlant",
+   "nom_en": "Shrieking Chakram",
+   "niveau": "5",
+   "initiative": 8,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "{Attack} 4 {Target} X, {Range} 4",
+     "{CreateAir}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "{Manquant}",
+     "{Move} 1",
+     "Un {Enemy} adjacent n'ayant pas subi de {Damage} de cette action ce tour subit {Damage}2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 264,
+   "nom": "Note Exaltante",
+   "nom_en": "Empowering Note",
+   "niveau": "5",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Persistent} Pour chaque capacité non persistante d'une de vos cartes Capacité, vous pouvez dépenser 1{SSResonance} pour augmenter de 1 l'{Attack}, l'{RangedAttack}, la {Range}, la {Target}, le {Heal}, le {Move}, les {Damage}, le {Shield}, la {Retaliate}, la {Push} ou la {Pierce}.",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Détruisez 1 {ObstacleHex} adjacent :",
+     "{CreateEarth}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 265,
+   "nom": "Onde Insoutenable",
+   "nom_en": "Unsustainable Wave",
+   "niveau": "6",
+   "initiative": 36,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range} 3",
+     "Deux {Enemy} à {Range}2 de la cible subissent {Damage}X-2, où X est égal aux {Damage} que la cible a subis de cette attaque.",
+     "{ConsumeEarth} : +1 {Attack}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Gagnez X{SSResonance}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 266,
+   "nom": "Sens du Futur",
+   "nom_en": "Future Sense",
+   "niveau": "6",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Target}2, {Range} 4",
+     "Révélez la prochaine capacité de tous les types de {Enemy} ciblés",
+     "{Consume} : +1 {Target}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 7 {Jump}",
+     "—",
+     "Gagnez 3{SSResonance}",
+     "{CreateEarth}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 267,
+   "nom": "Thérapie Sonique",
+   "nom_en": "Sound Therapy",
+   "niveau": "7",
+   "initiative": 73,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "Un {Allies} à {Range}2 ou moins peut {Recover} jusqu'à X cartes de sa défausse",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 4 {Range} 3",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 268,
+   "nom": "Réfraction Occultante",
+   "nom_en": "Cloaking Refraction",
+   "niveau": "7",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "—",
+     "-2{SSResonance} : {Invisible} sur vous-même, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Octroyez à tous les {Allies} adjacents et à vous-même :",
+     "{ConsumeLight} : +1 {Shield}, {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 269,
+   "nom": "Points Faibles",
+   "nom_en": "Soft Spots",
+   "niveau": "8",
+   "initiative": 47,
+   "haut": {
+    "texte": [
+     "{Brittle} {Target}2, {Range}2",
+     "{ConsumeAir} : +1{Target}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5",
+     "{Consume} : {Jump}",
+     "—",
+     "{Push}2 {Target}2, {Range}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 270,
+   "nom": "Retour",
+   "nom_en": "Feedback",
+   "niveau": "8",
+   "initiative": 24,
+   "haut": {
+    "texte": [
+     "{Persistent} Immédiatement après chaque action ONDE, gagnez 1{SSResonance}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Muddle} {Manquant}",
+     "{Consume} : +3{Range}",
+     "{CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 271,
+   "nom": "Clameur Barbare",
+   "nom_en": "Barbaric Yawp",
+   "niveau": "9",
+   "initiative": 66,
+   "haut": {
+    "texte": [
+     "Tous les {Allies} et {Enemy} à {Range}2 subissent {Damage}X",
+     "{ConsumeAny} : +1 {Range}",
+     "{ConsumeAny} : +1 {Range}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Consume} : +2 {Move}",
+     "—",
+     "{Round} Vous et tous les {Allies} adjacents gagnez {Advantage} sur toutes vos attaques ce round"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 272,
+   "nom": "Vibrations Violentes",
+   "nom_en": "Violent Vibrations",
+   "niveau": "9",
+   "initiative": 5,
+   "haut": {
+    "texte": [
+     "Onde -X{SSResonance} :",
+     "Octroyez à tous les {Allies} adjacente à {Range}2 ou moins et à vous-même :",
+     "{Shield}X+1",
+     "{Retaliate}X+1",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Wound} {Manquant}",
+     "{CreateAny}"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

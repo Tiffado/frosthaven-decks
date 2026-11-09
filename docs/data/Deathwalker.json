@@ -1,0 +1,699 @@
+{
+ "id": "Deathwalker",
+ "nom": "Arpenteuse des Ombres",
+ "nom_en": "Deathwalker",
+ "nom_complet": "Arpenteuse des Ombres Valrath",
+ "main": 11,
+ "pv": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "depart": true,
+ "difficulte": "Basse",
+ "gameplay": "Vous créez des ombres ({DWLShadow}), qui peuvent être placées sur n'importe quel hexagone, sauf ceux situés au-delà des lignes de mur et ceux contenant d'autres {DWLShadow}. Les {DWLShadow} ne peuvent pas franchir les lignes de mur, mais peuvent entrer librement sur n'importe quel hexagone et s'y arrêter, sauf ceux contenant une autre {DWLShadow}. Les hexagones ne contenant qu'une {DWLShadow} sont toujours considérés comme vides et ne deviennent pas des hexagones négatifs.\n\nPas plus de 5 {DWLShadow} ne peuvent être présentes sur le plateau à la fois. Si une sixième {DWLShadow} devait être placée, retirez d'abord une {DWLShadow} existante. Essayez d'en garder quelques-unes sur le champ de bataille, sans quoi vos actions seront limitées.\n\nSi une {DWLShadow} est retirée pendant une action, les attaques ou capacités suivantes doivent être effectuées comme si cette {DWLShadow} n'était pas présente. L'hexagone occupé par une {DWLShadow} est considéré comme adjacent à une {DWLShadow} pour le ciblage,et si vous effectuez une attaque comme si vous occupiez un autre hexagone, la ligne de vue est déterminée à partir de cet hexagone.",
+ "histoire": "Peu de peuples sont aussi mal adaptés au climat glacial du Nord que les Valraths, qui ont élu domicile dans le Désert Rouge, loin au sud. Autrefois, une grande guerre dans cette région les opposa aux humains, pour la mainmise sur les Plaines de Grondorage. Les deux nations ont depuis fait la paix. Les dirigeants valraths, en particulier, ont fait des efforts concertés pour abandonner leur passé violent. Ils ont, plus récemment, mis l'accent sur la puissance économique plutôt que militaire.\n\nLes Valraths ont un proverbe : « Pour survivre à la glace, il faut avoir une âme glaciale. » Cela convient parfaitement à une Arpenteuse des Ombres, une nomade qui se voue à expier les péchés passés de la nation Valrath, s'assurant que les âmes des morts trouvent le repos. Lorsqu'un désastre se produit, une Arpenteuse des Ombres rôde toujours dans les parages. Et Havreblanc en a connu son lot.",
+ "deblocage": null,
+ "cartes": [
+  {
+   "id": 90,
+   "nom": "Appel des Abysses",
+   "nom_en": "Call to the Abyss",
+   "niveau": "1",
+   "initiative": 82,
+   "haut": {
+    "texte": [
+     "{Persistent} Lorsque vous ou l'une de vos {AA_Summon} attaquez, vous pouvez marquer la cible de l'attaque. Lorsqu'un {Enemy} marqué meurt, placez un {DWLShadow} sur ou adjacent à l'hexagone qu'il occupait.",
+     "Les marques précédentes de cette capacité sont retirées"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Placez 1 {DWLShadow} sur un hexagone à {Range}2 ou moins"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 91,
+   "nom": "Courroux des Morts",
+   "nom_en": "Anger of the Dead",
+   "niveau": "1",
+   "initiative": 14,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Range} 2",
+     "{Consume} : Retirez X {DWLShadow} à {Range}3 ou moins :"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Target} tous les {Enemy} sur un hexagone avec une {DWLShadow}",
+     "—",
+     "{Round} Lorsqu'un {Enemy} entre dans un hexagone {DWLShadow}, il gagne {Wound}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 92,
+   "nom": "Sombre Apparition",
+   "nom_en": "Sunless Apparition",
+   "niveau": "1",
+   "initiative": 96,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Bête des Ombres : {Health}1 {Move}3 {Attack}3",
+     "Retirez 1 {DWLShadow} d'un hexagone adjacent pour invoquer :",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Loot} 1",
+     "—",
+     "{Teleport} sur un hexagone avec une {DWLShadow}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 93,
+   "nom": "Nuit Fluide",
+   "nom_en": "Fluid Night",
+   "niveau": "1",
+   "initiative": 24,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "Effectuez une attaque comme si vous occupiez un hexagone avec une {DWLShadow}, puis retirez cette {DWLShadow}",
+     "{CreateDark}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Lorsque vous devriez subir des {Damage}, vous pouvez à la place {Teleport} sur un hexagone avec une {DWLShadow}. Si vous le faites, retirez cette {DWLShadow}, annulez les {Damage}, et défaussez cette carte."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 94,
+   "nom": "Brouillard Obscur",
+   "nom_en": "Dark Fog",
+   "niveau": "1",
+   "initiative": 46,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range} 3 {Curse}",
+     "{Zone}",
+     "{CreateDark}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez 1 {DWLShadow} jusqu'à 5 hexagones"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 95,
+   "nom": "Sombre Barrière",
+   "nom_en": "Black Barrage",
+   "niveau": "1",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 4",
+     "{ConsumeDark} : +1 {Attack}, +1 {Range}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez toutes les {DWLShadow} jusqu'à 2 hexagones"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 96,
+   "nom": "Appel Tragique",
+   "nom_en": "Call of Doom",
+   "niveau": "1",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "Cible tous les adversaires adjacents",
+     "{ConsumeDark} : {Muddle}",
+     "Effectuez les attaques comme si vous occupiez un hexagone avec une {DWLShadow}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 97,
+   "nom": "Éclipse",
+   "nom_en": "Eclipse",
+   "niveau": "1",
+   "initiative": 86,
+   "haut": {
+    "texte": [
+     "Placez 3 {DWLShadow} sur des hexagones à {Range}3 ou moins",
+     "{CreateDark}"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 98,
+   "nom": "Pourriture Tenace",
+   "nom_en": "Lingering Rot",
+   "niveau": "1",
+   "initiative": 64,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Target} tous les {Enemy} adjacents, {Poison}",
+     "Effectuez les attaques comme si vous occupiez un hexagone avec une {DWLShadow}, puis retirez cette {DWLShadow}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Poison} {Range}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 99,
+   "nom": "Un Pas dans l'Ombre",
+   "nom_en": "Shadow Step",
+   "niveau": "1",
+   "initiative": 19,
+   "haut": {
+    "texte": [
+     "{Move} 3",
+     "Ce déplacement doit se terminer sur un hexagone avec une {DWLShadow}",
+     "—",
+     "{Attack} 3"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 6",
+     "—",
+     "Placez une {DWLShadow} sur l'hexagone que vous occupez"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 100,
+   "nom": "Puissance des Abysses",
+   "nom_en": "Strength of the Abyss",
+   "niveau": "1",
+   "initiative": 50,
+   "haut": {
+    "texte": [
+     "où X est le nombre de {DWLShadow} sur le terrain"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Une fois au cours de chacune de vos capacités de déplacement ou d'attaque, vous pouvez retirer 1 {DWLShadow} à {Range}3 ou moins pour gagner {XP1} et ajouter : +2{Move} à votre capacité de déplacement",
+     "{Persistent} Une fois au cours de chacune de vos capacités de déplacement ou d'attaque, vous pouvez retirer 1 {DWLShadow} à {Range}3 ou moins pour gagner {XP1} et ajouter : +2{Attack} à l'une de vos attaques"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 101,
+   "nom": "Vague d'Angoisse",
+   "nom_en": "Wave of Anguish",
+   "niveau": "X",
+   "initiative": 58,
+   "haut": {
+    "texte": [
+     "Pour chaque {DWLShadow} sur le terrain au début de cette action, effectuez :",
+     "{Attack} 3",
+     "Effectuez chaque attaque comme si vous occupiez l'hexagone avec cette {DWLShadow}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Déplacez toutes les {DWLShadow} jusqu'à 1 hexagone"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 102,
+   "nom": "Esprits Puissants",
+   "nom_en": "Forceful Spirits",
+   "niveau": "X",
+   "initiative": 34,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Target} 2 {Range} 2",
+     "{ConsumeDark} : +1 {Attack},{XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} sur un hexagone avec une {DWLShadow} ou adjacent à une {DWLShadow}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 103,
+   "nom": "Repos dans la Pénombre",
+   "nom_en": "Rest in the Shade",
+   "niveau": "X",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "{Heal} 2",
+     "{Target} les {Allies} occupant des hexagones avec une {DWLShadow} et vous-même",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez toutes les {DWLShadow} jusqu'à 6 hexagones"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 104,
+   "nom": "Esprits sans Repos",
+   "nom_en": "Restless Spirits",
+   "niveau": "2",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Curse}",
+     "{Consume} : Si vous êtes sur un hexagone avec une {DWLShadow}, vous pouvez la retirer :"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez 1 {DWLShadow} jusqu'à 4 hexagones",
+     "—",
+     "Si cette {DWLShadow} est déplacée sur le même hexagone qu'un {Enemy}, cet {Enemy} subit {Damage}3, retirez cette {DWLShadow}, et gagnez {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 105,
+   "nom": "Désespoir Envahissant",
+   "nom_en": "Deepening Despair",
+   "niveau": "2",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Target} un {Enemy} adjacent à au moins 2 {DWLShadow} à n'importe quelle {Range}",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} Vous et tous les {Allies} pouvez considérer tout hexagone avec une {DWLShadow} comme adjacent à chaque autre hexagone avec une {DWLShadow} durant les capacités de déplacement ce round.",
+     "—",
+     "{Move} 3",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 106,
+   "nom": "Projectile Morbide",
+   "nom_en": "Dead Bolt",
+   "niveau": "3",
+   "initiative": 88,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range} 4",
+     "{ConsumeDark} : {Curse}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez toutes les {DWLShadow} jusqu'à 3 hexagones"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 107,
+   "nom": "Sacrifice Rituel",
+   "nom_en": "Ritual Sacrifice",
+   "niveau": "3",
+   "initiative": 13,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "+1 {Attack} pour chaque {DWLShadow} sur ou adjacent à l'hexagone occupé par la cible"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Retirez un nombre au choix de {DWLShadow} à {Range}3 ou moins :",
+     "{Move} 2",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 108,
+   "nom": "Crépuscule Fugace",
+   "nom_en": "Fleeting Dusk",
+   "niveau": "4",
+   "initiative": 36,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Manquant}",
+     "Effectuez les attaques comme si vous occupiez un hexagone avec une {DWLShadow}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Placez 1 {DWLShadow} sur un hexagone adjacent"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 109,
+   "nom": "Attirance Délétère",
+   "nom_en": "Pulled Across",
+   "niveau": "4",
+   "initiative": 77,
+   "haut": {
+    "texte": [
+     "{Target} un {Enemy} adjacent normal ou d'élite occupant un hexagone avec une {DWLShadow}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Invisible} sur vous-même",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 110,
+   "nom": "Médium",
+   "nom_en": "Medium",
+   "niveau": "5",
+   "initiative": 55,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{ConsumeDark} : +2 {Attack}",
+     "Si cette attaque élimine un {Enemy}, placez une {DWLShadow} sur un hexagone qui lui est adjacent"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Au début de chacun de vos tours, déplacez 1 {DWLShadow} jusqu'à 3 hexagones",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 111,
+   "nom": "Domination",
+   "nom_en": "Dominate",
+   "niveau": "5",
+   "initiative": 29,
+   "haut": {
+    "texte": [
+     "{Attack} 6",
+     "{ConsumeDark} : {Disarm}",
+     "Effectuez l'attaque comme si vous occupiez un hexagone avec une {DWLShadow}, puis retirez-la {DWLShadow}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 112,
+   "nom": "La Nuit Prend Forme",
+   "nom_en": "The Night Takes Shape",
+   "niveau": "6",
+   "initiative": 94,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Horreur des Ombres : {Health}5 {Move}3 {Attack}3",
+     "Retirez 2 {DWLShadow} d'hexagones adjacents pour invoquer :",
+     "—",
+     "Toutes les attaques ciblant vos {AA_Summon} gagnent {Disadvantage}",
+     "{XP}2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez 1 {DWLShadow} sur un hexagone inoccupé jusqu'à 3 hexagones",
+     "—",
+     "{Teleport} sur le nouvel hexagone de cette {DWLShadow}, puis retirez-la et gagnez {XP1}",
+     "—",
+     "{Attack} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 113,
+   "nom": "Tempête Vengeresse",
+   "nom_en": "Vengeful Storm",
+   "niveau": "6",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range}4",
+     "{Consume} : Pour chaque {DWLShadow} retirée, gagnez +1{Target}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "Effectuez cette capacité comme si vous occupiez un hexagone avec une {DWLShadow}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 114,
+   "nom": "Prolifération des Abysses",
+   "nom_en": "Proliferation of the Abyss",
+   "niveau": "7",
+   "initiative": 38,
+   "haut": {
+    "texte": [
+     "Placez une {DWLShadow} à côté de vous",
+     "—",
+     "{Persistent} Lorsque vous ou un {Allies} devriez subir des {Damage}, vous pouvez retirer une {DWLShadow} à 1 hexagone ou moins pour gagner {XP1}, défausser cette carte et annuler les {Damage}."
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{ConsumeDark} : +2 {Move}",
+     "—",
+     "Déplacez 2 {DWLShadow} jusqu'à 4 hexagones"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 115,
+   "nom": "Poigne Affamée",
+   "nom_en": "Hungry Grasps",
+   "niveau": "7",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "Pour jusqu'à 2 {DWLShadow}, effectuez :",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Pour chaque {DWLShadow}, effectuez :",
+     "Effectuez chaque soin comme si vous occupiez l'hexagone avec l'{DWLShadow}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 116,
+   "nom": "Vrilles Cinglantes",
+   "nom_en": "Lashing Tendrils",
+   "niveau": "8",
+   "initiative": 80,
+   "haut": {
+    "texte": [
+     "{Persistent} Vous et vos {Allies} gagnez {Retaliate}2, {Range}2 tant que vous occupez un hexagone avec une {DWLShadow}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Déplacez 2 {DWLShadow} jusqu'à 3 hexagones",
+     "—",
+     "Un {Enemy} adjacent aux deux {DWLShadow} déplacées subit {Damage}3",
+     "{ConsumeDark} : +2 {Damage}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 117,
+   "nom": "Figé par la Peur",
+   "nom_en": "Frozen in Fear",
+   "niveau": "8",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "{Immobilize} {Target} tous, {Range}1",
+     "{Manquant}",
+     "—",
+     "Tous les {Enemy} ayant {Immobilize} subissent {Damage}1",
+     "{ConsumeDark} : +1 {Damage}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Placez 2 {DWLShadow} sur des hexagones adjacents",
+     "—",
+     "Déplacez tous les {DWLShadow} jusqu'à 5 hexagones",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 118,
+   "nom": "À l'Heure Venue",
+   "nom_en": "When Your Time Comes",
+   "niveau": "9",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "{Persistent} Marquez un {Enemy} à {Range}4 ou moins. Lorsque cet {Enemy} meurt, tous les {Enemy} adjacents subissent {Damage}4.",
+     "—",
+     "{Attack} 2 {Range} 4, {Curse}",
+     "{Create['Dark']}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Lorsqu'un {Enemy} meurt\n{ConsumeDark}: placez une {DWLShadow} sur son hexagone",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 119,
+   "nom": "Lance Noire",
+   "nom_en": "Black Lance",
+   "niveau": "9",
+   "initiative": 16,
+   "haut": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Attack} 4",
+     "{Consume} : Retirez un nombre au choix de {DWLShadow} des hexagones franchis pendant la capacité de déplacement :"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {Jump}",
+     "Tous les {Enemy} franchis gagnent {Curse}",
+     "{Create['Dark']}"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

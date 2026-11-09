@@ -1,0 +1,703 @@
+{
+ "id": "Pyroclast",
+ "nom": "Pyroclaste",
+ "nom_en": "Pyroclast",
+ "nom_complet": "Pyroclaste Savvas",
+ "main": 10,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Vous pouvez créer de nombreux terrains dangereux ({HazardHex}) et obstacles ({ObstacleHex}) pour infliger des dégâts et entraver vos adversaires. Lorsque vous créez plusieurs obstacles, vous n'êtes pas obligé de créer le nombre maximum indiqué sur la capacité. Comme toute autre classe, le Pyroclaste ne peut pas créer d'obstacles dans des hexagones qui bloqueraient des parties du champ de bataille.\n\nVous ne pouvez jamais créer plus de 6 hexagones de terrain dangereux ({HazardHex}) sur le champ de bataille à un moment donné. Si vous deviez en créer un septième, retirez d'abord un {HazardHex} existant que vous avez créé.\n\nVous avez de nombreux bonus persistants qui comportent le mot-clé Bûcher. Contrairement aux autres bonus persistants que vous pouvez défausser (ou perdre si l'action a une icône « Perdue ») quand vous le souhaitez, vous ne pouvez le faire pour les cartes avec Bûcher qu'au début de vos repos.",
+ "histoire": "Les Savvas vivent dans les profondeurs sous les Crêtes de Cuivre, en grande partie à l'écart de l'agitation de la surface. Là, ils protègent leur source de vie, qui instille conscience et pensée à la roche inerte. Les besoins des Savvas étant limités, la plupart ne cherchent qu'à dominer les éléments, pour contrôler et utiliser le vent, la terre, la glace ou le feu. Ceux qui en sont capables sont tenus en très haute estime.\n\nLes Savvas poussent jusqu'à l'extrême pour exercer leur pouvoir sur les éléments. Certains se jettent dans des volcans en activité, où, s'ils ne sont pas détruits, ils communient avec la puissance brute du magma. Ils en émergent alors sous la forme d'un Pyroclaste, incarnation vivante de la force chaotique et destructrice de la lave bouillonnante. Personne ne peut alors remettre en question leur pouvoir.",
+ "deblocage": "Agrandir le Camp des Mineurs (événement « L'Agrandissement du Camp des Mineurs », section 49.2).",
+ "cartes": [
+  {
+   "id": 215,
+   "nom": "Refroidissement",
+   "nom_en": "Cooling",
+   "niveau": "1",
+   "initiative": 75,
+   "haut": {
+    "texte": [
+     "Remplacez 1{HazardHex} dans un hexagone inoccupé à {Range}4 par un {ObstacleHex}. Tous les {Enemy} adjacents à cet hexagone subissent {Damage}2.",
+     "{Create['Earth']}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 5 sur vous-même",
+     "—",
+     "{Persistent} Ajoutez -1{Move} à vos trois prochaines capacités de déplacement"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 216,
+   "nom": "Rage Contenue",
+   "nom_en": "Quenched Rage",
+   "niveau": "1",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Push} 3",
+     "—",
+     "{ConsumeEarth} : Doublez les {Damage} infligés par tout {HazardHex} franchi par la cible, puis, sans tenir compte de votre ligne de vue, remplacez ces {HazardHex} par des {ObstacleHex}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Ajoutez -1{Attack} à vos 3 prochaines attaques, puis doublez la valeur de la quatrième attaque.",
+     "{Create['Earth']}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 217,
+   "nom": "Feu Mouvant",
+   "nom_en": "Flowing Fire",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{ConsumeFire} : Créez un {HazardHex} dans chaque {RedHex} vide, {XP1}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 6",
+     "—",
+     "{Persistent} Subissez {Damage}1 maintenant et au début de vos 2 prochains tours"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 218,
+   "nom": "Éruption",
+   "nom_en": "Eruption",
+   "niveau": "1",
+   "initiative": 47,
+   "haut": {
+    "texte": [
+     "Créez un {ObstacleHex} de 1 hexagone dans un hexagone vide à {Range}5",
+     "—",
+     "Créez 1{HazardHex} dans tous les hexagones sans décor occupés adjacents à l'obstacle. Les personnages dans ces hexagones subissent {Damage}4",
+     "{Create['Fire', 'Earth']}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 2",
+     "{Create['Fire']}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 219,
+   "nom": "Bombe Volcanique",
+   "nom_en": "Lava Bomb",
+   "niveau": "1",
+   "initiative": 53,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range} 3",
+     "—",
+     "Créez 1{HazardHex} dans l'hexagone sans décor occupé par la cible",
+     "{Create['Fire']}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 220,
+   "nom": "Voie Ardente",
+   "nom_en": "Igneous Path",
+   "niveau": "1",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "Choisissez un chemin entre vous et un hexagone sans décor situé à 4{Range} et placez {HazardHex} sur tous les hexagones sans décor de ce chemin. Les personnages sur ces hexagones subissent 3{Damage}. Gagnez {XP1} pour chaque personnage blessé.",
+     "{Create['Fire']}"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "{ConsumeFire} : +1 {Move}, {XP1}",
+     "Créez 1 {HazardHex} sur chaque hexagone sans décor que vous quittez durant ce déplacement"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 221,
+   "nom": "Sous Pression",
+   "nom_en": "Under Pressure",
+   "niveau": "1",
+   "initiative": 85,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "Ajoutez +2{Attack} et gagnez {XP1} si la cible est adjacente à au moins 2 hexagones avec des {ObstacleHex} ou des murs"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Loot} 1",
+     "{Create['Earth']}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 222,
+   "nom": "Armure Fondue",
+   "nom_en": "Melted Armor",
+   "niveau": "1",
+   "initiative": 62,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "Ajoutez +1{Attack}, {Pierce}3 et gagnez {XP1} si la cible occupe un {HazardHex}",
+     "{Create['Fire']}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Toutes les attaques vous ciblant ajoutent +1{Attack}",
+     "—",
+     "{Persistent} Ajoutez +1{Attack} à vos 3 prochaines attaques"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 223,
+   "nom": "Pierre Liquide",
+   "nom_en": "Liquid Stone",
+   "niveau": "1",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Push} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Push} 1 {Range} 1",
+     "{ConsumeEarth} : +2 {Push}, {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 224,
+   "nom": "Nuage de Cendres",
+   "nom_en": "Cloud of Ash",
+   "niveau": "1",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "Détruisez un {ObstacleHex} à {Range}4 :",
+     "{Attack} 1 {Manquant}",
+     "Effectuez les attaques comme si vous occupiez cet {ObstacleHex}",
+     "{Create['Earth']}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Remplacez un ou deux {HazardHex} adjacents dans des hexagones inoccupés par {ObstacleHex}. Si vous le faites, {CreateEarth} et {XP1}."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 225,
+   "nom": "Incendie",
+   "nom_en": "Wildfire",
+   "niveau": "X",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "{Persistent} Détruisez 1 {HazardHex} adjacent. Si vous le faites, lors de vos 3 prochaines attaques, ajoutez {Wound}, {Poison} et {Fire}."
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacement {Move} 4",
+     "—",
+     "{Wound} sur vous-même",
+     "—",
+     "{Wound} {Target} 2, {Range} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 226,
+   "nom": "Force de la Terre",
+   "nom_en": "Force of the Earth",
+   "niveau": "X",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "{Range} 3, {Pull} 2, {Muddle}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Détruisez 1 {ObstacleHex} adjacent. Si vous le faites, lors des deux prochains soins vous ciblant, ajoutez +3{Heal}."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 227,
+   "nom": "Roche Métamorphique",
+   "nom_en": "Metamorphic Rock",
+   "niveau": "X",
+   "initiative": 68,
+   "haut": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "—",
+     "{Persistent} {Retaliate} 1",
+     "{Create['Earth']}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Récupérez une utilisation d'un de vos bonus actifs :",
+     "—",
+     "{Move} 3"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 228,
+   "nom": "Fumée Incandescente",
+   "nom_en": "Searing Smoke",
+   "niveau": "2",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Manquant}",
+     "{ConsumeFire} : +1 {Attack}, {XP1}",
+     "{ConsumeEarth} : {Muddle}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {Jump}",
+     "Tous les {Enemy} franchis gagnent {Muddle}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 229,
+   "nom": "Intense Furie",
+   "nom_en": "Deep Fury",
+   "niveau": "2",
+   "initiative": 38,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "Ajoutez +1{Attack}, {Push}2 et gagnez {XP1} si vous occupez un {HazardHex}",
+     "—",
+     "Si vous occupez un {HazardHex} :",
+     "{Heal} 2 sur vous-même"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 3 sur vous-même",
+     "—",
+     "{Persistent} Lors de votre prochaine attaque ciblant un {Enemy} occupant un {HazardHex}, doublez la valeur de l'attaque"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 230,
+   "nom": "Magma Vivant",
+   "nom_en": "Living Magma",
+   "niveau": "3",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Persistent} Maintenant et au début de vos deux prochains tours :",
+     "{Attack} 1 {Target}1 {Enemy} adjacent à un {HazardHex}, {Pierce}2, {Wound} {Create['Fire']}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "Déplacez un {HazardHex} adjacent jusqu'à 2 hexagones. S'il entre sur un hexagone occupé par un personnage, ce personnage subit des dégâts de terrain dangereux."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 231,
+   "nom": "Pique Durcie",
+   "nom_en": "Hardened Spike",
+   "niveau": "3",
+   "initiative": 80,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "Ajoutez +1{Attack} et gagnez {XP1} si la cible occupe un {HazardHex}",
+     "—",
+     "{Persistent} Au début de votre prochain tour : {Damage}1 sur vous-même",
+     "{Create['Earth']}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Round} Ajoutez +1{Attack} à votre prochaine attaque de ce round ciblant un {Enemy} adjacent à un {ObstacleHex}",
+     "{ConsumeEarth} : {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 232,
+   "nom": "Main Enflammée",
+   "nom_en": "Hand of Flame",
+   "niveau": "4",
+   "initiative": 29,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Muddle}",
+     "Créez 1{HazardHex} dans l'hexagone sans décor occupé par la cible",
+     "{Create['Fire']}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 2 {Wound}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 233,
+   "nom": "Vague de Chaleur",
+   "nom_en": "Heat Wave",
+   "niveau": "4",
+   "initiative": 8,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Push} 2 {Manquant}",
+     "{ConsumeFire} : +1 {Range}, {XP1}",
+     "—",
+     "{Persistent} Au début de votre prochain tour :"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{ConsumeFire}",
+     "Créez un {ObstacleHex} de 1 hexagone sur un hexagone vide adjacent",
+     "{Create['Earth']}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 234,
+   "nom": "Pluie de Feu",
+   "nom_en": "Rain of Fire",
+   "niveau": "5",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "Créez 2 {HazardHex} sur des hexagones sans décor à {Range}3 ou moins",
+     "—",
+     "Tous les autres personnages adjacents à ou occupant l'un de ces hexagones subissent {Damage}1",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5 {Jump}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 235,
+   "nom": "Orbes Magmatiques",
+   "nom_en": "Magma Orbs",
+   "niveau": "5",
+   "initiative": 82,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Target}2, {Range}3",
+     "{ConsumeFire}{ConsumeEarth} : +1 {Target}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Créez 1 {HazardHex} sur un hexagone vide adjacent",
+     "—",
+     "{Pull} 1 {Range}2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 236,
+   "nom": "Retour aux Sources",
+   "nom_en": "Return to the Source",
+   "niveau": "6",
+   "initiative": 14,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range}4, {Pull}3",
+     "—",
+     "{Persistent} Lorsque le prochain {Enemy} devrait subir des {Damage} en entrant sur un {HazardHex}, bloquez les {Damage}",
+     "{Create['Fire']}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "Ignorez les {HazardHex} pendant ce déplacement",
+     "—",
+     "{Heal} X sur vous-même",
+     "où X est le nombre de {HazardHex} différents que vous avez franchis pendant la capacité de déplacement"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 237,
+   "nom": "Bouclier d'Obsidienne",
+   "nom_en": "Obsidian Shield",
+   "niveau": "6",
+   "initiative": 19,
+   "haut": {
+    "texte": [
+     "{Persistent} Pour les 4 prochaines sources de {Damage} subis d'attaques vous ciblant, gagnez {Shield}1",
+     "Quand la dernière utilisation est consommée, l'adversaire attaquant subit {Damage}5, et vous créez un {ObstacleHex} de 1 hexagone sur un hexagone vide adjacent"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Subissez {Damage}2 ou détruisez un obstacle adjacent",
+     "—",
+     "{Round} La prochaine fois que vous subissez des {Damage} ce round, bloquez-les",
+     "{Create['Earth']}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 238,
+   "nom": "Rage Éruptive",
+   "nom_en": "Erupting Rage",
+   "niveau": "7",
+   "initiative": 70,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Push}2",
+     "Vous pouvez pousser la cible sur des hexagones avec une tuile {ObstacleHex} de 1 hexagone. Pour chaque hexagone, sans tenir compte de votre ligne de vue, remplacez la tuile {ObstacleHex} par une tuile {HazardHex} de 1 hexagone, et la cible subit des dégâts de terrain dangereux"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Move} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 239,
+   "nom": "Chaleur Étouffante",
+   "nom_en": "Swelter",
+   "niveau": "7",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "Détruisez un hexagone contenant un {HazardHex} à {Range}4 ou moins :",
+     "{Attack} 3 {Target} tous les {Enemy} occupant ou adjacents à cet hexagone, {Range}5, {Pierce}2",
+     "{Create['Fire']}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Tous les {Enemy} dans la même salle que vous subissent des {Damage} égaux au nombre de {HazardHex} dans la salle, jusqu'à un maximum de {Damage}5 par {Enemy}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 240,
+   "nom": "Nourrir la Bête",
+   "nom_en": "Feed the Beast",
+   "niveau": "8",
+   "initiative": 27,
+   "haut": {
+    "texte": [
+     "Choisissez un {HazardHex} dans un rayon de {Range}3. Détruisez un {ObstacleHex} adjacent (à vous) pour créer 2 {HazardHex} dans des hexagones sans décor adjacents à l'hexagone choisi. Chaque {Enemy} occupant cet hexagone ou les hexagones avec les tuiles créées subit {Damage}5.",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacement {Move} 2",
+     "—",
+     "{Round} Détruisez 1 {HazardHex} adjacent pour infliger des dégâts de terrain dangereux à la cible de votre prochaine attaque ce round, après l'attaque"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 241,
+   "nom": "Lance de Scories",
+   "nom_en": "Cinder Lance",
+   "niveau": "8",
+   "initiative": 90,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{ConsumeFire} : +2 {Attack}, {Manquant}, {XP1}",
+     "{ConsumeEarth} : +2 {Attack}, {Manquant}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacement {Move} 2",
+     "—",
+     "{Attack} 3 {Zone}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 242,
+   "nom": "Armure de Pierre",
+   "nom_en": "Stone Armor",
+   "niveau": "9",
+   "initiative": 9,
+   "haut": {
+    "texte": [
+     "{Persistent} Lorsque vous devriez subir des {Damage}, vous pouvez détruire un obstacle adjacent pour bloquer ces {Damage}",
+     "{Create['Earth']}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3 {Jump}",
+     "—",
+     "{Round} {Shield}X",
+     "où X est le nombre d'hexagones adjacents avec des obstacles ou des objectifs"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 243,
+   "nom": "Catastrophe",
+   "nom_en": "Calamity",
+   "niveau": "9",
+   "initiative": 35,
+   "haut": {
+    "texte": [
+     "Créez 3 {HazardHex} sur des hexagones sans décor et trois {ObstacleHex} de 1 hexagone sur des hexagones vides dans la même salle que vous. Tous les {Enemy} dans cette salle subissent {Damage}4.",
+     "{ConsumeFire} : {Manquant}",
+     "{ConsumeEarth} : {Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Contrôlez tous les {Enemy} dans la même salle que vous :",
+     "{Move}1",
+     "vous en contrôlez les capacités."
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

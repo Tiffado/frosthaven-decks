@@ -1,0 +1,138 @@
+[
+ {
+  "id": "BannerSpear",
+  "nom": "Porte-Bannière",
+  "nom_en": "Banner Spear",
+  "main": 10,
+  "depart": true,
+  "cartes": 29
+ },
+ {
+  "id": "Blinkblade",
+  "nom": "Vivelame",
+  "nom_en": "Blinkblade",
+  "main": 10,
+  "depart": true,
+  "cartes": 29
+ },
+ {
+  "id": "Boneshaper",
+  "nom": "Marionnettiste",
+  "nom_en": "Boneshaper",
+  "main": 12,
+  "depart": true,
+  "cartes": 31
+ },
+ {
+  "id": "CrashingTide",
+  "nom": "Mascaret",
+  "nom_en": "Crashing Tide",
+  "main": 12,
+  "depart": false,
+  "cartes": 31
+ },
+ {
+  "id": "Deathwalker",
+  "nom": "Arpenteuse des Ombres",
+  "nom_en": "Deathwalker",
+  "main": 11,
+  "depart": true,
+  "cartes": 30
+ },
+ {
+  "id": "Deepwraith",
+  "nom": "Spectre des Profondeurs",
+  "nom_en": "Deepwraith",
+  "main": 10,
+  "depart": false,
+  "cartes": 29
+ },
+ {
+  "id": "Drifter",
+  "nom": "Vagabond",
+  "nom_en": "Drifter",
+  "main": 12,
+  "depart": true,
+  "cartes": 31
+ },
+ {
+  "id": "FrozenFist",
+  "nom": "Poing-de-Glace",
+  "nom_en": "Frozen Fist",
+  "main": 8,
+  "depart": false,
+  "cartes": 27
+ },
+ {
+  "id": "Geminate",
+  "nom": "Géminé",
+  "nom_en": "Geminate",
+  "main": 14,
+  "depart": true,
+  "cartes": 34
+ },
+ {
+  "id": "HIVE",
+  "nom": "HIVE",
+  "nom_en": "HIVE",
+  "main": 11,
+  "depart": false,
+  "cartes": 30
+ },
+ {
+  "id": "Infuser",
+  "nom": "Infusatrice",
+  "nom_en": "Infuser",
+  "main": 11,
+  "depart": false,
+  "cartes": 30
+ },
+ {
+  "id": "MetalMosaic",
+  "nom": "Mosaïque de Métal",
+  "nom_en": "Metal Mosaic",
+  "main": 9,
+  "depart": false,
+  "cartes": 28
+ },
+ {
+  "id": "PainConduit",
+  "nom": "Porte-Douleur",
+  "nom_en": "Pain Conduit",
+  "main": 10,
+  "depart": false,
+  "cartes": 29
+ },
+ {
+  "id": "Pyroclast",
+  "nom": "Pyroclaste",
+  "nom_en": "Pyroclast",
+  "main": 10,
+  "depart": false,
+  "cartes": 29
+ },
+ {
+  "id": "Shattersong",
+  "nom": "Brise-Chant",
+  "nom_en": "Shattersong",
+  "main": 10,
+  "depart": false,
+  "cartes": 29
+ },
+ {
+  "id": "Snowdancer",
+  "nom": "Danseuse des Neiges",
+  "nom_en": "Snowdancer",
+  "main": 11,
+  "depart": false,
+  "cartes": 30
+ },
+ {
+  "id": "Trapper",
+  "nom": "Trappeur",
+  "nom_en": "Trapper",
+  "main": 9,
+  "depart": false,
+  "cartes": 28
+ }
+]

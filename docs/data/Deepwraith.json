@@ -1,0 +1,710 @@
+{
+ "id": "Deepwraith",
+ "nom": "Spectre des Profondeurs",
+ "nom_en": "Deepwraith",
+ "nom_complet": "Spectre des Profondeurs Fouineur",
+ "main": 10,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Vous prenez des Trophées ({DWRTrophy}) sur vos victimes, les utilisant pour vous camoufler et intimider vos ennemis.\n\nLorsqu'un adversaire meurt d'une {Wound} ou d'une {Bane} ou que vous éliminez un adversaire, vous gagnez un {DWRTrophy}. Vous commencez chaque quête avec zéro {DWRTrophy} et pouvez en avoir un maximum de 5 {DWRTrophy} à tout moment. Ils peuvent être dépensés de diverses manières via vos cartes Capacité.\n\nUne manière puissante de dépenser des {DWRTrophy} est l'action supérieure de Collecte de Crânes, qui vous permet d'infliger {Poison} ou {Muddle} à vos adversaires. Cette source constante d'états négatifs peut être essentielle pour activer l'action supérieure de Peur Irrésistible.",
+ "histoire": "Les Fouineurs, comme les appellent les habitants de la terre ferme, régnaient autrefois sur un vaste empire sous-marin. Celuici tomba en ruine après la destruction de la source de leur pouvoir – une couronne de corail – dont les débris furent emportés vers le nord par les courants de la mer de Brume. Hantés par un accablant sentiment de perte, les Fouineurs sont déterminés à restaurer la couronne, même s'ils ne comprennent plus pourquoi, et ne cessent d'en chercher les éclats. En se rapprochant de leur source d'énergie, ils regagnent peu à peu leur ancienne puissance.\n\nMéfiez-vous des profondeurs de la mer, où les chasseurs Fouineurs, cachés dans l'ombre et camouflés, traquent leurs victimes ! Ces Spectres des Profondeurs utilisent la peur et la confusion pour briser la volonté de leurs proies jusqu'à ce qu'elles accueillent avec joie l'étreinte de la mort. Il n'y a rien de plus terrifiant dans toutes les mers. Et désormais, ils quittent l'obscurité de l'océan pour parcourir les terres du Nord à la recherche des éclats de leur couronne. Ce changement d'environnement n'a pas vraiment altéré leur capacité à tuer silencieusement et avec efficacité.",
+ "deblocage": "Terminer le scénario 14 « Les Récifs Déchiquetés » : vous choisissez entre le Spectre des Profondeurs et le Mascaret. L'autre se débloque au scénario 60 « La Couronne Brisée ».",
+ "cartes": [
+  {
+   "id": 445,
+   "nom": "Collecte de Crânes",
+   "nom_en": "Skull Collection",
+   "niveau": "1",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Persistent} Durant votre tour, vous pouvez effectuer un nombre quelconque des capacités suivantes :",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 446,
+   "nom": "Aura Vide",
+   "nom_en": "Hollow Aura",
+   "niveau": "1",
+   "initiative": 88,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Pierce} 2",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Gagnez {DWRTrophy}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 447,
+   "nom": "Chair Embrochée",
+   "nom_en": "Skewer the Flesh",
+   "niveau": "1",
+   "initiative": 86,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "{Immobilize}",
+     "—",
+     "{Attack} 1",
+     "{Immobilize}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 448,
+   "nom": "Peur Irrésistible",
+   "nom_en": "Succumb to Fear",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Target} 1 adversaire non-boss adjacent qui a 3 états négatifs ou plus {Enemy}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 449,
+   "nom": "Nuage d'Encre",
+   "nom_en": "Ink Cloud",
+   "niveau": "1",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{CreateDark}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 450,
+   "nom": "Lacérations",
+   "nom_en": "Lacerating Stabs",
+   "niveau": "1",
+   "initiative": 14,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Wound}",
+     "—",
+     "{Attack} 2 {Wound}",
+     "si effectué sur une nouvelle cible",
+     "—",
+     "{Attack} 2 {Wound}",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Wound} {Range} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 451,
+   "nom": "Coup d'Œil aux Abysses",
+   "nom_en": "Staring into the Abyss",
+   "niveau": "1",
+   "initiative": 63,
+   "haut": {
+    "texte": [
+     "{Stun} {Range} 1",
+     "{ConsumeDark} : +1 {Target}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "-1{DWRTrophy}: {Disarm} {Range} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 452,
+   "nom": "Manteau d'Effroi",
+   "nom_en": "Mantle of Dread",
+   "niveau": "1",
+   "initiative": 96,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{ConsumeDark} : +1 {Range}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Après une de vos capacités de {Move} ou de {Teleport} chaque tour, infligez {Wound} ou {Muddle} à un {Enemy} adjacent",
+     "{CreateDark}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 453,
+   "nom": "Faux Noire",
+   "nom_en": "Black Scythe",
+   "niveau": "1",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{ConsumeDark} : +1 {Attack},{Curse}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Loot} 1",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 454,
+   "nom": "Panique Frénétique",
+   "nom_en": "Tumultuous Panic",
+   "niveau": "1",
+   "initiative": 66,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "—",
+     "{Move} 2",
+     "—",
+     "{Attack} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 4",
+     "—",
+     "{Manquant}",
+     "—",
+     "{Teleport} 2",
+     "—",
+     "{Disarm} {Range} 1",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 455,
+   "nom": "Soif d'Âme",
+   "nom_en": "Soul Hunger",
+   "niveau": "X",
+   "initiative": 91,
+   "haut": {
+    "texte": [
+     "{Target} 1 adversaire non-boss adjacent {Enemy} qui a 2 états négatifs ou plus",
+     "—",
+     "{Manquant}",
+     "{CreateDark}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Si vous avez {Invisible}, gagnez un {DWRTrophy}",
+     "—",
+     "{Teleport} 3",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 456,
+   "nom": "Camouflage Morbide",
+   "nom_en": "Morbid Camouflage",
+   "niveau": "X",
+   "initiative": 31,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "Si cette attaque élimine un {Enemy}, gagnez {Invisible} et {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "Gagnez {Invisible} si ce déplacement se termine sur un hexagone avec du butin"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 457,
+   "nom": "Obsédante Brutalité",
+   "nom_en": "Haunting Brutality",
+   "niveau": "X",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{ConsumeDark} : {Wound}, {Poison}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 6",
+     "—",
+     "{Manquant}",
+     "{CreateDark}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 458,
+   "nom": "Glissement vers la Mort",
+   "nom_en": "Slipping into Death",
+   "niveau": "2",
+   "initiative": 89,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "{ConsumeDark} : : +1 {Attack}",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Target} 1 adversaire adjacent blessé {Enemy} avec 4 points de vie ou moins"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 459,
+   "nom": "L'Art d'Attendre",
+   "nom_en": "Lie in Wait",
+   "niveau": "2",
+   "initiative": 98,
+   "haut": {
+    "texte": [
+     "{Curse} {Target} 3, {Range} 1",
+     "{Consume} : : +1 {Target}",
+     "+1{Range} si vous avez {Invisible}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 460,
+   "nom": "Angoisse Écrasante",
+   "nom_en": "Crippling Terror",
+   "niveau": "3",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{Target} 2",
+     "{Consume} : : {Push} 2, {Immobilize}",
+     "{CreateDark}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Round} {Pierce}3 pour toutes vos attaques et celles de vos alliés ciblant un {Enemy} avec un état négatif à {Range}2 ou moins de vous"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 461,
+   "nom": "Épines Paralysantes",
+   "nom_en": "Pinning Spines",
+   "niveau": "3",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "{Disarm}",
+     "—",
+     "{Attack} 1",
+     "{Immobilize}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "Tous les {Enemy} ayant {Immobilize} subissent {Damage}2",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 462,
+   "nom": "Ténèbres Écrasantes",
+   "nom_en": "Crushing Darkness",
+   "niveau": "4",
+   "initiative": 40,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{Consume} : : +1 {Attack},{Curse}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{ConsumeDark} : +3 {Range}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 463,
+   "nom": "Trophées Macabres",
+   "nom_en": "Grim Trophies",
+   "niveau": "4",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "Gagnez {DWRTrophy} pour chaque butin obtenu"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Dépensez un nombre de {DWRTrophy} au choix"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 464,
+   "nom": "Décoration Supplémentaire",
+   "nom_en": "Extra Decoration",
+   "niveau": "5",
+   "initiative": 92,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "+2{Attack} et gagnez {XP1} si vous avez {Invisible}",
+     "—",
+     "Si vous avez éliminé un {Enemy} avec la capacité d'attaque, gagnez un {DWRTrophy} supplémentaire"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 465,
+   "nom": "Spirale de la Mort",
+   "nom_en": "Death Spiral",
+   "niveau": "5",
+   "initiative": 48,
+   "haut": {
+    "texte": [
+     "{Persistent} Ajoutez {Stun}, {Curse} et {Curse} à votre prochaine capacité {Bane}",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} Toutes vos attaques gagnent {Advantage} et {Pierce}2",
+     "—",
+     "Si vous avez {Invisible} :"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 466,
+   "nom": "Pince de la Ruine",
+   "nom_en": "Claw of Doom",
+   "niveau": "6",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Stun}",
+     "{CreateDark}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 5"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 467,
+   "nom": "Les Profondeurs Impitoyables",
+   "nom_en": "The Remorseless Deep",
+   "niveau": "6",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Target} 1 adversaire adjacent {Enemy} avec {Bane}",
+     "—",
+     "{Manquant}",
+     "{CreateDark}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 468,
+   "nom": "Fin Précipitée",
+   "nom_en": "Hasten the End",
+   "niveau": "7",
+   "initiative": 65,
+   "haut": {
+    "texte": [
+     "{Target} 1 adversaire adjacent blessé non-boss {Enemy} avec {Wound}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 4",
+     "—",
+     "{Manquant}",
+     "—",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 469,
+   "nom": "Frénésie Extrême",
+   "nom_en": "Dire Frenzy",
+   "niveau": "7",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{Move} 2",
+     "—",
+     "{Attack} 2",
+     "—",
+     "{Move} 2",
+     "—",
+     "{Attack} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 470,
+   "nom": "Horreur Invisible",
+   "nom_en": "Unseen Horror",
+   "niveau": "8",
+   "initiative": 19,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "si la cible est hors de vue de ses {Allies}",
+     "{ConsumeDark} : Ne tenez pas compte de la ligne de vue"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Une fois par tour si vous avez {Invisible}\n{DWRTrophy}:+1{Attack} et {Wound} à toutes vos attaques ce tour",
+     "{CreateDark}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 471,
+   "nom": "Arraché aux Os",
+   "nom_en": "Rip from the Bone",
+   "niveau": "8",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "Gagnez {DWRTrophy} pour chaque {Enemy} ciblé"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 3",
+     "—",
+     "{Disarm} {Range} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 472,
+   "nom": "Nuit Noire des Profondeurs",
+   "nom_en": "Black Night of the Deep",
+   "niveau": "9",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Attack} 3",
+     "{Target} 3, {Range} 2, {Curse}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 4",
+     "—",
+     "{Manquant}",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 473,
+   "nom": "Dévoration des Impuissants",
+   "nom_en": "Consume the Helpless",
+   "niveau": "9",
+   "initiative": 12,
+   "haut": {
+    "texte": [
+     "{Target}1 adversaire adjacent {Enemy} avec {Immobilize} ou {Stun}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "À la fin de chaque round, si vous avez gagné un {DWRTrophy} ce round :",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  }
+ ]
+}

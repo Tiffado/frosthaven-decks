@@ -1,0 +1,639 @@
+{
+ "id": "Trapper",
+ "nom": "Trappeur",
+ "nom_en": "Trapper",
+ "nom_complet": "Trappeur Vermling",
+ "main": 9,
+ "pv": [
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Votre mission est simple : poser des pièges et forcer vos adversaires à les déclencher. Vous disposez de nombreux outils pour y parvenir, notamment la capacité de retirer {Flying} des adversaires. Notez la différence entre déclencher un piège, ce qui provoque ses effets, et détruire un piège, ce qui ne déclenche rien.\n\n\nVous avez également des pièges bénéfiques, qui prodiguent des soins et des états positifs à quiconque les déclenche, y compris vous-même ou vos adversaires. Cependant, les adversaires considèrent toujours les pièges bénéfiques comme des hexagones négatifs et les évitent autant que possible. Un piège peut avoir à la fois des effets positifs et négatifs. Vous pouvez créer un nombre illimité de pièges.",
+ "histoire": "Le climat froid du nord est particulièrement inhospitalier pour la petite taille d'un Vermling. Mais contraints de choisir entre les rudes éléments et le harcèlement incessant des colons humains dans le sud, certains clans ont décidé de risquer la neige et la glace. Beaucoup ont trouvé refuge près de Havreblanc, principalement dans la Forêt Rayonnante, où il fait toujours anormalement chaud. Des forces malveillantes ont cependant commencé à repousser les Vermlings hors de la forêt, qui se retrouvent une fois de plus à devoir se battre pour survivre.\n\nUne grande partie de cette survie consiste à chasser pour trouver de la nourriture et des peaux pour se réchauffer. Les Trappeurs ont toujours été doués pour cela, ce qui leur donne un avantage certain dans les impitoyables régions sauvages. Ils sont devenus très habiles non seulement à poser plusieurs types de pièges, mais aussi à attirer leurs proies dans ces pièges mortels. Très agiles et équipés d'une panoplie de pièges à mâchoires, les Trappeurs sont prêts à abattre n'importe quelle proie.",
+ "deblocage": "Construire le Pavillon de Chasse (événement « La Construction du Pavillon de chasse », section 172.3).",
+ "cartes": [
+  {
+   "id": 273,
+   "nom": "Chausse-Trappes",
+   "nom_en": "Caltrops",
+   "niveau": "1",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "Créez 2 pièges dans un hexagone vide à {Range}2 ou moins avec l'effet suivant :",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacement {Move} 5"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 274,
+   "nom": "Masque de Fourrure",
+   "nom_en": "Furry Facade",
+   "niveau": "1",
+   "initiative": 85,
+   "haut": {
+    "texte": [
+     "{Move} 1",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Appât Touffu : {Health}2 {Move}0 {Attack}0 {Range}0",
+     "à la fin du tour",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 275,
+   "nom": "Piège à Sanglier",
+   "nom_en": "Boar Catcher",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "Créez 1 piège dans un hexagone vide à {Range}2 ou moins avec l'effet suivant : {Damage}4",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {Jump}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 276,
+   "nom": "Fosse à Pointes",
+   "nom_en": "Spike Pit",
+   "niveau": "1",
+   "initiative": 47,
+   "haut": {
+    "texte": [
+     "{Manquant} {Damage}3",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Repositionnez jusqu'à 2 pièges situés à {Range}2 ou moins sur des hexagones vides à {Range}4 ou moins"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 277,
+   "nom": "Filet Électrifié",
+   "nom_en": "Electrified Net",
+   "niveau": "1",
+   "initiative": 53,
+   "haut": {
+    "texte": [
+     "Créez 3 pièges dans un hexagone vide à {Range}2 ou moins avec l'effet suivant :",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant :"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 278,
+   "nom": "Pot de Miel",
+   "nom_en": "Honeypot",
+   "niveau": "1",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "{Loot} 1",
+     "Vous pouvez choisir de ne pas collecter tous les {Loot}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacement {Move} 3",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 279,
+   "nom": "Appât Envoûtant",
+   "nom_en": "Enticing Bait",
+   "niveau": "1",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Manquant} {Heal}1",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Contrôlez tous les {Enemy} ciblés par la {Muddle} :",
+     "{Manquant}",
+     "{Move}2",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 280,
+   "nom": "Leurre Explosif",
+   "nom_en": "Exploding Decoy",
+   "niveau": "1",
+   "initiative": 62,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Range}4",
+     ", {Pull}2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Si l'hexagone d'où vous êtes parti est vide, créez un piège avec les effets suivants (sans tenir compte de la ligne de vue) :",
+     "{Move} 3",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 281,
+   "nom": "Rafale de Clous",
+   "nom_en": "Flurry of Nails",
+   "niveau": "1",
+   "initiative": 68,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Push}2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3 {Jump}",
+     "Augmentez de 1 la valeur d'au maximum deux pièges {Damage} ou {Heal} sur des hexagones que vous franchissez"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 282,
+   "nom": "Démontage",
+   "nom_en": "Dismantle",
+   "niveau": "X",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "Détruisez un piège adjacent :",
+     "{Attack}X {Range}3",
+     "où X est la valeur de {Damage} du piège détruit. Ajoutez également tous les états de celui-ci aux attaques."
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Détruisez un piège adjacent",
+     "{Move} 3",
+     "Ajoutez les effets du piège détruit à un piège adjacent"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 283,
+   "nom": "À Ressort",
+   "nom_en": "Spring-Loaded",
+   "niveau": "X",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Persistent} Lorsque vous ou un {Allies} déclenchez un piège pendant une capacité de déplacement, ajoutez +2{Move} et {Jump} à cette capacité de déplacement",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "La cible {Enemy} avec {Flying} à {Range}3 ou moins perd sa capacité de vol"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 284,
+   "nom": "Amélioration Improvisée",
+   "nom_en": "Improvised Improvement",
+   "niveau": "X",
+   "initiative": 58,
+   "haut": {
+    "texte": [
+     "Remplacez un piège adjacent par un piège avec l'effet suivant :",
+     "{Damage}5",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 285,
+   "nom": "Résultat Inéluctable",
+   "nom_en": "Unavoidable Outcome",
+   "niveau": "2",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Range}3",
+     "Si la cible est adjacente à un piège, déclenchez-le et appliquez ses effets à la cible"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} La prochaine fois qu'un {Enemy} termine son déplacement sur un hexagone adjacent à un piège, sans tenir compte de la ligne de vue, déclenchez un piège adjacent à cet {Enemy} et appliquez ses effets à cet {Enemy}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 286,
+   "nom": "Chemin de Douleur",
+   "nom_en": "Path of Pain",
+   "niveau": "2",
+   "initiative": 38,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Push}2",
+     "Pour chaque piège que la cible déclenche par cette attaque, ajoutez +2{Push}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{Move} 2",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 287,
+   "nom": "Dents Supplémentaires",
+   "nom_en": "Extra Teeth",
+   "niveau": "3",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "Créez 1 piège dans un hexagone vide à {Range}3 ou moins avec l'effet suivant : {Damage}5",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "Détruisez tous les pièges adjacents pour créer un piège dans un hexagone vide à {Range}2 qui possède tous leurs effets. Le nouveau piège ne peut pas appliquer le même état plus d'une fois."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 288,
+   "nom": "Pyrotechnie",
+   "nom_en": "Pyrotechnics",
+   "niveau": "3",
+   "initiative": 80,
+   "haut": {
+    "texte": [
+     "{Manquant} {Heal}1",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Round} Augmentez de 3 les valeurs de {Damage} ou {Heal} du prochain piège que vous créez ce round"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 289,
+   "nom": "Terrain Miné",
+   "nom_en": "Dangerous Ground",
+   "niveau": "4",
+   "initiative": 31,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Sans tenir compte de votre ligne de vue, déclenchez tous les pièges et appliquez les effets de chacun à un personnage à {Range}2 ou moins de ce piège",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 290,
+   "nom": "Butin du Traqueur",
+   "nom_en": "Stalker's Spoils",
+   "niveau": "4",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{Loot} 1",
+     "où X est le nombre de sacs de butin récupérés avec la capacité de pillage"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 291,
+   "nom": "Attrait de l'Appât",
+   "nom_en": "Lure of the Snare",
+   "niveau": "5",
+   "initiative": 59,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Range}4",
+     ", {Pull}3"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déclenche un piège à {Range}3 ou moins et applique ses effets à un personnage qui lui est adjacent",
+     "{Move} 3 {Jump}",
+     "Ce déplacement doit se terminer sur ou adjacent au piège"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 292,
+   "nom": "Chasseur Chevronné",
+   "nom_en": "Proficient Hunter",
+   "niveau": "5",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "{Persistent} Chaque round, augmentez de 2 la valeur de {Damage} ou {Heal} d'un piège que vous créez",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 293,
+   "nom": "Embûche Persistante",
+   "nom_en": "Persistent Pitfalls",
+   "niveau": "6",
+   "initiative": 13,
+   "haut": {
+    "texte": [
+     "Modifiez les effets d'un piège adjacent, qui deviennent :",
+     "{Damage}6",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} Ce round, après qu'un piège {Damage}2 ou plus a été déclenché, créez un piège d'une valeur {Damage} moitié moindre (arrondissez à l'inférieur) et aux mêmes états sur l'hexagone vide le plus proche du piège déclenché"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 294,
+   "nom": "Nasse d'Épines",
+   "nom_en": "Cage of Thorns",
+   "niveau": "6",
+   "initiative": 55,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Range}2",
+     "Créez 1 piège sur chaque hexagone vide adjacent à la cible avec l'effet suivant :",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "Repositionnez jusqu'à deux pièges situés à {Range}4 ou moins sur des hexagones vides adjacents à un {Enemy} à {Range}2 ou moins"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 295,
+   "nom": "Périls Crochus",
+   "nom_en": "Grasping Hazards",
+   "niveau": "7",
+   "initiative": 8,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} Tous les pièges affectent les personnages avec des déplacements {Flying} et {Jump} ce round. Si un personnage avec {Flying} occupe actuellement un hexagone avec un piège, il déclenche le piège. {Manquant}",
+     "{Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 296,
+   "nom": "Tranchée",
+   "nom_en": "Foxhole",
+   "niveau": "7",
+   "initiative": 90,
+   "haut": {
+    "texte": [
+     "Détruisez un piège {Damage} adjacent :",
+     "{Attack} X-1 {Range}3 {Zone}",
+     "où X est la valeur de {Damage} du piège détruit. Ajoutez également tous les états de celui-ci aux attaques.",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Summon} Matrice de Défense : {Health}8 {Move}0 {Attack}2 {Range}3",
+     "Crée à la fin du tour un piège {Damage}2 sur un hexagone vide adjacent",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 297,
+   "nom": "Herse",
+   "nom_en": "Spike Strip",
+   "niveau": "8",
+   "initiative": 67,
+   "haut": {
+    "texte": [
+     "Choisissez un chemin entre vous et un hexagone à 4{Range} et créez un piège {Damage}2 sur tous les hexagones de terrain vides sur ce chemin",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Déplacement {Move} 3",
+     "Créez 1 piège dans chaque hexagone vide que vous traversez avec l'effet suivant :"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 298,
+   "nom": "Éclats Magnétiques",
+   "nom_en": "Magnetic Shards",
+   "niveau": "8",
+   "initiative": 37,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Target}3, {Range}3,",
+     "{Push}2",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Créez 2 pièges dans des hexagones vides adjacents avec l'effet suivant : {Heal}2",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 299,
+   "nom": "Dangereuse Cargaison",
+   "nom_en": "Dangerous Cargo",
+   "niveau": "9",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Persistent} Une fois par round, pendant l'une de vos capacités de déplacement, placez 1 piège avec l'effet suivant dans un hexagone vide que vous quittez :",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{Move} 4",
+     "Repositionnez tous les pièges à {Range}3 ou moins du début de la capacité de déplacement vers des hexagones vides adjacents"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 300,
+   "nom": "La Mère de Tous les Pièges",
+   "nom_en": "Mother of All Traps",
+   "niveau": "9",
+   "initiative": 86,
+   "haut": {
+    "texte": [
+     "Détruisez trois pièges à {Range}3 ou moins pour créer 1 piège dans un hexagone vide avec les effets suivants :",
+     "{Damage}9",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "Durant ce déplacement, vous pouvez appliquer les effets des pièges déclenchés à tout personnage adjacent à ceux-ci au lieu de vous-même"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

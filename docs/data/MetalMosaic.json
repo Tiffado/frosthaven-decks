@@ -1,0 +1,728 @@
+{
+ "id": "MetalMosaic",
+ "nom": "Mosaïque de Métal",
+ "nom_en": "Metal Mosaic",
+ "nom_complet": "Mosaïque de Métal Émancipée",
+ "main": 9,
+ "pv": [
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "La plupart de vos actions vous feront gagner ({MMGainPressure}) ou perdre ({MMLosePressure}) de la pression, ce qui déplacera votre manomètre vers le haut ou vers le bas après que l'action a été entièrement résolue. Vous commencez chaque quête avec une pression normale.\n\nDe nombreuses actions offriront des bonus ou des pénalités en fonction de votre pression actuelle. Si votre pression correspond à l'une des lignes de pression d'une action, tous les bonus et pénalités de cette ligne sont appliqués.\n\nPour chaque action, les capacités et effets sont appliqués de haut en bas. Ensuite, tous les changements de pression sont appliqués de haut en bas. Tous les effets d'automutilation sont également appliqués en même temps que les changements de pression.",
+ "histoire": "Au fil du temps, de vieilles pièces de ces machines, certaines plus fonctionnelles que d'autres, ont été éparpillées sur le continent. Un ensemble de ces technologies anciennes, encore opérationnel, a été retrouvé, puis assemblé en une machine de combat impressionnante, bien que désarticulée. Si elle possède la même origine que les Émancipés, elle ne semble pas partager leur cause. Elle est heureuse d'être de nouveau en vie et désire aider ses créateurs à protéger l'avant-poste de Havreblanc.\n\nLes machines vivantes viennent d'une époque révolue. Construits pour remplir diverses fonctions, ces automates furent mis en sommeil lors d'un grand cataclysme. Mais aujourd'hui, ils se réveillent, se proclament « Émancipés », et étendent leur influence dans le Nord. Libérés de leur programmation d'origine, ils disposent désormais du libre arbitre.",
+ "deblocage": "Résoudre l'énigme « Technologie Ancienne » : rassembler les pièces de technologie ancienne trouvées en scénario, puis lire la solution (section 35.1).",
+ "cartes": [
+  {
+   "id": 417,
+   "nom": "Armure à Vapeur",
+   "nom_en": "Steam Armor",
+   "niveau": "1",
+   "initiative": 17,
+   "haut": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "{Shield} 1",
+     "{MMPressureOver} +2{Shield}, {XP1}, {MMSelfDamage}, {MMLosePressure} {MMLosePressure}",
+     "{MMPressureHigh} +1{Shield}, {XP1}, {MMLosePressure}",
+     "{CreateIce}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{MMPressureRegular} {MMGainPressure}",
+     "{MMPressureLow} {XP1}, {MMGainPressure}",
+     "{CreateFire}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 418,
+   "nom": "Ancienne Chignole",
+   "nom_en": "Ancient Drill",
+   "niveau": "1",
+   "initiative": 90,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Pierce} 1",
+     "{MMPressureOver} +2{Attack}, +3{Pierce}, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} +1{Attack}, +2{Pierce}, {XP1}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Vous pouvez détruire un {ObstacleHex} adjacent pour {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 419,
+   "nom": "Bottes Fusée",
+   "nom_en": "Rocket Boots",
+   "niveau": "1",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Push} 2",
+     "{CreateFire}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3 {Jump}",
+     "{MMPressureOver} +3{Move}, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} +1{Move}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 420,
+   "nom": "Noyau de Puissance",
+   "nom_en": "Power Core",
+   "niveau": "1",
+   "initiative": 83,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Stun}",
+     "{MMPressureOver} +1{Target}, {Wound}, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} +1{Attack}, {Wound}, {XP1}, {MMLosePressure}"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 3 sur vous-même",
+     "{MMPressureRegular} +1{Heal}",
+     "{MMPressureLow} +2{Heal}, {XP1}",
+     "{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 421,
+   "nom": "Piston d'Acier",
+   "nom_en": "Steel Piston",
+   "niveau": "1",
+   "initiative": 40,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "—",
+     "Lorsque vous effectuez une capacité d'attaque, vous pouvez {MMLosePressure} et défausser cette carte pour ajouter +2{Attack} à une attaque et gagner {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{MMPressureOver} {Attack} 3, {XP1}, {MMSelfDamage}, {MMLosePressure}{MMLosePressure}",
+     "{MMPressureHigh} {Attack} 2, {XP1}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 422,
+   "nom": "Montée en Pression",
+   "nom_en": "Pressure Build-Up",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{ConsumeIce} : +2{Attack}, {XP1}",
+     "{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "{MMPressureLow} {Shield} 1, {XP1}",
+     "—",
+     "{Move} 3",
+     "{ConsumeFire} : {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 423,
+   "nom": "Faucille d'Essieu",
+   "nom_en": "Beam Axe",
+   "niveau": "1",
+   "initiative": 29,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{MMPressureOver} {XP1}, {MMSelfDamage}, {MMLosePressure}{MMLosePressure}",
+     "{MMPressureHigh} {XP1}, {MMSelfDamage}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{MMPressureOver} {Manquant}",
+     "{MMPressureLow} {Heal}1 {Target} tous les alliés, {Range}1, {XP1}, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 424,
+   "nom": "Lecteur de Mémoire",
+   "nom_en": "Memory Drive",
+   "niveau": "1",
+   "initiative": 64,
+   "haut": {
+    "texte": [
+     "{Recover} jusqu'à une carte de niveau 1 de votre défausse",
+     "{MMPressureRegular}",
+     "{ConsumeIce} : +1 {RecoverIcon}",
+     "{MMPressureLow} +1 {RecoverIcon}, {XP1}, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "Ajoutez +1{Move} toutes les 2 cartes dans votre défausse"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 425,
+   "nom": "Super Transfert Thermique",
+   "nom_en": "Super Heat Transfer",
+   "niveau": "1",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "{ConsumeFire} : {Wound}",
+     "{MMPressureRegular} {MMGainPressure}",
+     "{MMPressureLow} {XP1}, {MMGainPressure}",
+     "{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{MMPressureHigh} -1 {Move}, {MMGainPressure}",
+     "{MMPressureRegular} -1 {Move}, {MMLosePressure}",
+     "{CreateIce}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 426,
+   "nom": "Traitement",
+   "nom_en": "Processing",
+   "niveau": "X",
+   "initiative": 95,
+   "haut": {
+    "texte": [
+     "Au début du prochain round, jouez trois cartes au lieu de deux, dont une déterminera l'initiative. Vous devez quand même effectuer au moins une action supérieure et une action inférieure.",
+     "{MMPressureRegular} {MMGainPressure}",
+     "{MMPressureLow} {XP1}, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 427,
+   "nom": "Récursivité",
+   "nom_en": "Recursion",
+   "niveau": "X",
+   "initiative": 50,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "—",
+     "Pour votre prochain {MMGainPressure}, {MMGainPressure} {MMGainPressure} à la place"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Pour votre prochain {MMLosePressure}, {MMLosePressure} {MMLosePressure} à la place"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 428,
+   "nom": "Rouage Curieux",
+   "nom_en": "Curious Gear",
+   "niveau": "X",
+   "initiative": 12,
+   "haut": {
+    "texte": [
+     "Déclenchez un piège à {Range}3 ou moins et appliquez ses effets à un {Enemy} qui lui est adjacent",
+     "{MMGainPressure}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{MMPressureOver} +1 {Move}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 429,
+   "nom": "Soupape de Détente",
+   "nom_en": "Release Valve",
+   "niveau": "2",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{MMPressureOver} +1 {Damage}, {MMLosePressure}",
+     "{MMPressureHigh} {MMLosePressure}",
+     "{MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{MMPressureOver} {Heal} 3 sur vous-même, {XP1}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 430,
+   "nom": "Revêtement de Bronze",
+   "nom_en": "Bronze Plating",
+   "niveau": "2",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "{Shield} 1",
+     "—",
+     "Vous ne pouvez pas effectuer de capacité de déplacement",
+     "—",
+     "{MMPressureLow}{MMPressureRegular} {Regenerate} sur vous-même, {XP1}, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Ajoutez +1{Attack} à vos attaques de mêlée ce round",
+     "{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 431,
+   "nom": "Conduits d'Évacuation",
+   "nom_en": "Stress Vents",
+   "niveau": "3",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "Lorsque vous êtes attaqué par un {Enemy} à {Range}2 ou moins, vous pouvez {MMLosePressure} pour infliger {Damage}3 à l'attaquant juste après son attaque",
+     "Défaussez cette carte quand vous avez {MMPressureLow}",
+     "{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Persistent} {Retaliate} 1",
+     "{Retaliate} 1",
+     "{MMPressureOver} +2 {Retaliate}, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} +1 {Retaliate}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 432,
+   "nom": "Décharge Électrique",
+   "nom_en": "Electrical Discharge",
+   "niveau": "3",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Stun}",
+     "{MMPressureOver} +3 {Attack}, {XP1}, 2 {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} +1 {Attack}, {MMLosePressure}",
+     "{MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "{Stun} {Range} 1",
+     "—",
+     "{MMPressureOver}{MMPressureHigh}{MMPressureRegular} {Stun} sur vous-même",
+     "{MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 433,
+   "nom": "Conversion d'Énergie",
+   "nom_en": "Energy Conversion",
+   "niveau": "4",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Attack} 9",
+     "{Manquant}",
+     "{Manquant}",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "{ConsumeFire} : +2 {Move}, {XP1}",
+     "—",
+     "Lorsque vous êtes attaqué ce round, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 434,
+   "nom": "Champ Magnétique",
+   "nom_en": "Magnetic Field",
+   "niveau": "4",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "—",
+     "{Loot} 1",
+     "—",
+     "{ConsumeIce}: {Heal} 2, sur vous-même",
+     "—",
+     "{MMPressureLow}{Heal} 3, sur vous-même, {XP1}, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Manquant}",
+     "—",
+     "{Persistent} {Shield} 1",
+     "{MMPressureOver} {Shield} 1 sur vous-même"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 435,
+   "nom": "Radiation",
+   "nom_en": "Radiation",
+   "niveau": "5",
+   "initiative": 37,
+   "haut": {
+    "texte": [
+     "{Attack} 5 {Poison}",
+     "{MMPressureHigh} -1{Attack}, {MMGainPressure}",
+     "{MMPressureRegular} -1{Attack}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Persistent} Pour votre prochain effet {MMSelfDamage}, si vous êtes adjacent à au moins un {Enemy}, un {Enemy} adjacent subit les {Damage} à votre place"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 436,
+   "nom": "Conduction Thermique",
+   "nom_en": "Heat Conduction",
+   "niveau": "5",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "{Persistent} {Shield} 3",
+     "{Persistent} {Shield} 1",
+     "{MMPressureOver}{Retaliate} 3, {XP1}, {MMLosePressure}",
+     "—",
+     "{Shield} 1",
+     "{MMPressureLow} +2{Shield}, {XP1}, {MMGainPressure}",
+     "{CreateIce}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Lorsqu'un {Allies} termine sa capacité de déplacement sur un hexagone qui vous est adjacent, vous pouvez {MMGainPressure} :",
+     "Défaussez cette carte quand vous avez {MMPressureOver}",
+     "{MMLosePressure}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 437,
+   "nom": "Souffle Brûlant",
+   "nom_en": "Scalding Blast",
+   "niveau": "6",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "{MMPressureOver} +2{Target}, {XP1}, 2 {MMSelfDamage}, {MMLosePressure} {MMLosePressure}",
+     "{MMPressureHigh} +1{Target}, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureRegular} +1{Attack}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 3 {Pierce} 2",
+     "{MMGainPressure} {CreateFire}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 438,
+   "nom": "Noyau de Vapeur",
+   "nom_en": "Steam Core",
+   "niveau": "6",
+   "initiative": 71,
+   "haut": {
+    "texte": [
+     "{Heal} 5",
+     "—",
+     "{MMPressureOver}{Manquant}",
+     "{MMPressureLow}{Manquant}",
+     "{CreateMixed-FI}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "Lorsque vous effectuez une capacité de déplacement, vous pouvez {MMGainPressure} pour ajouter +2{Move} et gagner {XP1}. Si vous le faites, mettez fin à cet effet."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 439,
+   "nom": "Chignole Chauffée",
+   "nom_en": "Heated Drill",
+   "niveau": "7",
+   "initiative": 80,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{ConsumeFire} : +2 {Attack}, {XP1}",
+     "{MMPressureOver} {Pierce} 4, {Wound}, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} {Pierce} 2, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{MMPressureOver}{Move} 3",
+     "—",
+     "{Attack} 3 {Pierce} 1",
+     "Ajoutez +1{Pierce} toutes les 2 cartes dans votre défausse"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 440,
+   "nom": "Sommeil Cryogénique",
+   "nom_en": "Cryogenic Hibernation",
+   "niveau": "7",
+   "initiative": 19,
+   "haut": {
+    "texte": [
+     "{Shield} 2",
+     "—",
+     "Vous ne pouvez pas effectuer de capacité d'attaque",
+     "—",
+     "À la fin de chacun de vos tours, gagnez {Brittle}",
+     "—",
+     "{MMPressureLow} {Heal} 4, sur vous-même, {XP1}, {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{MMPressureHigh} +1 {Move}",
+     "{MMPressureRegular} +2 {Move}, {MMGainPressure}",
+     "—",
+     "{MMPressureLow}",
+     "{ConsumeIce}: {Brittle} {Range} 1",
+     "{XP1}{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 441,
+   "nom": "Barrage de Pistons",
+   "nom_en": "Piston Barrage",
+   "niveau": "8",
+   "initiative": 33,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "—",
+     "{MMPressureOver} {Attack} 3",
+     "—",
+     "{MMPressureOver} {Attack} 3, {XP1}, {MMSelfDamage}, {MMLosePressure}",
+     "{MMPressureHigh} {Attack} 3, {XP1}, {MMLosePressure}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}",
+     "—",
+     "Détruisez tous les obstacles adjacents",
+     "{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 442,
+   "nom": "Étrange Mécanisme",
+   "nom_en": "Curious Machinery",
+   "niveau": "8",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "Contrôlez un {Enemy} à {Range}3 ou moins :",
+     "—",
+     "{MMPressureOver} {Target} {Enemy} contrôlé"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "Traitez le prochain piège à {Damage} que vous déclenchez durant ce déplacement comme un piège {Heal} à la place, dont la valeur de {Heal} est égale à la valeur de {Damage} du piège",
+     "{MMPressureHigh}",
+     "{ConsumeIce}: {XP1} {MMLosePressure} {MMLosePressure}",
+     "{MMPressureRegular}",
+     "{ConsumeFire}: {XP1} {MMGainPressure} {MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 443,
+   "nom": "Inversion de Polarité",
+   "nom_en": "Polarity Shift",
+   "niveau": "9",
+   "initiative": 79,
+   "haut": {
+    "texte": [
+     "{Pull}3 {Target} tous, {Range}4",
+     "—",
+     "{ConsumeFire} : Tous les {Enemy} adjacents subissent {Damage}1 {CreateIce}",
+     "—",
+     "{ConsumeIce} : Tous les {Enemy} adjacents subissent {Damage}1 {CreateFire}",
+     "—",
+     "{Push} 3 {Target} tous, {Range} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{MMPressureOver} {Attack} 5, {MMLosePressure}{MMLosePressure}{MMLosePressure}",
+     "{MMPressureHigh} {Move} 5, {MMLosePressure}{MMLosePressure}",
+     "{Persistent} {Shield} 2",
+     "{MMPressureRegular} {Shield} 2, {MMGainPressure}{MMGainPressure}",
+     "{MMPressureLow} {Heal} 6, sur vous-même, {MMGainPressure}{MMGainPressure}{MMGainPressure}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 444,
+   "nom": "Noyau Instable",
+   "nom_en": "Unstable Core",
+   "niveau": "9",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "Jouez 4 de vos cartes perdues. Pour chacune, effectuez soit l'action supérieure soit l'action inférieure, en activant un des effets de pression de chaque action sans tenir compte de votre pression actuelle.",
+     "—",
+     "Vous devenez épuisé"
+    ],
+    "defausse": "perte_definitive"
+   },
+   "bas": {
+    "texte": [
+     "Une fois par tour, quand vous effectuez une capacité d'attaque, vous pouvez {MMLosePressure} pour ajouter +3{Attack} à une attaque, ou quand vous effectuez une capacité de déplacement, vous pouvez {MMGainPressure} pour ajouter +3{Move}",
+     "Si vous avez {MMPressureLow} ou {MMPressureOver} à la fin du tour :"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

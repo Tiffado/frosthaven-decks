@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frosthaven : cartes et decks</title>
+<meta name="description" content="Référence des personnages et des cartes de Frosthaven (jeu vidéo Steam) et simulateur de deck. Site de fan non officiel.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="entete">
+  <h1>Frosthaven <span>cartes et decks</span></h1>
+  <p class="sous-titre">Référence non officielle pour le jeu vidéo (accès anticipé Steam) : personnages, cartes et simulateur de deck.</p>
+</header>
+
+<main>
+  <section class="choix" aria-label="Personnages">
+    <h2>Classes de départ</h2>
+    <div id="liste-depart" class="boutons-perso"></div>
+
+    <h2>Classes à débloquer</h2>
+    <div id="avert-spoiler" class="spoiler">
+      <p><strong>Attention, spoilers.</strong> Les classes à débloquer font partie des surprises de la campagne :
+        leurs noms, leurs cartes et leurs conditions de déblocage sont masqués.</p>
+      <button id="btn-spoiler" type="button">Afficher les classes à débloquer</button>
+    </div>
+    <div id="liste-verrou" class="boutons-perso" hidden></div>
+  </section>
+
+  <section id="fiche" class="fiche" hidden></section>
+</main>
+
+<footer class="pied">
+  <p>Site de fan non officiel, gratuit et sans publicité. <em>Frosthaven</em> et ses textes sont la propriété de
+    Cephalofair Games (jeu de plateau) et de Snapshot Games (jeu vidéo). Aucune image officielle n'est reproduite ;
+    les textes des cartes servent uniquement de référence pour les joueurs.</p>
+  <p>Données issues de la version du jeu installée par l'auteur du site : elles peuvent changer avec les mises à jour.
+    Certaines lignes de cartes sont absentes des fichiers de traduction du jeu et sont signalées par ⚠.</p>
+</footer>
+
+<template id="tpl-fiche">
+  <div class="fiche-tete">
+    <div>
+      <h2 class="f-nom"></h2>
+      <p class="f-complet"></p>
+    </div>
+    <dl class="f-stats">
+      <div><dt>Taille de main</dt><dd class="f-main"></dd></div>
+      <div><dt>Points de vie (niv. 1 → 9)</dt><dd class="f-pv"></dd></div>
+      <div><dt>Difficulté</dt><dd class="f-diff"></dd></div>
+      <div><dt>Cartes</dt><dd class="f-nb"></dd></div>
+    </dl>
+  </div>
+  <div class="f-deblocage" hidden>
+    <button type="button" class="btn-debloc">Comment le débloquer ?</button>
+    <p class="texte-debloc" hidden></p>
+  </div>
+  <h3>Style de jeu</h3>
+  <p class="f-gameplay"></p>
+  <details class="f-histoire-bloc"><summary>Histoire</summary><p class="f-histoire"></p></details>
+
+  <nav class="onglets" role="tablist">
+    <button type="button" role="tab" data-onglet="cartes" aria-selected="true">Cartes</button>
+    <button type="button" role="tab" data-onglet="simu" aria-selected="false">Simulateur de deck</button>
+    <button type="button" role="tab" data-onglet="aide" aria-selected="false">Légende</button>
+  </nav>
+
+  <div class="panneau" data-panneau="cartes">
+    <div class="filtres">
+      <label>Niveau <select class="filtre-niveau"><option value="">Tous</option></select></label>
+      <label>Recherche <input type="search" class="filtre-texte" placeholder="nom ou effet"></label>
+    </div>
+    <div class="grille-cartes"></div>
+  </div>
+
+  <div class="panneau" data-panneau="simu" hidden>
+    <p class="aide">Choisissez le niveau du personnage. À chaque niveau de 2 à 9, ajoutez une carte de ce niveau ou
+      d'un niveau inférieur pas encore prise. Le pool de départ contient les cartes de niveau 1 et X. Composez ensuite
+      votre main, limitée par la taille de main du personnage.</p>
+    <div class="simu-haut">
+      <label>Niveau du personnage <select class="simu-niveau"></select></label>
+      <button type="button" class="simu-raz">Tout effacer</button>
+      <button type="button" class="simu-lien">Copier le lien de ce deck</button>
+    </div>
+    <div class="simu-montees"></div>
+    <div class="simu-colonnes">
+      <div>
+        <h3>Pool disponible <span class="simu-nb-pool"></span></h3>
+        <p class="aide">Cliquez sur une carte pour l'ajouter à la main ou l'en retirer.</p>
+        <div class="simu-pool grille-cartes compacte"></div>
+      </div>
+      <div>
+        <h3>Main <span class="simu-nb-main"></span></h3>
+        <div class="simu-bilan"></div>
+        <div class="simu-main grille-cartes compacte"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panneau" data-panneau="aide" hidden>
+    <p class="aide">Les icônes du jeu sont écrites en toutes lettres. Les plus courantes :</p>
+    <div class="legende"></div>
+  </div>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

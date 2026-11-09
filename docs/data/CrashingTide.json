@@ -1,0 +1,761 @@
+{
+ "id": "CrashingTide",
+ "nom": "Mascaret",
+ "nom_en": "Crashing Tide",
+ "nom_complet": "Mascaret Fouineur",
+ "main": 12,
+ "pv": [
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Votre pouvoir fluctue. Nombre de vos actions ont des Marées ({CTTide}), qui constituent des bonus persistants pouvant bénéficier à vos autres capacités. Au fur et à mesure que vous effectuez des actions {CTTide}, votre puissance augmente, mais lorsque vous n'avez plus de cartes et devez vous reposer, vous êtes obligé de défausser toutes vos cartes {CTTide}, ce qui vous impose d'effectuer de nouveau ces actions pour regagner leurs effets. Gérer ce cycle est la clé du succès.\n\nUne des plus puissantes capacités {CTTide} à votre disposition est l'action inférieure de Vague Écrasante, qui vous permet de jouer trois cartes par round au lieu de deux. Vous pouvez utiliser ce bonus pour activer plusieurs {CTTide} à la fois, vous déplacer sur de grandes distances ou assaillir vos adversaires d'une rafale d'attaques. Gardez à l'esprit que cet effet est facultatif. À certains moments il est préférable pour le déroulement de la bataille de ne jouer que deux cartes.\n\nToutes les tuiles Eau que vous créez sont considérées comme des terrains difficiles.",
+ "histoire": "Les Fouineurs, comme les appellent les habitants de la terre ferme, régnaient autrefois sur un vaste empire sous-marin. Celuici tomba en ruine après la destruction de la source de leur pouvoir – une couronne de corail – dont les débris furent emportés par les courants de la mer de Brume. Hantés par un accablant sentiment de perte, les Fouineurs sont déterminés à restaurer la couronne, même s'ils ne comprennent plus pourquoi, et ne cessent d'en chercher les fragments. Les courants transportèrent ceux-ci vers le nord, et en se rapprochant de leur source d'énergie, les Fouineurs regagnent peu à peu leur ancienne puissance.\n\nComme le flux et le reflux du pouvoir des Fouineurs à travers l'histoire, les marées changent aussi. Toute chose suit un cycle. Les Mascarets, gardiens et protecteurs de leur société et de l'ordre naturel des choses, en sont un exemple parfait. Leur pouvoir grandit jusqu'à ce qu'ils le libèrent dans une vague de destruction pour frapper leurs ennemis. Les vagues doivent se retirer, bien sûr, mais ensuite le pouvoir se développera à nouveau.",
+ "deblocage": "Terminer le scénario 14 « Les Récifs Déchiquetés » : vous choisissez entre le Mascaret et le Spectre des Profondeurs. L'autre se débloque au scénario 60 « La Couronne Brisée ».",
+ "cartes": [
+  {
+   "id": 474,
+   "nom": "Vague Irrésistible",
+   "nom_en": "Overwhelming Wave",
+   "niveau": "1",
+   "initiative": 86,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} Chaque round, vous pouvez jouer trois cartes au lieu de deux, en en utilisant une pour déterminer l'initiative. Vous devez quand même effectuer au moins une action supérieure et une action inférieure.",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 475,
+   "nom": "Chair Faible",
+   "nom_en": "Soft Flesh",
+   "niveau": "1",
+   "initiative": 75,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} Lorsqu'un {Enemy} adjacent meurt :",
+     "{Heal} 1 sur vous-même",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Si vous occupez un hexagone Eau :",
+     "{Heal} 2 sur vous-même"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 476,
+   "nom": "Saumure Rance",
+   "nom_en": "Rancid Brine",
+   "niveau": "1",
+   "initiative": 62,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} Ajoutez {Poison} à toutes vos attaques",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Créez une tuile Eau de 1 hexagone sur un hexagone adjacent sans décor",
+     "—",
+     "{Poison} {Target} deux {Enemy} occupant un hexagone d'eau"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 477,
+   "nom": "Chitine Acérée",
+   "nom_en": "Sharp Chitin",
+   "niveau": "1",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} {Shield} 1",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{ConsumeLight}: {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 478,
+   "nom": "Au Plus Profond",
+   "nom_en": "Down to the Depths",
+   "niveau": "1",
+   "initiative": 74,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} Après chacune de vos attaques, si la cible a 3 PV ou moins, elle gagne {Bane}",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "Ignorez les {HazardHex} pendant ce déplacement"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 479,
+   "nom": "Fontaine de Pouvoir",
+   "nom_en": "Pool of Power",
+   "niveau": "1",
+   "initiative": 41,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "Ajoutez +1{Target} si vous occupez un hexagone d'eau",
+     "{ConsumeLight} : +1{Attack}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} Quand vous vous reposez, vous pouvez conserver un effet actif {CTTide} de votre choix",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 480,
+   "nom": "Glissade",
+   "nom_en": "Skitter",
+   "niveau": "1",
+   "initiative": 51,
+   "haut": {
+    "texte": [
+     "{Attack} 1",
+     "{ConsumeLight} : +1{Attack}, {XP1}",
+     "—",
+     "{Move} 1",
+     "—",
+     "{Attack} 1",
+     "{ConsumeDark} : +1{Attack}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} Durant toutes vos capacités de déplacement, ajoutez +1{Move} et ignorez les terrains difficiles",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 481,
+   "nom": "Houle Purificatrice",
+   "nom_en": "Cleansing Swell",
+   "niveau": "1",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Attack} 1 {Push}2 {ConsumeLight} : +1{Push}, {XP1} {Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} Pendant votre repos : {Heal}X sur vous-même. Où X est le nombre de {CTTide} actives avant le repos",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 482,
+   "nom": "Force Culminante",
+   "nom_en": "Cresting Force",
+   "niveau": "1",
+   "initiative": 87,
+   "haut": {
+    "texte": [
+     "{Attack} X",
+     "où X est le nombre de {CTTide} actives",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 483,
+   "nom": "Déferlante Écrasante",
+   "nom_en": "Crashing Surge",
+   "niveau": "1",
+   "initiative": 34,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Zone}",
+     "—",
+     "Vous pouvez créer des tuiles Eau d'un hexagone sur n'importe quel nombre d'hexagones sans décor {RedHex}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Créez une tuile Eau de 1 hexagone sur un hexagone adjacent sans décor"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 484,
+   "nom": "Pinces Puissantes",
+   "nom_en": "Mighty Claws",
+   "niveau": "1",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Target}2",
+     "{ConsumeDark} : {Pierce}2, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "{Shield} 1",
+     "—",
+     "{Retaliate} 1",
+     "—",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 485,
+   "nom": "Submersion",
+   "nom_en": "Submerge",
+   "niveau": "1",
+   "initiative": 68,
+   "haut": {
+    "texte": [
+     "{Attack} 1 {Pierce}4",
+     "+2{Attack} et gagnez {XP1} si la cible occupe un hexagone d'eau"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{ConsumeDark} : +1{Move}, {XP1}",
+     "Les 4 premiers hexagones avec tuiles Eau dans lesquels vous entrez pendant cette action coûtent 0 mouvement"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 486,
+   "nom": "Montée des Eaux",
+   "nom_en": "Rising Flood",
+   "niveau": "X",
+   "initiative": 49,
+   "haut": {
+    "texte": [
+     "Créez une tuile Eau de 2 hexagones de sorte qu'au moins un vous soit adjacent et que les deux soient sans décor",
+     "—",
+     "Les adversaires sur ces hexagones subissent {Damage}1 et gagnent {Immobilize}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Choisissez une tuile Eau de 1 hexagone adjacente :",
+     "{Move} 3",
+     "—",
+     "Indépendamment de votre ligne de vue, repositionnez la tuile Eau choisie vers un hexagone sans décor adjacent."
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 487,
+   "nom": "Contre-courant",
+   "nom_en": "Undertow",
+   "niveau": "X",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Bane} {Target} 1 adversaire non-boss adjacent occupant un hexagone d'eau {Enemy}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 1 sur vous-même",
+     "—",
+     "{Shield} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 488,
+   "nom": "Bris d'Armure",
+   "nom_en": "Crush Armor",
+   "niveau": "X",
+   "initiative": 42,
+   "haut": {
+    "texte": [
+     "Un {Enemy} normal adjacent subit des {Damage} égaux à sa valeur de {Shield}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Round} Tous les {Enemy} adjacents à vous gagnent -1{Shield} ce round"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 489,
+   "nom": "Torrent Fracassant",
+   "nom_en": "Smashing Torrent",
+   "niveau": "2",
+   "initiative": 79,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{ConsumeLight} : {Stun}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} Immédiatement après l'une de vos capacités de déplacement chaque tour, tous les {Enemy} adjacents subissent {Damage}1",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 490,
+   "nom": "Du Sang dans l'Eau",
+   "nom_en": "Blood in the Water",
+   "niveau": "2",
+   "initiative": 53,
+   "haut": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Pull} 2 {Range}3",
+     "—",
+     "{Attack} 4",
+     "+2{Attack} et {Wound} si la cible occupe un hexagone d'eau",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 491,
+   "nom": "Écaillage",
+   "nom_en": "Shuck",
+   "niveau": "3",
+   "initiative": 55,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} Ajoutez {Pierce}2 et {Wound} à toutes vos attaques",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Pour chaque effet {CTTide} actif :",
+     "{Move} 1",
+     "{Attack} 1",
+     "{ConsumeLight} : +1{Move}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 492,
+   "nom": "Cycle Éternel",
+   "nom_en": "Endless Cycle",
+   "niveau": "3",
+   "initiative": 8,
+   "haut": {
+    "texte": [
+     "{Recover} jusqu'à X de vos cartes défaussées, où X est le nombre de vos {CTTide} actives au début de cette action",
+     "{ConsumeDark} : +2{RecoverIcon},{XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Manquant}",
+     "{Shield} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 493,
+   "nom": "Réfraction Chaotique",
+   "nom_en": "Chaotic Refraction",
+   "niveau": "4",
+   "initiative": 26,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} {Shield} 1\nCe {Shield} ne s'applique qu'aux attaques de mêlée.",
+     "{Persistent} {Retaliate} 2",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 494,
+   "nom": "Coup de Balai",
+   "nom_en": "Clean Sweep",
+   "niveau": "4",
+   "initiative": 65,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Manquant}",
+     "{ConsumeDark} : {Muddle},{XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Heal} 2 sur vous-même",
+     "{ConsumeLight} : +2{Heal},{XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 495,
+   "nom": "Lame de Fond",
+   "nom_en": "Tidal Blast",
+   "niveau": "5",
+   "initiative": 71,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Target}X, {Range}4",
+     "où X est le nombre de {CTTide} actives",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} Chaque tour, ajoutez +1{Attack} à une de vos attaques\net +1{Move} à une de vos capacités de déplacement",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 496,
+   "nom": "Sol Détrempé",
+   "nom_en": "Sodden Soil",
+   "niveau": "5",
+   "initiative": 17,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Wound},{Immobilize}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} sur un hexagone inoccupé avec une tuile Eau, à 5 ou moins",
+     "{ConsumeDark} : {Teleport} à la place sur n'importe quel hexagone inoccupé et révélé avec une tuile Eau, {XP1}",
+     "—",
+     "{Attack} 2 {Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 497,
+   "nom": "Redoutable Tenaille",
+   "nom_en": "Powerful Pincer",
+   "niveau": "6",
+   "initiative": 70,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} Pendant vos capacités d'attaque de mêlée : {ConsumeLight}{ConsumeDark}:ajoutez {Disarm} à une attaque et gagnez {XP1}",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{ConsumeLight}: ajoutez {Disarm} à une attaque et gagnez {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 498,
+   "nom": "Emprise du Crépuscule",
+   "nom_en": "Twilight Grasp",
+   "niveau": "6",
+   "initiative": 33,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {ConsumeLight} : +1{Attack} {ConsumeDark} : +1{Attack} {Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Bane} {Target}2 {Enemy} normaux occupant un hexagone d'eau, {Range}1",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 499,
+   "nom": "Embourbé",
+   "nom_en": "Dug In",
+   "niveau": "7",
+   "initiative": 76,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Manquant}",
+     "—",
+     "{ConsumeDark}: Vous êtes immunisé contre les déplacements forcés"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Marée",
+     "{Persistent} À la fin de chacun de vos tours, si vous n'avez pas bougé pendant votre tour :\n{Heal} 3 self",
+     "{CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 500,
+   "nom": "Submergé par les Vagues",
+   "nom_en": "Drown beneath the Waves",
+   "niveau": "7",
+   "initiative": 9,
+   "haut": {
+    "texte": [
+     "{ConsumeLight}: Les effets des capacités Torrent Fracassant et Lame de Fond {CTTide} peuvent être utilisés plus d'une fois par tour",
+     "—",
+     "{Move} 3",
+     "—",
+     "{Attack} 4",
+     "—",
+     "{Move} 3",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Pull} 2 {Target}3, {Range}5",
+     "—",
+     "Tous les {Enemy} à {Range}5 ou moins occupant un hexagone d'eau subissent {Damage}2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 501,
+   "nom": "La Mort de Tous les Côtés",
+   "nom_en": "Death on All Sides",
+   "niveau": "8",
+   "initiative": 73,
+   "haut": {
+    "texte": [
+     "Marée",
+     "{Persistent} Ajoutez +2{Attack} à toutes vos attaques ciblant un {Enemy} adjacent à au moins un de vos {Allies}",
+     "{CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 3",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 502,
+   "nom": "Flux et Reflux",
+   "nom_en": "Ebb and Flow",
+   "niveau": "8",
+   "initiative": 24,
+   "haut": {
+    "texte": [
+     "{Pull} 2 {Manquant}",
+     "—",
+     "{Attack} 3 {Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Heal} 3 {Range}3",
+     "Si la cible occupe un hexagone sans décor, vous pouvez créer une tuile Eau de 1 hexagone sur celui-ci"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 503,
+   "nom": "Marée Haute",
+   "nom_en": "High Tide",
+   "niveau": "9",
+   "initiative": 90,
+   "haut": {
+    "texte": [
+     "{Move} X",
+     "où X est le nombre de {CTTide} actives",
+     "—",
+     "{Attack} X",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Vous n'avez pas à défausser de cartes {CTTide} durant votre repos",
+     "—",
+     "Vous ne pouvez pas prendre de repos long",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 504,
+   "nom": "Marée Basse",
+   "nom_en": "Low Tide",
+   "niveau": "9",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "Jouez deux de vos cartes perdues pour leurs actions {CTTide}. Vous pouvez choisir de ne pas défausser ces cartes lors de votre repos. Si elles sont retirées de vos effets actifs, remettez-les dans vos cartes perdues.",
+     "{XP}2"
+    ],
+    "defausse": "perte_definitive"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "Si vous avez 2 effets {CTTide} actifs ou moins :",
+     "{Shield} 2"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}

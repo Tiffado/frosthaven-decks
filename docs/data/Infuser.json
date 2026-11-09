@@ -1,0 +1,772 @@
+{
+ "id": "Infuser",
+ "nom": "Infusatrice",
+ "nom_en": "Infuser",
+ "nom_complet": "Infusatrice Orchid",
+ "main": 11,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": false,
+ "difficulte": "Haute",
+ "gameplay": "Vous disposez d'actions puissantes appelées Infusions ({IFInfusion}), qui nécessitent généralement la consommation de plusieurs éléments pour être exécutées. Elles offrent à la fois un bonus persistant et une capacité que vous pouvez utiliser chaque fois qu'une action {IFInfusion} est effectuée, ce qui peut provoquer une réaction en chaîne lorsque vous avez plusieurs {IFInfusion} actives. Ces capacités supplémentaires peuvent être exécutées dans n'importe quel ordre lorsqu'elles sont déclenchées.\n\nNombre de vos capacités vous permettent de réduire leur puissance en échange de l'infusion d'éléments. Ces échanges sont optionnels. Toute action avec des consommations d'éléments dans le coin supérieur gauche ne peut être effectuée que si les éléments sont consommés.",
+ "histoire": "Les Orchids sont originaires de contrées situées par-delà la mer de Brume. Ils peuvent passer des années dans un état de paix, contemplant et planifiant leur prochaine action tandis que des cristaux se développent sur leur peau. Les Orchids sont en grande partie insensibles à leur environnement. Ils tirent de leur méditation toute la chaleur et la subsistance dont ils ont besoin, et donc leur présence dans le nord inhospitalier est finalement tout à fait naturelle. Son climat plus rude leur offre des perspectives nouvelles et uniques sur lesquelles méditer.\n\nLa nature contemplative des Orchids leur confère également une maîtrise particulière des énergies élémentaires. Si certains les utilisent pour attaquer leurs adversaires avec une puissance brute, les Infusatrices se servent de leur flux naturel pour améliorer leurs compétences martiales déjà impressionnantes. Ces guerrières les exhalent sous forme de filaments qu'elles tissent pour former armures et armes matérielles.",
+ "deblocage": "Agrandir la Bibliothèque de l'avant-poste (événement « L'Agrandissement de la Bibliothèque », section 116.3).",
+ "cartes": [
+  {
+   "id": 185,
+   "nom": "Bénéfice de la Tempête",
+   "nom_en": "Boon of the Tempest",
+   "niveau": "1",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "Ajoutez +1{Move} et {Jump} à toutes vos capacités de déplacement",
+     "Quand cette {IFInfusion} ou une autre est jouée :",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{Consume} : -1{Move}: {CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 186,
+   "nom": "Générosité de la Terre",
+   "nom_en": "Bounty of the Earth",
+   "niveau": "1",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Persistent} {Shield} 2",
+     "{Shield} 2",
+     "{Consume} : -1{Shield}: {CreateEarth}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{IFInfusion} {ConsumeEarth} {ConsumeWild} INFUSION :",
+     "{Retaliate} 1 {Range} 2",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 187,
+   "nom": "Caresse de la Nuit",
+   "nom_en": "Caress of the Night",
+   "niveau": "1",
+   "initiative": 87,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "Ajoutez {Wound} et {Muddle} à toutes vos attaques de mêlée",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 3",
+     "{Consume} : -1{Attack}: {CreateDark}, {XP}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 188,
+   "nom": "Tempête Immatérielle de Lames",
+   "nom_en": "Formless Bladestorm",
+   "niveau": "1",
+   "initiative": 33,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Zone}",
+     "—",
+     "{Teleport} sur n'importe quel hexagone inoccupé adjacent à l'unité {Enemy} ciblée par la capacité d'attaque la plus éloignée",
+     "{CreateMixed-AD}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Pull} 2 {Range} 3",
+     "{Consume} : -1{Pull},-1{Range}: {CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 189,
+   "nom": "Tranchant d'Émeraude",
+   "nom_en": "Emerald Edge",
+   "niveau": "1",
+   "initiative": 70,
+   "haut": {
+    "texte": [
+     "{ConsumeEarth}, {ConsumeDark}:",
+     "{Attack} 5",
+     "—",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 2, {Target} 2, {Range} 2",
+     "{Consume} : -1{Target}: {CreateEarth}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 190,
+   "nom": "Division Torrentielle",
+   "nom_en": "Torrential Cleave",
+   "niveau": "1",
+   "initiative": 83,
+   "haut": {
+    "texte": [
+     "{ConsumeAir}, {ConsumeDark}:",
+     "{Attack} 4 {Push} 2",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Consume} : -1{Move}: {CreateEarth}",
+     "—",
+     "{Immobilize}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 191,
+   "nom": "Éclats d'Onyx",
+   "nom_en": "Onyx Shards",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Disarm}",
+     "{Range} 4",
+     "{Consume} : -2{Range}: {CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Créez 4 {ObstacleHex} à {Range}3 ou moins",
+     "—",
+     "Tous les {Enemy} adjacents à au moins deux des obstacles créés subissent {Damage}2",
+     "{CreateMixed-ED}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 192,
+   "nom": "Pulsion Irrésistible",
+   "nom_en": "Unstoppable Impulse",
+   "niveau": "1",
+   "initiative": 56,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{Consume} : -1{Attack}: {CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{ConsumeAir}, {ConsumeDark}:",
+     "{Push} 2 {Range} 1",
+     "—",
+     "{Move} 2",
+     "—",
+     "{Push} 2 {Range} 1",
+     "—",
+     "{Move} 2",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 193,
+   "nom": "Cyclone Cinglant",
+   "nom_en": "Slashing Cyclone",
+   "niveau": "1",
+   "initiative": 14,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Manquant}",
+     "{Consume} : -1{Attack}: {CreateAir}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5",
+     "Tous les {Enemy} adjacents à tout hexagone sur lequel vous êtes entré durant ce déplacement subissent {Damage}1",
+     "{CreateMixed-AE}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 194,
+   "nom": "Élan Grandissant",
+   "nom_en": "Rising Momentum",
+   "niveau": "1",
+   "initiative": 25,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "+1{Attack} pour chaque paire d'{IFInfusion} actives",
+     "{ConsumeEarth} : {CreateEarth}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "+1{Move} pour chaque paire d'{IFInfusion} actives",
+     "{ConsumeAir} : {CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 195,
+   "nom": "Impassible Vigilance",
+   "nom_en": "Stoic Vigilance",
+   "niveau": "1",
+   "initiative": 12,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{Persistent} {Shield} 1",
+     "{Shield} 1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "—",
+     "{Persistent} Tous les {Enemy} à {Range}3 ou moins qui ciblent un de vos {Allies} adjacents à vous avec une attaque ce round vous ciblent à la place, sans tenir compte de la portée"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 196,
+   "nom": "Imprégnation de Vie",
+   "nom_en": "Imbue with Life",
+   "niveau": "X",
+   "initiative": 42,
+   "haut": {
+    "texte": [
+     "{ConsumeEarth}:",
+     "{Persistent} {Summon} Claymore Animée : {Health}2 {Move}3 {Attack}3 {Shield}1",
+     "{Shield} 1",
+     "Lorsque vous n'avez pas {Disarm}, gagnez {Disarm}",
+     "Cette {Summon} est affectée par toutes vos {IFInfusion} actives"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 7",
+     "{Manquant}",
+     "{ConsumeAir} : -2{Heal}: {CreateAir}, {XP1}",
+     "{ConsumeEarth} : -2{Heal}: {CreateEarth}, {XP1}",
+     "{ConsumeDark} : -2{Heal}: {CreateDark}"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 197,
+   "nom": "Prouesse Guerrière",
+   "nom_en": "Battle Prowess",
+   "niveau": "X",
+   "initiative": 78,
+   "haut": {
+    "texte": [
+     "Octroyez à une de vos invocations ou à vous-même :",
+     "{Attack} 3",
+     "{ConsumeDark} : {CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{Consume} : -1{Move}: {CreateWild}, {XP1}",
+     "—",
+     "{Loot} 2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 198,
+   "nom": "Égide Cristalline",
+   "nom_en": "Crystalline Aegis",
+   "niveau": "X",
+   "initiative": 17,
+   "haut": {
+    "texte": [
+     "{Brittle} {Range} 1",
+     "Ajoutez +1{Target} pour chaque paire d'{IFInfusion} actives",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 199,
+   "nom": "Voile Protecteur",
+   "nom_en": "Veil of Protection",
+   "niveau": "2",
+   "initiative": 47,
+   "haut": {
+    "texte": [
+     "{Heal} 5",
+     "{Consume} : -2{Heal}: {CreateEarth}, {XP}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "Vos points de vie actuels et maximum augmentent de 3. Vous êtes immunisé contre {Curse}.",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 200,
+   "nom": "Choc Lointain",
+   "nom_en": "Remote Impact",
+   "niveau": "2",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Consume} : -1{Attack}: {Push} 1, {CreateAir}, {XP1}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{ConsumeEarth}, {ConsumeAir}:",
+     "Créez 1 {ObstacleHex} sur un hexagone vide à {Range}5 ou moins",
+     "—",
+     "{Target} tous les {Enemy} adjacents au {ObstacleHex} créé",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 201,
+   "nom": "Riposte Renforcée",
+   "nom_en": "Reinforced Riposte",
+   "niveau": "3",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "{Persistent} {Retaliate} 1 {Range}2",
+     "{Retaliate} 1 {Range} 2",
+     "Ajoutez +1{Retaliate} pour chaque paire d'{IFInfusion} actives",
+     "{ConsumeDark} : {CreateDark}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Wound} {Range} 1",
+     "—",
+     "{Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 202,
+   "nom": "Flux Dirigé",
+   "nom_en": "Guide the Flow",
+   "niveau": "3",
+   "initiative": 35,
+   "haut": {
+    "texte": [
+     "{Move} 3",
+     "{ConsumeAir} : {CreateDark}",
+     "{ConsumeEarth} : {CreateAir}",
+     "{ConsumeDark} : {CreateEarth}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 3",
+     "{ConsumeAir} : {CreateEarth}",
+     "{ConsumeEarth} : {CreateDark}",
+     "{ConsumeDark} : {CreateAir}, {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 203,
+   "nom": "Ténèbres Coalescentes",
+   "nom_en": "Coalescing Darkness",
+   "niveau": "4",
+   "initiative": 85,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "Après qu'un {Enemy} adjacent vous attaque, cet {Enemy} gagne {Curse}",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Pull} 2",
+     "{Target} 2, {Range} 3",
+     "{ConsumeAir} : -1 {Pull}, -1 {Range}: {CreateAir}",
+     "{ConsumeDark} : -1 {Target}: {CreateDark}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 204,
+   "nom": "Lancer Désespéré",
+   "nom_en": "Desperate Throw",
+   "niveau": "4",
+   "initiative": 16,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "{Manquant}",
+     "{ConsumeEarth} : -1 {Attack}: {CreateEarth}",
+     "—",
+     "{Disarm}",
+     "sur vous-même"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{Loot} 1",
+     "—",
+     "Tout élément faiblissant devient fort"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 205,
+   "nom": "Gemme en Résonance",
+   "nom_en": "Gemstone Resonance",
+   "niveau": "5",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "Ajoutez {Regenerate} à toutes vos capacités de soin",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "Vous gagnez une paire supplémentaire de {IFInfusion} actives pour ce round (pour les capacités et les modificateurs d'attaque)"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 206,
+   "nom": "Lance d'Obsidienne",
+   "nom_en": "Obsidian Spear",
+   "niveau": "5",
+   "initiative": 84,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{Consume} : -1{Attack}: {Pull} 1, {CreateDark}, {XP1}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{ConsumeEarth}, {ConsumeDark}:",
+     "{Attack} 4",
+     "{Range} 3",
+     "{Stun}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 207,
+   "nom": "Vent Arrière",
+   "nom_en": "Propulsive Tailwind",
+   "niveau": "6",
+   "initiative": 91,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "Après chacune de vos capacités d'attaque :",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{Consume} : -1{Move}: {CreateEarth}",
+     "Octroyez à un {Allies} adjacent :",
+     "{Move} 3",
+     "{Consume} : -1{Move}: {CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 208,
+   "nom": "Barrage de Bourrasque",
+   "nom_en": "Gale Barrage",
+   "niveau": "6",
+   "initiative": 44,
+   "haut": {
+    "texte": [
+     "{ConsumeAir}, {ConsumeDark}:",
+     "{Attack} 2 {Target} 3, {Pierce} 2",
+     "Vous pouvez cibler plusieurs fois le même {Enemy} avec cette capacité",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "Ajoutez +2{Attack} à votre prochaine capacité d'attaque ce round",
+     "{Consume} : {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 209,
+   "nom": "Pointe-de-diamant",
+   "nom_en": "Diamondization",
+   "niveau": "7",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "{Shield} 1",
+     "Ajoutez +1{Shield} pour chaque paire d'{IFInfusion} actives",
+     "—",
+     "{Manquant}",
+     "{CreateMixed-ED}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Wound}, {Immobilize} {Range}2",
+     "{Zone}",
+     "{CreateMixed-ED}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 210,
+   "nom": "Onde de Choc Malachite",
+   "nom_en": "Malachite Shockwave",
+   "niveau": "7",
+   "initiative": 68,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{Stun}",
+     "{Zone}",
+     "{CreateMixed-ED}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "{Consume} : -1{Move}: {CreateMixed-ED}, {XP1}",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 211,
+   "nom": "Entraves Libérées",
+   "nom_en": "Untether the Shackles",
+   "niveau": "8",
+   "initiative": 61,
+   "haut": {
+    "texte": [
+     "{Persistent} {Summon} Fauchon Esprit-lié : {Health}6 {Move}3 {Attack}4 {Shield}1",
+     "{Shield} 1",
+     "Lorsque vous jouez une {IFInfusion}, vous pouvez faire effectuer à cette {Summon} toutes les capacités déclenchées par cette {IFInfusion} à votre place",
+     "{Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 5",
+     "{Jump}",
+     "{CreateMixed-AD}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 212,
+   "nom": "Vif Renversement",
+   "nom_en": "Swift Pivot",
+   "niveau": "8",
+   "initiative": "08",
+   "haut": {
+    "texte": [
+     "Annulez les prochains {Damage} que vous devriez subir d'une attaque de mêlée ce round, et l'attaquant subit {Damage} 4",
+     "{CreateMixed-AE}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2 — {Attack} 4 — {Move} 2 {Zone}",
+     "{CreateMixed-AE}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 213,
+   "nom": "Anciens Rituels de Pouvoir",
+   "nom_en": "Ancient Rites of Power",
+   "niveau": "9",
+   "initiative": 94,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "Ajoutez +1{Target} à toutes vos capacités d'attaque de mêlée",
+     "{Manquant}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 3",
+     "{Target} 3, {Range} 3",
+     "{Consume} : -1{Heal}: {CreateDark}",
+     "{Consume} : -1{Target}: {CreateEarth}",
+     "{Consume} : -2{Range}: {CreateAir}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 214,
+   "nom": "Déchirure des Cieux",
+   "nom_en": "Sky-Splitting Strike",
+   "niveau": "9",
+   "initiative": 50,
+   "haut": {
+    "texte": [
+     "{Attack} 6",
+     "{ConsumeAir} : {Pierce} 5, {XP1}",
+     "{ConsumeEarth} : +1{Attack}, {Wound}",
+     "{ConsumeDark} : {Disarm}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Créez un {ObstacleHex} de 3 hexagones sur des hexagones vides à {Range}4 ou moins",
+     "—",
+     "Tous les {Enemy} adjacents au {ObstacleHex} créé subissent {Damage}4 et gagnent {Stun}",
+     "{Create['Earth', 'Air', 'Dark']}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  }
+ ]
+}

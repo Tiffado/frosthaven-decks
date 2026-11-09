@@ -1,0 +1,825 @@
+{
+ "id": "Geminate",
+ "nom": "Géminé",
+ "nom_en": "Geminate",
+ "nom_complet": "Géminé Persécuteur",
+ "main": 14,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": true,
+ "difficulte": "Haute",
+ "gameplay": "Vous pouvez alterner entre deux formes différentes, Mêlée ({GMMelee}) et À distance ({GMRanged}). Pendant la sélection des cartes, vous ne pouvez jouer que les cartes de votre forme actuelle, indiquée à côté de l'initiative de chaque carte. Les symboles Changement de forme ({GMMeleeToRanged} ou {GMRangedToMelee}) vous forcent à passer d'une forme à l'autre, en suivant la flèche blanche, à la fin du tour où une action avec ce symbole est effectuée. Un seul symbole de changement peut être déclenché par tour. Changer de forme n'est pas une capacité, et vous devez effectuer une capacité sur l'action pour la déclencher. Vous pouvez commencer chaque quête dans l'une ou l'autre forme.\n\nVous devez soit pouvoir effectuer un repos, soit jouer deux cartes de votre forme actuelle au début de chaque round, sinon vous êtes épuisé. Vous avez une seule défausse et une seule pile de cartes perdues pour toutes les cartes, comme d'habitude, et, quand vous effectuez un repos, vous récupérez toutes les cartes défaussées des deux formes. Vous pouvez également changer de forme pendant un repos long.\n\nNombre de vos capacités ne vous permettent de cibler que les adversaires à des portées précises. Lorsque vous effectuez une capacité avec zone d'effet ayant une portée précise, vous ne pouvez cibler que les adversaires qui sont à la fois dans la zone d'effet et à la portée indiquée.",
+ "histoire": "Un Persécuteur n'est pas une créature individuelle, mais plutôt un essaim de milliers d'insectes rassemblés pour former un esprit collectif comparable à celui d'une ruche. Leur existence remonte aux premiers âges du monde et, de fait, précède toute autre forme de vie sentiente. Tout à leurs propres intrigues, ils se sont toujours tenus à l'écart des affaires des autres espèces. Lorsqu'ils interagissent avec autrui, les Persécuteurs prennent une forme vaguement similaire à celle de leur interlocuteur, pour minimiser la gêne qu'ils provoquent.\n\nTous les Persécuteurs n'agissent cependant pas comme une entité unique. Dans de rares cas, un essaim évolue sans pouvoir développer un esprit cohérent. Au lieu de cela, il trouve un équilibre stable entre deux volontés qui rivalisent pour influencer leur forme collective. Un Géminé, comme on appelle ce phénomène, oscille harmonieusement entre deux formes radicalement différentes, chacune ayant ses propres capacités et désirs.",
+ "deblocage": null,
+ "cartes": [
+  {
+   "id": 151,
+   "nom": "Pics Givrés",
+   "nom_en": "Icebound Quills",
+   "niveau": "1",
+   "initiative": 14,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "{Pierce} 1",
+     "{ConsumeIce} : +1 {Attack}, +1 {Pierce}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "{Persistent} {Retaliate} 1",
+     "{Shield} 1",
+     "{Retaliate} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 152,
+   "nom": "Pinces Exténuantes",
+   "nom_en": "Draining Pincers",
+   "niveau": "1",
+   "initiative": 72,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{Zone}",
+     "{ConsumeLight} : Avantage, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{Jump}",
+     "{GMMeleeToRanged}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 153,
+   "nom": "Dards de Frelon",
+   "nom_en": "Hornet Stingers",
+   "niveau": "1",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Attack} 1 {Pierce} 3, {Poison}",
+     "{Target} tous les {Allies} sur {RedHex}",
+     "{GMMeleeToRanged}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{Round} Toutes les attaques vous ciblant ce round gagnent {Disadvantage}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 154,
+   "nom": "Faveur du Changelin",
+   "nom_en": "Changeling's Boon",
+   "niveau": "1",
+   "initiative": 40,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{Attack} 2"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Bless} sur vous-même",
+     "{Persistent} À la fin de chacun de vos tours, vous pouvez {ConsumeWild} pour {CreateMixed-FL}",
+     "{GMMeleeToRanged}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 155,
+   "nom": "Vrilles Agitées",
+   "nom_en": "Flailing Tendrils",
+   "niveau": "1",
+   "initiative": 12,
+   "haut": {
+    "texte": [
+     "{Attack} 1 {Muddle}",
+     "{ConsumeLight} : +1 {Attack}",
+     "—",
+     "{Manquant}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Target} tous, {Range}2",
+     "—",
+     "{Target} tous les {Allies}, {Range}2",
+     "{CreateFire}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 156,
+   "nom": "Fâcheuse Posture",
+   "nom_en": "Drag Down",
+   "niveau": "1",
+   "initiative": 34,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Immobilize} {GMMeleeToRanged} {Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {Jump}",
+     "{Disarm} {Target}2, {Range}1",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 157,
+   "nom": "Carapace de Lucane",
+   "nom_en": "Hornbeetle Carapace",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Persistent} Pour vos 4 prochaines attaques, gagnez +1{Attack} si vous êtes {GMMelee} ou +2{RangedAttack} si vous êtes {GMRanged}"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} {Shield} 1",
+     "{Move} 1",
+     "{Shield} 1",
+     "{ConsumeIce} : +1 {Shield}, {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 160,
+   "nom": "Offrande Désintéressée",
+   "nom_en": "Selfless Offering",
+   "niveau": "1",
+   "initiative": 27,
+   "haut": {
+    "texte": [
+     "{Heal} 3 {Manquant}",
+     "{ConsumeFire} : {Regenerate}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 161,
+   "nom": "Dans mes Bras",
+   "nom_en": "Into My Embrace",
+   "niveau": "1",
+   "initiative": 36,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Manquant}",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 4 {Manquant}",
+     "{ConsumeFire} : {Strengthen}, {XP1}",
+     "{ConsumeLight} : {Strengthen}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 162,
+   "nom": "Essaim de Lucioles",
+   "nom_en": "Firefly Swarm",
+   "niveau": "1",
+   "initiative": 76,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Manquant}",
+     "{ConsumeFire} : +1 {Attack}, {XP1}",
+     "{Zone}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 163,
+   "nom": "Vol du Scarabée",
+   "nom_en": "Scarab Flight",
+   "niveau": "1",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Manquant}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Pour les 4 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}1 si vous êtes {GMRanged}, ou {Shield}2 si vous êtes {GMMelee}"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 164,
+   "nom": "Pointe de l'Esprit",
+   "nom_en": "Mind Spike",
+   "niveau": "1",
+   "initiative": 18,
+   "haut": {
+    "texte": [
+     "{Immobilize} {Manquant}",
+     "—",
+     "Toutes les cibles de la capacité {Immobilize} subissent {Damage}1",
+     "{ConsumeLight} : +1 {Damage}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 2 {Manquant}",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 165,
+   "nom": "Récolte d'Essence",
+   "nom_en": "Harvest the Essence",
+   "niveau": "1",
+   "initiative": 60,
+   "haut": {
+    "texte": [
+     "{Ward} sur vous-même",
+     "{Persistent} À la fin de chacun de vos tours, vous pouvez {ConsumeWild} pour {CreateMixed-IL}.",
+     "{GMRangedToMelee}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "{Heal} 2 sur vous-même"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 166,
+   "nom": "Rafale d'Épines",
+   "nom_en": "Hail of Thorns",
+   "niveau": "1",
+   "initiative": 88,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Manquant}, {Range}2, {Muddle}",
+     "{Muddle} {Manquant}",
+     "{CreateIce}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "{ConsumeLight}: {Wound}, {Range}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 158,
+   "nom": "Piqûre Imprudente",
+   "nom_en": "Reckless Jab",
+   "niveau": "X",
+   "initiative": 38,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "{Consume} : Si vous n'avez pas {Wound}, gagnez {Wound} pour ajouter {Disarm}",
+     "{Consume} : Si vous n'avez pas {Poison}, gagnez {Poison} pour ajouter +2{Attack}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 4",
+     "{ConsumeIce} : {Stun}, {XP1}",
+     "{ConsumeLight} : {Stun}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 159,
+   "nom": "Frénésie Productive",
+   "nom_en": "Feeding Frenzy",
+   "niveau": "X",
+   "initiative": 62,
+   "haut": {
+    "texte": [
+     "{Persistent} Lorsque vous tuez un {Enemy} pendant votre tour, vous pouvez changer de forme ou ignorer tout icône de changement de forme à la fin du tour",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 167,
+   "nom": "Haine Contenue",
+   "nom_en": "Smoldering Hatred",
+   "niveau": "X",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Manquant}",
+     "{Consume} : {Manquant}",
+     "{Consume} : {Manquant} {BSRedHex}{BSRedHex}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Immobilize} {Target} 2, {Range} 1",
+     "{Move} 4 {Jump}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 168,
+   "nom": "Remodelage d'Apparence",
+   "nom_en": "Reshape the Guise",
+   "niveau": "X",
+   "initiative": 38,
+   "haut": {
+    "texte": [
+     "{Loot} 1",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Lorsque vous prenez un repos court, vous pouvez choisir la carte défaussée que vous perdez et vous pouvez changer de forme",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 169,
+   "nom": "Piques Venimeuses",
+   "nom_en": "Venomous Barbs",
+   "niveau": "2",
+   "initiative": 17,
+   "haut": {
+    "texte": [
+     "{Retaliate} 2 {Range}2",
+     "{Consume} : {Manquant}",
+     "{Persistent} {Retaliate} 2",
+     "Gagnez {XP1} lorsque vous ripostez ce round"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 2",
+     "{Poison}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 170,
+   "nom": "Hôte Acridien",
+   "nom_en": "Locust Host",
+   "niveau": "2",
+   "initiative": 23,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Manquant}",
+     "£TAttack.Area£",
+     "{Consume} : {Manquant}",
+     "£TCAreaIncrease.Area£",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 1",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 171,
+   "nom": "Tempête de Mandibules",
+   "nom_en": "Mandible Storm",
+   "niveau": "3",
+   "initiative": 30,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Immobilize}",
+     "—",
+     "{Muddle} self",
+     "{GMMeleeToRanged}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Round} {Shield} 2",
+     "{Move} 3",
+     "{Shield} 2",
+     "{ConsumeIce} : +1{Shield}, {XP1}",
+     "{ConsumeLight} : +1{Shield}, {XP1}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 172,
+   "nom": "Envol de Libellule",
+   "nom_en": "Dragonfly Surge",
+   "niveau": "3",
+   "initiative": 50,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{ConsumeFire} : {Manquant}",
+     "{ConsumeLight} : {Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Round} Toutes vos attaques ce round gagnent {Pierce}2 et {Advantage}",
+     "—",
+     "{Manquant}",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 173,
+   "nom": "Battage et Fléau",
+   "nom_en": "Thresh and Flail",
+   "niveau": "4",
+   "initiative": 43,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "—",
+     "{Attack} 3",
+     "—",
+     "{Attack} 2",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Pull} 3 {Range} 4",
+     "{ConsumeLight} : +1 {Target}, {CreateMixed-FI}, {XP1}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 174,
+   "nom": "Descente Lumineuse",
+   "nom_en": "Luminous Descent",
+   "niveau": "4",
+   "initiative": 67,
+   "haut": {
+    "texte": [
+     "{Heal}4 {Manquant}",
+     "{ConsumeLight} : +1 {Target}, {CreateMixed-FI}, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move}5 {Jump}",
+     "—",
+     "{Stun} {Target} 2, {Range} 1",
+     "{CreateLight}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 175,
+   "nom": "Grâce Informe",
+   "nom_en": "Formless Grace",
+   "niveau": "5",
+   "initiative": 75,
+   "haut": {
+    "texte": [
+     "{Heal}2 {Manquant}",
+     "—",
+     "Une fois durant chacun de vos tours",
+     "{GMMeleeToRanged}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {Jump}",
+     "—",
+     "{ConsumeIce}{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 176,
+   "nom": "Essaim Chitineux",
+   "nom_en": "Chitinous Horde",
+   "niveau": "5",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "{Round} {Shield} 2",
+     "—",
+     "{ConsumeFire} : {Manquant}",
+     "{Persistent} {Shield} 3"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Tous les {Enemy} adjacents subissent {Damage}2",
+     "—",
+     "1 {Allies} adjacent subit {Damage}2",
+     "{GMRangedToMelee}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 177,
+   "nom": "Acides Corrosifs",
+   "nom_en": "Corrosive Acids",
+   "niveau": "6",
+   "initiative": 28,
+   "haut": {
+    "texte": [
+     "{Attack}2",
+     "{Consume} : {Manquant} {Consume} : {Manquant}",
+     "{Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move}3",
+     "—",
+     "{Round} Tous les personnages gagnent -2{Shield} ce round tant qu'ils vous sont adjacents",
+     "{GMMeleeToRanged}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 178,
+   "nom": "Hirudothérapie",
+   "nom_en": "Hirudotherapy",
+   "niveau": "6",
+   "initiative": 92,
+   "haut": {
+    "texte": [
+     "Jusqu'à 2 {Enemy} à {Range} précise 2/3 subissent {Damage}2",
+     "—",
+     "où X est le nombre de {Damage} infligés par cette capacité",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move}3",
+     "—",
+     "{Attack}2 {Manquant}",
+     "{Consume} : {Manquant}",
+     "{Consume} : {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 179,
+   "nom": "Piège en Deux Volets",
+   "nom_en": "Two-Pronged Entrapment",
+   "niveau": "7",
+   "initiative": 21,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "—",
+     "{Shield} 1",
+     "{ConsumeWild}: {CreateIce} {CreateLight}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Push}2 {Brittle} {ConsumeIce} : {Immobilize}, {XP1} {ConsumeLight} : {Disarm} £BPush.Area£",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 180,
+   "nom": "Phéromones Envoutantes",
+   "nom_en": "Alluring Pheromones",
+   "niveau": "7",
+   "initiative": 49,
+   "haut": {
+    "texte": [
+     "{Manquant} — {ConsumeWild} {CreateFire} {CreateLight} £TAttack.Area£"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal}2 {Regenerate}, {Bless} {ConsumeFire} : {Strengthen} {ConsumeLight} : {Bless}, {XP1} £BHeal.Area£",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 181,
+   "nom": "Métabolisme Accéléré",
+   "nom_en": "Accelerated Metabolism",
+   "niveau": "8",
+   "initiative": 85,
+   "haut": {
+    "texte": [
+     "{ConsumeFire} : {Strengthen}",
+     "{ConsumeIce} : {Strengthen}",
+     "—",
+     "{Attack}3 {Target} 2 {Pierce} 3"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 6",
+     "—",
+     "Au début de votre prochain tour, effectuez immédiatement l'action supérieure ou inférieure d'une carte {GMMelee} de votre main, puis perdez cette carte",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 182,
+   "nom": "Entité Fluctuante",
+   "nom_en": "Oscillating Entity",
+   "niveau": "8",
+   "initiative": 55,
+   "haut": {
+    "texte": [
+     "{Attack} 4 {Manquant}",
+     "—",
+     "Au début de votre prochain tour, effectuez immédiatement l'action supérieure ou inférieure d'une carte {GMRanged} de votre main, puis perdez cette carte",
+     "{GMRangedToMelee}"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4",
+     "—",
+     "{Bless} sur vous-même",
+     "{ConsumeFire} : {Strengthen}",
+     "{ConsumeIce} : {Strengthen}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 183,
+   "nom": "Présage de Calamité",
+   "nom_en": "Harbinger of Ruin",
+   "niveau": "9",
+   "initiative": 11,
+   "haut": {
+    "texte": [
+     "{Persistent} Pour les 4 prochaines sources de {Damage} d'attaques de mêlée vous ciblant, gagnez {Ward}, puis l'attaquant {Enemy} subit {Damage}5"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Attack} 4 {Immobilize}",
+     "—",
+     "{Persistent} {Retaliate} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 184,
+   "nom": "Voix du Salut",
+   "nom_en": "Voice of Salvation",
+   "niveau": "9",
+   "initiative": 39,
+   "haut": {
+    "texte": [
+     "+2{Attack} à tous les {Allies} à {Range}3 ou moins"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Les 4 prochaines fois qu'un {Allies} devrait perdre une carte pour bloquer des {Damage}, il ne perd pas de carte"
+    ],
+    "defausse": "perte"
+   }
+  }
+ ]
+}

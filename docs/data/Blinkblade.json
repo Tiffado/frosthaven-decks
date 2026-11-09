@@ -1,0 +1,697 @@
+{
+ "id": "Blinkblade",
+ "nom": "Vivelame",
+ "nom_en": "Blinkblade",
+ "nom_complet": "Vivelame Quatryl",
+ "main": 10,
+ "pv": [
+  8,
+  9,
+  11,
+  12,
+  14,
+  15,
+  17,
+  18,
+  20
+ ],
+ "depart": true,
+ "difficulte": "Haute",
+ "gameplay": "Au début de chaque round, avant la sélection des cartes, même lors d'un repos long, vous devez choisir si vous êtes Rapide ({BBFast}) ou Lent ({BBSlow}) pour le round.\n\nSi {BBFast} est choisi, retirez un {BBTime}. {BBFast} ne peut pas être choisi s'il n'y a aucun {BBTime} présent.\n\nSi {BBSlow} est choisi, ajoutez un {BBTime} jusqu'à un maximum de 2. {BBSlow} peut toujours être choisi. Grâce à l'utilisation de diverses capacités, le nombre total peut être augmenté jusqu'à cinq.\n\nVotre initiative pour le round dépend également de la déclaration de {BBFast} ou {BBSlow}.",
+ "histoire": "Les Quatryls n'apprécient pas d'être sous-estimés. Inférieurs en taille aux autres peuples, ils font tout pour prouver leur valeur. Dans leurs laboratoires du continent oriental, ils ont développé d'innombrables merveilles technologiques – des améliorations bioniques et des prothèses pour augmenter leurs capacités naturelles. Les archives suggèrent qu'à une époque reculée, les recherches des Quatryls les ont poussés à monter des installations scientifiques dans le Nord, dont ils souhaitaient percer les secrets. Mais elles sont depuis longtemps tombées en ruine.\n\nLe fait est que le froid est sans pitié pour des êtres si petits. Si un Vivelame parcourt le Nord, c'est peut-être parce qu'il n'a nulle part ailleurs où aller, ou parce qu'il poursuit une cible. Ce sont des assassins, après tout. Équipés de moteurs temporels expérimentaux, ils peuvent altérer le cours du temps, se déplacer en un clin d'œil et frapper plus violemment qu'une créature dix fois plus grande qu'eux. Cependant, ils ne peuvent effectuer de telles prouesses que durant de brefs instants. Un tel pouvoir a toujours un coût.",
+ "deblocage": null,
+ "cartes": [
+  {
+   "id": 32,
+   "nom": "Coup Trouble",
+   "nom_en": "Blurry Jab",
+   "niveau": "1",
+   "initiative": 20,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{BBFast} +1 {Attack}, {Wound}, {XP1} {BBSlow} -1 {Attack}, {Muddle}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} +2 {Move} {Move} 3 {BBSlow} -1 {Move}",
+     "—",
+     "{BBSlow} Un {Enemy} adjacent subit {Damage}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 33,
+   "nom": "Coup Double",
+   "nom_en": "Twin Strike",
+   "niveau": "1",
+   "initiative": 24,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {BBSlow} -1 {Attack}",
+     "—",
+     "{BBFast} {Move} 2, {XP1}",
+     "—",
+     "{Attack} 3 {BBSlow} -1 {Attack}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3 {BBSlow} -2 {Move}",
+     "—",
+     "{BBFast} Ajoutez {Pierce}2 à toutes vos attaques ce round {CreateAir} {BBSlow} {Manquant} {CreateEarth}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 34,
+   "nom": "Perte de Vitesse",
+   "nom_en": "Sap Speed",
+   "niveau": "1",
+   "initiative": 45,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Zone}",
+     "{BBFast} {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} +2 {Target} {Immobilize} {Range} 1",
+     "—",
+     "{BBSlow} Ignorez les effets {BBSlow} de vos autres actions ce tour"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 35,
+   "nom": "Transfert Cinétique",
+   "nom_en": "Kinetic Transfer",
+   "niveau": "1",
+   "initiative": 36,
+   "haut": {
+    "texte": [
+     "{Move} 2 {BBSlow} -1 {Move}",
+     "—",
+     "{BBFast} {Push} 3 {Attack} 2 {BBSlow} +1 {Range}",
+     "{BBSlow} {CreateFire} {BBSlow} {CreateIce}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {BBSlow} -1 {Move}",
+     "—",
+     "{BBFast} Tous les personnages adjacents subissent {Damage}1"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 36,
+   "nom": "Surcharge",
+   "nom_en": "Overdrive",
+   "niveau": "1",
+   "initiative": 60,
+   "haut": {
+    "texte": [
+     "{Persistent} Gagnez {Shield}1 si vous êtes {BBSlow}",
+     "{Persistent} Ajoutez {Jump} à toutes vos capacités de déplacement tant que vous êtes {BBFast}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Muddle} {Manquant} {BBSlow} +1 {Range}",
+     "{BBFast} {Round} Les {Enemy} avec {Muddle} ne ripostent pas à vos attaques ce round"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 37,
+   "nom": "Fuite d'Énergie",
+   "nom_en": "Power Leak",
+   "niveau": "1",
+   "initiative": 17,
+   "haut": {
+    "texte": [
+     "{Attack} 4",
+     "{BBFast} Si vous n'avez pas {Poison}",
+     "—",
+     "{BBSlow} {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} +4 {Move} {Move} 3",
+     "—",
+     "{BBSlow} {Manquant}",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 38,
+   "nom": "Délit de Fuite",
+   "nom_en": "Hit and Run",
+   "niveau": "1",
+   "initiative": 41,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {Immobilize} {BBSlow} -1 {Attack}",
+     "—",
+     "{BBFast} {Move} 2, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Pour vos 5 prochaines actions contenant une attaque, si vous êtes {BBFast}, effectuez {Move}3 à la fin de l'action"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 39,
+   "nom": "Ravitaillement",
+   "nom_en": "Drive Recharge",
+   "niveau": "1",
+   "initiative": 69,
+   "haut": {
+    "texte": [
+     "Gagnez 2{BBTime}",
+     "—",
+     "{Manquant}"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Manquant}",
+     "{BBSlow} {Regenerate}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 40,
+   "nom": "Réaction en Chaîne",
+   "nom_en": "Cascading Reaction",
+   "niveau": "1",
+   "initiative": 19,
+   "haut": {
+    "texte": [
+     "{BBFast} {Wound}, {XP1} {Attack} 3",
+     "—",
+     "{Move} 3 {BBSlow} -1 {Move}",
+     "—",
+     "{BBFast} {Wound}, {XP1} {Attack} 3"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {BBSlow} -1 {Move}",
+     "—",
+     "{BBFast} {Round} Tous les {Allies} se déplaçant depuis un hexagone qui vous est adjacent vers un hexagone qui ne l'est pas gagnent +1{Move} à leur capacité de déplacement"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 41,
+   "nom": "Glissement Temporel",
+   "nom_en": "Temporal Displacement",
+   "niveau": "1",
+   "initiative": 44,
+   "haut": {
+    "texte": [
+     "{BBFast} {Move} 2",
+     "—",
+     "{Loot} 1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} +2 {Range} {Attack} 3 {BBSlow} -1 {Attack}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 42,
+   "nom": "Ajustement Expérimental",
+   "nom_en": "Experimental Adjustment",
+   "niveau": "X",
+   "initiative": 12,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{BBFast} Tous les {Enemy} à {Range}2 ou moins subissent {Damage}1 {BBSlow} {Manquant}",
+     "—",
+     "{BBFast} {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2 {BBSlow} +2 {Move}",
+     "—",
+     "{BBFast} {Loot} 1 {BBSlow} {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 43,
+   "nom": "Du Sable et du Sang",
+   "nom_en": "Sand in the Hourglass",
+   "niveau": "X",
+   "initiative": 52,
+   "haut": {
+    "texte": [
+     "{BBFast} {Wound} {Range} 1",
+     "—",
+     "Tous les {Enemy} ayant {Wound} subissent {Damage}2",
+     "{ConsumeLight} : [{'Row': '{Dark}'}]",
+     "{ConsumeDark} : [{'Row': '{Light}'}]"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal} 2 {Manquant}",
+     "—",
+     "{BBFast} À la fin de votre tour, jouez une carte de votre main pour en effectuer l'action supérieure ou inférieure"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 44,
+   "nom": "En Sursis",
+   "nom_en": "Borrowed Time",
+   "niveau": "X",
+   "initiative": 2,
+   "haut": {
+    "texte": [
+     "{Persistent} Pour vos 6 prochaines actions, si vous êtes {BBSlow}, ignorez tous les effets {BBSlow} et effectuez à la fin de l'action : {Immobilize} {Range}3"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} {Round} -1{Move} aux capacités de déplacement des {Allies} {BBSlow} {Round} +1{Move} aux capacités de déplacement des {Allies}",
+     "—",
+     "{BBFast} où X est égal à deux fois le nombre de vos {Allies}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 45,
+   "nom": "Réinitialisation Système",
+   "nom_en": "Systems Reboot",
+   "niveau": "2",
+   "initiative": 57,
+   "haut": {
+    "texte": [
+     "{Manquant}",
+     "—",
+     "{Recover} une de vos cartes perdues"
+    ],
+    "defausse": "perte_definitive"
+   },
+   "bas": {
+    "texte": [
+     "Cette action peut être effectuée alors que vous avez {Stun}",
+     "{BBFast} +2{Move} {Move} 2",
+     "{BBSlow} Déclenchez les effets {BBFast} à la place des effets {BBSlow} de vos autres actions ce tour"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 46,
+   "nom": "Amplification Imprudente",
+   "nom_en": "Reckless Augmentation",
+   "niveau": "2",
+   "initiative": 10,
+   "haut": {
+    "texte": [
+     "{BBFast} +2{Attack}, {Pierce}1 {Attack} 3",
+     "—",
+     "{BBFast} {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3",
+     "—",
+     "{BBFast} {Manquant}",
+     "—",
+     "{BBFast} {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 47,
+   "nom": "Coups Décisifs",
+   "nom_en": "Make It Count",
+   "niveau": "3",
+   "initiative": 51,
+   "haut": {
+    "texte": [
+     "{Heal} 1 {Target}3 {Range}3",
+     "{BBFast} +2{Heal}, -1{Target}, -1{Range}, {XP1}",
+     "—",
+     "{BBSlow} {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} {Move} 2",
+     "—",
+     "{BBFast} {Wound} {Attack} 2 {BBSlow} {Muddle}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 48,
+   "nom": "Deux-Temps",
+   "nom_en": "Double Time",
+   "niveau": "3",
+   "initiative": 22,
+   "haut": {
+    "texte": [
+     "{Attack} 3 {BBSlow} -1{Attack}",
+     "—",
+     "{Attack} 2",
+     "—",
+     "{BBFast} {Move}2, {XP1}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Persistent} Pour vos 3 prochains tours, si vous êtes {BBFast}, déclenchez tous les effets {BBFast} deux fois"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 49,
+   "nom": "Parfaite Synchronisation",
+   "nom_en": "Precision Timing",
+   "niveau": "4",
+   "initiative": 15,
+   "haut": {
+    "texte": [
+     "{Persistent} +1{Attack} à toutes vos attaques si vous êtes {BBSlow}",
+     "{Persistent} +1{Move} à toutes vos capacités de déplacement tant que vous êtes {BBFast}",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 2",
+     "—",
+     "{BBFast} {Attack} 2, {XP1}",
+     "—",
+     "{Move} 2 {BBSlow} -1{Move}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 50,
+   "nom": "Énergie Potentielle",
+   "nom_en": "Potential Energy",
+   "niveau": "4",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "{Attack}X+2",
+     "où X est le nombre de {BBTime} que vous avez",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move}X+2",
+     "{Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 51,
+   "nom": "Vitesse Folle",
+   "nom_en": "Breakneck Speed",
+   "niveau": "5",
+   "initiative": 3,
+   "haut": {
+    "texte": [
+     "{Persistent} Au début des 4 prochains rounds où aucun repos long n'a été effectué, subissez {Damage}2 et jouez 3 cartes au lieu de 2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 5",
+     "—",
+     "{BBSlow} {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 52,
+   "nom": "Rafale Soudaine",
+   "nom_en": "Flashing Flurry",
+   "niveau": "5",
+   "initiative": 40,
+   "haut": {
+    "texte": [
+     "{Attack} 3",
+     "{ConsumeAny} : +1 {Attack}",
+     "{BBFast} +1 {Target}, +2 {Range}, {XP1} {BBSlow} -1 {Attack}, {Zone}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Stun} {Manquant}",
+     "Gagnez 1 {BBTime} pour chaque {Enemy} ciblé",
+     "{XP}1"
+    ],
+    "defausse": "perte"
+   }
+  },
+  {
+   "id": 53,
+   "nom": "Plantez-les Tous",
+   "nom_en": "Stab Them All",
+   "niveau": "6",
+   "initiative": 4,
+   "haut": {
+    "texte": [
+     "{Attack} 2",
+     "—",
+     "{BBFast} {Move} 2",
+     "{Attack} 2",
+     "{BBFast} {Move} 2",
+     "—",
+     "{Attack} 1",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} {Move} 3 {BBSlow} {Manquant} {BBSlow}",
+     "—",
+     "{Round} Lorsqu'un {Enemy} termine son {Teleport} ou son {Move} à côté de vous : -1 {Attack} {Target} cet {Enemy}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 54,
+   "nom": "Le Fil du Couteau",
+   "nom_en": "The Knife's Edge",
+   "niveau": "6",
+   "initiative": 65,
+   "haut": {
+    "texte": [
+     "{BBFast} {Target} tous les {Enemy} adjacents {Attack}3 {Wound}",
+     "—",
+     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Manquant} {BBSlow}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Heal}4 {Manquant}",
+     "—",
+     "{BBFast} {Move} 2"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 55,
+   "nom": "Lames en Phase",
+   "nom_en": "Phasing Blades",
+   "niveau": "7",
+   "initiative": 63,
+   "haut": {
+    "texte": [
+     "Ajoutez {Pierce}3 à toutes vos attaques",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 4 {BBSlow} -1 {Move}",
+     "—",
+     "Gagnez 1{BBTime} si vous êtes adjacent à 3 {Enemy} ou plus"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 56,
+   "nom": "Accélération Finale",
+   "nom_en": "Rushed to the End",
+   "niveau": "7",
+   "initiative": 32,
+   "haut": {
+    "texte": [
+     "{BBFast} +1 {Attack}, {XP1} {Attack} 4",
+     "{Consume} : {Manquant}"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "Octroyez à 1 {Allies} à {Range}2 ou moins :",
+     "{Move} 4 {BBSlow} +2 {Move}",
+     "—",
+     "{Move} 4 {BBSlow} -2 {Move}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 57,
+   "nom": "Incertitude Quantique",
+   "nom_en": "Quantum Uncertainty",
+   "niveau": "8",
+   "initiative": 35,
+   "haut": {
+    "texte": [
+     "{Attack} 5",
+     "{BBFast} Traitez les modificateurs d'attaque {NullModifier} piochés comme des {2x} à la place {BBSlow} Traitez les modificateurs d'attaque {2x} piochés comme des {NullModifier} à la place"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Move} 3 {BBSlow} -1 {Move}",
+     "{BBFast} {Manquant} {BBSlow} {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 58,
+   "nom": "Plus Vite, Plus Fort",
+   "nom_en": "Fastest Alive",
+   "niveau": "8",
+   "initiative": 1,
+   "haut": {
+    "texte": [
+     "{Attack} 2 {Target} 3 {Muddle}",
+     "{BBFast} +2 {Attack} si vous ciblez un {Enemy} ayant {Immobilize}, {Stun} ou dont la capacité choisie n'a pas de {Move}",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{BBFast} +2 {Move} {Move} 6 {BBSlow} -2 {Move}"
+    ],
+    "defausse": "defausse"
+   }
+  },
+  {
+   "id": 59,
+   "nom": "Flux Inversé",
+   "nom_en": "Reverse the Flow",
+   "niveau": "9",
+   "initiative": 58,
+   "haut": {
+    "texte": [
+     "{Round} Vous pouvez effectuer n'importe quelles capacités de déplacement comme des capacités d'attaque de même valeur ce round",
+     "—",
+     "Effectuez l'action inférieure d'une carte de votre défausse",
+     "{XP}1"
+    ],
+    "defausse": "defausse"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} vers un hexagone de départ",
+     "—",
+     "{Manquant}",
+     "—",
+     "{Recover} jusqu'à 2 de vos cartes perdues"
+    ],
+    "defausse": "perte_definitive"
+   }
+  },
+  {
+   "id": 60,
+   "nom": "Ligne Temporelle Brisée",
+   "nom_en": "Fractured Timeline",
+   "niveau": "9",
+   "initiative": 55,
+   "haut": {
+    "texte": [
+     "{Persistent} Faites apparaître une copie d'un {Enemy} normal adjacent sur un hexagone vide adjacent. La copie est un {Allies} qui utilise vos modificateurs d'attaque",
+     "{XP}2"
+    ],
+    "defausse": "perte"
+   },
+   "bas": {
+    "texte": [
+     "{Teleport} 7",
+     "—",
+     "{BBSlow} {Manquant}"
+    ],
+    "defausse": "defausse"
+   }
+  }
+ ]
+}
