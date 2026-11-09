@@ -378,8 +378,7 @@
    "initiative": 67,
    "haut": {
     "texte": [
-     "{Attack} 2 — {ConsumeIce} : {Disarm}, {XP1} £TAttack.Area£",
-     "{Zone_0}"
+     "{Attack} 2 — {ConsumeIce} : {Disarm}, {XP1} {Zone_0}"
     ],
     "defausse": "defausse",
     "zones": [
@@ -421,8 +420,7 @@
    "initiative": 51,
    "haut": {
     "texte": [
-     "{Attack} 3 — {ConsumeIce} : {Wound} £TAttack.Area£ — {ConsumeEarth} :  £TCAreaIncrease.Area£ {XP1}",
-     "{Zone_0}"
+     "{Attack} 3 — {ConsumeIce} : {Wound} {Zone_0} — {ConsumeEarth} :  {Zone_1} {XP1}"
     ],
     "defausse": "defausse",
     "zones": [
@@ -779,10 +777,9 @@
    "initiative": 28,
    "haut": {
     "texte": [
-     "{Attack}5 £TAttack.Area£",
+     "{Attack}5 {Zone_0}",
      "—",
-     "Si la capacité d'attaque a ciblé 2 {Enemy} :",
-     "{Zone_0}"
+     "Si la capacité d'attaque a ciblé 2 {Enemy} :"
     ],
     "defausse": "defausse",
     "zones": [
@@ -850,9 +847,8 @@
    "initiative": 33,
    "haut": {
     "texte": [
-     "{Attack} 3 {Range}3, {Push} Créez 3 {IceHex} sur des {RedHex} sans décor, {XP1} £TAttack.Area£",
-     "{Create['Ice']}",
-     "{Zone_0}"
+     "{Attack} 3 {Range}3, {Push} Créez 3 {IceHex} sur des {RedHex} sans décor, {XP1} {Zone_0}",
+     "{Create['Ice']}"
     ],
     "defausse": "defausse",
     "zones": [

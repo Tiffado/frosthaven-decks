@@ -688,11 +688,10 @@
    "haut": {
     "texte": [
      "{Attack} 2 {Manquant}",
-     "£TAttack.Area£",
+     "{Zone_0}",
      "{Consume} : {Manquant}",
-     "£TCAreaIncrease.Area£",
-     "{XP}2",
-     "{Zone_0}"
+     "{Zone_1}",
+     "{XP}2"
     ],
     "defausse": "perte",
     "zones": [
@@ -1064,9 +1063,8 @@
    },
    "bas": {
     "texte": [
-     "{Push}2 {Brittle} {ConsumeIce} : {Immobilize}, {XP1} {ConsumeLight} : {Disarm} £BPush.Area£",
-     "{XP}1",
-     "{Zone_0}"
+     "{Push}2 {Brittle} {ConsumeIce} : {Immobilize}, {XP1} {ConsumeLight} : {Disarm} {Zone_0}",
+     "{XP}1"
     ],
     "defausse": "perte",
     "zones": [
@@ -1109,8 +1107,7 @@
    "initiative": 49,
    "haut": {
     "texte": [
-     "{Manquant} — {ConsumeWild} {CreateFire} {CreateLight} £TAttack.Area£",
-     "{Zone_0}"
+     "{Manquant} — {ConsumeWild} {CreateFire} {CreateLight} {Zone_0}"
     ],
     "defausse": "defausse",
     "zones": [
@@ -1140,9 +1137,8 @@
    },
    "bas": {
     "texte": [
-     "{Heal}2 {Regenerate}, {Bless} {ConsumeFire} : {Strengthen} {ConsumeLight} : {Bless}, {XP1} £BHeal.Area£",
-     "{XP}1",
-     "{Zone_0}"
+     "{Heal}2 {Regenerate}, {Bless} {ConsumeFire} : {Strengthen} {ConsumeLight} : {Bless}, {XP1} {Zone_0}",
+     "{XP}1"
     ],
     "defausse": "perte",
     "zones": [

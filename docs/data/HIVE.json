@@ -696,9 +696,8 @@
    "haut": {
     "texte": [
      "{Attack}3 {Wound}",
-     "£TAttack.Area£",
-     "{XP}1",
-     "{Zone_0}"
+     "{Zone_0}",
+     "{XP}1"
     ],
     "defausse": "defausse",
     "zones": [

@@ -152,7 +152,9 @@ def nettoyer(s: str, index: dict, nom_carte: str, prof=0) -> str:
     s = re.sub(r"\$([A-Za-z0-9_/]+)\$", rempl_cle, s)
     s = re.sub(r"\*([A-Za-z0-9_.]+)\*", lambda m: str(valeur(m.group(1), index, nom_carte)), s)
     s = re.sub(r"@[A-Za-z0-9_.]*@", "", s)
-    s = re.sub(r"£([A-Za-z0-9_]+)£", r"{Zone}", s)
+    # Zone d'effet : £Area£ (zone du côté) ou £NomCapacité.Area£ (zone de cette capacité précise).
+    s = re.sub(r"£([A-Za-z0-9_]+)\.Area£", r"{ZoneAb_\1}", s)
+    s = re.sub(r"£([A-Za-z0-9_.]+)£", r"{Zone}", s)
     s = re.sub(r"<sprite name=\"?([A-Za-z0-9_+\-]+)\"?\s*>", r"{\1}", s)
     s = re.sub(r"<br\s*/?>", "\n", s, flags=re.I)
     s = re.sub(r"</?[a-z]+(=[^>]*)?>", "", s)
@@ -335,16 +337,28 @@ def convertir_carte(chemin: Path):
         while lignes and lignes[-1] == "—":
             lignes.pop()
         cotes[cote] = {"texte": lignes, "defausse": defausse[0 if cote == "haut" else 1]}
-        # Zones d'effet : le k-ième {Zone} de ce côté reçoit la k-ième zone trouvée dans ses données.
+        # Zones d'effet : {ZoneAb_X} reçoit la zone de la capacité X ; le k-ième {Zone} anonyme reçoit
+        # la k-ième zone trouvée dans les données de ce côté.
         zones = zones_du_cote((c.get("Data") or {}).get(cle))
+        compteur = iter(range(10 ** 6))
+
+        def zone_nommee(m):
+            z = zones_du_cote(index.get(m.group(1)))
+            if not z:
+                inconnus.add(f"zone de {m.group(1)} ({nom})")
+                return "{Zone}"
+            if z[0] not in zones:
+                zones.append(z[0])
+            return "{Zone_%d}" % zones.index(z[0])
+
+        texte = [re.sub(r"\{ZoneAb_([A-Za-z0-9_]+)\}", zone_nommee, l) for l in lignes]
         if zones:
-            compteur = iter(range(10 ** 6))
             texte = [re.sub(r"\{Zone\}", lambda _m: "{Zone_%d}" % min(next(compteur), len(zones) - 1), l)
-                     for l in lignes]
+                     for l in texte]
             if not any("{Zone_" in l for l in texte):
                 texte.append("{Zone_0}")  # zone présente dans les données mais pas dans la mise en page du jeu
-            cotes[cote]["texte"] = texte
             cotes[cote]["zones"] = zones
+        cotes[cote]["texte"] = texte
     return {
         "id": c["ID"],
         "nom": nom,
