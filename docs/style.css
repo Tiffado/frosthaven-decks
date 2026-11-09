@@ -227,9 +227,16 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .legende .leg { display: flex; align-items: center; gap: 8px; font-size: .9rem; }
 
 .simu-haut { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
-.simu-montees { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; margin-bottom: 12px; }
-.simu-montees label { display: flex; flex-direction: column; gap: 3px; font-size: .85rem; color: var(--doux); }
-.simu-montees select { color: var(--texte); }
+.simu-montees { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.montee { border: 1px solid var(--bord); border-radius: 10px; padding: 10px 12px; background: var(--surface); }
+.montee-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.montee-tete h4 { margin: 0; font-size: 1rem; }
+.montee-tete button { margin-left: auto; }
+.montee-choix { color: var(--def); font-weight: 600; }
+.montee-attente { color: var(--manquant-texte); background: var(--manquant); border-radius: 4px; padding: 0 6px; font-size: .85rem; }
+.montee-groupe { margin: 10px 0 6px; font-size: .85rem; font-weight: 600; color: var(--doux); }
+.montee .grille-cartes { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.montee-resume { margin-top: 8px; max-width: 280px; }
 .simu-colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .simu-bilan { background: var(--badge); border-radius: 8px; padding: 8px 12px; font-size: .9rem; margin-bottom: 10px; }
 .simu-bilan ul { margin: 4px 0 0; padding-left: 18px; }

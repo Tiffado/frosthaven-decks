@@ -175,6 +175,7 @@ function initSimulateur(p, q) {
   const parId = Object.fromEntries(p.cartes.map((c) => [c.id, c]));
   const base = p.cartes.filter((c) => c.niveau === "1" || c.niveau === "X");
   let e = etatDeck(p.id);
+  let ouvert = null;  // niveau de montée affiché en grand (null : le premier sans choix ; -1 : aucun)
 
   const selNiv = q(".simu-niveau");
   for (let n = 1; n <= 9; n++) selNiv.add(new Option(String(n), n));
@@ -205,25 +206,59 @@ function initSimulateur(p, q) {
       div.innerHTML = '<p class="aide">Niveau 1 : le pool contient seulement les cartes de niveau 1 et X.</p>';
       return;
     }
+    // Niveau ouvert : celui demandé (bouton « Changer » ou « Choisir »), sinon le premier niveau sans choix.
+    if (ouvert > e.niveau) ouvert = null;
+    const premierLibre = [...Array(e.niveau - 1).keys()].map((i) => i + 2).find((n) => !e.choix[n]);
+    const niveauOuvert = ouvert === -1 ? null : (ouvert || premierLibre);
+
     for (let n = 2; n <= e.niveau; n++) {
-      const lab = document.createElement("label");
-      lab.textContent = `Montée au niveau ${n}`;
-      const sel = document.createElement("select");
-      sel.add(new Option("— choisir une carte —", ""));
-      const prises = new Set(Object.entries(e.choix).filter(([k]) => Number(k) !== n).map(([, v]) => v));
-      for (const c of p.cartes) {
-        const nv = Number(c.niveau);
-        if (!(nv >= 2 && nv <= n) || prises.has(c.id)) continue;
-        const forme = c.forme ? ` · ${c.forme === "melee" ? "Mêlée" : "Distance"}` : "";
-        sel.add(new Option(`Niv. ${c.niveau} · ${c.nom} (init. ${c.initiative}${forme})`, c.id));
+      const bloc = document.createElement("section");
+      bloc.className = "montee";
+      const choisie = parId[e.choix[n]];
+      const estOuvert = n === niveauOuvert;
+      const tete = document.createElement("div");
+      tete.className = "montee-tete";
+      tete.innerHTML = `<h4>Montée au niveau ${n}</h4>` +
+        (choisie ? `<span class="montee-choix">✓ ${echapper(choisie.nom)}</span>` : '<span class="montee-attente">à choisir</span>');
+      const bouton = document.createElement("button");
+      bouton.type = "button";
+      bouton.textContent = estOuvert ? (choisie ? "Fermer" : "") : (choisie ? "Changer" : "Choisir");
+      bouton.hidden = !bouton.textContent;
+      bouton.addEventListener("click", () => { ouvert = estOuvert ? -1 : n; rendreMontees(); });
+      tete.appendChild(bouton);
+      bloc.appendChild(tete);
+
+      if (estOuvert) {
+        // Candidats : les cartes du niveau n, puis celles des niveaux 2 à n−1 pas encore prises ailleurs.
+        const prises = new Set(Object.entries(e.choix).filter(([k]) => Number(k) !== n).map(([, v]) => v));
+        const candidats = p.cartes.filter((c) => Number(c.niveau) >= 2 && Number(c.niveau) <= n && !prises.has(c.id));
+        const groupes = [["Nouvelles cartes du niveau " + n, candidats.filter((c) => Number(c.niveau) === n)],
+          ["Cartes restantes des niveaux précédents", candidats.filter((c) => Number(c.niveau) < n)]];
+        for (const [titre, liste] of groupes) {
+          if (!liste.length) continue;
+          bloc.insertAdjacentHTML("beforeend", `<p class="montee-groupe">${titre} (${liste.length})</p>`);
+          const grille = document.createElement("div");
+          grille.className = "grille-cartes";
+          for (const c of liste) {
+            const el = creerCarte(c, { cliquable: true });
+            if (choisie && choisie.id === c.id) el.classList.add("en-main");
+            el.title = choisie && choisie.id === c.id ? "Carte choisie (cliquer pour annuler)" : "Choisir cette carte";
+            el.addEventListener("click", () => {
+              if (e.choix[n] === c.id) delete e.choix[n]; else e.choix[n] = c.id;
+              ouvert = null;  // passe au prochain niveau sans choix
+              majTout();
+            });
+            grille.appendChild(el);
+          }
+          bloc.appendChild(grille);
+        }
+      } else if (choisie) {
+        const grille = document.createElement("div");
+        grille.className = "grille-cartes montee-resume";
+        grille.appendChild(creerCarte(choisie));
+        bloc.appendChild(grille);
       }
-      sel.value = e.choix[n] ? String(e.choix[n]) : "";
-      sel.addEventListener("change", () => {
-        if (sel.value) e.choix[n] = Number(sel.value); else delete e.choix[n];
-        majTout();
-      });
-      lab.appendChild(sel);
-      div.appendChild(lab);
+      div.appendChild(bloc);
     }
   }
 
@@ -269,7 +304,9 @@ function initSimulateur(p, q) {
   // Vue compacte (par défaut) : les longues phrases sont raccourcies dans le pool et la main.
   const caseDetail = q(".simu-detail");
   caseDetail.checked = stock.lire("fh-texte-complet", false);
-  const appliquerVue = () => q(".simu-colonnes").classList.toggle("compacte", !caseDetail.checked);
+  const appliquerVue = () => {
+    for (const s of [".simu-colonnes", ".simu-montees"]) q(s).classList.toggle("compacte", !caseDetail.checked);
+  };
   caseDetail.addEventListener("change", () => { stock.ecrire("fh-texte-complet", caseDetail.checked); appliquerVue(); });
   appliquerVue();
   q(".simu-raz").addEventListener("click", () => {
