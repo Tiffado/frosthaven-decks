@@ -44,6 +44,9 @@ Le chemin du jeu par défaut est `F:/SteamLibrary/steamapps/common/Frosthaven/Fr
 rédigées à partir des scénarios et des événements du jeu. `tools/unityfs.py` lit les paquets Unity compressés ; il a
 servi à vérifier que les lignes manquantes (voir plus bas) ne s'y trouvent pas.
 
+Avant de publier une modification du CSS ou du JavaScript, lancer `python tools/version.py` : il change le numéro
+de version des fichiers dans `docs/index.html`, pour que les navigateurs ne gardent pas l'ancienne version en cache.
+
 ## Limites connues
 
 - Environ 270 lignes de texte de cartes (sur 198 cartes) sont référencées par le jeu mais absentes de ses tables de

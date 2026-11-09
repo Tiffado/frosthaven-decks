@@ -17,7 +17,7 @@ let courant = null;
 
 async function chargerPerso(id) {
   if (!cache[id]) {
-    const r = await fetch(`data/${id}.json`);
+    const r = await fetch(`data/${id}.json`, { cache: "no-cache" });  // revalide à chaque visite
     cache[id] = await r.json();
   }
   return cache[id];
@@ -40,7 +40,7 @@ function afficherSpoilers() {
 }
 
 async function init() {
-  resume = await (await fetch("data/personnages.json")).json();
+  resume = await (await fetch("data/personnages.json", { cache: "no-cache" })).json();
   const depart = document.getElementById("liste-depart");
   const verrou = document.getElementById("liste-verrou");
   for (const p of resume) (p.depart ? depart : verrou).appendChild(boutonPerso(p));

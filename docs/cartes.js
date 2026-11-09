@@ -138,8 +138,10 @@ function zoneSvg(hexs) {
   const poly = pts.map(([cx, cy, t]) => `<polygon class="hex hex-${t}" points="${coin(cx, cy)}"><title>${TYPES_HEX[t] || t}</title></polygon>` +
     (t === "G" ? `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3" class="hex-vous"/>` : "")).join("");
   const largeur = maxX - minX, hauteur = maxY - minY;
+  // Échelle plafonnée : une grande zone reste dans 62 px de haut et 150 px de large.
+  const echelle = Math.min(1.35, 62 / hauteur, 150 / largeur);
   return `<svg class="zone" viewBox="${minX.toFixed(1)} ${minY.toFixed(1)} ${largeur.toFixed(1)} ${hauteur.toFixed(1)}" ` +
-    `style="width:${(largeur * 1.35).toFixed(0)}px" role="img" aria-label="Zone d'effet">${poly}</svg>`;
+    `style="width:${(largeur * echelle).toFixed(0)}px" role="img" aria-label="Zone d'effet">${poly}</svg>`;
 }
 
 // Un jeton (+ sa valeur éventuelle) en HTML. `zones` : zones d'effet du côté de carte, pour les jetons {Zone_k}.
