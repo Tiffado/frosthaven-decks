@@ -17,6 +17,10 @@
   --manquant: #fff4d6;
   --manquant-texte: #8a5a00;
   --choisi: #2f6f9f;
+  --melee: #b5452f;
+  --melee-fond: #fbe4dd;
+  --distance: #2a6bb0;
+  --distance-fond: #dde9f8;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -38,6 +42,10 @@
     --manquant: #3b3018;
     --manquant-texte: #f3cf7a;
     --choisi: #5ea3d6;
+    --melee: #f39a85;
+    --melee-fond: #43241d;
+    --distance: #8cbcf0;
+    --distance-fond: #1d2f47;
   }
 }
 
@@ -125,6 +133,18 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .carte-meta { text-align: right; white-space: nowrap; }
 .carte-init { font-size: 1.25rem; font-weight: 700; }
 .carte-niv { font-size: .78rem; color: var(--doux); display: block; }
+/* Formes du Géminé : bandeau de couleur à gauche et badge sous l'initiative. */
+.carte.forme-melee { border-left: 5px solid var(--melee); }
+.carte.forme-distance { border-left: 5px solid var(--distance); }
+.forme { display: inline-block; margin-top: 2px; font-size: .75rem; font-weight: 700; border-radius: 4px; padding: 0 6px; }
+.forme.melee { background: var(--melee-fond); color: var(--melee); }
+.forme.distance { background: var(--distance-fond); color: var(--distance); }
+.groupe-forme { grid-column: 1 / -1; margin: 6px 0 0; font-size: .95rem; }
+.groupe-forme.melee { color: var(--melee); }
+.groupe-forme.distance { color: var(--distance); }
+.alerte { color: var(--perte); font-weight: 600; }
+.ic.f-melee { background: var(--melee-fond); color: var(--melee); }
+.ic.f-distance { background: var(--distance-fond); color: var(--distance); }
 .action { border-top: 1px dashed var(--bord); padding-top: 6px; }
 .action-titre { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--doux); display: flex; justify-content: space-between; }
 .action p { margin: 2px 0; }

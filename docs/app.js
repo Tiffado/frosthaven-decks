@@ -38,7 +38,9 @@ function libelle(jeton) {
     return { texte: `${verbe} ${quoi || m[2]}`, classe: "elem" };
   }
   if (ELEMENTS[jeton]) return { texte: ELEMENTS[jeton], classe: "elem" };
-  if (ICONES[jeton]) return { texte: ICONES[jeton], classe: jeton === "Manquant" ? "manquant" : "" };
+  if (ICONES[jeton]) {
+    return { texte: ICONES[jeton], classe: jeton === "Manquant" ? "manquant" : (CLASSE_FORME[jeton] || "") };
+  }
   return { texte: jeton, classe: "" };
 }
 
@@ -62,16 +64,34 @@ function actionHtml(titre, action) {
     action.texte.map(ligneHtml).join("") + "</div>";
 }
 
+// Formes du Géminé : une carte ne se joue que dans sa forme (champ RequiredForm du jeu).
+const FORMES = { melee: "🗡 Mêlée", distance: "🏹 Distance" };
+// Icônes de forme dans le texte des cartes : même couleur que la forme visée.
+const CLASSE_FORME = { GMMelee: "f-melee", GMRangedToMelee: "f-melee", GMRanged: "f-distance", GMMeleeToRanged: "f-distance" };
+const formeHtml = (c) => c.forme ? `<span class="forme ${c.forme}" title="Forme requise">${FORMES[c.forme]}</span>` : "";
+
 function carteHtml(c) {
   return `<div class="carte-tete"><div class="carte-nom">${echapper(c.nom)}<small>${echapper(c.nom_en)}</small></div>` +
     `<div class="carte-meta"><span class="carte-init" title="Initiative">${c.initiative}</span>` +
-    `<span class="carte-niv">niveau ${c.niveau}</span></div></div>` +
+    `<span class="carte-niv">niveau ${c.niveau}</span>${formeHtml(c)}</div></div>` +
     actionHtml("Haut", c.haut) + actionHtml("Bas", c.bas);
+}
+
+// Ajoute les cartes à une grille ; pour le Géminé, sous un titre par forme.
+function remplirGrille(grille, cartes, fabriquer) {
+  grille.replaceChildren();
+  const formes = [...new Set(cartes.map((c) => c.forme).filter(Boolean))];
+  const groupes = formes.length ? ["melee", "distance"].map((f) => [f, cartes.filter((c) => c.forme === f)]) : [[null, cartes]];
+  for (const [f, liste] of groupes) {
+    if (f) grille.insertAdjacentHTML("beforeend",
+      `<h4 class="groupe-forme ${f}">Forme ${FORMES[f]} (${liste.length})</h4>`);
+    for (const c of liste) grille.appendChild(fabriquer(c));
+  }
 }
 
 function creerCarte(c, options = {}) {
   const el = document.createElement("article");
-  el.className = "carte" + (options.cliquable ? " cliquable" : "");
+  el.className = "carte" + (options.cliquable ? " cliquable" : "") + (c.forme ? " forme-" + c.forme : "");
   el.innerHTML = carteHtml(c);
   el.dataset.id = c.id;
   return el;
@@ -196,15 +216,22 @@ function remplirCartes(p, q) {
     const brut = [c.nom, c.nom_en, ...c.haut.texte, ...c.bas.texte].join(" ");
     el.dataset.recherche = brut.replace(/\{([^}]+)\}/g, (_, j) => libelle(j).texte).toLowerCase();
     el.dataset.niveau = c.niveau;
+    el.dataset.forme = c.forme || "";
     grille.appendChild(el);
     return el;
   });
+  const avecFormes = p.cartes.some((c) => c.forme);
+  q(".bloc-forme").hidden = !avecFormes;
   const filtrer = () => {
     const n = sel.value;
+    const f = q(".filtre-forme").value;
     const t = q(".filtre-texte").value.trim().toLowerCase();
-    for (const el of elements) el.hidden = (n && el.dataset.niveau !== n) || (t && !el.dataset.recherche.includes(t));
+    for (const el of elements) {
+      el.hidden = (n && el.dataset.niveau !== n) || (f && el.dataset.forme !== f) || (t && !el.dataset.recherche.includes(t));
+    }
   };
   sel.addEventListener("change", filtrer);
+  q(".filtre-forme").addEventListener("change", filtrer);
   q(".filtre-texte").addEventListener("input", filtrer);
 }
 
@@ -288,7 +315,8 @@ function initSimulateur(p, q) {
       for (const c of p.cartes) {
         const nv = Number(c.niveau);
         if (!(nv >= 2 && nv <= n) || prises.has(c.id)) continue;
-        sel.add(new Option(`Niv. ${c.niveau} · ${c.nom} (init. ${c.initiative})`, c.id));
+        const forme = c.forme ? ` · ${c.forme === "melee" ? "Mêlée" : "Distance"}` : "";
+        sel.add(new Option(`Niv. ${c.niveau} · ${c.nom} (init. ${c.initiative}${forme})`, c.id));
       }
       sel.value = e.choix[n] ? String(e.choix[n]) : "";
       sel.addEventListener("change", () => {
@@ -312,23 +340,19 @@ function initSimulateur(p, q) {
     sauver();
     const pl = pool();
     const enMain = new Set(e.main);
-    const divPool = q(".simu-pool");
-    divPool.replaceChildren();
-    for (const c of pl) {
+    remplirGrille(q(".simu-pool"), pl, (c) => {
       const el = creerCarte(c, { cliquable: true });
       if (enMain.has(c.id)) el.classList.add("en-main");
       el.addEventListener("click", () => basculer(c.id));
-      divPool.appendChild(el);
-    }
+      return el;
+    });
     q(".simu-nb-pool").textContent = `(${pl.length} cartes)`;
-    const divMain = q(".simu-main");
-    divMain.replaceChildren();
     const cartesMain = e.main.map((id) => parId[id]).sort((a, b) => a.initiative - b.initiative);
-    for (const c of cartesMain) {
+    remplirGrille(q(".simu-main"), cartesMain, (c) => {
       const el = creerCarte(c, { cliquable: true });
       el.addEventListener("click", () => basculer(c.id));
-      divMain.appendChild(el);
-    }
+      return el;
+    });
     const nb = q(".simu-nb-main");
     nb.textContent = `(${e.main.length} / ${p.main})`;
     nb.classList.toggle("plein", e.main.length === p.main);
@@ -366,9 +390,19 @@ function bilan(cartes, taille) {
   const inits = cartes.map((c) => c.initiative);
   const xp = cartes.filter((c) => [...c.haut.texte, ...c.bas.texte].some((l) => /\{XP/.test(l))).length;
   const restants = taille - cartes.length;
+  let formes = "";
+  if (cartes.some((c) => c.forme)) {
+    // Le Géminé doit pouvoir jouer deux cartes de sa forme actuelle à chaque round (ou se reposer).
+    const nb = (f) => cartes.filter((c) => c.forme === f).length;
+    const m = nb("melee"), d = nb("distance");
+    const alerte = [m, d].some((n) => n < 2)
+      ? ` <span class="alerte">· moins de 2 cartes dans une forme : vous serez vite épuisé dans cette forme</span>` : "";
+    formes = `<li>Forme <span class="forme melee">${FORMES.melee}</span> : ${m} · ` +
+      `<span class="forme distance">${FORMES.distance}</span> : ${d}${alerte}</li>`;
+  }
   return `<strong>${cartes.length} carte${cartes.length > 1 ? "s" : ""}</strong>` +
     (restants > 0 ? ` · encore ${restants} place${restants > 1 ? "s" : ""}` : " · main complète") +
-    `<ul><li>Actions du haut avec perte : ${pertes("haut")} · du bas : ${pertes("bas")}` +
+    `<ul>${formes}<li>Actions du haut avec perte : ${pertes("haut")} · du bas : ${pertes("bas")}` +
     (doubles ? ` (${doubles} carte${doubles > 1 ? "s" : ""} perdue${doubles > 1 ? "s" : ""} des deux côtés)` : "") + "</li>" +
     `<li>Cartes avec un effet persistant : ${persist}</li>` +
     `<li>Cartes qui rapportent de l'XP : ${xp}</li>` +

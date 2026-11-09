@@ -301,6 +301,7 @@ def convertir_carte(chemin: Path):
         "nom": nom,
         "nom_en": tr(c["Name"].strip("$")[3:], "en") if str(c["Name"]).startswith("$FH/") else nom,
         "niveau": str(c["Level"]),
+        "forme": {"Melee": "melee", "Range": "distance"}.get(str(c.get("RequiredForm", ""))),
         "initiative": c["Initiative"],
         "haut": cotes["haut"],
         "bas": cotes["bas"],
@@ -320,7 +321,12 @@ def convertir_personnage(dossier: Path, deblocages: dict):
     p = lire_yaml(dossier / f"{ident}.yml")
     cartes = [convertir_carte(f) for f in sorted((dossier / "AbilityCards").glob("*.yml"))]
     ordre = {"1": 1, "X": 1.5}
-    cartes.sort(key=lambda k: (ordre.get(k["niveau"], float(k["niveau"]) if k["niveau"].isdigit() else 99), k["id"]))
+    # Tri : niveau, puis forme du Géminé (Mêlée avant Distance), puis numéro de carte.
+    cartes.sort(key=lambda k: (ordre.get(k["niveau"], float(k["niveau"]) if k["niveau"].isdigit() else 99),
+                               {"melee": 0, "distance": 1}.get(k.get("forme"), 2), k["id"]))
+    for k in cartes:
+        if k.get("forme") is None:
+            k.pop("forme", None)
     return {
         "id": ident,
         "nom": nom_classe(ident),
