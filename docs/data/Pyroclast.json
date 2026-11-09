@@ -39,7 +39,8 @@
     "texte": [
      "{Heal} 5 sur vous-même",
      "—",
-     "{Persistent} Ajoutez -1{Move} à vos trois prochaines capacités de déplacement"
+     "{Persistent} Ajoutez -1{Move} à vos trois prochaines capacités de déplacement",
+     "{Suivi_000}"
     ],
     "defausse": "defausse"
    }
@@ -61,6 +62,7 @@
    "bas": {
     "texte": [
      "{Persistent} Ajoutez -1{Attack} à vos 3 prochaines attaques, puis doublez la valeur de la quatrième attaque.",
+     "{Suivi_0001}",
      "{Create['Earth']}"
     ],
     "defausse": "defausse"
@@ -85,7 +87,8 @@
     "texte": [
      "{Move} 6",
      "—",
-     "{Persistent} Subissez {Damage}1 maintenant et au début de vos 2 prochains tours"
+     "{Persistent} Subissez {Damage}1 maintenant et au début de vos 2 prochains tours",
+     "{Suivi_00}"
     ],
     "defausse": "defausse"
    }
@@ -199,7 +202,8 @@
     "texte": [
      "{Persistent} Toutes les attaques vous ciblant ajoutent +1{Attack}",
      "—",
-     "{Persistent} Ajoutez +1{Attack} à vos 3 prochaines attaques"
+     "{Persistent} Ajoutez +1{Attack} à vos 3 prochaines attaques",
+     "{Suivi_001}"
     ],
     "defausse": "defausse"
    }
@@ -259,7 +263,8 @@
    "initiative": 72,
    "haut": {
     "texte": [
-     "{Persistent} Détruisez 1 {HazardHex} adjacent. Si vous le faites, lors de vos 3 prochaines attaques, ajoutez {Wound}, {Poison} et {Fire}."
+     "{Persistent} Détruisez 1 {HazardHex} adjacent. Si vous le faites, lors de vos 3 prochaines attaques, ajoutez {Wound}, {Poison} et {Fire}.",
+     "{Suivi_010}"
     ],
     "defausse": "defausse"
    },
@@ -289,7 +294,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Détruisez 1 {ObstacleHex} adjacent. Si vous le faites, lors des deux prochains soins vous ciblant, ajoutez +3{Heal}."
+     "{Persistent} Détruisez 1 {ObstacleHex} adjacent. Si vous le faites, lors des deux prochains soins vous ciblant, ajoutez +3{Heal}.",
+     "{Suivi_01}"
     ],
     "defausse": "defausse"
    }
@@ -361,7 +367,8 @@
     "texte": [
      "{Heal} 3 sur vous-même",
      "—",
-     "{Persistent} Lors de votre prochaine attaque ciblant un {Enemy} occupant un {HazardHex}, doublez la valeur de l'attaque"
+     "{Persistent} Lors de votre prochaine attaque ciblant un {Enemy} occupant un {HazardHex}, doublez la valeur de l'attaque",
+     "{Suivi_1}"
     ],
     "defausse": "perte"
    }
@@ -375,7 +382,8 @@
    "haut": {
     "texte": [
      "{Persistent} Maintenant et au début de vos deux prochains tours :",
-     "{Attack} 1 {Target}1 {Enemy} adjacent à un {HazardHex}, {Pierce}2, {Wound} {Create['Fire']}"
+     "{Attack} 1 {Target}1 {Enemy} adjacent à un {HazardHex}, {Pierce}2, {Wound} {Create['Fire']}",
+     "{Suivi_01}"
     ],
     "defausse": "defausse"
    },
@@ -400,6 +408,7 @@
      "Ajoutez +1{Attack} et gagnez {XP1} si la cible occupe un {HazardHex}",
      "—",
      "{Persistent} Au début de votre prochain tour : {Damage}1 sur vous-même",
+     "{Suivi_00}",
      "{Create['Earth']}"
     ],
     "defausse": "defausse"
@@ -409,6 +418,7 @@
      "{Move} 3",
      "—",
      "{Round} Ajoutez +1{Attack} à votre prochaine attaque de ce round ciblant un {Enemy} adjacent à un {ObstacleHex}",
+     "{Suivi_0}",
      "{ConsumeEarth} : {Manquant}"
     ],
     "defausse": "defausse"
@@ -449,7 +459,7 @@
      "{Push} 2 {Manquant}",
      "{ConsumeFire} : +1 {Range}, {XP1}",
      "—",
-     "{Persistent} Au début de votre prochain tour :"
+     "{Persistent} Au début de votre prochain tour : {Suivi_0}"
     ],
     "defausse": "defausse"
    },
@@ -518,7 +528,7 @@
     "texte": [
      "{Attack} 3 {Range}4, {Pull}3",
      "—",
-     "{Persistent} Lorsque le prochain {Enemy} devrait subir des {Damage} en entrant sur un {HazardHex}, bloquez les {Damage}",
+     "{Persistent} Lorsque le prochain {Enemy} devrait subir des {Damage} en entrant sur un {HazardHex}, bloquez les {Damage} {Suivi_0}",
      "{Create['Fire']}"
     ],
     "defausse": "defausse"
@@ -543,6 +553,7 @@
    "haut": {
     "texte": [
      "{Persistent} Pour les 4 prochaines sources de {Damage} subis d'attaques vous ciblant, gagnez {Shield}1",
+     "{Suivi_0001}",
      "Quand la dernière utilisation est consommée, l'adversaire attaquant subit {Damage}5, et vous créez un {ObstacleHex} de 1 hexagone sur un hexagone vide adjacent"
     ],
     "defausse": "defausse"
@@ -554,6 +565,7 @@
      "Subissez {Damage}2 ou détruisez un obstacle adjacent",
      "—",
      "{Round} La prochaine fois que vous subissez des {Damage} ce round, bloquez-les",
+     "{Suivi_0}",
      "{Create['Earth']}"
     ],
     "defausse": "defausse"
@@ -623,7 +635,8 @@
     "texte": [
      "Déplacement {Move} 2",
      "—",
-     "{Round} Détruisez 1 {HazardHex} adjacent pour infliger des dégâts de terrain dangereux à la cible de votre prochaine attaque ce round, après l'attaque"
+     "{Round} Détruisez 1 {HazardHex} adjacent pour infliger des dégâts de terrain dangereux à la cible de votre prochaine attaque ce round, après l'attaque",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }

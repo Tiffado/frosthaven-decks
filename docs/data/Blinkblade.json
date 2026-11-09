@@ -177,7 +177,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Pour vos 5 prochaines actions contenant une attaque, si vous êtes {BBFast}, effectuez {Move}3 à la fin de l'action"
+     "{Persistent} Pour vos 5 prochaines actions contenant une attaque, si vous êtes {BBFast}, effectuez {Move}3 à la fin de l'action",
+     "{Suivi_00101}"
     ],
     "defausse": "perte"
    }
@@ -308,7 +309,8 @@
    "initiative": 2,
    "haut": {
     "texte": [
-     "{Persistent} Pour vos 6 prochaines actions, si vous êtes {BBSlow}, ignorez tous les effets {BBSlow} et effectuez à la fin de l'action : {Immobilize} {Range}3"
+     "{Persistent} Pour vos 6 prochaines actions, si vous êtes {BBSlow}, ignorez tous les effets {BBSlow} et effectuez à la fin de l'action : {Immobilize} {Range}3",
+     "{Suivi_010101}"
     ],
     "defausse": "perte"
    },
@@ -411,7 +413,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Pour vos 3 prochains tours, si vous êtes {BBFast}, déclenchez tous les effets {BBFast} deux fois"
+     "{Persistent} Pour vos 3 prochains tours, si vous êtes {BBFast}, déclenchez tous les effets {BBFast} deux fois",
+     "{Suivi_0000}"
     ],
     "defausse": "perte"
    }
@@ -471,7 +474,8 @@
    "initiative": 3,
    "haut": {
     "texte": [
-     "{Persistent} Au début des 4 prochains rounds où aucun repos long n'a été effectué, subissez {Damage}2 et jouez 3 cartes au lieu de 2"
+     "{Persistent} Au début des 4 prochains rounds où aucun repos long n'a été effectué, subissez {Damage}2 et jouez 3 cartes au lieu de 2",
+     "{Suivi_0101}"
     ],
     "defausse": "perte"
    },

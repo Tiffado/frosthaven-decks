@@ -111,72 +111,121 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .filtres { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
 .filtres label { display: flex; align-items: center; gap: 6px; }
 
-.grille-cartes { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; align-items: start; }
+.grille-cartes { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; align-items: stretch; }
 
-/* ---------- Carte : en-tête, moitié haute, initiative, moitié basse ---------- */
+/* ---------- Carte : design du site (cadre sombre, panneaux parchemin, médaillon d'initiative) ----------
+   Les couleurs internes sont fixes : la carte garde le même aspect en mode clair et sombre. */
 .carte {
-  --classe-carte: var(--classe, var(--accent));
-  background: var(--surface);
-  border: 1px solid var(--bord);
-  border-radius: 12px;
-  overflow: hidden;
+  --classe-carte: var(--classe, #3a6f9a);
+  --encre: #2b2219;
+  --encre-douce: #6a5a46;
+  --parchemin: #f4ecd9;
+  --parchemin-2: #e6d7b8;
+  --bronze: #b08d57;
+  position: relative;
   display: flex;
   flex-direction: column;
+  padding: 5px;
+  border-radius: 14px;
+  border: 2px solid var(--bronze);
+  background: linear-gradient(165deg, #34495c 0%, #1f2b37 55%, #17212b 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25), inset 0 0 0 1px rgba(255, 255, 255, .08);
+  color: var(--encre);
   font-size: .9rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
 }
-.carte.cliquable { cursor: pointer; }
-.carte.cliquable:hover { border-color: var(--classe-carte); }
-.carte.en-main { outline: 3px solid var(--choisi); outline-offset: -1px; }
+.carte.cliquable { cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+.carte.cliquable:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0, 0, 0, .3); }
+.carte.en-main { box-shadow: 0 0 0 3px var(--choisi), 0 3px 8px rgba(0, 0, 0, .25); }
+
+/* Bandeau du nom */
 .carte-tete {
-  display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;
-  padding: 8px 12px 7px;
-  background: color-mix(in srgb, var(--classe-carte) 16%, var(--surface));
-  border-bottom: 3px solid var(--classe-carte);
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 6px 10px 7px;
+  border-radius: 9px 9px 3px 3px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--classe-carte) 80%, #fff) 0%, var(--classe-carte) 100%);
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .45);
 }
-.carte-nom { font-weight: 700; line-height: 1.2; }
-.carte-nom small { display: block; font-weight: 400; color: var(--doux); font-size: .74rem; margin-top: 1px; }
-.carte-meta { text-align: right; white-space: nowrap; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+.carte-nom { font-family: "Cinzel", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 1rem; line-height: 1.15; }
+.carte-nom small { display: block; font-family: system-ui, sans-serif; font-weight: 400; font-size: .7rem; opacity: .85; margin-top: 2px; }
+.carte-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .carte-niv {
-  font-size: .72rem; font-weight: 700; color: var(--surface); background: var(--classe-carte);
-  border-radius: 10px; padding: 0 7px;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 30px; height: 24px; padding: 0 4px; font-size: .78rem; font-weight: 800; text-shadow: none;
+  color: var(--encre); background: var(--parchemin);
+  clip-path: polygon(22% 0, 78% 0, 100% 50%, 78% 100%, 22% 100%, 0 50%);
 }
 
-.moitie { position: relative; padding: 9px 12px 8px; display: flex; flex-direction: column; gap: 3px; min-height: 56px; }
-.moitie.perdue { background: color-mix(in srgb, var(--perte) 7%, var(--surface)); }
-.moitie p { margin: 0; line-height: 1.55; }
-.moitie p.principal { font-size: 1.12rem; }
-.moitie p.detail { font-size: .84rem; color: var(--doux); }
-.moitie .sep { border: none; border-top: 1px dashed var(--bord); margin: 3px 0; width: 100%; }
-.perte-marque {
-  align-self: flex-end; font-size: .7rem; font-weight: 800; letter-spacing: .02em;
-  color: #fff; background: var(--perte); border-radius: 4px; padding: 1px 6px; margin-bottom: 2px;
+/* Les deux actions : contenu centré, coins en bas */
+.moitie {
+  position: relative; flex: 1;
+  display: flex; flex-direction: column;
+  margin-top: 4px; min-height: 104px;
+  border-radius: 4px;
+  background: radial-gradient(ellipse at 50% 40%, var(--parchemin) 55%, var(--parchemin-2) 100%);
+  box-shadow: inset 0 0 0 1px rgba(120, 90, 50, .25);
 }
-.moitie .perte-marque { position: absolute; top: 6px; right: 8px; }
-.moitie.perdue > p:first-of-type { padding-right: 64px; }
+.moitie.bas { border-radius: 4px 4px 9px 9px; }
+.moitie-corps { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 10px 10px 2px; }
+.moitie.haut .moitie-corps { padding-top: 8px; }
+.moitie.bas .moitie-corps { padding-top: 22px; }
+.moitie.haut .coins { padding-bottom: 16px; }
+.moitie p { margin: 0; line-height: 1.5; text-align: center; }
+.moitie p.principal { font-size: 1.22rem; }
+.moitie p.detail { font-size: .82rem; color: var(--encre-douce); }
+.moitie .sep { border: none; border-top: 1px solid rgba(120, 90, 50, .35); margin: 4px 14%; width: 72%; }
 
-.initiative { position: relative; height: 0; border-top: 1px solid var(--bord); }
+.coins { display: flex; justify-content: space-between; align-items: flex-end; min-height: 26px; padding: 0 6px 5px; }
+.coin-g, .coin-d { display: flex; align-items: center; gap: 4px; }
+.coin-xp { display: inline-flex; align-items: center; gap: 1px; color: #b07d08; font-weight: 800; }
+.coin-xp svg { width: 1.15em; height: 1.15em; }
+.coin-xp b { color: var(--encre); }
+.coin-elem .pic { vertical-align: middle; }
+.coin-perte {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  color: #fff; background: radial-gradient(circle at 35% 30%, #d9584a, #962a20);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+}
+.coin-perte svg { width: 17px; height: 17px; }
+.coin-perte.definitive { outline: 2px solid #962a20; outline-offset: 2px; }
+
+/* Médaillon d'initiative, à cheval sur les deux actions */
+.initiative { position: relative; height: 0; z-index: 2; }
 .initiative span {
-  position: absolute; left: 50%; top: 0; transform: translate(-50%, -50%);
-  min-width: 42px; height: 30px; padding: 0 8px;
+  position: absolute; left: 50%; top: 2px; transform: translate(-50%, -50%);
+  width: 46px; height: 46px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.15rem; font-weight: 800; color: var(--surface);
-  background: var(--classe-carte); border-radius: 15px; border: 2px solid var(--surface);
-  z-index: 1;
+  font-family: "Cinzel", Georgia, serif; font-size: 1.25rem; font-weight: 700; color: #1d2a36;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #dbe8f1 45%, #9fb7c9 100%);
+  border: 3px solid var(--bronze);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .35), inset 0 0 6px rgba(255, 255, 255, .7);
 }
-.moitie.bas { padding-top: 18px; }
-.moitie.haut { padding-bottom: 18px; }
+
+/* Cases d'utilisation des bonus persistants */
+.suivi { display: flex; justify-content: center; gap: 3px; margin-top: 3px !important; }
+.case-suivi {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 17px; height: 17px; border: 1.5px solid #8a7353; border-radius: 3px; background: rgba(255, 255, 255, .55);
+}
+.case-suivi.xp { color: #b07d08; }
+.case-suivi svg { width: 12px; height: 12px; }
+
+/* Invocations : encadré de caractéristiques */
+.invoc { margin: 3px auto; border: 1.5px solid #8a7353; border-radius: 6px; background: rgba(255, 255, 255, .5); overflow: hidden; min-width: 75%; }
+.invoc-nom { font-weight: 700; font-size: .85rem; padding: 2px 8px; background: rgba(138, 115, 83, .18); text-align: center; }
+.invoc-stats { padding: 3px 8px; text-align: center; font-size: 1.02rem; }
 
 /* Pictogrammes et valeurs */
-.pic { display: inline-flex; align-items: center; gap: 1px; vertical-align: -0.28em; color: var(--texte); }
+.pic { display: inline-flex; align-items: center; gap: 1px; vertical-align: -0.28em; color: var(--encre, currentColor); }
 .pic svg { width: 1.2em; height: 1.2em; }
 .val { font-weight: 800; margin: 0 .22em 0 .08em; }
-.pic.c-soin { color: #2e9a52; }
-.pic.c-degats { color: #c0392b; }
-.pic.c-butin { color: #c99a1e; }
-.pic.c-xp { color: #d6a31a; }
-.pic.c-bonus { color: var(--classe-carte); }
-.el { display: inline-flex; align-items: center; justify-content: center; width: 1.35em; height: 1.35em; border-radius: 50%; color: #fff; }
+.pic.c-soin { color: #23864a; }
+.pic.c-degats { color: #b3342a; }
+.pic.c-butin { color: #a8780c; }
+.pic.c-xp { color: #c08a0c; }
+.pic.c-bonus { color: var(--classe-carte, var(--accent)); }
+.el { display: inline-flex; align-items: center; justify-content: center; width: 1.35em; height: 1.35em; border-radius: 50%; color: #fff; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15); }
 .el svg { width: .95em; height: .95em; }
 .el-feu { background: #e0582a; }
 .el-glace { background: #4aa6d8; }
@@ -186,8 +235,8 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .el-tenebres { background: #3e3560; }
 .el-joker { background: linear-gradient(135deg, #e0582a, #e8b923, #5f8a3a, #4aa6d8, #3e3560); }
 .signe { font-weight: 900; font-size: .95em; margin-left: 1px; }
-.elem-consume .signe { color: #c0392b; }
-.elem-create .signe { color: #2e9a52; }
+.elem-consume .signe { color: #b3342a; }
+.elem-create .signe { color: #23864a; }
 
 .ic {
   display: inline-block; background: var(--badge); color: var(--badge-texte);
@@ -200,18 +249,27 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .ic.manquant { background: var(--manquant); color: var(--manquant-texte); font-weight: 500; white-space: normal; }
 .ic.f-melee { background: var(--melee-fond); color: var(--melee); }
 .ic.f-distance { background: var(--distance-fond); color: var(--distance); }
+/* Dans la carte, les étiquettes gardent des couleurs claires quel que soit le thème. */
+.carte .ic { background: #e4e9ee; color: #24425c; }
+.carte .ic.etat-neg { background: #ece0f5; color: #6a2d8f; }
+.carte .ic.etat-pos { background: #dff0e2; color: #23743b; }
+.carte .ic.elem { background: #efe6f7; color: #5a2d82; }
+.carte .ic.mm { background: #efe2cc; color: #7a5a2c; }
+.carte .ic.manquant { background: #fff1c9; color: #7a5000; }
+.carte .ic.f-melee { background: #fbe4dd; color: #a83c27; }
+.carte .ic.f-distance { background: #dde9f8; color: #245f9e; }
 @media (prefers-color-scheme: dark) {
   .ic.etat-neg { background: #3a2a4a; color: #d9b8f0; }
   .ic.etat-pos { background: #1f3a27; color: #9fe0b1; }
   .ic.mm { background: #3a3024; color: #e3c99a; }
 }
 
-/* Formes du Géminé */
-.carte.forme-melee { border-left: 5px solid var(--melee); }
-.carte.forme-distance { border-left: 5px solid var(--distance); }
-.forme { display: inline-block; font-size: .72rem; font-weight: 700; border-radius: 4px; padding: 0 6px; }
-.forme.melee { background: var(--melee-fond); color: var(--melee); }
-.forme.distance { background: var(--distance-fond); color: var(--distance); }
+/* Formes du Géminé : cadre coloré et badge dans le bandeau */
+.carte.forme-melee { border-color: #c4553d; }
+.carte.forme-distance { border-color: #3d7fc4; }
+.forme { display: inline-block; font-size: .7rem; font-weight: 700; border-radius: 4px; padding: 0 6px; text-shadow: none; }
+.forme.melee { background: #fbe4dd; color: #a83c27; }
+.forme.distance { background: #dde9f8; color: #245f9e; }
 .groupe-forme { grid-column: 1 / -1; margin: 6px 0 0; font-size: .95rem; }
 .groupe-forme.melee { color: var(--melee); }
 .groupe-forme.distance { color: var(--distance); }

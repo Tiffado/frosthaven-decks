@@ -29,7 +29,8 @@
    "initiative": 71,
    "haut": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochaines attaques de mêlée, gagnez +2{Attack}"
+     "{Persistent} Lors de vos 6 prochaines attaques de mêlée, gagnez +2{Attack}",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    },
@@ -58,7 +59,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Gagnez +2{Move} pour vos 6 prochaines capacités de déplacement"
+     "{Persistent} Gagnez +2{Move} pour vos 6 prochaines capacités de déplacement",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -71,7 +73,8 @@
    "initiative": 66,
    "haut": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochaines attaques à distance, ajoutez +1{Range} et +1{RangedAttack}"
+     "{Persistent} Lors de vos 6 prochaines attaques à distance, ajoutez +1{Range} et +1{RangedAttack}",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    },
@@ -100,7 +103,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochains soins, gagnez +2{Heal}"
+     "{Persistent} Lors de vos 6 prochains soins, gagnez +2{Heal}",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -119,7 +123,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Lors des 6 prochaines attaques des adversaires à {Range}2 ou moins vous ciblant, gagnez {Retaliate}2{Range}2"
+     "{Persistent} Lors des 6 prochaines attaques des adversaires à {Range}2 ou moins vous ciblant, gagnez {Retaliate}2{Range}2",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -138,7 +143,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Pour les 6 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}1"
+     "{Persistent} Pour les 6 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}1",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -341,7 +347,8 @@
    "initiative": 17,
    "haut": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochaines attaques de mêlée, 1 {Enemy} adjacent à votre cible subit {Damage}2 si possible"
+     "{Persistent} Lors de vos 6 prochaines attaques de mêlée, 1 {Enemy} adjacent à votre cible subit {Damage}2 si possible",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    },
@@ -390,7 +397,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochaines attaques à distance, gagnez +1{Target}"
+     "{Persistent} Lors de vos 6 prochaines attaques à distance, gagnez +1{Target}",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -432,7 +440,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Pour les 6 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}2"
+     "{Persistent} Pour les 6 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}2",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -468,7 +477,8 @@
    "initiative": 91,
    "haut": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochains soins, si la cible n'a pas {Ward}, elle gagne {Ward}"
+     "{Persistent} Lors de vos 6 prochains soins, si la cible n'a pas {Ward}, elle gagne {Ward}",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    },
@@ -513,7 +523,8 @@
    "initiative": 56,
    "haut": {
     "texte": [
-     "{Persistent} Lors de vos 6 prochaines attaques ciblant un {Enemy} avec {Shield}, obtenez {Pierce}3"
+     "{Persistent} Lors de vos 6 prochaines attaques ciblant un {Enemy} avec {Shield}, obtenez {Pierce}3",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    },
@@ -560,7 +571,8 @@
    "initiative": 77,
    "haut": {
     "texte": [
-     "{Persistent} Juste après vos 6 prochaines capacités de soin, effectuez {Move}3 {Jump}"
+     "{Persistent} Juste après vos 6 prochaines capacités de soin, effectuez {Move}3 {Jump}",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    },
@@ -612,7 +624,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Les 6 prochaines fois qu'un adversaire entre sur un hexagone adjacent au vôtre, il subit {Damage}3"
+     "{Persistent} Les 6 prochaines fois qu'un adversaire entre sur un hexagone adjacent au vôtre, il subit {Damage}3",
+     "{Suivi_101010}"
     ],
     "defausse": "perte"
    }
@@ -646,7 +659,8 @@
    "initiative": 96,
    "haut": {
     "texte": [
-     "{Persistent} Pour les 4 prochaines sources de 4 {Damage} ou moins que vous devriez subir"
+     "{Persistent} Pour les 4 prochaines sources de 4 {Damage} ou moins que vous devriez subir",
+     "{Suivi_1010}"
     ],
     "defausse": "perte"
    },

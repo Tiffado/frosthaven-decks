@@ -105,7 +105,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Les trois prochaines fois que vous subissez {Damage}, s'il y a des adversaires dans un rayon de {Range}3, l'un d'eux subit une quantité égale de {Damage}"
+     "{Persistent} Les trois prochaines fois que vous subissez {Damage}, s'il y a des adversaires dans un rayon de {Range}3, l'un d'eux subit une quantité égale de {Damage}",
+     "{Suivi_111}"
     ],
     "defausse": "perte"
    }
@@ -264,7 +265,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Durant ce round et les quatre suivants, les états négatifs que vous avez ne vous affectent pas, et ne peuvent pas être retirés ou transférés"
+     "{Persistent} Durant ce round et les quatre suivants, les états négatifs que vous avez ne vous affectent pas, et ne peuvent pas être retirés ou transférés",
+     "{Suivi_10101}"
     ],
     "defausse": "perte"
    }
@@ -335,7 +337,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} La prochaine fois que vous subissez des {Damage} d'une attaque, l'attaquant subit le même montant de {Damage}"
+     "{Persistent} La prochaine fois que vous subissez des {Damage} d'une attaque, l'attaquant subit le même montant de {Damage}",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }
@@ -554,7 +557,8 @@
    "initiative": 20,
    "haut": {
     "texte": [
-     "{Round} La prochaine fois que vous devriez subir des {Damage} ce round alors qu'un {Enemy} vous est adjacent, cet {Enemy} subit ces {Damage} à votre place, et vous gagnez {XP1}"
+     "{Round} La prochaine fois que vous devriez subir des {Damage} ce round alors qu'un {Enemy} vous est adjacent, cet {Enemy} subit ces {Damage} à votre place, et vous gagnez {XP1}",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    },

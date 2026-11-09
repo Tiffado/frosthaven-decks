@@ -481,7 +481,8 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Persistent} Pour votre prochain effet {MMSelfDamage}, si vous êtes adjacent à au moins un {Enemy}, un {Enemy} adjacent subit les {Damage} à votre place"
+     "{Persistent} Pour votre prochain effet {MMSelfDamage}, si vous êtes adjacent à au moins un {Enemy}, un {Enemy} adjacent subit les {Damage} à votre place",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }

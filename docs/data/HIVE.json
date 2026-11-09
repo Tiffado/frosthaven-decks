@@ -382,7 +382,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Si votre {AA_Summon} devait subir {Damage}, vous pouvez subir ce montant de {Damage} moins 1, {HIVETransfer} avec cette {AA_Summon}, mettre fin à cet effet et gagner {XP1}"
+     "{Persistent} Si votre {AA_Summon} devait subir {Damage}, vous pouvez subir ce montant de {Damage} moins 1, {HIVETransfer} avec cette {AA_Summon}, mettre fin à cet effet et gagner {XP1}",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }

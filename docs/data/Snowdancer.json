@@ -172,7 +172,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Pour vos cinq prochaines attaques, ajoutez +X {Attack}, où X est le nombre d'utilisations consommées (0, 1, 2, 3, 4)"
+     "{Persistent} Pour vos cinq prochaines attaques, ajoutez +X {Attack}, où X est le nombre d'utilisations consommées (0, 1, 2, 3, 4)",
+     "{Suivi_01001}"
     ],
     "defausse": "perte"
    }

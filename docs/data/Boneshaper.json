@@ -37,7 +37,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Bloquez les 3 prochaines sources de {Damage} que vous devriez subir."
+     "{Persistent} Bloquez les 3 prochaines sources de {Damage} que vous devriez subir.",
+     "{Suivi_001}"
     ],
     "defausse": "perte"
    }
@@ -173,7 +174,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Le prochain {Enemy} qui élimine une de vos {AA_Summon} (avec une capacité d'attaque) subit 2{Damage}"
+     "{Persistent} Le prochain {Enemy} qui élimine une de vos {AA_Summon} (avec une capacité d'attaque) subit 2{Damage}",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }
@@ -342,7 +344,8 @@
    },
    "bas": {
     "texte": [
-     "{Round} La prochaine fois qu'un {Enemy} meurt ce round, tous les personnages adjacents subissent {Damage}2"
+     "{Round} La prochaine fois qu'un {Enemy} meurt ce round, tous les personnages adjacents subissent {Damage}2",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }
@@ -363,7 +366,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Annule les 3 prochaines sources de {Damage} infligés à l'une de vos {AA_Summon}"
+     "{Persistent} Annule les 3 prochaines sources de {Damage} infligés à l'une de vos {AA_Summon}",
+     "{Suivi_101}"
     ],
     "defausse": "perte"
    }
@@ -503,7 +507,8 @@
     "texte": [
      "{Damage}2 self",
      "—",
-     "{Persistent} Annule la prochaine source de {Damage} infligée à l'une de vos {AA_Summon}"
+     "{Persistent} Annule la prochaine source de {Damage} infligée à l'une de vos {AA_Summon}",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }
@@ -618,6 +623,7 @@
    "bas": {
     "texte": [
      "{Persistent} Lors des 3 prochaines fois qu'un personnage meurt :\n{Heal} -1 {Target} -1 {Allies} {Range} 1",
+     "{Suivi_001}",
      "{CreateDark}"
     ],
     "defausse": "defausse"
@@ -632,6 +638,7 @@
    "haut": {
     "texte": [
      "{Persistent} Les 3 prochaines morts d'un {Enemy} à {Range}3 ou moins, ajoutez 1 {Curse} au paquet Modificateur d'attaque des {Enemy}",
+     "{Suivi_001}",
      "{CreateDark}"
     ],
     "defausse": "defausse"

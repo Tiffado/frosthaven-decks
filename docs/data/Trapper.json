@@ -296,7 +296,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} La prochaine fois qu'un {Enemy} termine son déplacement sur un hexagone adjacent à un piège, sans tenir compte de la ligne de vue, déclenchez un piège adjacent à cet {Enemy} et appliquez ses effets à cet {Enemy}"
+     "{Persistent} La prochaine fois qu'un {Enemy} termine son déplacement sur un hexagone adjacent à un piège, sans tenir compte de la ligne de vue, déclenchez un piège adjacent à cet {Enemy} et appliquez ses effets à cet {Enemy}",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }
@@ -362,7 +363,8 @@
    "bas": {
     "texte": [
      "{Move} 3",
-     "{Round} Augmentez de 3 les valeurs de {Damage} ou {Heal} du prochain piège que vous créez ce round"
+     "{Round} Augmentez de 3 les valeurs de {Damage} ou {Heal} du prochain piège que vous créez ce round",
+     "{Suivi_0}"
     ],
     "defausse": "defausse"
    }

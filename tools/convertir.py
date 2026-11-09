@@ -211,6 +211,11 @@ def rendre(noeud, ctx, lignes: list):
             rendre(v.get("Layout"), ctx, sous)
             if sous:
                 sous[0] = duree(str(v.get("Ability", "")), index) + " " + sous[0]
+                # Cases d'utilisation du bonus (ActiveBonus.XPTracker : 1 = XP gagnée sur cette utilisation).
+                bonus = (index.get(str(v.get("Ability", ""))) or {}).get("ActiveBonus") or {}
+                suivi = bonus.get("XPTracker") if isinstance(bonus, dict) else None
+                if isinstance(suivi, list) and suivi:
+                    sous.append("{Suivi_" + "".join("1" if x else "0" for x in suivi) + "}")
             lignes.extend(sous)
         elif k == "Consume":
             nom_c = str(v.get("Name", ""))

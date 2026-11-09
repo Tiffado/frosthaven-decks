@@ -36,6 +36,8 @@ const PICTOS = {
   lumiere: `<circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" ${SVG_TRAIT}/>`,
   tenebres: '<path d="M19.5 14.5A8 8 0 1 1 9.5 4.5a6.2 6.2 0 0 0 10 10z" fill="currentColor"/>',
   joker: `<circle cx="12" cy="12" r="8.5" ${SVG_TRAIT}/><path d="M12 3.5v17M3.5 12h17" ${SVG_TRAIT}/>`,
+  // Perte : carte barrée (dessin du site).
+  perte: `<rect x="5" y="3" width="14" height="18" rx="2" ${SVG_TRAIT}/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" ${SVG_TRAIT} stroke-width="2.4"/>`,
 };
 
 // Jeton du jeu → [pictogramme, libellé, classe de couleur]. Les valeurs qui suivent (« 3 », « X ») sont mises en gras.
@@ -152,8 +154,31 @@ function jetonHtml(jeton, valeur) {
 // Pictogrammes qui ouvrent une ligne « principale » (affichée en grand si elle est courte).
 const PRINCIPAUX = new Set(["Attack", "Move", "Heal", "Shield", "Retaliate", "Loot", "Teleport", "Push", "Pull", "Summon"]);
 
+// Cases d'utilisation d'un bonus persistant : une case par utilisation, une étoile quand elle rapporte de l'XP.
+function suiviHtml(code) {
+  if (code.length < 2 && !code.includes("1")) return "";
+  const cases = [...code].map((x) => `<span class="case-suivi${x === "1" ? " xp" : ""}">${x === "1" ? svg("xp") : ""}</span>`);
+  return `<p class="suivi" title="${code.length} utilisations ; étoile : +1 XP">${cases.join("")}</p>`;
+}
+
+// Invocation : « {Summon} Nom : {Health}2 {Move}3 … » → encadré avec le nom et les caractéristiques.
+function invocationHtml(ligne) {
+  const m = ligne.match(/^((?:\{(?:Persistent|Round)\}\s*)*)\{Summon\}\s*(.*?)\s*:\s*(.*)$/s);
+  if (!m) return null;
+  // Les caractéristiques à 0 (bannière qui ne bouge ni n'attaque) sont masquées, sauf les PV.
+  const brut = m[3].replace(/\{(Move|Attack|Range)\}0\b\s*/g, "");
+  const stats = echapper(brut).replace(/\{([A-Za-z0-9_+\-]+)\}(\s*(?:[+−-]?\d+|X)\b)?/g, (_, j, v) => jetonHtml(j, v ? v.trim() : ""));
+  const prefixe = [...m[1].matchAll(/\{(\w+)\}/g)].map((x) => jetonHtml(x[1], "")).join("");
+  return `<div class="invoc"><div class="invoc-nom">${prefixe}${jetonHtml("Summon", "")} ${echapper(m[2])}</div>` +
+    `<div class="invoc-stats">${stats}</div></div>`;
+}
+
 function ligneHtml(ligne) {
   if (ligne === "—") return '<hr class="sep">';
+  const suivi = ligne.match(/^\{Suivi_([01]+)\}$/);
+  if (suivi) return suiviHtml(suivi[1]);
+  const invoc = invocationHtml(ligne);
+  if (invoc) return invoc;
   let classe = "";
   const debut = ligne.match(/^\{([A-Za-z0-9_]+)\}/);
   const texteSeul = ligne.replace(/\{[^}]+\}/g, "").replace(/[\d\s,+\-X:]/g, "");
@@ -166,10 +191,23 @@ function ligneHtml(ligne) {
 
 const ETIQ_PERTE = { perte: "Perte", perte_definitive: "Perte définitive" };
 
+// Une action : contenu centré, puis une rangée de coins (XP gagnée à gauche ; éléments créés et perte à droite).
 function moitieHtml(cote, action) {
   const perdue = action.defausse !== "defausse";
-  const etiq = perdue ? `<span class="perte-marque" title="Cette action fait perdre la carte">✕ ${ETIQ_PERTE[action.defausse] || "Perte"}</span>` : "";
-  return `<section class="moitie ${cote}${perdue ? " perdue" : ""}">${etiq}${action.texte.map(ligneHtml).join("")}</section>`;
+  const corps = [], xp = [], creations = [];
+  for (const l of action.texte) {
+    const mXp = l.match(/^\{XP\}\s*(\d+)$/);
+    if (mXp) { xp.push(mXp[1]); continue; }
+    if (/^(\s*\{Create[A-Za-z\-]+\}\s*)+$/.test(l)) { creations.push(...l.match(/\{Create[A-Za-z\-]+\}/g)); continue; }
+    corps.push(l);
+  }
+  while (corps.length && corps[corps.length - 1] === "—") corps.pop();
+  const gauche = xp.map((n) => `<span class="coin-xp" title="Gagnez ${n} XP">${svg("xp")}<b>${n}</b></span>`).join("");
+  const droite = creations.map((j) => `<span class="coin-elem">${jetonHtml(j.slice(1, -1), "")}</span>`).join("") +
+    (perdue ? `<span class="coin-perte${action.defausse === "perte_definitive" ? " definitive" : ""}" ` +
+      `title="${ETIQ_PERTE[action.defausse] || "Perte"} : la carte part dans les cartes perdues">${svg("perte")}</span>` : "");
+  return `<section class="moitie ${cote}${perdue ? " perdue" : ""}"><div class="moitie-corps">${corps.map(ligneHtml).join("")}</div>` +
+    `<div class="coins"><span class="coin-g">${gauche}</span><span class="coin-d">${droite}</span></div></section>`;
 }
 
 function carteHtml(c) {
@@ -206,6 +244,7 @@ function legendeHtml() {
   for (const e of ["Fire", "Ice", "Air", "Earth", "Light", "Dark", "Wild"]) items.push([jetonHtml(e, ""), ELEMENTS[e]]);
   items.push([jetonHtml("CreateFire", ""), "Créer un élément (+)"], [jetonHtml("ConsumeFire", ""), "Consommer un élément (−)"]);
   items.push(['<span class="ic etat-neg">Blessure</span>', "État négatif infligé"], ['<span class="ic etat-pos">Renforcement</span>', "État positif"]);
-  items.push(['<span class="perte-marque">✕ Perte</span>', "L'action fait perdre la carte"]);
+  items.push([`<span class="coin-perte">${svg("perte")}</span>`, "Perte : l'action fait perdre la carte"]);
+  items.push([suiviHtml("101010").replace(/^<p/, "<span").replace(/<\/p>$/, "</span>"), "Utilisations d'un bonus (étoile : +1 XP)"]);
   return items.map(([h, t]) => `<div class="leg">${h}<span>${echapper(t)}</span></div>`).join("");
 }

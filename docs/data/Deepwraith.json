@@ -500,6 +500,7 @@
    "haut": {
     "texte": [
      "{Persistent} Ajoutez {Stun}, {Curse} et {Curse} à votre prochaine capacité {Bane}",
+     "{Suivi_0}",
      "{CreateDark}"
     ],
     "defausse": "defausse"

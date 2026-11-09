@@ -181,7 +181,8 @@
    "initiative": 20,
    "haut": {
     "texte": [
-     "{Persistent} Pour vos 4 prochaines attaques, gagnez +1{Attack} si vous êtes {GMMelee} ou +2{RangedAttack} si vous êtes {GMRanged}"
+     "{Persistent} Pour vos 4 prochaines attaques, gagnez +1{Attack} si vous êtes {GMMelee} ou +2{RangedAttack} si vous êtes {GMRanged}",
+     "{Suivi_0101}"
     ],
     "defausse": "perte"
    },
@@ -280,7 +281,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Pour les 4 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}1 si vous êtes {GMRanged}, ou {Shield}2 si vous êtes {GMMelee}"
+     "{Persistent} Pour les 4 prochaines sources de {Damage} d'attaques vous ciblant, gagnez {Shield}1 si vous êtes {GMRanged}, ou {Shield}2 si vous êtes {GMMelee}",
+     "{Suivi_0101}"
     ],
     "defausse": "perte"
    }
@@ -822,7 +824,8 @@
    "initiative": 11,
    "haut": {
     "texte": [
-     "{Persistent} Pour les 4 prochaines sources de {Damage} d'attaques de mêlée vous ciblant, gagnez {Ward}, puis l'attaquant {Enemy} subit {Damage}5"
+     "{Persistent} Pour les 4 prochaines sources de {Damage} d'attaques de mêlée vous ciblant, gagnez {Ward}, puis l'attaquant {Enemy} subit {Damage}5",
+     "{Suivi_0101}"
     ],
     "defausse": "perte"
    },
@@ -850,7 +853,8 @@
    },
    "bas": {
     "texte": [
-     "{Persistent} Les 4 prochaines fois qu'un {Allies} devrait perdre une carte pour bloquer des {Damage}, il ne perd pas de carte"
+     "{Persistent} Les 4 prochaines fois qu'un {Allies} devrait perdre une carte pour bloquer des {Damage}, il ne perd pas de carte",
+     "{Suivi_0101}"
     ],
     "defausse": "perte"
    }
