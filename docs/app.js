@@ -1,101 +1,6 @@
 "use strict";
 
-// Libellés français des icônes du jeu (jetons {Nom} dans les données). Classe « elem » pour les éléments.
-const ELEMENTS = { Air: "Air", Fire: "Feu", Ice: "Glace", Earth: "Terre", Light: "Lumière", Dark: "Ténèbres",
-  Wild: "élément au choix", Any: "élément au choix", Mixed: "élément mixte" };
-const MIXTES = { A: "Air", F: "Feu", I: "Glace", E: "Terre", L: "Lumière", D: "Ténèbres" };
-const ICONES = {
-  Attack: "Attaque", RangedAttack: "attaque à distance", Move: "Déplacement", Range: "Portée", Target: "Cible",
-  Shield: "Bouclier", Heal: "Soin", Retaliate: "Riposte", Push: "Poussée", Pull: "Attraction", Damage: "dégâts",
-  Wound: "Blessure", Pierce: "Perforation", Jump: "Saut", Immobilize: "Immobilisation", Muddle: "Confusion",
-  Loot: "Butin", Stun: "Étourdissement", Strengthen: "Renforcement", Poison: "Poison", Curse: "Malédiction",
-  Teleport: "Téléportation", Disarm: "Désarmement", Bless: "Bénédiction", Regenerate: "Régénération",
-  Ward: "Protection", Brittle: "Fragilité", Bane: "Fléau", Invisible: "Invisibilité", Flying: "Vol",
-  Allies: "alliés", Enemy: "ennemis", Health: "PV", Summon: "Invocation", AA_Summon: "invocation",
-  XP: "XP +", XP1: "+1 XP", XP2: "+2 XP", Persistent: "∞ Persistant", Round: "↻ Ce round",
-  Zone: "zone d'effet (voir le jeu)", Advantage: "Avantage", Disadvantage: "Désavantage",
-  Recover: "Récupération", RecoverIcon: "Récupération", Consume: "Coût", NullModifier: "Nul", "2x": "×2",
-  HazardHex: "terrain dangereux", ObstacleHex: "obstacle", IceHex: "terrain glacé", RedHex: "hexagone ciblé",
-  BlueHex: "hexagone allié", GreyHex: "hexagone", BSRedHex: "hexagone ciblé", BSYouHex: "vous",
-  BBFast: "Rapide :", BBSlow: "Lent :", BBTime: "Temps",
-  MMGainPressure: "+1 Pression", MMLosePressure: "−1 Pression", MMPressureOver: "Pression excessive :",
-  MMPressureHigh: "Pression haute :", MMPressureRegular: "Pression normale :", MMPressureLow: "Pression basse :",
-  MMSelfDamage: "dégâts à vous-même",
-  HIVEMode: "Mode HIVE", HIVETransfer: "Transfert", GMMelee: "forme Mêlée", GMRanged: "forme Distance",
-  GMMeleeToRanged: "passer en forme Distance", GMRangedToMelee: "passer en forme Mêlée",
-  SSResonance: "Résonance", DWRTrophy: "Trophée", DWLShadow: "Ombre", CTTide: "Marée", IFInfusion: "Infusion",
-  BoneShield: "Bouclier d'os", AA_Immune: "Immunité", ShieldRangedAttack: "Bouclier contre attaques à distance",
-  Manquant: "⚠ texte absent des données du jeu",
-};
-
-function libelle(jeton) {
-  let m;
-  if ((m = jeton.match(/^(Consume|Create)(.*)$/)) && m[2]) {
-    const verbe = m[1] === "Consume" ? "Consommer" : "Créer";
-    let quoi = ELEMENTS[m[2]];
-    const mixte = m[2].match(/^Mixed-([A-Z])([A-Z])$/);
-    if (mixte) quoi = `${MIXTES[mixte[1]]} ou ${MIXTES[mixte[2]]}`;
-    return { texte: `${verbe} ${quoi || m[2]}`, classe: "elem" };
-  }
-  if (ELEMENTS[jeton]) return { texte: ELEMENTS[jeton], classe: "elem" };
-  if (ICONES[jeton]) {
-    return { texte: ICONES[jeton], classe: jeton === "Manquant" ? "manquant" : (CLASSE_FORME[jeton] || "") };
-  }
-  return { texte: jeton, classe: "" };
-}
-
-const echapper = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-
-function ligneHtml(ligne) {
-  if (ligne === "—") return "<hr>";
-  const html = echapper(ligne).replace(/\{([A-Za-z0-9_+\-]+)\}/g, (_, j) => {
-    const l = libelle(j);
-    return `<span class="ic ${l.classe}">${echapper(l.texte)}</span>`;
-  });
-  return `<p>${html.replace(/\n/g, "<br>")}</p>`;
-}
-
-const ETIQ_DEFAUSSE = { perte: "perte", perte_definitive: "perte définitive", defausse: "défausse" };
-
-function actionHtml(titre, action) {
-  const classe = action.defausse === "defausse" ? "defausse" : "perte";
-  return `<div class="action"><div class="action-titre"><span>${titre}</span>` +
-    `<span class="etiq ${classe}">${ETIQ_DEFAUSSE[action.defausse] || action.defausse}</span></div>` +
-    action.texte.map(ligneHtml).join("") + "</div>";
-}
-
-// Formes du Géminé : une carte ne se joue que dans sa forme (champ RequiredForm du jeu).
-const FORMES = { melee: "🗡 Mêlée", distance: "🏹 Distance" };
-// Icônes de forme dans le texte des cartes : même couleur que la forme visée.
-const CLASSE_FORME = { GMMelee: "f-melee", GMRangedToMelee: "f-melee", GMRanged: "f-distance", GMMeleeToRanged: "f-distance" };
-const formeHtml = (c) => c.forme ? `<span class="forme ${c.forme}" title="Forme requise">${FORMES[c.forme]}</span>` : "";
-
-function carteHtml(c) {
-  return `<div class="carte-tete"><div class="carte-nom">${echapper(c.nom)}<small>${echapper(c.nom_en)}</small></div>` +
-    `<div class="carte-meta"><span class="carte-init" title="Initiative">${c.initiative}</span>` +
-    `<span class="carte-niv">niveau ${c.niveau}</span>${formeHtml(c)}</div></div>` +
-    actionHtml("Haut", c.haut) + actionHtml("Bas", c.bas);
-}
-
-// Ajoute les cartes à une grille ; pour le Géminé, sous un titre par forme.
-function remplirGrille(grille, cartes, fabriquer) {
-  grille.replaceChildren();
-  const formes = [...new Set(cartes.map((c) => c.forme).filter(Boolean))];
-  const groupes = formes.length ? ["melee", "distance"].map((f) => [f, cartes.filter((c) => c.forme === f)]) : [[null, cartes]];
-  for (const [f, liste] of groupes) {
-    if (f) grille.insertAdjacentHTML("beforeend",
-      `<h4 class="groupe-forme ${f}">Forme ${FORMES[f]} (${liste.length})</h4>`);
-    for (const c of liste) grille.appendChild(fabriquer(c));
-  }
-}
-
-function creerCarte(c, options = {}) {
-  const el = document.createElement("article");
-  el.className = "carte" + (options.cliquable ? " cliquable" : "") + (c.forme ? " forme-" + c.forme : "");
-  el.innerHTML = carteHtml(c);
-  el.dataset.id = c.id;
-  return el;
-}
+// Le rendu des cartes (pictogrammes, libellés, grilles) est dans cartes.js, chargé avant ce fichier.
 
 // ---------- Stockage local (préférences de chaque visiteur) ----------
 const stock = {
@@ -167,6 +72,7 @@ async function afficherPerso(id, majAdresse, onglet = null) {
 
   const fiche = document.getElementById("fiche");
   fiche.hidden = false;
+  fiche.style.setProperty("--classe", COULEURS_CLASSE[p.id] || "#2f6f9f");
   fiche.replaceChildren(document.getElementById("tpl-fiche").content.cloneNode(true));
   const q = (s) => fiche.querySelector(s);
   q(".f-nom").textContent = p.nom;
@@ -175,7 +81,7 @@ async function afficherPerso(id, majAdresse, onglet = null) {
   q(".f-pv").textContent = p.pv.join(" · ");
   q(".f-diff").textContent = p.difficulte;
   q(".f-nb").textContent = p.cartes.length;
-  q(".f-gameplay").innerHTML = ligneHtml(p.gameplay).slice(3, -4);
+  q(".f-gameplay").innerHTML = ligneHtml(p.gameplay).replace(/^<p[^>]*>|<\/p>$/g, "");
   q(".f-histoire").textContent = p.histoire;
   if (p.deblocage) {
     q(".f-deblocage").hidden = false;
@@ -236,14 +142,7 @@ function remplirCartes(p, q) {
 }
 
 function remplirLegende(div) {
-  const vus = new Set();
-  for (const p of Object.values(cache)) {
-    for (const c of p.cartes) for (const l of [...c.haut.texte, ...c.bas.texte]) {
-      for (const m of l.matchAll(/\{([A-Za-z0-9_+\-]+)\}/g)) vus.add(m[1]);
-    }
-  }
-  const items = [...vus].map((j) => libelle(j).texte).sort((a, b) => a.localeCompare(b, "fr"));
-  div.innerHTML = [...new Set(items)].map((t) => `<div><span class="ic">${echapper(t)}</span></div>`).join("");
+  div.innerHTML = legendeHtml();
 }
 
 // ---------- Simulateur de deck ----------
@@ -367,6 +266,12 @@ function initSimulateur(p, q) {
   }
 
   selNiv.addEventListener("change", () => { e.niveau = Number(selNiv.value); majTout(); });
+  // Vue compacte (par défaut) : les longues phrases sont raccourcies dans le pool et la main.
+  const caseDetail = q(".simu-detail");
+  caseDetail.checked = stock.lire("fh-texte-complet", false);
+  const appliquerVue = () => q(".simu-colonnes").classList.toggle("compacte", !caseDetail.checked);
+  caseDetail.addEventListener("change", () => { stock.ecrire("fh-texte-complet", caseDetail.checked); appliquerVue(); });
+  appliquerVue();
   q(".simu-raz").addEventListener("click", () => {
     if (confirm("Effacer les choix de montée de niveau et la main de ce personnage ?")) {
       e = { niveau: 1, choix: {}, main: [] };

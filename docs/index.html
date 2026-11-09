@@ -82,6 +82,7 @@
       votre main, limitée par la taille de main du personnage.</p>
     <div class="simu-haut">
       <label>Niveau du personnage <select class="simu-niveau"></select></label>
+      <label class="case"><input type="checkbox" class="simu-detail"> Texte complet des cartes</label>
       <button type="button" class="simu-raz">Tout effacer</button>
       <button type="button" class="simu-lien">Copier le lien de ce deck</button>
     </div>
@@ -90,22 +91,23 @@
       <div>
         <h3>Pool disponible <span class="simu-nb-pool"></span></h3>
         <p class="aide">Cliquez sur une carte pour l'ajouter à la main ou l'en retirer.</p>
-        <div class="simu-pool grille-cartes compacte"></div>
+        <div class="simu-pool grille-cartes"></div>
       </div>
       <div>
         <h3>Main <span class="simu-nb-main"></span></h3>
         <div class="simu-bilan"></div>
-        <div class="simu-main grille-cartes compacte"></div>
+        <div class="simu-main grille-cartes"></div>
       </div>
     </div>
   </div>
 
   <div class="panneau" data-panneau="aide" hidden>
-    <p class="aide">Les icônes du jeu sont écrites en toutes lettres. Les plus courantes :</p>
+    <p class="aide">Pictogrammes dessinés pour ce site (ce ne sont pas ceux du jeu). Survolez un pictogramme sur une carte pour voir son nom.</p>
     <div class="legende"></div>
   </div>
 </template>
 
+<script src="cartes.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

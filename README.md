@@ -8,6 +8,8 @@ Site statique de fan (non officiel) pour le jeu vidéo **Frosthaven** (accès an
   limitée par la taille de main, bilan (pertes, effets persistants, initiatives) et lien de partage ;
 - les classes à débloquer masquées derrière un avertissement de spoiler, avec un bouton « Comment le débloquer ? ».
 
+Les cartes sont dessinées par le site : pictogrammes SVG originaux (`docs/cartes.js`), valeurs en gras, initiative au centre, pertes en rouge. Ce ne sont ni les images ni les icônes du jeu.
+
 Le site est dans `docs/` (HTML, CSS, JavaScript sans dépendance), prêt pour GitHub Pages (branche `main`,
 dossier `/docs`).
 
