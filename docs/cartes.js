@@ -85,6 +85,7 @@ const ICONES = {
   SSResonance: "Résonance", DWRTrophy: "Trophée", DWLShadow: "Ombre", CTTide: "Marée", IFInfusion: "Infusion",
   BoneShield: "Bouclier d'os", AA_Immune: "Immunité", ShieldRangedAttack: "Bouclier contre attaques à distance",
   Manquant: "⚠ texte absent des données du jeu",
+  Reconst: "",
 };
 // Jetons de condition propres à une classe : affichés comme une étiquette suivie de « : ».
 const CONDITIONS = new Set(["BBFast", "BBSlow", "MMPressureOver", "MMPressureHigh", "MMPressureRegular", "MMPressureLow"]);
@@ -149,6 +150,9 @@ function jetonHtml(jeton, valeur, zones) {
   const val = valeur ? `<b class="val">${echapper(valeur)}</b>` : "";
   let m;
   if ((m = jeton.match(/^Zone_(\d+)$/)) && zones && zones[Number(m[1])]) return zoneSvg(zones[Number(m[1])]) + val;
+  if (jeton === "Reconst") {
+    return '<span class="reconst" title="Ligne absente des textes du jeu : rédigée par le site à partir des valeurs de la carte">≈</span>';
+  }
   if ((m = jeton.match(/^(Consume|Create)(.+)$/))) {
     const titre = libelle(jeton).texte;
     const elems = elementCode(m[2]).map((e) => `<span class="el el-${ELEM_PICTO[e] || "joker"}">${svg(ELEM_PICTO[e] || "joker")}</span>`);
@@ -270,6 +274,8 @@ function legendeHtml() {
   items.push([jetonHtml("CreateFire", ""), "Créer un élément (+)"], [jetonHtml("ConsumeFire", ""), "Consommer un élément (−)"]);
   items.push(['<span class="ic etat-neg">Blessure</span>', "État négatif infligé"], ['<span class="ic etat-pos">Renforcement</span>', "État positif"]);
   items.push([`<span class="coin-perte">${svg("perte")}</span>`, "Perte : l'action fait perdre la carte"]);
+  items.push(['<span class="reconst">≈</span>', "Ligne rédigée par le site à partir des valeurs de la carte (texte absent du jeu)"]);
+  items.push(['<span class="ic manquant">⚠</span>', "Ligne absente du jeu et trop particulière pour être reconstituée"]);
   items.push([zoneSvg([[0, 0, "G"], [2, 0, "R"], [1, 1, "R"], [3, 1, "B"], [4, 0, "E"]]),
     "Zone d'effet : gris = vous, rouge = cases touchées, bleu = allié ou bannière, pointillé = case vide"]);
   items.push([suiviHtml("101010").replace(/^<p/, "<span").replace(/<\/p>$/, "</span>"), "Utilisations d'un bonus (étoile : +1 XP)"]);

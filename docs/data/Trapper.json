@@ -51,7 +51,7 @@
    "haut": {
     "texte": [
      "{Move} 1",
-     "{Manquant}"
+     "{Reconst} {Invisible} sur vous-même"
     ],
     "defausse": "defausse"
    },
@@ -164,7 +164,7 @@
    "bas": {
     "texte": [
      "Contrôlez tous les {Enemy} ciblés par la {Muddle} :",
-     "{Manquant}",
+     "{Reconst} {Muddle} {Range}3 {Target} tous",
      "{Move}2",
      "{XP}2"
     ],

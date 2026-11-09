@@ -49,8 +49,10 @@ de version des fichiers dans `docs/index.html`, pour que les navigateurs ne gard
 
 ## Limites connues
 
-- Environ 270 lignes de texte de cartes (sur 198 cartes) sont référencées par le jeu mais absentes de ses tables de
-  traduction locales. Le site les signale par « ⚠ texte absent des données du jeu ».
+- Environ 280 lignes de texte de cartes sont référencées par le jeu mais absentes de ses tables de traduction.
+  `tools/reconstituer.py` en rédige environ la moitié à partir des valeurs des capacités (attaque, portée, cibles,
+  états, dégâts, bonus, consommations) : le site les marque « ≈ ». Les autres, trop particulières, restent
+  signalées par « ⚠ texte absent des données du jeu ».
 - Les zones d'effet sont dessinées à partir des coordonnées du jeu (AreaEffect) ; une seule carte n'en a pas dans les données.
 - Les données suivent la version installée du jeu et peuvent changer avec les mises à jour.
 

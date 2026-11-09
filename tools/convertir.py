@@ -10,6 +10,14 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # « python -I » n'ajoute pas le dossier du script
+import reconstituer  # noqa: E402
+
+# Capacité décrite par l'élément de mise en page en cours (Active, Consume) : sert à reconstituer une ligne
+# absente des traductions. Pile de (nom de capacité, est_une_consommation).
+pile_cibles = []
+reconstituees = 0
+
 RACINE = Path(__file__).resolve().parent.parent
 RULESET = RACINE / "tmp/ruleset"
 SORTIE = RACINE / "docs/data"
@@ -148,6 +156,14 @@ def nettoyer(s: str, index: dict, nom_carte: str, prof=0) -> str:
         cle = m.group(1)
         if cle.startswith("FH/"):
             cle = cle[3:]
+        if cle not in textes and "Glossary/" + cle not in textes and pile_cibles:
+            nom_ab, conso = pile_cibles[-1]
+            texte = reconstituer.decrire(index.get(nom_ab), conso)
+            if texte:
+                global reconstituees
+                reconstituees += 1
+                pile_cibles[-1] = (nom_ab, conso, "décrite")
+                return texte
         return nettoyer(tr(cle), index, nom_carte, prof + 1) if prof < 3 else tr(cle)
     s = re.sub(r"\$([A-Za-z0-9_/]+)\$", rempl_cle, s)
     s = re.sub(r"\*([A-Za-z0-9_.]+)\*", lambda m: str(valeur(m.group(1), index, nom_carte)), s)
@@ -210,7 +226,9 @@ def rendre(noeud, ctx, lignes: list):
                 lignes.append(t)
         elif k == "Active":
             sous = []
+            pile_cibles.append((str(v.get("Ability", "")), False))
             rendre(v.get("Layout"), ctx, sous)
+            pile_cibles.pop()
             if sous:
                 sous[0] = duree(str(v.get("Ability", "")), index) + " " + sous[0]
                 # Cases d'utilisation du bonus (ActiveBonus.XPTracker : 1 = XP gagnée sur cette utilisation).
@@ -226,7 +244,9 @@ def rendre(noeud, ctx, lignes: list):
             if not elems:
                 elems = [e for e in ELEMENTS if e in nom_c]
             jeton = "".join(f"{{Consume{e}}}" for e in elems) or "{Consume}"
+            pile_cibles.append((nom_c, True))
             lignes.append(f"{jeton} : " + nettoyer(v.get("Text"), index, nom))
+            pile_cibles.pop()
         elif k == "Infuse":
             lignes.append(f"{{Create{v}}}")
         elif k in ("Conditional", "MandatoryTrigger"):
@@ -319,6 +339,37 @@ def zones_du_cote(data) -> list:
     return zones
 
 
+def remplir_manquants(lignes: list, data_cote, layout_cote, index: dict) -> list:
+    """Remplace les {Manquant} restants par la description des capacités du côté que la mise en page ne cite
+    nulle part (ni *Nom*, ni Ability: / Name:), dans l'ordre des données du jeu."""
+    global reconstituees
+    if not any("{Manquant}" in l for l in lignes):
+        return lignes
+    capacites = list(((data_cote or {}).get("Abilities") or {}).keys())
+    cite = str(layout_cote)
+    libres = [n for n in capacites if not re.search(r"(\*|\b)" + re.escape(n) + r"(\.|\*|\b)", cite)]
+    textes_libres = [t for t in (reconstituer.decrire(index.get(n)) for n in libres) if t]
+    cites = [n for n in capacites if n not in libres]
+    sortie = []
+    for l in lignes:
+        # « {Heal} 2 {Manquant} » : complément de cible de la capacité déjà affichée sur la ligne.
+        m = re.match(r"^((?:\{(?:Persistent|Round|BBFast|BBSlow)\}\s*)*)\{(\w+)\}\s*[\dX+]+\s*\{Manquant\}", l)
+        if m:
+            genre = m.group(2)
+            ab = next((index.get(n) for n in cites if isinstance(index.get(n), dict) and genre in index.get(n)), None)
+            q = reconstituer.qualificatif(ab) if ab else None
+            if q:
+                l = l.replace("{Manquant}", q, 1)
+                reconstituees += 1
+        while "{Manquant}" in l and textes_libres:
+            l = l.replace("{Manquant}", textes_libres.pop(0), 1)
+            reconstituees += 1
+        # L'icône d'état déjà affichée par le jeu n'est pas répétée par le texte reconstitué.
+        l = re.sub(r"\{(\w+)\}(\s*\{Reconst\}\s*)\{\1\}\s*", r"{\1}\2", l)
+        sortie.append(l)
+    return sortie
+
+
 def convertir_carte(chemin: Path):
     c = lire_yaml(chemin)
     index = {}
@@ -336,6 +387,7 @@ def convertir_carte(chemin: Path):
         lignes = [l for l in lignes if l.strip()]
         while lignes and lignes[-1] == "—":
             lignes.pop()
+        lignes = remplir_manquants(lignes, (c.get("Data") or {}).get(cle), (c.get("Layout") or {}).get(cle), index)
         cotes[cote] = {"texte": lignes, "defausse": defausse[0 if cote == "haut" else 1]}
         # Zones d'effet : {ZoneAb_X} reçoit la zone de la capacité X ; le k-ième {Zone} anonyme reçoit
         # la k-ième zone trouvée dans les données de ce côté.
@@ -420,6 +472,7 @@ def main():
                       | {"cartes": len(perso["cartes"])})
     (SORTIE / "personnages.json").write_text(json.dumps(resume, ensure_ascii=False, indent=1), encoding="utf8")
     print(f"{len(resume)} personnages, {sum(r['cartes'] for r in resume)} cartes → docs/data/")
+    print(f"{reconstituees} lignes reconstituées depuis les valeurs du jeu")
     if inconnus:
         print(f"{len(inconnus)} éléments non résolus :")
         for i in sorted(inconnus)[:80]:

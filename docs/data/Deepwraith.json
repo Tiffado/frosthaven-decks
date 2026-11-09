@@ -106,7 +106,7 @@
     "texte": [
      "{Teleport} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} {Muddle} {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -119,14 +119,14 @@
    "initiative": 28,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Attack}2 {Range}1 {Target} tous",
      "{CreateDark}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Invisible} {Range}1 {Target} tous",
      "{CreateDark}",
      "{XP}1"
     ],
@@ -247,7 +247,7 @@
     "texte": [
      "{Teleport} 4",
      "—",
-     "{Manquant}",
+     "{Reconst} {Immobilize} {Range}1 {Target} tous",
      "—",
      "{Teleport} 2",
      "—",
@@ -267,7 +267,7 @@
     "texte": [
      "{Target} 1 adversaire non-boss adjacent {Enemy} qui a 2 états négatifs ou plus",
      "—",
-     "{Manquant}",
+     "{Reconst} {Bane}",
      "{CreateDark}",
      "{XP}2"
     ],
@@ -321,7 +321,7 @@
     "texte": [
      "{Teleport} 6",
      "—",
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}2",
      "{CreateDark}",
      "{XP}1"
     ],
@@ -418,7 +418,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Immobilize} {Range}5 {Target} tous",
      "—",
      "Tous les {Enemy} ayant {Immobilize} subissent {Damage}2",
      "{XP}1"
@@ -441,7 +441,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Muddle} {Range}2 {Target} tous",
      "{ConsumeDark} : +3 {Range}"
     ],
     "defausse": "defausse"
@@ -485,7 +485,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}",
+     "{Reconst} {Target} tous : les {Enemy} ciblés subissent {Damage}1",
      "{CreateDark}"
     ],
     "defausse": "defausse"
@@ -546,7 +546,7 @@
     "texte": [
      "{Target} 1 adversaire adjacent {Enemy} avec {Bane}",
      "—",
-     "{Manquant}",
+     "{Reconst} {Brittle} {Target}1",
      "{CreateDark}",
      "{XP}1"
     ],
@@ -556,7 +556,7 @@
     "texte": [
      "{Teleport} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} {Wound} {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -578,9 +578,9 @@
     "texte": [
      "{Teleport} 4",
      "—",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}10",
      "—",
-     "{Manquant}",
+     "{Reconst} {Bane} {Range}1 {Target} tous",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -610,7 +610,7 @@
     "texte": [
      "{Move} 4",
      "—",
-     "{Manquant}"
+     "{Reconst} {Poison} {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -646,7 +646,7 @@
    "initiative": 11,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Attack}2 {Target} tous {Wound}",
      "—",
      "Gagnez {DWRTrophy} pour chaque {Enemy} ciblé"
     ],
@@ -680,7 +680,7 @@
     "texte": [
      "{Teleport} 4",
      "—",
-     "{Manquant}",
+     "{Reconst} {Immobilize} {Range}1 {Target} tous",
      "{CreateDark}"
     ],
     "defausse": "defausse"

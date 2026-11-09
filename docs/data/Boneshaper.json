@@ -95,7 +95,7 @@
    "initiative": 62,
    "haut": {
     "texte": [
-     "{Strengthen} {Manquant}",
+     "{Strengthen} {Reconst} {Range}3",
      "{ConsumeDark} : +1 {Target}",
      "—",
      "{Poison} {Range}3",
@@ -105,9 +105,9 @@
    },
    "bas": {
     "texte": [
-     "{Heal}5 {Manquant}",
+     "{Heal}5 {Reconst} sur un {Allies} {Range}3",
      "—",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "{CreateDark}"
     ],
     "defausse": "defausse"
@@ -188,7 +188,7 @@
    "initiative": 30,
    "haut": {
     "texte": [
-     "{Heal} 2 {Manquant}",
+     "{Heal} 2 {Reconst} sur un {Allies} {Range}3",
      "{ConsumeEarth} : +2 {Heal}",
      "{ConsumeDark} : +2 {Heal}, {XP1}"
     ],
@@ -196,10 +196,10 @@
    },
    "bas": {
     "texte": [
-     "{Heal}1 {Manquant}",
+     "{Heal}1 {Reconst} {Heal}1 sur vous-même",
      "—",
      "Si un {Enemy} est mort ce round :",
-     "{Heal}1 {Manquant}"
+     "{Heal}1 {Reconst} {Heal}1 sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -212,7 +212,7 @@
    "initiative": 18,
    "haut": {
     "texte": [
-     "{Heal}X+1 {Manquant}",
+     "{Heal}X+1 {Reconst} {Heal}1 sur vous-même",
      "où X est le nombre de vos {AA_Summon}"
     ],
     "defausse": "defausse"
@@ -307,11 +307,11 @@
    "initiative": 53,
    "haut": {
     "texte": [
-     "{Heal} 4 {Manquant}",
+     "{Heal} 4 {Reconst} sur un {Allies} {Range}2 {Target} tous {Bless}",
      "—",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "—",
-     "{Manquant}",
+     "{Reconst} Vous subissez {Curse}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -693,7 +693,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}",
+     "{Reconst} {Heal}3 {Range}3 {Target}1",
      "{ConsumeEarth} : {Ward}"
     ],
     "defausse": "defausse"
@@ -738,7 +738,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "—",
      "Tous les {Enemy} à {Range}5 ou moins subissent {Damage}1",
      "{ConsumeEarth}{ConsumeDark} : +1 {Damage}"

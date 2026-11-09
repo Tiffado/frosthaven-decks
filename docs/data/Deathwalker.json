@@ -649,7 +649,7 @@
    "haut": {
     "texte": [
      "{Immobilize} {Target} tous, {Range}1",
-     "{Manquant}",
+     "{Reconst} {Target} tous : les {Enemy} ciblés subissent {Damage}1",
      "—",
      "Tous les {Enemy} ayant {Immobilize} subissent {Damage}1",
      "{ConsumeDark} : +1 {Damage}",

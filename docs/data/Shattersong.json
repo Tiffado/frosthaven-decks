@@ -93,7 +93,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Muddle} {Range}2 {Target} tous",
      "{Consume} : : +3 {Range},"
     ],
     "defausse": "defausse"
@@ -164,8 +164,8 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
+     "{Reconst} Vous subissez {Brittle}",
      "{Manquant}"
     ],
     "defausse": "defausse"
@@ -208,7 +208,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} {Muddle} {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -366,7 +366,7 @@
     "texte": [
      "{Attack} 3",
      "{Range} 2",
-     "{ConsumeLight} : {Manquant}"
+     "{ConsumeLight} : {Reconst} +1{Attack}, {Advantage}"
     ],
     "defausse": "defausse"
    },
@@ -374,7 +374,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} {Attack}3 {Target} tous"
     ],
     "defausse": "perte"
    }
@@ -422,7 +422,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Immobilize} {Range}2 {Target} tous",
      "{Consume} : +1 {Range}"
     ],
     "defausse": "defausse"
@@ -706,7 +706,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Muddle} {Manquant}",
+     "{Muddle} {Reconst} {Range}2 {Target} tous",
      "{Consume} : +3{Range}",
      "{CreateAir}"
     ],
@@ -758,7 +758,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Wound} {Manquant}",
+     "{Wound} {Reconst} {Range}2 {Target} tous",
      "{CreateAny}"
     ],
     "defausse": "defausse"

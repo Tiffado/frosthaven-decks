@@ -613,7 +613,7 @@
    "initiative": 65,
    "haut": {
     "texte": [
-     "{Attack} 2 {Manquant}",
+     "{Attack} 2 {Reconst} {Range}1 {Target} tous",
      "{ConsumeDark} : {Muddle},{XP1}"
     ],
     "defausse": "defausse"
@@ -669,7 +669,7 @@
      "{Teleport} sur un hexagone inoccupé avec une tuile Eau, à 5 ou moins",
      "{ConsumeDark} : {Teleport} à la place sur n'importe quel hexagone inoccupé et révélé avec une tuile Eau, {XP1}",
      "—",
-     "{Attack} 2 {Manquant}",
+     "{Attack} 2 {Reconst} {Range}1 {Target} tous",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -748,7 +748,7 @@
    "initiative": 76,
    "haut": {
     "texte": [
-     "{Attack} 3 {Manquant}",
+     "{Attack} 3 {Reconst} {Range}1 {Target} tous",
      "—",
      "{ConsumeDark}: Vous êtes immunisé contre les déplacements forcés"
     ],
@@ -821,9 +821,9 @@
    "initiative": 24,
    "haut": {
     "texte": [
-     "{Pull} 2 {Manquant}",
+     "{Pull} 2 {Reconst} {Range}4 {Target} tous",
      "—",
-     "{Attack} 3 {Manquant}",
+     "{Attack} 3 {Reconst} {Range}1 {Target} tous {Immobilize}",
      "{XP}2"
     ],
     "defausse": "perte"

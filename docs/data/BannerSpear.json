@@ -184,7 +184,7 @@
    "bas": {
     "texte": [
      "{Round} {Shield} 2",
-     "{Manquant}"
+     "{Reconst} {Shield}2"
     ],
     "defausse": "defausse"
    }
@@ -617,7 +617,7 @@
    "bas": {
     "texte": [
      "{Move} 4",
-     "— {Manquant}",
+     "— {Reconst} {Muddle} {Range}1 {Target} tous",
      "{CreateAir}"
     ],
     "defausse": "defausse"

@@ -167,7 +167,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Manquant}"
+     "{Reconst} {Heal}2 sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -574,7 +574,7 @@
    "haut": {
     "texte": [
      "{Attack} 4 {Pierce}2",
-     "{Consume} : {Manquant}"
+     "{Consume} : {Reconst} {Wound}"
     ],
     "defausse": "defausse"
    },
@@ -711,7 +711,7 @@
    "haut": {
     "texte": [
      "{Attack} 4 {Range}2",
-     "{Consume} : {Manquant}",
+     "{Consume} : {Reconst} {Immobilize}",
      "{Zone_0}"
     ],
     "defausse": "perte",

@@ -224,7 +224,7 @@
    "bas": {
     "texte": [
      "{Move} 4",
-     "{MMPressureOver} {Manquant}",
+     "{MMPressureOver} {Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1",
      "{MMPressureLow} {Heal}1 {Target} tous les alliés, {Range}1, {XP1}, {MMGainPressure}"
     ],
     "defausse": "defausse"
@@ -355,7 +355,7 @@
    "initiative": 30,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}2",
      "{MMPressureOver} +1 {Damage}, {MMLosePressure}",
      "{MMPressureHigh} {MMLosePressure}",
      "{MMLosePressure}"
@@ -495,9 +495,9 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Pull}1 {Range}5 {Target} tous",
      "—",
-     "{Manquant}",
+     "{Reconst} {Pull}1 {Range}2 {Target} tous",
      "—",
      "{Persistent} {Shield} 1",
      "{MMPressureOver} {Shield} 1 sur vous-même"
@@ -590,8 +590,8 @@
     "texte": [
      "{Heal} 5",
      "—",
-     "{MMPressureOver}{Manquant}",
-     "{MMPressureLow}{Manquant}",
+     "{MMPressureOver}{Reconst} {Wound} {Range}1 {Target} tous",
+     "{MMPressureLow}{Reconst} {Regenerate} {Range}1 {Target} tous",
      "{CreateMixed-FI}"
     ],
     "defausse": "defausse"
@@ -682,7 +682,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}2",
      "—",
      "Détruisez tous les obstacles adjacents",
      "{MMGainPressure}"

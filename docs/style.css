@@ -202,6 +202,14 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
   box-shadow: 0 2px 5px rgba(0, 0, 0, .35), inset 0 0 6px rgba(255, 255, 255, .7);
 }
 
+/* Ligne reconstituée par le site à partir des valeurs de la carte */
+.reconst {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.15em; height: 1.15em; margin-right: 3px; border-radius: 50%;
+  font-size: .8em; font-weight: 800; color: #6a5a46; background: rgba(138, 115, 83, .18);
+  border: 1px dashed #8a7353; vertical-align: .05em; cursor: help;
+}
+
 /* Zones d'effet (dessinées par le site à partir des coordonnées du jeu) */
 .zone { display: inline-block; vertical-align: middle; max-width: 100%; height: auto; margin: 2px 4px; }
 .ligne-zone { display: flex; justify-content: center; }

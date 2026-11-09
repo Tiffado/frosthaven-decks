@@ -200,7 +200,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1",
      "—",
      "{Loot} 1",
      "{Create['Earth']}"
@@ -357,7 +357,7 @@
    "initiative": 45,
    "haut": {
     "texte": [
-     "{Attack} 2 {Manquant}",
+     "{Attack} 2 {Reconst} {Target} tous",
      "{ConsumeFire} : +1 {Attack}, {XP1}",
      "{ConsumeEarth} : {Muddle}, {XP1}"
     ],
@@ -443,7 +443,7 @@
      "—",
      "{Round} Ajoutez +1{Attack} à votre prochaine attaque de ce round ciblant un {Enemy} adjacent à un {ObstacleHex}",
      "{Suivi_0}",
-     "{ConsumeEarth} : {Manquant}"
+     "{ConsumeEarth} : {Reconst} +2{Attack}, {XP1}"
     ],
     "defausse": "defausse"
    }
@@ -478,9 +478,9 @@
    "initiative": 8,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}2",
      "—",
-     "{Push} 2 {Manquant}",
+     "{Push} 2 {Reconst} {Range}3 {Target} tous",
      "{ConsumeFire} : +1 {Range}, {XP1}",
      "—",
      "{Persistent} Au début de votre prochain tour : {Suivi_0}"
@@ -674,8 +674,8 @@
    "haut": {
     "texte": [
      "{Attack} 4",
-     "{ConsumeFire} : +2 {Attack}, {Manquant}, {XP1}",
-     "{ConsumeEarth} : +2 {Attack}, {Manquant}, {XP1}"
+     "{ConsumeFire} : +2 {Attack}, {Reconst} +2{Attack}, {XP1}, {XP1}",
+     "{ConsumeEarth} : +2 {Attack}, {Reconst} +2{Attack}, {XP1}, {XP1}"
     ],
     "defausse": "defausse"
    },
@@ -740,8 +740,8 @@
    "haut": {
     "texte": [
      "Créez 3 {HazardHex} sur des hexagones sans décor et trois {ObstacleHex} de 1 hexagone sur des hexagones vides dans la même salle que vous. Tous les {Enemy} dans cette salle subissent {Damage}4.",
-     "{ConsumeFire} : {Manquant}",
-     "{ConsumeEarth} : {Manquant}",
+     "{ConsumeFire} : {Reconst} {Target}2",
+     "{ConsumeEarth} : {Reconst} {Target}2",
      "{XP}2"
     ],
     "defausse": "perte"

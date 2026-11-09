@@ -346,7 +346,7 @@
    "initiative": 27,
    "haut": {
     "texte": [
-     "{Heal} 3 {Manquant}",
+     "{Heal} 3 {Reconst} sur un {Allies} {Range}3 {Target}1",
      "{ConsumeFire} : {Regenerate}, {XP1}"
     ],
     "defausse": "defausse"
@@ -368,14 +368,14 @@
    "initiative": 36,
    "haut": {
     "texte": [
-     "{Attack} 3 {Manquant}",
+     "{Attack} 3 {Reconst} {Range}4 (portée minimale 3)",
      "{GMRangedToMelee}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
-     "{Heal} 4 {Manquant}",
+     "{Heal} 4 {Reconst} sur vous-même {Regenerate}",
      "{ConsumeFire} : {Strengthen}, {XP1}",
      "{ConsumeLight} : {Strengthen}, {XP1}",
      "{XP}1"
@@ -392,7 +392,7 @@
    "initiative": 76,
    "haut": {
     "texte": [
-     "{Attack} 3 {Manquant}",
+     "{Attack} 3 {Reconst} {Range}4 (portée minimale 3)",
      "{ConsumeFire} : +1 {Attack}, {XP1}",
      "{Zone_0}",
      "{XP}1"
@@ -434,7 +434,7 @@
    "initiative": 30,
    "haut": {
     "texte": [
-     "{Attack} 2 {Manquant}",
+     "{Attack} 2 {Reconst} {Range}4 (portée minimale 3)",
      "{Zone_0}"
     ],
     "defausse": "defausse",
@@ -480,7 +480,7 @@
    "initiative": 18,
    "haut": {
     "texte": [
-     "{Immobilize} {Manquant}",
+     "{Immobilize} {Reconst} {Range}5 (portée minimale 4) {Target}3",
      "—",
      "Toutes les cibles de la capacité {Immobilize} subissent {Damage}1",
      "{ConsumeLight} : +1 {Damage}, {XP1}",
@@ -490,7 +490,7 @@
    },
    "bas": {
     "texte": [
-     "{Attack} 2 {Manquant}",
+     "{Attack} 2 {Reconst} {Range}4 (portée minimale 3)",
      "{GMRangedToMelee}"
     ],
     "defausse": "defausse"
@@ -529,8 +529,8 @@
    "initiative": 88,
    "haut": {
     "texte": [
-     "{Attack} 2 {Manquant}, {Range}2, {Muddle}",
-     "{Muddle} {Manquant}",
+     "{Attack} 2 {Reconst} {Range}2 {Target} tous {Muddle}, {Range}2, {Muddle}",
+     "{Muddle} {Reconst} {Range}2 {Target} tous",
      "{CreateIce}",
      "{XP}1"
     ],
@@ -586,7 +586,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1",
      "{Loot} 1"
     ],
     "defausse": "defausse"
@@ -601,8 +601,8 @@
    "initiative": 32,
    "haut": {
     "texte": [
-     "{Attack} 2 {Manquant}",
-     "{Consume} : {Manquant}",
+     "{Attack} 2 {Reconst} {Range}5 (portée minimale 4)",
+     "{Consume} : {Reconst} +2{Attack}",
      "{Consume} : {Manquant} {BSRedHex}{BSRedHex}",
      "{Zone_0}"
     ],
@@ -641,7 +641,7 @@
    "haut": {
     "texte": [
      "{Loot} 1",
-     "{Manquant}"
+     "{Reconst} {Regenerate} sur vous-même"
     ],
     "defausse": "defausse"
    },
@@ -664,7 +664,7 @@
    "haut": {
     "texte": [
      "{Retaliate} 2 {Range}2",
-     "{Consume} : {Manquant}",
+     "{Consume} : {Reconst} {Disarm}",
      "{Persistent} {Retaliate} 2",
      "Gagnez {XP1} lorsque vous ripostez ce round"
     ],
@@ -687,7 +687,7 @@
    "initiative": 23,
    "haut": {
     "texte": [
-     "{Attack} 2 {Manquant}",
+     "{Attack} 2 {Reconst} {Range}3 (portée minimale 2)",
      "{Zone_0}",
      "{Consume} : {Manquant}",
      "{Zone_1}",
@@ -769,7 +769,7 @@
    "bas": {
     "texte": [
      "{Move} 1",
-     "{Manquant}"
+     "{Reconst} {Push}2 {Range}2 (portée minimale 2) {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -841,9 +841,9 @@
    "initiative": 50,
    "haut": {
     "texte": [
-     "{Manquant}",
-     "{ConsumeFire} : {Manquant}",
-     "{ConsumeLight} : {Manquant}",
+     "{Reconst} {Attack}6 {Range}5 (portée minimale 4)",
+     "{ConsumeFire} : {Reconst} {Advantage}, {Wound}, {XP1}",
+     "{ConsumeLight} : {Reconst} {Advantage}, {Wound}, {XP1}",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -852,7 +852,7 @@
     "texte": [
      "{Round} Toutes vos attaques ce round gagnent {Pierce}2 et {Advantage}",
      "—",
-     "{Manquant}",
+     "{Reconst} Vous subissez {Poison}",
      "{GMRangedToMelee}"
     ],
     "defausse": "defausse"
@@ -894,7 +894,7 @@
    "initiative": 67,
    "haut": {
     "texte": [
-     "{Heal}4 {Manquant}",
+     "{Heal}4 {Reconst} sur un {Allies} {Range}3 {Target}1",
      "{ConsumeLight} : +1 {Target}, {CreateMixed-FI}, {XP1}"
     ],
     "defausse": "defausse"
@@ -919,7 +919,7 @@
    "initiative": 75,
    "haut": {
     "texte": [
-     "{Heal}2 {Manquant}",
+     "{Heal}2 {Reconst} sur un {Allies} {Range}1 {Target} tous",
      "—",
      "Une fois durant chacun de vos tours",
      "{GMMeleeToRanged}",
@@ -974,7 +974,7 @@
    "haut": {
     "texte": [
      "{Attack}2",
-     "{Consume} : {Manquant} {Consume} : {Manquant}",
+     "{Consume} : {Reconst} {Brittle} {Consume} : {Reconst} {Poison}",
      "{Zone_0}"
     ],
     "defausse": "defausse",
@@ -1038,9 +1038,9 @@
     "texte": [
      "{Move}3",
      "—",
-     "{Attack}2 {Manquant}",
-     "{Consume} : {Manquant}",
-     "{Consume} : {Manquant}"
+     "{Attack}2 {Reconst} {Range}4 (portée minimale 3) {Target}1",
+     "{Consume} : {Reconst} {Immobilize}",
+     "{Consume} : {Reconst} {Target}1"
     ],
     "defausse": "defausse"
    }
@@ -1212,7 +1212,7 @@
    "initiative": 55,
    "haut": {
     "texte": [
-     "{Attack} 4 {Manquant}",
+     "{Attack} 4 {Reconst} {Range}3 (portée minimale 2)",
      "—",
      "Au début de votre prochain tour, effectuez immédiatement l'action supérieure ou inférieure d'une carte {GMRanged} de votre main, puis perdez cette carte",
      "{GMRangedToMelee}"

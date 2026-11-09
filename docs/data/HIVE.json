@@ -294,7 +294,7 @@
      "—",
      "{Heal} 2 sur vous-même",
      "—",
-     "{Manquant}"
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1"
     ],
     "defausse": "defausse"
    },
@@ -324,9 +324,9 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Muddle} {Range}1 {Target} tous",
      "—",
-     "{Manquant}"
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1"
     ],
     "defausse": "defausse"
    }
@@ -513,7 +513,7 @@
      "—",
      "{Move} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1"
     ],
     "defausse": "defausse"
    }
@@ -736,7 +736,7 @@
      "—",
      "{Move} 1",
      "—",
-     "{Manquant}"
+     "{Reconst} {Wound} {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }

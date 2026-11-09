@@ -63,7 +63,7 @@
     "texte": [
      "{Move} 3 {BBSlow} -2 {Move}",
      "—",
-     "{BBFast} Ajoutez {Pierce}2 à toutes vos attaques ce round {CreateAir} {BBSlow} {Manquant} {CreateEarth}"
+     "{BBFast} Ajoutez {Pierce}2 à toutes vos attaques ce round {CreateAir} {BBSlow} {Reconst} Toutes vos attaques ce round gagnent {Pierce}2 {CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -149,7 +149,7 @@
    },
    "bas": {
     "texte": [
-     "{Muddle} {Manquant} {BBSlow} +1 {Range}",
+     "{Muddle} {Reconst} {Range}2 {Target} tous {BBSlow} +1 {Range}",
      "{BBFast} {Round} Les {Enemy} avec {Muddle} ne ripostent pas à vos attaques ce round"
     ],
     "defausse": "defausse"
@@ -166,7 +166,7 @@
      "{Attack} 4",
      "{BBFast} Si vous n'avez pas {Poison}",
      "—",
-     "{BBSlow} {Manquant}"
+     "{BBSlow} {Reconst} Vous subissez {Poison}"
     ],
     "defausse": "defausse"
    },
@@ -174,7 +174,7 @@
     "texte": [
      "{BBFast} +4 {Move} {Move} 3",
      "—",
-     "{BBSlow} {Manquant}",
+     "{BBSlow} {Reconst} {Heal}2 {Range}1 {Target} tous",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -218,7 +218,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Heal}2 {Target} tous sur vous-même",
      "{BBSlow} {Regenerate}"
     ],
     "defausse": "defausse"
@@ -278,11 +278,11 @@
    "initiative": 12,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "—",
-     "{BBFast} Tous les {Enemy} à {Range}2 ou moins subissent {Damage}1 {BBSlow} {Manquant}",
+     "{BBFast} Tous les {Enemy} à {Range}2 ou moins subissent {Damage}1 {BBSlow} {Reconst} {Target} tous {Range}2 : les {Enemy} ciblés subissent {Damage}1",
      "—",
-     "{BBFast} {Manquant}"
+     "{BBFast} {Reconst} {Immobilize} {Muddle} {Range}2 {Target} tous"
     ],
     "defausse": "defausse"
    },
@@ -290,7 +290,7 @@
     "texte": [
      "{Move} 2 {BBSlow} +2 {Move}",
      "—",
-     "{BBFast} {Loot} 1 {BBSlow} {Manquant}"
+     "{BBFast} {Loot} 1 {BBSlow} {Reconst} {Loot}1 {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -313,7 +313,7 @@
    },
    "bas": {
     "texte": [
-     "{Heal} 2 {Manquant}",
+     "{Heal} 2 {Reconst} sur vous-même ou un {Allies} {Range}1 {Target} tous",
      "—",
      "{BBFast} À la fin de votre tour, jouez une carte de votre main pour en effectuer l'action supérieure ou inférieure"
     ],
@@ -375,7 +375,7 @@
     "texte": [
      "{BBFast} +2{Attack}, {Pierce}1 {Attack} 3",
      "—",
-     "{BBFast} {Manquant}"
+     "{BBFast} {Reconst} Subissez {Damage}1"
     ],
     "defausse": "defausse"
    },
@@ -383,9 +383,9 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{BBFast} {Manquant}",
+     "{BBFast} {Reconst} Subissez {Damage}1",
      "—",
-     "{BBFast} {Manquant}"
+     "{BBFast} {Reconst} {Ward} sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -401,7 +401,7 @@
      "{Heal} 1 {Target}3 {Range}3",
      "{BBFast} +2{Heal}, -1{Target}, -1{Range}, {XP1}",
      "—",
-     "{BBSlow} {Manquant}"
+     "{BBSlow} {Reconst} {Bless} sur vous-même"
     ],
     "defausse": "defausse"
    },
@@ -502,7 +502,7 @@
     "texte": [
      "{Teleport} 5",
      "—",
-     "{BBSlow} {Manquant}"
+     "{BBSlow} {Reconst} Subissez {Damage}2"
     ],
     "defausse": "defausse"
    }
@@ -551,7 +551,7 @@
    },
    "bas": {
     "texte": [
-     "{BBFast} {Move} 3 {BBSlow} {Manquant} {BBSlow}",
+     "{BBFast} {Move} 3 {BBSlow} {Reconst} {Ward} sur vous-même {BBSlow}",
      "—",
      "{Round} Lorsqu'un {Enemy} termine son {Teleport} ou son {Move} à côté de vous : -1 {Attack} {Target} cet {Enemy}"
     ],
@@ -568,13 +568,13 @@
     "texte": [
      "{BBFast} {Target} tous les {Enemy} adjacents {Attack}3 {Wound}",
      "—",
-     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Manquant} {BBSlow}"
+     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Reconst} Subissez {Damage}1 {BBSlow}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
-     "{Heal}4 {Manquant}",
+     "{Heal}4 {Reconst} sur vous-même {Target} tous",
      "—",
      "{BBFast} {Move} 2"
     ],
@@ -612,7 +612,7 @@
    "haut": {
     "texte": [
      "{BBFast} +1 {Attack}, {XP1} {Attack} 4",
-     "{Consume} : {Manquant}"
+     "{Consume} : {Reconst} +3{Attack}, {XP1}"
     ],
     "defausse": "defausse"
    },
@@ -642,7 +642,7 @@
    "bas": {
     "texte": [
      "{Move} 3 {BBSlow} -1 {Move}",
-     "{BBFast} {Manquant} {BBSlow} {Manquant}"
+     "{BBFast} {Reconst} {Invisible} sur vous-même {BBSlow} {Reconst} {Strengthen} sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -687,7 +687,7 @@
     "texte": [
      "{Teleport} vers un hexagone de départ",
      "—",
-     "{Manquant}",
+     "{Reconst} {Heal}10 sur vous-même",
      "—",
      "{Recover} jusqu'à 2 de vos cartes perdues"
     ],
@@ -711,7 +711,7 @@
     "texte": [
      "{Teleport} 7",
      "—",
-     "{BBSlow} {Manquant}"
+     "{BBSlow} {Reconst} Subissez {Damage}2"
     ],
     "defausse": "defausse"
    }

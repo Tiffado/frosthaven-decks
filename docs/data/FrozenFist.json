@@ -232,7 +232,7 @@
     "texte": [
      "{Move} 3 {Jump}",
      "—",
-     "{Attack} 5 {Manquant}",
+     "{Attack} 5 {Reconst} {Range}1 {Target}1",
      "—",
      "{Heal} X sur vous-même",
      "où X est le total des {Damage} subis par les cibles de la capacité d'attaque",
@@ -250,7 +250,7 @@
    "initiative": 32,
    "haut": {
     "texte": [
-     "{Attack} 5 {Manquant}",
+     "{Attack} 5 {Reconst} {Range}1 {Target} tous {Immobilize}",
      "{Create['Ice', 'Earth']}",
      "{XP}2"
     ],
@@ -299,14 +299,14 @@
      "—",
      "Créez 1 {IceHex} sur un hexagone sans décor à {Range}3 ou moins",
      "—",
-     "{Manquant}",
+     "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1",
      "{Create['Ice']}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Heal}3 sur vous-même",
      "{Create['Earth']}"
     ],
     "defausse": "defausse"
@@ -323,7 +323,7 @@
      "{Shield} 1",
      "{ConsumeIce} : +1{Shield}, {XP1}",
      "—",
-     "{Manquant}",
+     "{Reconst} Vous subissez {Disarm}, {Muddle}",
      "—",
      "{Round} Lorsque vous devriez gagner {Disarm} ou {Muddle} ce round, bloquez cet état",
      "{Round} {Shield} 1"
@@ -334,7 +334,7 @@
     "texte": [
      "Déplacement {Move} 2",
      "—",
-     "{Manquant}",
+     "{Reconst} {Pull}1 {Range}2 {Target} tous",
      "—",
      "Un {Enemy} adjacent subit {Damage}1"
     ],
@@ -403,7 +403,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Heal}2 sur vous-même",
      "—",
      "{Move} 2",
      "—",
@@ -530,7 +530,7 @@
     "texte": [
      "{Move} 4",
      "—",
-     "{Manquant}"
+     "{Reconst} {Immobilize} {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -623,7 +623,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Manquant}",
+     "{Reconst} {Ward} sur vous-même",
      "{ConsumeIce} : {Bless}, {XP1}",
      "{CreateEarth}"
     ],

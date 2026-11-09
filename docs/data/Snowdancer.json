@@ -177,7 +177,7 @@
    "bas": {
     "texte": [
      "{Move} 2",
-     "{Manquant}"
+     "{Reconst} {Push}2 {Range}1 {Target} tous"
     ],
     "defausse": "defausse"
    }
@@ -611,7 +611,7 @@
     "texte": [
      "Déplacement {Move} 3 {Jump}",
      "—",
-     "{Manquant}",
+     "{Reconst} {Push}1 {Range}2",
      "{Create['Air']}"
     ],
     "defausse": "defausse"
@@ -634,7 +634,7 @@
    },
    "bas": {
     "texte": [
-     "{Heal} 2 {Manquant}"
+     "{Heal} 2 {Reconst} sur un {Allies} {Range}3 {Target}1"
     ],
     "defausse": "defausse"
    }
@@ -880,7 +880,7 @@
    "initiative": 81,
    "haut": {
     "texte": [
-     "{Attack} 4 {Manquant}",
+     "{Attack} 4 {Reconst} {Range}2 {Target} tous",
      "{ConsumeAir} : +1 {Range}, {XP1}",
      "{Create['Air']}",
      "{XP}1"
