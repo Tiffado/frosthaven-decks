@@ -339,14 +339,14 @@
    "initiative": 48,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Attack}1",
      "{XP}1"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
-     "{Manquant}"
+     "{Reconst} Commandez une de vos {AA_Summon} : {Move}1"
     ],
     "defausse": "defausse"
    }
@@ -436,7 +436,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Manquant}",
+     "{Reconst} Commandez 2 de vos {AA_Summon} : {Move}2",
      "{Move} 2"
     ],
     "defausse": "defausse"
@@ -560,7 +560,7 @@
     "texte": [
      "{Move} 4",
      "—",
-     "{Manquant} 4"
+     "{Reconst} Commandez une de vos {AA_Summon} : {Move}4 4"
     ],
     "defausse": "defausse"
    }

@@ -174,7 +174,7 @@
     "texte": [
      "{BBFast} +4 {Move} {Move} 3",
      "—",
-     "{BBSlow} {Reconst} {Heal}2 {Range}1 {Target} tous",
+     "{BBSlow} {Reconst} {Heal}2 sur vous et tous les {Allies} à {Range}1",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -212,13 +212,13 @@
     "texte": [
      "Gagnez 2{BBTime}",
      "—",
-     "{Manquant}"
+     "{Reconst} {Bless}, {Ward} sur vous-même"
     ],
     "defausse": "perte"
    },
    "bas": {
     "texte": [
-     "{Reconst} {Heal}2 {Target} tous sur vous-même",
+     "{Reconst} {Heal}2 sur vous-même",
      "{BBSlow} {Regenerate}"
     ],
     "defausse": "defausse"
@@ -290,7 +290,7 @@
     "texte": [
      "{Move} 2 {BBSlow} +2 {Move}",
      "—",
-     "{BBFast} {Loot} 1 {BBSlow} {Reconst} {Loot}1 {Range}1 {Target} tous"
+     "{BBFast} {Loot} 1 {BBSlow} {Reconst} Vous subissez {Immobilize}"
     ],
     "defausse": "defausse"
    }
@@ -313,7 +313,7 @@
    },
    "bas": {
     "texte": [
-     "{Heal} 2 {Reconst} sur vous-même ou un {Allies} {Range}1 {Target} tous",
+     "{Heal} 2 {Reconst} sur vous et tous les {Allies} à {Range}1",
      "—",
      "{BBFast} À la fin de votre tour, jouez une carte de votre main pour en effectuer l'action supérieure ou inférieure"
     ],
@@ -350,7 +350,7 @@
    "initiative": 57,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Recover} 1 de vos cartes perdues",
      "—",
      "{Recover} une de vos cartes perdues"
     ],
@@ -480,7 +480,7 @@
    "bas": {
     "texte": [
      "{Move}X+2",
-     "{Manquant}"
+     "{Reconst} {Move}2"
     ],
     "defausse": "defausse"
    }
@@ -523,7 +523,7 @@
    },
    "bas": {
     "texte": [
-     "{Stun} {Manquant}",
+     "{Stun} {Reconst} {Range}1 {Target} tous",
      "Gagnez 1 {BBTime} pour chaque {Enemy} ciblé",
      "{XP}1"
     ],
@@ -568,13 +568,13 @@
     "texte": [
      "{BBFast} {Target} tous les {Enemy} adjacents {Attack}3 {Wound}",
      "—",
-     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Reconst} Subissez {Damage}1 {BBSlow}"
+     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Manquant} {BBSlow}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
-     "{Heal}4 {Reconst} sur vous-même {Target} tous",
+     "{Heal}4 {Reconst} sur vous-même",
      "—",
      "{BBFast} {Move} 2"
     ],

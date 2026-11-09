@@ -134,7 +134,7 @@
     "texte": [
      "{Move} 1",
      "—",
-     "{ConsumeLight}: {Manquant}"
+     "{ConsumeLight}: {Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1 {XP1}"
     ],
     "defausse": "defausse"
    }
@@ -357,7 +357,7 @@
      "—",
      "{Retaliate} 1",
      "—",
-     "{Manquant}",
+     "{Reconst} {ConsumeDark} : Les attaques qui vous ciblent ont {Disadvantage} {XP1}",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -512,7 +512,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}",
+     "{Reconst} Créez de l'eau sur les hexagones de la zone",
      "{Zone_0}"
     ],
     "defausse": "defausse",

@@ -85,7 +85,7 @@
     "texte": [
      "{Heal} 3 {Range}3",
      "—",
-     "{Manquant}"
+     "{Reconst} Vous subissez {Wound}"
     ],
     "defausse": "defausse"
    }
@@ -258,7 +258,7 @@
    "initiative": 90,
    "haut": {
     "texte": [
-     "{Reconst} Vous subissez {Wound}, {Brittle}, {Bane}, {Poison}, {Immobilize}, {Disarm}, {Stun}, {Muddle}",
+     "{Manquant}",
      "Retirez tous les états négatifs que vous avez. Choisissez une carte de votre main. Pendant votre tour, vous pouvez jouer l'action supérieure de cette carte."
     ],
     "defausse": "defausse"
@@ -304,7 +304,7 @@
    "initiative": 47,
    "haut": {
     "texte": [
-     "{Heal} 3 {Reconst} sur vous-même ou un {Allies} {Target}2",
+     "{Heal} 3 {Reconst} sur vous-même ou un {Allies}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -313,7 +313,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Poison} {Reconst} {Target} tous {Range}3 : les {Enemy} ciblés subissent {Damage}1",
+     "{Poison} {Reconst} sur vous-même ou un {Allies} à {Range}4",
      "—",
      "Tous les {Enemy} à {Range}3 ou moins subissent {Damage}1"
     ],

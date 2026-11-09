@@ -263,7 +263,7 @@
    "haut": {
     "texte": [
      "Détruisez un {ObstacleHex} à {Range}4 :",
-     "{Attack} 1 {Manquant}",
+     "{Attack} 1 {Reconst} {Target} tous {Muddle}",
      "Effectuez les attaques comme si vous occupiez cet {ObstacleHex}",
      "{Create['Earth']}",
      "{XP}1"

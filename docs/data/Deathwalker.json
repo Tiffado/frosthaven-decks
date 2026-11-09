@@ -441,7 +441,7 @@
    "initiative": 36,
    "haut": {
     "texte": [
-     "{Attack} 3 {Manquant}",
+     "{Attack} 3 {Reconst} {Range}1 {Target} tous {Wound}",
      "Effectuez les attaques comme si vous occupiez un hexagone avec une {DWLShadow}",
      "{XP}1"
     ],
@@ -564,7 +564,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Wound} {Stun} {Range}1 {Target} tous",
      "Effectuez cette capacité comme si vous occupiez un hexagone avec une {DWLShadow}",
      "{XP}1"
     ],
@@ -604,7 +604,7 @@
    "haut": {
     "texte": [
      "Pour jusqu'à 2 {DWLShadow}, effectuez :",
-     "{Manquant}"
+     "{Reconst} {Attack}3 {Range}2 {Target}1"
     ],
     "defausse": "defausse"
    },
@@ -649,7 +649,7 @@
    "haut": {
     "texte": [
      "{Immobilize} {Target} tous, {Range}1",
-     "{Reconst} {Target} tous : les {Enemy} ciblés subissent {Damage}1",
+     "{Reconst} {Immobilize} {Range}1 {Target} tous",
      "—",
      "Tous les {Enemy} ayant {Immobilize} subissent {Damage}1",
      "{ConsumeDark} : +1 {Damage}",

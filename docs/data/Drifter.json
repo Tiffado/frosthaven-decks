@@ -53,7 +53,7 @@
     "texte": [
      "{Attack} 2",
      "—",
-     "{Manquant}"
+     "{Reconst} Récupérez une utilisation d'un de vos bonus actifs"
     ],
     "defausse": "defausse"
    },
@@ -82,7 +82,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Manquant}"
+     "{Reconst} Récupérez une utilisation d'un de vos bonus actifs"
     ],
     "defausse": "defausse"
    }
@@ -97,7 +97,7 @@
     "texte": [
      "{Attack} 2 {Range}2",
      "—",
-     "{Manquant}"
+     "{Reconst} Récupérez une utilisation d'un de vos bonus actifs"
     ],
     "defausse": "defausse"
    },
@@ -137,7 +137,7 @@
    "initiative": 90,
    "haut": {
     "texte": [
-     "{Manquant}"
+     "{Reconst} Récupérez une utilisation de 2 de vos bonus actifs"
     ],
     "defausse": "defausse"
    },
@@ -506,7 +506,7 @@
      "—",
      "{Heal} 2 {Range}1",
      "—",
-     "{Manquant}"
+     "{Reconst} Récupérez une utilisation d'un de vos bonus actifs"
     ],
     "defausse": "defausse"
    },
@@ -528,7 +528,7 @@
     "texte": [
      "{Attack} 3, {Range}3",
      "—",
-     "{Manquant}"
+     "{Reconst} Récupérez une utilisation d'un de vos bonus actifs"
     ],
     "defausse": "defausse"
    },

@@ -54,8 +54,12 @@ def portee(ab) -> str:
 
 def etats(ab) -> list:
     """Jetons d'états infligés ou donnés par la capacité."""
-    trouves = [e for e in ETATS if ab.get(e) is True]
-    trouves += [e for e in liste(ab.get("Conditions")) if e in ETATS and e not in trouves]
+    def actif(v):
+        # True, ou un dictionnaire d'enchantement ({Amount: true, ...} ou sans Amount) : l'état est appliqué.
+        return v is True or (isinstance(v, dict) and v.get("Amount", True) is not False)
+    trouves = [e for e in ETATS if actif(ab.get(e))]
+    for cle in ("Conditions", "Condition"):
+        trouves += [e for e in liste(ab.get(cle)) if e in ETATS and e not in trouves]
     return [f"{{{e}}}" for e in trouves]
 
 
@@ -91,12 +95,16 @@ def decrire_simple(ab):
         morceaux = [f"{{{jeton}}}{n}"]
         if k == "Move" and (ab.get("Jump") is True or (isinstance(ab.get("Move"), dict) and ab["Move"].get("Jump"))):
             morceaux.append("{Jump}")
-        for p in (portee(ab), cibles(ab)):
-            if p:
-                morceaux.append(p)
-        morceaux += etats(ab)
-        if sur_soi(ab) and k in ("Heal",):
-            morceaux.append("sur vous-même")
+        if k in ("Heal", "Shield", "Retaliate"):
+            q = qualificatif(ab)  # cible : vous-même, alliés…
+            if q:
+                morceaux.append(q.replace("{Reconst} ", ""))
+            morceaux += [e for e in etats(ab) if e not in " ".join(morceaux)]
+        else:
+            for p in (portee(ab), cibles(ab)):
+                if p:
+                    morceaux.append(p)
+            morceaux += etats(ab)
         return " ".join(morceaux)
     return None
 
@@ -126,20 +134,33 @@ def decrire_degats(ab):
     return f"Les {{Enemy}} ciblés subissent {{Damage}}{n}"
 
 
-def qualificatif(ab):
-    """Complément de cible d'une capacité déjà affichée (« sur vous-même », « sur un allié »…)."""
-    filtre = liste(ab.get("Filter")) if isinstance(ab, dict) else []
+def tous(ab) -> bool:
+    t = nombre(ab.get("Target"))
+    return t is not None and (t >= 99 or t < 0)
+
+
+def qualificatif(ab, genre=""):
+    """Complément de cible d'une capacité déjà affichée (« sur vous-même », « sur tous les alliés »…).
+    `genre` : jeton déjà affiché en début de ligne, à ne pas répéter."""
+    if not isinstance(ab, dict):
+        return None
+    filtre = liste(ab.get("Filter"))
     morceaux = []
     if filtre == ["Self"]:
         morceaux.append("sur vous-même")
     elif set(filtre) == {"Self", "Ally"}:
-        morceaux.append("sur vous-même ou un {Allies}")
+        morceaux.append("sur vous et tous les {Allies}" if tous(ab) else "sur vous-même ou un {Allies}")
     elif filtre == ["Ally"]:
-        morceaux.append("sur un {Allies}")
-    for p in (portee(ab), cibles(ab)):
-        if p:
-            morceaux.append(p)
-    morceaux += etats(ab)
+        morceaux.append("sur tous les {Allies}" if tous(ab) else "sur un {Allies}")
+    if filtre != ["Self"]:
+        r = portee(ab)
+        if r:
+            morceaux.append(("à " if filtre in (["Ally"], ["Self", "Ally"], ["Ally", "Self"]) else "") + r)
+        if not filtre or "Enemy" in filtre:
+            c = cibles(ab)
+            if c:
+                morceaux.append(c)
+    morceaux += [e for e in etats(ab) if e != "{" + genre + "}"]
     return "{Reconst} " + " ".join(morceaux) if morceaux else None
 
 
@@ -193,13 +214,118 @@ def decrire_consommation(conso):
     return ", ".join(morceaux) if morceaux else None
 
 
-def decrire(ab, est_consommation=False):
+def decrire_interne(capacites) -> str:
+    """Description jointe d'un dictionnaire de capacités internes (ordres, consommations, ombres…)."""
+    if not isinstance(capacites, dict):
+        return ""
+    morceaux = [t for t in (texte_de(a) for a in capacites.values()) if t]
+    return ", ".join(morceaux)
+
+
+def decrire_special(ab):
+    """Mécaniques particulières bien décrites par les données du jeu."""
+    # Utilisations des bonus actifs (Vagabond)
+    n = nombre(ab.get("MoveActiveBonusTracker"))
+    if n:
+        combien = nombre((ab.get("Vars") or {}).get("NumberOfCardsToSelect")) or 1
+        de = "d'un de vos" if combien == 1 else f"de {combien} de vos"
+        return (f"Récupérez une utilisation {de} bonus actifs" if n < 0
+                else f"Perdez une utilisation {de} bonus actifs")
+    # Jetons (temps du Vivelame, trophées du Spectre des Profondeurs)
+    jetons = nombre(ab.get("Tokens"))
+    drapeaux = liste(ab.get("Flags"))
+    if jetons and "ModifiesTimeTokens" in drapeaux:
+        return f"Gagnez {jetons}{{BBTime}}"
+    if jetons and "ModifiesTrophyTokens" in drapeaux:
+        return f"Gagnez {jetons}{{DWRTrophy}}"
+    # Cartes perdues récupérées
+    rec = ab.get("RecoverLostCards")
+    if isinstance(rec, dict):
+        k = nombre(rec.get("Strength")) or 1
+        return f"{{Recover}} {k} de vos cartes perdues"
+    # Création de terrain
+    terrain = ab.get("CreateTerrain")
+    if terrain:
+        quoi = {"Ice": "{IceHex}", "Water": "eau"}.get(str(terrain), str(terrain))
+        k = nombre(ab.get("Target")) or 1
+        suite = portee(ab)
+        if k < 0 or ab.get("AreaEffect"):
+            return f"Créez de l'{quoi} sur les hexagones de la zone" if quoi == "eau" else \
+                f"Créez {quoi} sur les hexagones de la zone"
+        return f"Créez {k} {quoi if quoi != 'eau' else 'hexagone(s) d’eau'}" + (f" à {suite}" if suite else "")
+    # Les attaquants ont un désavantage
+    if ab.get("AttackersGainDisadvantage") is True:
+        return "Les attaques qui vous ciblent ont {Disadvantage}"
+    # Ordre donné à une invocation
+    ordre = ab.get("ControlActor")
+    if isinstance(ordre, dict):
+        interne = decrire_interne(ordre.get("Abilities"))
+        if interne:
+            k = nombre(ab.get("Target")) or 1
+            filtre = ab.get("Filter")
+            filtre = liste(filtre.get("TargetType")) if isinstance(filtre, dict) else liste(filtre)
+            if "OwnSummon" in filtre:
+                qui = "une de vos {AA_Summon}" if k == 1 else f"{k} de vos {{AA_Summon}}"
+                return f"Commandez {qui} : {interne}"
+            if "Ally" in filtre:
+                r = portee(ab)
+                qui = "Un {Allies}" if k == 1 else f"{k} {{Allies}}"
+                return f"{qui}{' à ' + r if r else ''} effectue : {interne}"
+            return None  # cible du contrôle trop particulière
+    # Capacité effectuée depuis une ombre (Arpenteuse des Ombres)
+    ombre = ab.get("PerformFromShadow")
+    if isinstance(ombre, dict):
+        interne = decrire_interne(ombre.get("Abilities"))
+        if interne:
+            return interne
+    return None
+
+
+def texte_de(ab):
+    """Texte (sans le marqueur) d'une capacité, en essayant les descriptions dans l'ordre."""
+    if not isinstance(ab, dict) or ab.get("Null") is True or ab.get("null") is True:
+        return None
+    if any(str(k).startswith("Remove") for k in ab):
+        return None  # retrait d'états : la liste « Conditions » désigne alors ce qui est retiré, pas infligé
+    texte = (decrire_bonus(ab) or decrire_attaque(ab) or decrire_simple(ab) or decrire_degats(ab)
+             or decrire_special(ab) or decrire_etats(ab))
+    if not texte and isinstance(ab.get("SubAbilities"), dict):
+        # Ex. invocation dont le coût est « subissez 2 dégâts » : on décrit les sous-capacités.
+        texte = decrire_interne(ab["SubAbilities"]) or None
+    return texte
+
+
+def decrire_consommation_interne(ab, avec_element=False):
+    """Consommation au format « Consume: {Elements, Abilities, XP} » (et trophées).
+    `avec_element` : préfixer par l'élément consommé quand la ligne du jeu ne l'affiche pas déjà."""
+    conso = ab.get("Consume")
+    if not isinstance(conso, dict):
+        return None
+    morceaux = []
+    if avec_element:
+        elems = liste(conso.get("Elements") or conso.get("Element"))
+        if elems:
+            morceaux.append("".join(f"{{Consume{e}}}" for e in elems) + " :")
+    trophees = nombre(conso.get("Trophies"))
+    if trophees:
+        morceaux.append(f"Dépensez {trophees}{{DWRTrophy}} :")
+    interne = decrire_interne(conso.get("Abilities"))
+    if interne:
+        morceaux.append(interne)
+    xp = nombre(conso.get("XP")) or nombre(ab.get("XP"))
+    if xp:
+        morceaux.append(f"{{XP{xp}}}" if xp in (1, 2) else f"{{XP}}{xp}")
+    return " ".join(morceaux) if interne else None
+
+
+def decrire(ab, est_consommation=False, avec_element=False):
     """Texte reconstitué pour une capacité, ou None."""
     if not isinstance(ab, dict) or ab.get("Null") is True:
         return None
-    if est_consommation or "Elements" in ab and "AbilityOverrides" in ab:
+    if isinstance(ab.get("Consume"), dict):
+        texte = decrire_consommation_interne(ab, avec_element)
+    elif est_consommation or "Elements" in ab and "AbilityOverrides" in ab:
         texte = decrire_consommation(ab)
     else:
-        texte = (decrire_bonus(ab) or decrire_attaque(ab) or decrire_simple(ab) or decrire_degats(ab)
-                 or decrire_etats(ab))
+        texte = texte_de(ab)
     return "{Reconst} " + texte if texte else None

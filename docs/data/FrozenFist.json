@@ -323,7 +323,7 @@
      "{Shield} 1",
      "{ConsumeIce} : +1{Shield}, {XP1}",
      "—",
-     "{Reconst} Vous subissez {Disarm}, {Muddle}",
+     "{Manquant}",
      "—",
      "{Round} Lorsque vous devriez gagner {Disarm} ou {Muddle} ce round, bloquez cet état",
      "{Round} {Shield} 1"
@@ -403,11 +403,11 @@
    },
    "bas": {
     "texte": [
-     "{Reconst} {Heal}2 sur vous-même",
+     "{Reconst} {ConsumeIce} : Créez 1 {IceHex} à {Range}1 {XP1}",
      "—",
      "{Move} 2",
      "—",
-     "{Manquant}"
+     "{Reconst} {Heal}2 sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -495,7 +495,7 @@
      "—",
      "{ConsumeIce} : Les {Enemy} sur ces hexagones gagnent {Brittle}, {XP1}",
      "—",
-     "{Persistent} {Manquant}"
+     "{Persistent} {Reconst} {Ward} sur vous-même"
     ],
     "defausse": "defausse"
    },
@@ -613,7 +613,7 @@
    "initiative": 21,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Heal}3 sur vous-même",
      "{ConsumeEarth} : +3{Heal}, {XP1}",
      "{Round} Lorsque vous subissez des {Damage} ce round, subissez 1{Damage} de moins"
     ],
@@ -704,7 +704,7 @@
    "initiative": 73,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {ConsumeAny} : {Strengthen} sur vous-même {XP1}",
      "—",
      "{Round} À la fin de chacun de vos déplacements ce tour :\nEffectuez ces attaques sans tenir compte de la ligne de vue"
     ],
@@ -750,7 +750,7 @@
    "initiative": 18,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {ConsumeIce} : {Brittle} {Range}1 {Target} tous {XP1}",
      "—",
      "{Attack} 6",
      "{ConsumeEarth} : +2{Attack}, {XP1}"
@@ -763,7 +763,7 @@
      "—",
      "{ConsumeIce}: {Shield}2",
      "—",
-     "{Manquant}",
+     "{Reconst} {Heal}3 sur vous-même",
      "{ConsumeEarth} : +2{Heal}, {XP1}"
     ],
     "defausse": "defausse"

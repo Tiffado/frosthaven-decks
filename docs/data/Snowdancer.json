@@ -303,7 +303,7 @@
    "initiative": 32,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Un {Allies} à {Range}99 effectue : {Move}2, {Attack}3 {Range}1 {Target}1",
      "{Move} 2",
      "{Attack} 3"
     ],
@@ -634,7 +634,7 @@
    },
    "bas": {
     "texte": [
-     "{Heal} 2 {Reconst} sur un {Allies} {Range}3 {Target}1"
+     "{Heal} 2 {Reconst} sur un {Allies} à {Range}3 {Strengthen}"
     ],
     "defausse": "defausse"
    }
@@ -692,7 +692,7 @@
    "initiative": 16,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Un {Allies} à {Range}99 effectue : {Move}3, {Attack}6 {Range}1",
      "{Move} 3",
      "{Attack} 6",
      "{ConsumeIce} : +2{Attack},{XP1}",
@@ -787,7 +787,7 @@
    "initiative": 33,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Un {Allies} à {Range}3 effectue : {Attack}4",
      "{Attack} 4 {Push} 2",
      "{ConsumeIce} : {Immobilize}",
      "{Zone_0}",
@@ -891,7 +891,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Manquant}",
+     "{Reconst} {ConsumeIce} : Créez 1 Thorns à {Range}1",
      "—",
      "{Pull} 2 {Range} 3"
     ],

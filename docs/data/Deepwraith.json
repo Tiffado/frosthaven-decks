@@ -84,7 +84,7 @@
     "texte": [
      "{Teleport} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} {ConsumeDark} : Dépensez 1{DWRTrophy} : {Invisible} sur vous-même {XP1}"
     ],
     "defausse": "defausse"
    }
@@ -191,7 +191,7 @@
    "initiative": 96,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Poison} {Range}1 {Target} tous",
      "{ConsumeDark} : +1 {Range}, {XP1}"
     ],
     "defausse": "defausse"
@@ -222,7 +222,7 @@
     "texte": [
      "{Loot} 1",
      "—",
-     "{Manquant}"
+     "{Reconst} Gagnez 1{DWRTrophy}"
     ],
     "defausse": "defausse"
    }
@@ -370,7 +370,7 @@
     "texte": [
      "{Teleport} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} Dépensez 1{DWRTrophy} : {Heal}3 sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -669,7 +669,7 @@
    "initiative": 26,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {ConsumeDark} : Dépensez 1{DWRTrophy} : {Invisible} sur vous-même {XP1}",
      "—",
      "{Attack} 3",
      "{Target} 3, {Range} 2, {Curse}"

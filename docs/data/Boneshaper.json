@@ -30,7 +30,7 @@
    "haut": {
     "texte": [
      "{Persistent} {Summon} Squelette Titubant : {Health}3 {Move}2 {Attack}2 {Range}1",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -52,7 +52,7 @@
    "haut": {
     "texte": [
      "{Persistent} {Summon} Squelette Titubant : {Health}3 {Move}2 {Attack}2 {Range}1",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -73,7 +73,7 @@
    "haut": {
     "texte": [
      "{Persistent} {Summon} Squelette Titubant : {Health}3 {Move}2 {Attack}2 {Range}1",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -95,7 +95,7 @@
    "initiative": 62,
    "haut": {
     "texte": [
-     "{Strengthen} {Reconst} {Range}3",
+     "{Strengthen} {Reconst} sur un {Allies} à {Range}3",
      "{ConsumeDark} : +1 {Target}",
      "—",
      "{Poison} {Range}3",
@@ -105,7 +105,7 @@
    },
    "bas": {
     "texte": [
-     "{Heal}5 {Reconst} sur un {Allies} {Range}3",
+     "{Heal}5 {Reconst} sur un {Allies} à {Range}3",
      "—",
      "{Reconst} Subissez {Damage}2",
      "{CreateDark}"
@@ -188,7 +188,7 @@
    "initiative": 30,
    "haut": {
     "texte": [
-     "{Heal} 2 {Reconst} sur un {Allies} {Range}3",
+     "{Heal} 2 {Reconst} sur un {Allies} à {Range}3",
      "{ConsumeEarth} : +2 {Heal}",
      "{ConsumeDark} : +2 {Heal}, {XP1}"
     ],
@@ -196,10 +196,10 @@
    },
    "bas": {
     "texte": [
-     "{Heal}1 {Reconst} {Heal}1 sur vous-même",
+     "{Heal}1 {Reconst} sur un {Allies} à {Range}3",
      "—",
      "Si un {Enemy} est mort ce round :",
-     "{Heal}1 {Reconst} {Heal}1 sur vous-même"
+     "{Heal}1 {Reconst} sur un {Allies} à {Range}3"
     ],
     "defausse": "defausse"
    }
@@ -212,7 +212,7 @@
    "initiative": 18,
    "haut": {
     "texte": [
-     "{Heal}X+1 {Reconst} {Heal}1 sur vous-même",
+     "{Heal}X+1 {Reconst} sur vous-même",
      "où X est le nombre de vos {AA_Summon}"
     ],
     "defausse": "defausse"
@@ -307,7 +307,7 @@
    "initiative": 53,
    "haut": {
     "texte": [
-     "{Heal} 4 {Reconst} sur un {Allies} {Range}2 {Target} tous {Bless}",
+     "{Heal} 4 {Reconst} sur tous les {Allies} à {Range}2 {Bless}",
      "—",
      "{Reconst} Subissez {Damage}2",
      "—",
@@ -318,7 +318,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Move}3",
      "{Move} 3",
      "{CreateAir}"
     ],
@@ -358,7 +358,7 @@
    "initiative": 80,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Attack}1",
      "{Attack} +1",
      "{ConsumeEarth} : {Poison}, {XP1}"
     ],
@@ -388,7 +388,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Poison} {Range}1 {Target} tous",
      "{CreateEarth}"
     ],
     "defausse": "defausse"
@@ -428,7 +428,7 @@
     "texte": [
      "{Persistent} {Summon} Squelette Titubant : {Health}3 {Move}2 {Attack}2 {Range}1",
      "—",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}1",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -437,7 +437,7 @@
     "texte": [
      "Effectuez une action {AA_Summon} d'une carte de votre défausse",
      "—",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}1",
      "{CreateEarth}"
     ],
     "defausse": "defausse"
@@ -451,7 +451,7 @@
    "initiative": 28,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} {Attack}2 {Target} tous {Poison}",
      "—",
      "{Target} tous les {Enemy} adjacents à cette {AA_Summon}, {Poison}",
      "{CreateEarth}",
@@ -475,7 +475,7 @@
    "initiative": 95,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Attack}1",
      "{ConsumeDark} : [{'Row': 'Octroyez cette capacité à 2 de vos {AA_Summon} à la place'}]"
     ],
     "defausse": "defausse"
@@ -524,7 +524,7 @@
      "{Persistent} {Summon} Atrocité Cousue : {Health}8 {Move}2 {Attack}3",
      "{Wound}",
      "—",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}2",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -570,7 +570,7 @@
    "haut": {
     "texte": [
      "{Persistent} {Summon} {AA_Summon} Squelettes Titubants : {Health}3 {Move}2 {Attack}2 {Range}1",
-     "{Manquant}",
+     "{Reconst} Subissez {Damage}6",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -578,7 +578,7 @@
    "bas": {
     "texte": [
      "{ConsumeDark}: {Move} 4, {XP1}",
-     "{Manquant}"
+     "{Reconst} Commandez une de vos {AA_Summon} : {Move}4"
     ],
     "defausse": "defausse"
    }
@@ -591,7 +591,7 @@
    "initiative": 85,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Move}1, {Attack}1",
      "{CreateDark}"
     ],
     "defausse": "defausse"
@@ -669,7 +669,7 @@
     "texte": [
      "+1{Attack} pour chaque {BoneShield}\nLorsque cette invocation devrait subir {Damage}, vous pouvez retirer 1 {BoneShield} pour bloquer les {Damage}",
      "—",
-     "{Manquant}",
+     "{Reconst} {ConsumeDark} : Commandez une de vos {AA_Summon} : {Wound} {Range}1 {Target} tous",
      "{Manquant}"
     ],
     "defausse": "defausse"
@@ -693,7 +693,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Reconst} {Heal}3 {Range}3 {Target}1",
+     "{Reconst} {Heal}3 sur un {Allies} à {Range}3",
      "{ConsumeEarth} : {Ward}"
     ],
     "defausse": "defausse"

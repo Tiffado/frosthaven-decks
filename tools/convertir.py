@@ -348,21 +348,48 @@ def remplir_manquants(lignes: list, data_cote, layout_cote, index: dict) -> list
     capacites = list(((data_cote or {}).get("Abilities") or {}).keys())
     cite = str(layout_cote)
     libres = [n for n in capacites if not re.search(r"(\*|\b)" + re.escape(n) + r"(\.|\*|\b)", cite)]
-    textes_libres = [t for t in (reconstituer.decrire(index.get(n)) for n in libres) if t]
     cites = [n for n in capacites if n not in libres]
+    deja = re.sub(r"\s+", "", " ".join(lignes))
+
+    def nouveau(t):
+        # Écarte une description déjà affichée ailleurs sur la carte (ex. « {Shield}2 » d'une consommation),
+        # y compris quand seule sa valeur principale (« {Shield}1 ») y figure déjà.
+        if not t:
+            return False
+        brut = re.sub(r"\s+", "", t.replace("{Reconst}", ""))
+        coeur = re.match(r"^\{(\w+)\}([\dX]+)", brut)
+        return brut not in deja and not (coeur and coeur.group(0) in deja)
+    textes_libres = [t for t in (reconstituer.decrire(index.get(n), avec_element=True) for n in libres) if nouveau(t)]
+    # Sous-capacités « texte seul » des capacités citées : ex. le coût d'une invocation (« subissez 2 dégâts »).
+    for n in cites:
+        for sous in ((index.get(n) or {}).get("SubAbilities") or {}).values():
+            if isinstance(sous, dict) and (sous.get("TextOnly") or sous.get("AutoTrigger")):
+                t = reconstituer.decrire(sous)
+                if nouveau(t):
+                    textes_libres.append(t)
+    # Dernier recours : capacité citée ailleurs (ex. dans une consommation) dont l'effet de base n'est pas affiché.
+    for n in cites:
+        t = reconstituer.decrire(index.get(n), avec_element=True)
+        if nouveau(t) and t not in textes_libres:
+            textes_libres.append(t)
     sortie = []
     for l in lignes:
-        # « {Heal} 2 {Manquant} » : complément de cible de la capacité déjà affichée sur la ligne.
-        m = re.match(r"^((?:\{(?:Persistent|Round|BBFast|BBSlow)\}\s*)*)\{(\w+)\}\s*[\dX+]+\s*\{Manquant\}", l)
+        # « {Heal} 2 {Manquant} » ou « {Stun} {Manquant} » : complément de la capacité déjà affichée sur la ligne.
+        m = re.match(r"^((?:\{(?:Persistent|Round|BBFast|BBSlow)\}\s*)*)\{(\w+)\}\s*[\dX+]*\s*\{Manquant\}", l)
         if m:
             genre = m.group(2)
-            ab = next((index.get(n) for n in cites if isinstance(index.get(n), dict) and genre in index.get(n)), None)
-            q = reconstituer.qualificatif(ab) if ab else None
+            candidats = [index.get(n) for n in cites] + list(index.values())  # cités d'abord, puis imbriqués
+            ab = next((a for a in candidats if isinstance(a, dict) and genre in a), None)
+            q = reconstituer.qualificatif(ab, genre) if ab else None
             if q:
                 l = l.replace("{Manquant}", q, 1)
                 reconstituees += 1
         while "{Manquant}" in l and textes_libres:
-            l = l.replace("{Manquant}", textes_libres.pop(0), 1)
+            t = textes_libres.pop(0)
+            if re.search(r"\{Consume[\w\-]*\}\s*:?\s*\{Manquant\}", l):
+                # La ligne du jeu affiche déjà l'élément consommé : pas de second préfixe.
+                t = re.sub(r"^\{Reconst\}\s*(?:\{Consume[\w\-]*\})+\s*:\s*", "{Reconst} ", t)
+            l = l.replace("{Manquant}", t, 1)
             reconstituees += 1
         # L'icône d'état déjà affichée par le jeu n'est pas répétée par le texte reconstitué.
         l = re.sub(r"\{(\w+)\}(\s*\{Reconst\}\s*)\{\1\}\s*", r"{\1}\2", l)

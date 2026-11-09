@@ -62,7 +62,7 @@
     "texte": [
      "{IFInfusion} {ConsumeEarth} {ConsumeWild} INFUSION :",
      "{Retaliate} 1 {Range} 2",
-     "{Reconst} {Retaliate}1",
+     "{Manquant}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -608,7 +608,7 @@
    "haut": {
     "texte": [
      "{Attack} 5",
-     "{Manquant}",
+     "{Reconst} Vous subissez {Disarm}",
      "{ConsumeEarth} : -1 {Attack}: {CreateEarth}",
      "—",
      "{Disarm}",
@@ -635,7 +635,7 @@
    "initiative": 30,
    "haut": {
     "texte": [
-     "{Reconst} {Heal}2 {Range}3 {Target}1",
+     "{Reconst} {Heal}2 sur un {Allies} à {Range}3",
      "Ajoutez {Regenerate} à toutes vos capacités de soin",
      "{Manquant}",
      "{XP}1"

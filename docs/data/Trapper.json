@@ -59,7 +59,7 @@
     "texte": [
      "{Persistent} {Summon} Appât Touffu : {Health}2 {Move}0 {Attack}0 {Range}0",
      "à la fin du tour",
-     "{Manquant}"
+     "{Reconst} Vous subissez {Disarm}"
     ],
     "defausse": "defausse"
    }

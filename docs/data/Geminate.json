@@ -192,7 +192,7 @@
      "{Attack} 1 {Muddle}",
      "{ConsumeLight} : +1 {Attack}",
      "—",
-     "{Manquant}",
+     "{Reconst} {Muddle} {Target} tous",
      "{Zone_0}"
     ],
     "defausse": "defausse",
@@ -346,7 +346,7 @@
    "initiative": 27,
    "haut": {
     "texte": [
-     "{Heal} 3 {Reconst} sur un {Allies} {Range}3 {Target}1",
+     "{Heal} 3 {Reconst} sur un {Allies} à {Range}3",
      "{ConsumeFire} : {Regenerate}, {XP1}"
     ],
     "defausse": "defausse"
@@ -530,7 +530,7 @@
    "haut": {
     "texte": [
      "{Attack} 2 {Reconst} {Range}2 {Target} tous {Muddle}, {Range}2, {Muddle}",
-     "{Muddle} {Reconst} {Range}2 {Target} tous",
+     "{Muddle} {Reconst} sur tous les {Allies} à {Range}2",
      "{CreateIce}",
      "{XP}1"
     ],
@@ -894,7 +894,7 @@
    "initiative": 67,
    "haut": {
     "texte": [
-     "{Heal}4 {Reconst} sur un {Allies} {Range}3 {Target}1",
+     "{Heal}4 {Reconst} sur un {Allies} à {Range}3",
      "{ConsumeLight} : +1 {Target}, {CreateMixed-FI}, {XP1}"
     ],
     "defausse": "defausse"
@@ -919,7 +919,7 @@
    "initiative": 75,
    "haut": {
     "texte": [
-     "{Heal}2 {Reconst} sur un {Allies} {Range}1 {Target} tous",
+     "{Heal}2 {Reconst} sur tous les {Allies} à {Range}1",
      "—",
      "Une fois durant chacun de vos tours",
      "{GMMeleeToRanged}",
@@ -931,7 +931,7 @@
     "texte": [
      "{Move} 4 {Jump}",
      "—",
-     "{ConsumeIce}{Manquant}"
+     "{ConsumeIce}{Reconst} {Ward} sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -945,7 +945,7 @@
    "initiative": 15,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Un {Allies} à {Range}3 effectue : {Shield}2",
      "{Round} {Shield} 2",
      "—",
      "{ConsumeFire} : {Manquant}",
@@ -1107,7 +1107,7 @@
    "initiative": 49,
    "haut": {
     "texte": [
-     "{Manquant} — {ConsumeWild} {CreateFire} {CreateLight} {Zone_0}"
+     "{Reconst} {Attack}3 {Range}5 (portée minimale 4) — {ConsumeWild} {CreateFire} {CreateLight} {Zone_0}"
     ],
     "defausse": "defausse",
     "zones": [

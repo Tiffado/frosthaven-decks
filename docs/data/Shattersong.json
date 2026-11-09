@@ -119,7 +119,7 @@
     "texte": [
      "{Move} 1",
      "—",
-     "{Manquant}"
+     "{Reconst} {Strengthen} sur vous-même"
     ],
     "defausse": "defausse"
    }
@@ -277,7 +277,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}"
+     "{Reconst} Un {Allies} à {Range}2 effectue : {Shield}1 sur vous-même {Strengthen}"
     ],
     "defausse": "defausse"
    }
@@ -471,7 +471,7 @@
     "texte": [
      "{Move} 2",
      "—",
-     "{Manquant}"
+     "{Reconst} {Invisible} sur vous-même"
     ],
     "defausse": "defausse"
    }
