@@ -40,7 +40,7 @@
     "texte": [
      "{Heal} 4 sur vous-même, {Ward}",
      "—",
-     "{Create['Ice', 'Earth']}"
+     "{CreateIce}{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -58,7 +58,7 @@
      "{Attack} 2 {Target} tous les {Enemy} sur ou adjacents à cet hexagone",
      "—",
      "{Round} Lorsque vous subissez des {Damage} d'une attaque ce round :",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    },
@@ -81,7 +81,7 @@
      "{Attack} 2 {Push} 2 {Zone_0}",
      "—",
      "Créez 1 {IceHex} sur un {RedHex} sans décor de la capacité d'attaque",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse",
     "zones": [
@@ -156,7 +156,7 @@
      "+1 {Attack} si la cible est sur un {IceHex}",
      "—",
      "{Round} Lorsque vous subissez des {Damage} ce round, un {Enemy} adjacent subit {Damage}1",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    },
@@ -180,14 +180,14 @@
      "{ConsumeEarth}: {Attack} 2",
      "—",
      "{Round} +1 {Heal} à tous les soins vous ciblant ce round",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
      "{Heal} 2 {Target} tous, {Range}1",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -236,7 +236,7 @@
      "—",
      "{Heal} X sur vous-même",
      "où X est le total des {Damage} subis par les cibles de la capacité d'attaque",
-     "{Create['Earth']}",
+     "{CreateEarth}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -251,7 +251,7 @@
    "haut": {
     "texte": [
      "{Attack} 5 {Reconst} {Range}1 {Target} tous {Immobilize}",
-     "{Create['Ice', 'Earth']}",
+     "{CreateIce}{CreateEarth}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -274,7 +274,7 @@
    "haut": {
     "texte": [
      "{Attack} 2 {Target}2, {Range}3",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    },
@@ -300,14 +300,14 @@
      "Créez 1 {IceHex} sur un hexagone sans décor à {Range}3 ou moins",
      "—",
      "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
      "{Reconst} {Heal}3 sur vous-même",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -323,7 +323,7 @@
      "{Shield} 1",
      "{ConsumeIce} : +1{Shield}, {XP1}",
      "—",
-     "{Manquant}",
+     "{Reconst} Retirez {Disarm} et {Muddle} de vous-même",
      "—",
      "{Round} Lorsque vous devriez gagner {Disarm} ou {Muddle} ce round, bloquez cet état",
      "{Round} {Shield} 1"
@@ -478,7 +478,7 @@
    "bas": {
     "texte": [
      "{Move} 3",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    }
@@ -505,7 +505,7 @@
      "{Shield} 1",
      "—",
      "{ConsumeEarth}: {Move}3",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -522,7 +522,7 @@
      "{ConsumeIce} : +2{Attack}, {XP1}",
      "—",
      "Si la capacité d'attaque a éliminé un {Enemy} :",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    },
@@ -553,7 +553,7 @@
      "{Shield} 1",
      "—",
      "{Retaliate} 1",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -807,7 +807,7 @@
      "Tous les {Enemy} à {Range}3 ou moins subissent {Damage}1",
      "—",
      "Pour chaque {Enemy} ayant subi des {Damage} par cette action :",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -824,7 +824,7 @@
      "—",
      "{Target} tous les {Enemy} adjacents à un {ObstacleHex} créé",
      "{ConsumeEarth} : +1{Attack}, {XP1}",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    },
@@ -834,7 +834,7 @@
      "—",
      "{Retaliate} 2",
      "{ConsumeEarth} : +2{Retaliate}, {XP1}",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -848,7 +848,7 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Range}3, {Push} Créez 3 {IceHex} sur des {RedHex} sans décor, {XP1} {Zone_0}",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse",
     "zones": [
@@ -894,7 +894,7 @@
    "bas": {
     "texte": [
      "Déplacement {Move} 6 Un {Enemy} adjacent subit {Damage}3, {XP1}",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    }

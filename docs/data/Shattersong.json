@@ -166,7 +166,7 @@
     "texte": [
      "{Reconst} Subissez {Damage}2",
      "{Reconst} Vous subissez {Brittle}",
-     "{Manquant}"
+     "{Reconst} Gagnez 2{SSResonance}"
     ],
     "defausse": "defausse"
    }
@@ -269,7 +269,7 @@
      "{Attack} 5",
      "{Range} 2",
      "—",
-     "{Manquant}",
+     "{Reconst} Gagnez 2{SSResonance}",
      "{CreateAir}",
      "{XP}1"
     ],
@@ -463,7 +463,7 @@
     "texte": [
      "{Attack} 2 {Range} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} Gagnez 1{SSResonance}"
     ],
     "defausse": "defausse"
    },
@@ -511,7 +511,7 @@
      "{Attack} 4",
      "{ConsumeAir} : +3 {Range}",
      "—",
-     "{Manquant}",
+     "{ConsumeLight} : {Reconst} Gagnez 1{SSResonance}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -521,7 +521,7 @@
      "{Move} 4",
      "{ConsumeAir} : +1 {Move}, {Jump}",
      "—",
-     "{Manquant}"
+     "{ConsumeEarth} : {Reconst} Gagnez 1{SSResonance}"
     ],
     "defausse": "defausse"
    }
@@ -544,7 +544,7 @@
    "bas": {
     "texte": [
      "Onde -X{SSResonance} :",
-     "{Manquant}",
+     "{Reconst} Effectuez X fois :",
      "{Move} 1",
      "Un {Enemy} adjacent n'ayant pas subi de {Damage} de cette action ce tour subit {Damage}2"
     ],

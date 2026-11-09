@@ -678,7 +678,7 @@
      "{Persistent} Marquez un {Enemy} à {Range}4 ou moins. Lorsque cet {Enemy} meurt, tous les {Enemy} adjacents subissent {Damage}4.",
      "—",
      "{Attack} 2 {Range} 4, {Curse}",
-     "{Create['Dark']}"
+     "{CreateDark}"
     ],
     "defausse": "defausse"
    },
@@ -709,7 +709,7 @@
     "texte": [
      "{Move} 4 {Jump}",
      "Tous les {Enemy} franchis gagnent {Curse}",
-     "{Create['Dark']}"
+     "{CreateDark}"
     ],
     "defausse": "defausse"
    }

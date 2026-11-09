@@ -30,7 +30,7 @@
    "haut": {
     "texte": [
      "Créez 2 pièges dans un hexagone vide à {Range}2 ou moins avec l'effet suivant :",
-     "{Manquant}",
+     "{Reconst} {Damage}1",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -93,8 +93,8 @@
    "initiative": 47,
    "haut": {
     "texte": [
-     "{Manquant} {Damage}3",
-     "{Manquant}",
+     "{Reconst} Créez 1 piège dans un hexagone vide à {Range}2 ou moins avec l'effet suivant : {Damage}3",
+     "{Reconst} {Immobilize}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -142,7 +142,7 @@
    "bas": {
     "texte": [
      "Déplacement {Move} 3",
-     "{Manquant}"
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Heal}2"
     ],
     "defausse": "defausse"
    }
@@ -155,7 +155,7 @@
    "initiative": 30,
    "haut": {
     "texte": [
-     "{Manquant} {Heal}1",
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Heal}4",
      "{Manquant}",
      "{XP}1"
     ],
@@ -189,7 +189,7 @@
     "texte": [
      "Si l'hexagone d'où vous êtes parti est vide, créez un piège avec les effets suivants (sans tenir compte de la ligne de vue) :",
      "{Move} 3",
-     "{Manquant}"
+     "{Reconst} {Damage}2"
     ],
     "defausse": "defausse"
    }
@@ -268,7 +268,7 @@
     "texte": [
      "Remplacez un piège adjacent par un piège avec l'effet suivant :",
      "{Damage}5",
-     "{Manquant}",
+     "{Reconst} {Wound}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -276,7 +276,7 @@
    "bas": {
     "texte": [
      "{Move} 2",
-     "{Manquant}"
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Bless}"
     ],
     "defausse": "defausse"
    }
@@ -317,9 +317,9 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Wound}",
      "{Move} 2",
-     "{Manquant}"
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Wound}"
     ],
     "defausse": "defausse"
    }
@@ -354,8 +354,8 @@
    "initiative": 80,
    "haut": {
     "texte": [
-     "{Manquant} {Heal}1",
-     "{Manquant}",
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Heal}3",
+     "{Reconst} {Strengthen}, {Bless}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -377,8 +377,8 @@
    "initiative": 31,
    "haut": {
     "texte": [
-     "{Manquant}",
-     "{Manquant}",
+     "{Reconst} Créez 2 pièges dans des hexagones vides à {Range}2 ou moins avec l'effet suivant :",
+     "{Reconst} {Damage}3",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -399,8 +399,8 @@
    "initiative": 10,
    "haut": {
     "texte": [
-     "{Manquant}",
-     "{Manquant}",
+     "{Reconst} Créez 2 pièges dans des hexagones vides à {Range}2 ou moins avec l'effet suivant :",
+     "{Reconst} {Heal}3",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -453,7 +453,7 @@
    "bas": {
     "texte": [
      "{Move} 5",
-     "{Manquant}"
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Regenerate}"
     ],
     "defausse": "defausse"
    }
@@ -468,7 +468,7 @@
     "texte": [
      "Modifiez les effets d'un piège adjacent, qui deviennent :",
      "{Damage}6",
-     "{Manquant}",
+     "{Reconst} {Stun}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -510,7 +510,7 @@
    "initiative": 8,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Damage}2, {Wound}, {Poison}, {Muddle}, {Curse}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -600,7 +600,7 @@
    "bas": {
     "texte": [
      "Créez 2 pièges dans des hexagones vides adjacents avec l'effet suivant : {Heal}2",
-     "{Manquant}",
+     "{Reconst} {Regenerate}, {Ward}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -638,7 +638,7 @@
     "texte": [
      "Détruisez trois pièges à {Range}3 ou moins pour créer 1 piège dans un hexagone vide avec les effets suivants :",
      "{Damage}9",
-     "{Manquant}",
+     "{Reconst} {Wound}, {Poison}, {Stun}",
      "{XP}1"
     ],
     "defausse": "defausse"

@@ -62,7 +62,7 @@
     "texte": [
      "{IFInfusion} {ConsumeEarth} {ConsumeWild} INFUSION :",
      "{Retaliate} 1 {Range} 2",
-     "{Manquant}",
+     "{Reconst} Une fois par tour, pendant votre tour : {Heal}3 (vous ou votre {AA_Summon})",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -76,9 +76,9 @@
    "initiative": 87,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{IFInfusion} {ConsumeDark} {ConsumeWild} {Reconst} INFUSION :",
      "Ajoutez {Wound} et {Muddle} à toutes vos attaques de mêlée",
-     "{Manquant}",
+     "{Reconst} Une fois par tour, pendant votre tour : {Strengthen} (vous ou votre {AA_Summon})",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -302,7 +302,7 @@
    "haut": {
     "texte": [
      "{Attack} 2",
-     "{Manquant}",
+     "{Reconst} {Target} tous les {Enemy} adjacents",
      "{Consume} : -1{Attack}: {CreateAir}, {XP1}"
     ],
     "defausse": "defausse"
@@ -383,7 +383,7 @@
    "bas": {
     "texte": [
      "{Heal} 7",
-     "{Manquant}",
+     "{Reconst} sur vous-même",
      "{ConsumeAir} : -2{Heal}: {CreateAir}, {XP1}",
      "{ConsumeEarth} : -2{Heal}: {CreateEarth}, {XP1}",
      "{ConsumeDark} : -2{Heal}: {CreateDark}"
@@ -451,9 +451,9 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{IFInfusion} {ConsumeEarth} {ConsumeDark} {Reconst} INFUSION :",
      "Vos points de vie actuels et maximum augmentent de 3. Vous êtes immunisé contre {Curse}.",
-     "{Manquant}",
+     "{Reconst} Une fois par tour, pendant votre tour : {Ward} (vous ou votre {AA_Summon})",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -582,9 +582,9 @@
    "initiative": 85,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{IFInfusion} {ConsumeAir} {ConsumeDark} {Reconst} INFUSION :",
      "Après qu'un {Enemy} adjacent vous attaque, cet {Enemy} gagne {Curse}",
-     "{Manquant}",
+     "{Reconst} Une fois par tour, pendant votre tour : {Disarm} un {Enemy} à {Range}1 (vous ou votre {AA_Summon})",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -637,7 +637,7 @@
     "texte": [
      "{Reconst} {Heal}2 sur un {Allies} à {Range}3",
      "Ajoutez {Regenerate} à toutes vos capacités de soin",
-     "{Manquant}",
+     "{Reconst} Ces effets demandent de consommer {ConsumeEarth}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -713,9 +713,9 @@
    "initiative": 91,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{IFInfusion} {ConsumeAir} {ConsumeEarth} {Reconst} INFUSION :",
      "Après chacune de vos capacités d'attaque :",
-     "{Manquant}",
+     "{Reconst} {Move}2\nUne fois par tour, pendant votre tour : {Push}2 {Range}1, {Immobilize} (vous ou votre {AA_Summon})",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -976,9 +976,9 @@
    "initiative": 94,
    "haut": {
     "texte": [
-     "{Manquant}",
+     "{IFInfusion} {ConsumeAir} {ConsumeEarth} {ConsumeDark} {Reconst} INFUSION :",
      "Ajoutez +1{Target} à toutes vos capacités d'attaque de mêlée",
-     "{Manquant}",
+     "{Reconst} Une fois par tour, pendant votre tour : {Bless} (vous ou votre {AA_Summon})",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -1014,7 +1014,7 @@
      "Créez un {ObstacleHex} de 3 hexagones sur des hexagones vides à {Range}4 ou moins",
      "—",
      "Tous les {Enemy} adjacents au {ObstacleHex} créé subissent {Damage}4 et gagnent {Stun}",
-     "{Create['Earth', 'Air', 'Dark']}",
+     "{CreateEarth}{CreateAir}{CreateDark}",
      "{XP}1",
      "{Zone_0}"
     ],

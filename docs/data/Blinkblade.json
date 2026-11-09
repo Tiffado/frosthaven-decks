@@ -77,7 +77,7 @@
    "haut": {
     "texte": [
      "{Attack} 2 {Zone_0}",
-     "{BBFast} {Manquant}"
+     "{BBFast} {Reconst} +1{Attack}, {Advantage}, {XP1}"
     ],
     "defausse": "defausse",
     "zones": [
@@ -568,7 +568,7 @@
     "texte": [
      "{BBFast} {Target} tous les {Enemy} adjacents {Attack}3 {Wound}",
      "—",
-     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Manquant} {BBSlow}"
+     "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Reconst} Subissez {Damage}1"
     ],
     "defausse": "defausse"
    },

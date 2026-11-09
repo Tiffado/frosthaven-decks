@@ -341,7 +341,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Contrôlez un {Enemy} à {Range}4 : il effectue {Move}1",
      "{MMPressureOver} +1 {Move}, {MMLosePressure}"
     ],
     "defausse": "defausse"
@@ -458,9 +458,9 @@
    "haut": {
     "texte": [
      "{Attack} 9",
-     "{Manquant}",
-     "{Manquant}",
-     "{Manquant}",
+     "{Reconst} −1{Attack} : {MMGainPressure} ou {MMLosePressure}",
+     "{Reconst} −1{Attack} : {MMGainPressure} ou {MMLosePressure}",
+     "{Reconst} −1{Attack} : {MMGainPressure} ou {MMLosePressure}",
      "{XP}2"
     ],
     "defausse": "perte"

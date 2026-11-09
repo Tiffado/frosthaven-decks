@@ -32,7 +32,7 @@
      "{Attack} 2",
      "{Range}3 ,{Muddle}",
      "{Zone_0}",
-     "{Create['Ice', 'Air']}",
+     "{CreateIce}{CreateAir}",
      "{XP}1"
     ],
     "defausse": "perte",
@@ -221,7 +221,7 @@
    "bas": {
     "texte": [
      "{Move} 2 {Jump}",
-     "{Create['Air']}"
+     "{CreateAir}"
     ],
     "defausse": "defausse"
    }
@@ -259,7 +259,7 @@
    "haut": {
     "texte": [
      "{Heal} 2 {Range}3 {Regenerate}",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    },
@@ -329,14 +329,14 @@
      "Créez 1 {HazardHex} sur un hexagone sans décor à {Range}3 ou moins",
      "—",
      "{Target} un {Allies} adjacent à l'hexagone",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
      "{Move} 2 {Jump}",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    }
@@ -521,7 +521,7 @@
    "bas": {
     "texte": [
      "{Push} 4",
-     "{Manquant}",
+     "{Reconst} {Target} tous les {Allies} à {Range}3, {Bless}",
      "{CreateLight}",
      "{XP}1"
     ],
@@ -538,7 +538,7 @@
     "texte": [
      "{Persistent} {Summon} {Summon} 2x Harfang des Neiges : {Health}3 {Move}3 {Attack}2 {Range}1",
      "{Flying}",
-     "{Create['Air']}",
+     "{CreateAir}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -562,8 +562,8 @@
     "texte": [
      "{Attack} 3 {Range}3 {Zone_0}",
      "—",
-     "{Manquant}",
-     "{Create['Air']}",
+     "{Reconst} Contrôlez chaque {Enemy} ciblé : il effectue {Move}1",
+     "{CreateAir}",
      "{XP}2"
     ],
     "defausse": "perte",
@@ -612,7 +612,7 @@
      "Déplacement {Move} 3 {Jump}",
      "—",
      "{Reconst} {Push}1 {Range}2",
-     "{Create['Air']}"
+     "{CreateAir}"
     ],
     "defausse": "defausse"
    }
@@ -628,7 +628,7 @@
      "Créez 2 {HazardHex} sur des hexagones sans décor adjacents",
      "—",
      "Jusqu'à 3 {Enemy} sur des {HazardHex} subissent {Damage}2",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    },
@@ -718,7 +718,7 @@
    "haut": {
     "texte": [
      "{Attack} 1 {Target}3,{Range}4 {Pull}2",
-     "{Create['Air']}",
+     "{CreateAir}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -748,7 +748,7 @@
      "{Move} 3",
      "—",
      "Créez 1 {HazardHex} sur un hexagone adjacent sans décor",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    }
@@ -867,7 +867,7 @@
    "bas": {
     "texte": [
      "{Move} 4 {Jump}",
-     "{Create['Ice']}"
+     "{CreateIce}"
     ],
     "defausse": "defausse"
    }
@@ -882,7 +882,7 @@
     "texte": [
      "{Attack} 4 {Reconst} {Range}2 {Target} tous",
      "{ConsumeAir} : +1 {Range}, {XP1}",
-     "{Create['Air']}",
+     "{CreateAir}",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -944,7 +944,7 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Donnez cette carte à un personnage {Allies} adjacent, qui gagne :",
      "{Persistent} Au début de chacun de vos tours, {Ward} sur vous-même",
      "{XP}2"
     ],
@@ -962,14 +962,14 @@
      "{Attack} 3 {Range} 2 , {Push} 2",
      "—",
      "{Attack} 3 {Range} 4 , {Push} 2",
-     "{Create['Air']}"
+     "{CreateAir}"
     ],
     "defausse": "defausse"
    },
    "bas": {
     "texte": [
      "{Heal} 3",
-     "{Manquant}"
+     "{Reconst} sur un {Allies} à {Range}3, {Strengthen} ; puis {Push}3 sur cet {Allies}"
     ],
     "defausse": "defausse"
    }
@@ -991,7 +991,7 @@
    "bas": {
     "texte": [
      "{Move} 6",
-     "{Create['Air']}"
+     "{CreateAir}"
     ],
     "defausse": "defausse"
    }
@@ -1006,8 +1006,8 @@
     "texte": [
      "{Attack} 4 {Target} 4 , {Range} 4",
      "—",
-     "{Manquant}",
-     "{Create['Air']}",
+     "{Reconst} Contrôlez chaque {Enemy} ciblé : il effectue {Move}2",
+     "{CreateAir}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -1032,7 +1032,7 @@
    "haut": {
     "texte": [
      "{Attack} 3 {Target} deux {Enemy} occupant ou adjacents au même {HazardHex}, {Range}5",
-     "{Create['Ice']}",
+     "{CreateIce}",
      "{XP}1"
     ],
     "defausse": "defausse"

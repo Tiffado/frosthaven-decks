@@ -50,10 +50,11 @@ de version des fichiers dans `docs/index.html`, pour que les navigateurs ne gard
 ## Limites connues
 
 - Environ 280 lignes de texte de cartes sont référencées par le jeu mais absentes de ses tables de traduction.
-  `tools/reconstituer.py` en rédige environ les trois quarts à partir des valeurs des capacités (attaque, portée, cibles,
-  états, dégâts, bonus, consommations, ordres aux invocations, jetons, terrain) : le site les marque « ≈ ».
-  Les autres, trop particulières (conditions, effets propres à une classe), restent
-  signalées par « ⚠ texte absent des données du jeu ».
+  `tools/reconstituer.py` en rédige environ 205 à partir des valeurs des capacités (attaque, portée, cibles, états,
+  dégâts, bonus, consommations, ordres aux invocations, jetons, terrain). `tools/lignes_manuelles.json` en contient
+  environ 65 autres, rédigées à la main d'après les données de chaque carte (pièges, infusions, conditions…). Le site
+  marque toutes ces lignes « ≈ ». Une dizaine, que les données ne permettent pas de trancher, restent signalées par
+  « ⚠ texte absent des données du jeu ».
 - Les zones d'effet sont dessinées à partir des coordonnées du jeu (AreaEffect) ; une seule carte n'en a pas dans les données.
 - Les données suivent la version installée du jeu et peuvent changer avec les mises à jour.
 

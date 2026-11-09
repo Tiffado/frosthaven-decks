@@ -248,7 +248,8 @@ def rendre(noeud, ctx, lignes: list):
             lignes.append(f"{jeton} : " + nettoyer(v.get("Text"), index, nom))
             pile_cibles.pop()
         elif k == "Infuse":
-            lignes.append(f"{{Create{v}}}")
+            # Un ou plusieurs éléments créés (le jeu écrit « Air » ou « [Air] »).
+            lignes.append("".join(f"{{Create{e}}}" for e in (v if isinstance(v, list) else [v])))
         elif k in ("Conditional", "MandatoryTrigger"):
             if isinstance(v, dict):
                 rendre(v.get("Layout"), ctx, lignes)
@@ -397,6 +398,25 @@ def remplir_manquants(lignes: list, data_cote, layout_cote, index: dict) -> list
     return sortie
 
 
+MANUELLES = {k: v for k, v in json.loads((RACINE / "tools/lignes_manuelles.json").read_text(encoding="utf8")).items()
+             if not k.startswith("_")}
+manuelles_appliquees = 0
+
+
+def appliquer_manuelles(ident, cote: str, texte: list) -> list:
+    """Lignes rédigées à la main (tools/lignes_manuelles.json). Une ligne n'est remplacée que si elle est
+    manquante ou déjà reconstituée : un texte officiel du jeu n'est jamais écrasé."""
+    global manuelles_appliquees
+    for i, ligne in (MANUELLES.get(f"{ident}:{cote}") or {}).items():
+        i = int(i)
+        if i < len(texte) and ("{Manquant}" in texte[i] or "{Reconst}" in texte[i]):
+            texte[i] = ligne
+            manuelles_appliquees += 1
+        else:
+            inconnus.add(f"ligne manuelle non appliquée : carte {ident} {cote} [{i}]")
+    return texte
+
+
 def convertir_carte(chemin: Path):
     c = lire_yaml(chemin)
     index = {}
@@ -437,7 +457,7 @@ def convertir_carte(chemin: Path):
             if not any("{Zone_" in l for l in texte):
                 texte.append("{Zone_0}")  # zone présente dans les données mais pas dans la mise en page du jeu
             cotes[cote]["zones"] = zones
-        cotes[cote]["texte"] = texte
+        cotes[cote]["texte"] = appliquer_manuelles(c["ID"], cote, texte)
     return {
         "id": c["ID"],
         "nom": nom,
@@ -499,7 +519,7 @@ def main():
                       | {"cartes": len(perso["cartes"])})
     (SORTIE / "personnages.json").write_text(json.dumps(resume, ensure_ascii=False, indent=1), encoding="utf8")
     print(f"{len(resume)} personnages, {sum(r['cartes'] for r in resume)} cartes → docs/data/")
-    print(f"{reconstituees} lignes reconstituées depuis les valeurs du jeu")
+    print(f"{reconstituees} lignes reconstituées automatiquement, {manuelles_appliquees} rédigées à la main")
     if inconnus:
         print(f"{len(inconnus)} éléments non résolus :")
         for i in sorted(inconnus)[:80]:

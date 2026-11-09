@@ -602,8 +602,8 @@
    "haut": {
     "texte": [
      "{Attack} 2 {Reconst} {Range}5 (portée minimale 4)",
-     "{Consume} : {Reconst} +2{Attack}",
-     "{Consume} : {Manquant} {BSRedHex}{BSRedHex}",
+     "{Consume} : {Reconst} Subissez {Muddle} : +2{Attack}",
+     "{Consume} : {Reconst} Subissez {Curse} : l'attaque touche une zone de {BSRedHex}{BSRedHex}",
      "{Zone_0}"
     ],
     "defausse": "defausse",
@@ -689,7 +689,7 @@
     "texte": [
      "{Attack} 2 {Reconst} {Range}3 (portée minimale 2)",
      "{Zone_0}",
-     "{Consume} : {Manquant}",
+     "{Consume} : {Reconst} Subissez {Curse} : la zone d'attaque s'agrandit (schéma ci-dessous)",
      "{Zone_1}",
      "{XP}2"
     ],
@@ -948,7 +948,7 @@
      "{Reconst} Un {Allies} à {Range}3 effectue : {Shield}2",
      "{Round} {Shield} 2",
      "—",
-     "{ConsumeFire} : {Manquant}",
+     "{ConsumeFire} : {Reconst} l'{Allies} gagne aussi {Strengthen}",
      "{Persistent} {Shield} 3"
     ],
     "defausse": "defausse"

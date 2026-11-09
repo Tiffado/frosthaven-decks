@@ -147,7 +147,7 @@
      "si effectué sur une nouvelle cible",
      "—",
      "{Attack} 2 {Wound}",
-     "{Manquant}",
+     "{Reconst} +2{Attack} si effectué sur une cible différente des deux précédentes",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -339,7 +339,7 @@
      "{Attack} 1",
      "{ConsumeDark} : : +1 {Attack}",
      "—",
-     "{Manquant}"
+     "{Reconst} Si l'attaque tue sa cible : {Bane} à un {Enemy} adjacent à celle-ci (ni élite ni boss), {XP1}"
     ],
     "defausse": "defausse"
    },

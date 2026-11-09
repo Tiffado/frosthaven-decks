@@ -1,0 +1,96 @@
+{
+ "_explication": "Lignes rédigées à la main par le site d'après les données de chaque carte (texte absent des traductions du jeu). Clé : « numéro de carte:côté », puis numéro de ligne → texte. Une ligne n'est remplacée que si elle est manquante ou déjà reconstituée, jamais un texte officiel.",
+
+ "34:haut": {"1": "{BBFast} {Reconst} +1{Attack}, {Advantage}, {XP1}"},
+ "54:haut": {"2": "{BBFast} Subissez {Damage}1 pour chaque {Enemy} ciblé {BBSlow} {Reconst} Subissez {Damage}1"},
+ "133:haut": {"3": "{Reconst} Puis l'{AA_Summon} sacrifiée est tuée"},
+ "492:bas": {"2": "{Reconst} Si vous occupez un hexagone d'eau :"},
+ "503:haut": {"4": "{Reconst} {Range}1, où X est le nombre de {CTTide} actives"},
+ "450:haut": {"6": "{Reconst} +2{Attack} si effectué sur une cible différente des deux précédentes"},
+ "458:haut": {"3": "{Reconst} Si l'attaque tue sa cible : {Bane} à un {Enemy} adjacent à celle-ci (ni élite ni boss), {XP1}"},
+ "370:haut": {"3": "{Reconst} Retirez {Disarm} et {Muddle} de vous-même"},
+ "167:haut": {
+   "1": "{Consume} : {Reconst} Subissez {Muddle} : +2{Attack}",
+   "2": "{Consume} : {Reconst} Subissez {Curse} : l'attaque touche une zone de {BSRedHex}{BSRedHex}"
+ },
+ "170:haut": {"2": "{Consume} : {Reconst} Subissez {Curse} : la zone d'attaque s'agrandit (schéma ci-dessous)"},
+ "176:haut": {"3": "{ConsumeFire} : {Reconst} l'{Allies} gagne aussi {Strengthen}"},
+ "388:bas": {"1": "{Reconst} sur vous-même, {Regenerate}"},
+ "412:bas": {"2": "{Reconst} Commandez une de vos {AA_Summon} : {Teleport}8"},
+ "186:bas": {"2": "{Reconst} Une fois par tour, pendant votre tour : {Heal}3 (vous ou votre {AA_Summon})"},
+ "187:haut": {
+   "0": "{IFInfusion} {ConsumeDark} {ConsumeWild} {Reconst} INFUSION :",
+   "2": "{Reconst} Une fois par tour, pendant votre tour : {Strengthen} (vous ou votre {AA_Summon})"
+ },
+ "193:haut": {"1": "{Reconst} {Target} tous les {Enemy} adjacents"},
+ "196:bas": {"1": "{Reconst} sur vous-même"},
+ "199:bas": {
+   "0": "{IFInfusion} {ConsumeEarth} {ConsumeDark} {Reconst} INFUSION :",
+   "2": "{Reconst} Une fois par tour, pendant votre tour : {Ward} (vous ou votre {AA_Summon})"
+ },
+ "203:haut": {
+   "0": "{IFInfusion} {ConsumeAir} {ConsumeDark} {Reconst} INFUSION :",
+   "2": "{Reconst} Une fois par tour, pendant votre tour : {Disarm} un {Enemy} à {Range}1 (vous ou votre {AA_Summon})"
+ },
+ "205:haut": {"2": "{Reconst} Ces effets demandent de consommer {ConsumeEarth}"},
+ "207:haut": {
+   "0": "{IFInfusion} {ConsumeAir} {ConsumeEarth} {Reconst} INFUSION :",
+   "2": "{Reconst} {Move}2\nUne fois par tour, pendant votre tour : {Push}2 {Range}1, {Immobilize} (vous ou votre {AA_Summon})"
+ },
+ "213:haut": {
+   "0": "{IFInfusion} {ConsumeAir} {ConsumeEarth} {ConsumeDark} {Reconst} INFUSION :",
+   "2": "{Reconst} Une fois par tour, pendant votre tour : {Bless} (vous ou votre {AA_Summon})"
+ },
+ "428:bas": {"0": "{Reconst} Contrôlez un {Enemy} à {Range}4 : il effectue {Move}1"},
+ "433:haut": {
+   "1": "{Reconst} −1{Attack} : {MMGainPressure} ou {MMLosePressure}",
+   "2": "{Reconst} −1{Attack} : {MMGainPressure} ou {MMLosePressure}",
+   "3": "{Reconst} −1{Attack} : {MMGainPressure} ou {MMLosePressure}"
+ },
+ "238:bas": {
+   "0": "{Reconst} Créez 1 {HazardHex} dans un hexagone vide à {Range}1",
+   "4": "{Reconst} Créez 1 {HazardHex} dans un hexagone vide à {Range}1"
+ },
+ "248:bas": {"2": "{Reconst} Gagnez 2{SSResonance}"},
+ "252:haut": {"3": "{Reconst} Gagnez 2{SSResonance}"},
+ "260:haut": {"2": "{Reconst} Gagnez 1{SSResonance}"},
+ "262:haut": {"3": "{ConsumeLight} : {Reconst} Gagnez 1{SSResonance}"},
+ "262:bas": {"3": "{ConsumeEarth} : {Reconst} Gagnez 1{SSResonance}"},
+ "263:bas": {"1": "{Reconst} Effectuez X fois :"},
+ "343:bas": {"1": "{Reconst} {Target} tous les {Allies} à {Range}3, {Bless}"},
+ "345:haut": {"2": "{Reconst} Contrôlez chaque {Enemy} ciblé : il effectue {Move}1"},
+ "355:bas": {"0": "{Reconst} Donnez cette carte à un personnage {Allies} adjacent, qui gagne :"},
+ "356:bas": {"1": "{Reconst} sur un {Allies} à {Range}3, {Strengthen} ; puis {Push}3 sur cet {Allies}"},
+ "358:haut": {"2": "{Reconst} Contrôlez chaque {Enemy} ciblé : il effectue {Move}2"},
+ "273:haut": {"1": "{Reconst} {Damage}1"},
+ "276:haut": {
+   "0": "{Reconst} Créez 1 piège dans un hexagone vide à {Range}2 ou moins avec l'effet suivant : {Damage}3",
+   "1": "{Reconst} {Immobilize}"
+ },
+ "278:bas": {"1": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Heal}2"},
+ "279:haut": {"0": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Heal}4"},
+ "280:bas": {"2": "{Reconst} {Damage}2"},
+ "284:haut": {"2": "{Reconst} {Wound}"},
+ "284:bas": {"1": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Bless}"},
+ "286:bas": {
+   "0": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Wound}",
+   "2": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Wound}"
+ },
+ "288:haut": {
+   "0": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Heal}3",
+   "1": "{Reconst} {Strengthen}, {Bless}"
+ },
+ "289:haut": {
+   "0": "{Reconst} Créez 2 pièges dans des hexagones vides à {Range}2 ou moins avec l'effet suivant :",
+   "1": "{Reconst} {Damage}3"
+ },
+ "290:haut": {
+   "0": "{Reconst} Créez 2 pièges dans des hexagones vides à {Range}2 ou moins avec l'effet suivant :",
+   "1": "{Reconst} {Heal}3"
+ },
+ "292:bas": {"1": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Regenerate}"},
+ "293:haut": {"2": "{Reconst} {Stun}"},
+ "295:haut": {"0": "{Reconst} Créez 1 piège dans un hexagone vide adjacent avec l'effet suivant : {Damage}2, {Wound}, {Poison}, {Muddle}, {Curse}"},
+ "298:bas": {"1": "{Reconst} {Regenerate}, {Ward}"},
+ "300:haut": {"2": "{Reconst} {Wound}, {Poison}, {Stun}"}
+}

@@ -30,7 +30,7 @@
    "haut": {
     "texte": [
      "Remplacez 1{HazardHex} dans un hexagone inoccupé à {Range}4 par un {ObstacleHex}. Tous les {Enemy} adjacents à cet hexagone subissent {Damage}2.",
-     "{Create['Earth']}",
+     "{CreateEarth}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -63,7 +63,7 @@
     "texte": [
      "{Persistent} Ajoutez -1{Attack} à vos 3 prochaines attaques, puis doublez la valeur de la quatrième attaque.",
      "{Suivi_0001}",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -128,7 +128,7 @@
      "Créez un {ObstacleHex} de 1 hexagone dans un hexagone vide à {Range}5",
      "—",
      "Créez 1{HazardHex} dans tous les hexagones sans décor occupés adjacents à l'obstacle. Les personnages dans ces hexagones subissent {Damage}4",
-     "{Create['Fire', 'Earth']}",
+     "{CreateFire}{CreateEarth}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -136,7 +136,7 @@
    "bas": {
     "texte": [
      "{Attack} 2",
-     "{Create['Fire']}"
+     "{CreateFire}"
     ],
     "defausse": "defausse"
    }
@@ -152,7 +152,7 @@
      "{Attack} 2 {Range} 3",
      "—",
      "Créez 1{HazardHex} dans l'hexagone sans décor occupé par la cible",
-     "{Create['Fire']}"
+     "{CreateFire}"
     ],
     "defausse": "defausse"
    },
@@ -172,7 +172,7 @@
    "haut": {
     "texte": [
      "Choisissez un chemin entre vous et un hexagone sans décor situé à 4{Range} et placez {HazardHex} sur tous les hexagones sans décor de ce chemin. Les personnages sur ces hexagones subissent 3{Damage}. Gagnez {XP1} pour chaque personnage blessé.",
-     "{Create['Fire']}"
+     "{CreateFire}"
     ],
     "defausse": "perte"
    },
@@ -203,7 +203,7 @@
      "{Reconst} {Target} tous {Range}1 : les {Enemy} ciblés subissent {Damage}1",
      "—",
      "{Loot} 1",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -218,7 +218,7 @@
     "texte": [
      "{Attack} 3",
      "Ajoutez +1{Attack}, {Pierce}3 et gagnez {XP1} si la cible occupe un {HazardHex}",
-     "{Create['Fire']}"
+     "{CreateFire}"
     ],
     "defausse": "defausse"
    },
@@ -265,7 +265,7 @@
      "Détruisez un {ObstacleHex} à {Range}4 :",
      "{Attack} 1 {Reconst} {Target} tous {Muddle}",
      "Effectuez les attaques comme si vous occupiez cet {ObstacleHex}",
-     "{Create['Earth']}",
+     "{CreateEarth}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -335,7 +335,7 @@
      "{Persistent} {Shield} 1",
      "—",
      "{Persistent} {Retaliate} 1",
-     "{Create['Earth']}",
+     "{CreateEarth}",
      "{XP}2"
     ],
     "defausse": "perte"
@@ -406,7 +406,7 @@
    "haut": {
     "texte": [
      "{Persistent} Maintenant et au début de vos deux prochains tours :",
-     "{Attack} 1 {Target}1 {Enemy} adjacent à un {HazardHex}, {Pierce}2, {Wound} {Create['Fire']}",
+     "{Attack} 1 {Target}1 {Enemy} adjacent à un {HazardHex}, {Pierce}2, {Wound} {CreateFire}",
      "{Suivi_01}"
     ],
     "defausse": "defausse"
@@ -433,7 +433,7 @@
      "—",
      "{Persistent} Au début de votre prochain tour : {Damage}1 sur vous-même",
      "{Suivi_00}",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    },
@@ -458,7 +458,7 @@
     "texte": [
      "{Attack} 4 {Muddle}",
      "Créez 1{HazardHex} dans l'hexagone sans décor occupé par la cible",
-     "{Create['Fire']}",
+     "{CreateFire}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -493,7 +493,7 @@
      "—",
      "{ConsumeFire}",
      "Créez un {ObstacleHex} de 1 hexagone sur un hexagone vide adjacent",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -553,7 +553,7 @@
      "{Attack} 3 {Range}4, {Pull}3",
      "—",
      "{Persistent} Lorsque le prochain {Enemy} devrait subir des {Damage} en entrant sur un {HazardHex}, bloquez les {Damage} {Suivi_0}",
-     "{Create['Fire']}"
+     "{CreateFire}"
     ],
     "defausse": "defausse"
    },
@@ -590,7 +590,7 @@
      "—",
      "{Round} La prochaine fois que vous subissez des {Damage} ce round, bloquez-les",
      "{Suivi_0}",
-     "{Create['Earth']}"
+     "{CreateEarth}"
     ],
     "defausse": "defausse"
    }
@@ -610,11 +610,11 @@
    },
    "bas": {
     "texte": [
-     "{Manquant}",
+     "{Reconst} Créez 1 {HazardHex} dans un hexagone vide à {Range}1",
      "—",
      "{Move} 3",
      "—",
-     "{Manquant}"
+     "{Reconst} Créez 1 {HazardHex} dans un hexagone vide à {Range}1"
     ],
     "defausse": "defausse"
    }
@@ -629,7 +629,7 @@
     "texte": [
      "Détruisez un hexagone contenant un {HazardHex} à {Range}4 ou moins :",
      "{Attack} 3 {Target} tous les {Enemy} occupant ou adjacents à cet hexagone, {Range}5, {Pierce}2",
-     "{Create['Fire']}",
+     "{CreateFire}",
      "{XP}1"
     ],
     "defausse": "defausse"
@@ -716,7 +716,7 @@
    "haut": {
     "texte": [
      "{Persistent} Lorsque vous devriez subir des {Damage}, vous pouvez détruire un obstacle adjacent pour bloquer ces {Damage}",
-     "{Create['Earth']}",
+     "{CreateEarth}",
      "{XP}2"
     ],
     "defausse": "perte"

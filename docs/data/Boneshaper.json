@@ -286,7 +286,7 @@
     "texte": [
      "{Attack}4",
      "En tuant la cible, effectuez une action {AA_Summon} depuis votre défausse, réduisant de 2 les {Damage} subis",
-     "{Create['Earth', 'Dark']}",
+     "{CreateEarth}{CreateDark}",
      "{XP}1"
     ],
     "defausse": "perte"
@@ -336,7 +336,7 @@
      "Sacrifiez 1 de vos {AA_Summon} :",
      "{Attack} 4 {Target} tous les {Enemy} adjacents à cette {AA_Summon}",
      "—",
-     "{Manquant}",
+     "{Reconst} Puis l'{AA_Summon} sacrifiée est tuée",
      "{CreateFire}",
      "{XP}1"
     ],
@@ -717,7 +717,7 @@
    "bas": {
     "texte": [
      "{Persistent} Ignorez toutes les capacités d'automutilation de vos cartes",
-     "{Create['Earth', 'Dark']}",
+     "{CreateEarth}{CreateDark}",
      "{XP}1"
     ],
     "defausse": "perte"

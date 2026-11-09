@@ -63,7 +63,7 @@
    "bas": {
     "texte": [
      "{Heal} 3",
-     "{Manquant}"
+     "{Reconst} sur vous-même, {Regenerate}"
     ],
     "defausse": "defausse"
    }
@@ -655,7 +655,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}",
+     "{Reconst} Commandez une de vos {AA_Summon} : {Teleport}8",
      "Cette téléportation doit se terminer sur un hexagone qui vous est adjacent"
     ],
     "defausse": "defausse"

@@ -575,7 +575,7 @@
     "texte": [
      "{Move} 3",
      "—",
-     "{Manquant}",
+     "{Reconst} Si vous occupez un hexagone d'eau :",
      "{Shield} 1"
     ],
     "defausse": "defausse"
@@ -850,7 +850,7 @@
      "où X est le nombre de {CTTide} actives",
      "—",
      "{Attack} X",
-     "{Manquant}",
+     "{Reconst} {Range}1, où X est le nombre de {CTTide} actives",
      "{XP}1"
     ],
     "defausse": "defausse"
